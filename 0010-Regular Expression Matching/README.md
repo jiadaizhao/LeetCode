@@ -1,10 +1,14 @@
 10. Regular Expression Matching
+
 Difficulty: Hard
+
 https://leetcode.com/problems/regular-expression-matching/description/
 
 Implement regular expression matching with support for '.' and '*'.
 
+```
 '.' Matches any single character.
+
 '*' Matches zero or more of the preceding element.
 
 The matching should cover the entire input string (not partial).
@@ -20,7 +24,10 @@ isMatch("aa", "a*") ? true
 isMatch("aa", ".*") ? true
 isMatch("ab", ".*") ? true
 isMatch("aab", "c*a*b") ? true
+```
 
 Companies: Google, Uber, Airbnb, Facebook, Twitter
+
 Related Topics: Dynamic Programming, Backtracking, String
+
 Similar Questions: Wildcard Matching
