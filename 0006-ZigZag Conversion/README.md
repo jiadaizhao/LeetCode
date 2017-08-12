@@ -1,4 +1,4 @@
-6. ZigZag Conversion
+# 6. ZigZag Conversion
 
 Difficulty: Medium
 

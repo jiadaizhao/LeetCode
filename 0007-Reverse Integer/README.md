@@ -1,4 +1,4 @@
-7. Reverse Integer
+# 7. Reverse Integer
 
 Difficulty: Easy
 

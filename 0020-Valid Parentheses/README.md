@@ -1,4 +1,4 @@
-20. Valid Parentheses
+# 20. Valid Parentheses
 
 Difficulty: Easy
 
