@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/minimum-size-subarray-sum/description/
+https://leetcode.com/problems/course-schedule-ii/description/
 
 There are a total of n courses you have to take, labeled from 0 to n - 1.
 
