@@ -36,7 +36,7 @@ logger.shouldPrintMessage(11,"foo"); returns true;
 Credits:
 Special thanks to @memoryless for adding this problem and creating all test cases.
 
-Related Topic: Google
+Companies: Google
 
 Related Topics: Hash Table, Design
 

@@ -12,6 +12,6 @@ Given n = 2, return 91. (The answer should be the total numbers in the range of 
 **Credits:**  
 Special thanks to @memoryless for adding this problem and creating all test cases.
 
-Related Topic: Google
+Companies: Google
 
 Related Topics: Dynamic Programming, Backtracking, Math

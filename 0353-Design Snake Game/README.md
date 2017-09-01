@@ -56,6 +56,6 @@ snake.move("U"); -> Returns -1 (Game over because snake collides with border)
 **Credits:**  
 Special thanks to @elmirap for adding this problem and creating all test cases.
 
-Related Topic: Google
+Companies: Google
 
-Similar Questions: Design, Queue
+Related Topic: Design, Queue

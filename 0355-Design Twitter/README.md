@@ -39,6 +39,6 @@ twitter.unfollow(1, 2);
 twitter.getNewsFeed(1);
 ```
 
-Related Topic: Amazon, Twitter
+Companies: Amazon, Twitter
 
-Similar Questions: Hash Table, Heap, Design
+Related Topic: Hash Table, Heap, Design

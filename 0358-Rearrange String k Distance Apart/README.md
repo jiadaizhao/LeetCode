@@ -38,7 +38,7 @@ The same letters are at least distance 2 from each other.
 **Credits:**  
 Special thanks to @elmirap for adding this problem and creating all test cases.
 
-Related Topic: Google
+Companies: Google
 
 Related Topics: Hash Table, Heap, Greedy
 
