@@ -21,3 +21,40 @@ public:
         return result;
     }
 };
+
+class Solution {
+public:
+    int pathSum(vector<int>& nums) {
+        if (nums.size() == 0) {
+            return 0;
+        }
+        for (int num : nums) {
+            table[num / 10] = num % 10; 
+        }
+        
+        int sum = 0;
+        traverse(nums[0] / 10, 0, sum);
+        return sum;
+    }
+    
+private:
+    unordered_map<int, int> table;
+    void traverse(int root, int preSum, int& sum) {
+        int level = root / 10;
+        int index = root % 10;
+        int curSum = preSum + table[root];
+        
+        int left = (level + 1) * 10 + 2 * index - 1;
+        int right = (level + 1) * 10 + 2 * index;
+        if (table.find(left) == table.end() && table.find(right) == table.end()) {
+            sum += curSum;
+        }
+        
+        if (table.find(left) != table.end()) {
+            traverse(left, curSum, sum);
+        }
+        if (table.find(right) != table.end()) {
+            traverse(right, curSum, sum);
+        }
+    }
+};
