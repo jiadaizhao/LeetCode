@@ -48,3 +48,31 @@ private:
         return root;
     }
 };
+
+class Solution {
+public:
+    TreeNode* sortedListToBST(ListNode* head) {        
+        int len = 0;
+        ListNode* node = head;
+        while (node) {
+            ++len;
+            node = node->next;
+        }
+        
+        return helper(head, len);
+    }
+    
+private:
+    TreeNode* helper(ListNode* &head, int len) {
+        if (len == 0) {
+            return nullptr;
+        }
+        
+        TreeNode* left = helper(head, len / 2);
+        TreeNode* root = new TreeNode(head->val);
+        root->left = left;
+        head = head->next;
+        root->right = helper(head, len - len / 2 - 1);
+        return root;
+    }
+};
