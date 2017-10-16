@@ -1,57 +1,32 @@
 class Solution {
 public:
     string simplifyPath(string path) {
-        int start = 0;
-        int index;
+        int n = path.size();
         vector<string> St;
-        while ((index = path.find('/', start)) != string::npos)
-        {
-            string str = path.substr(start, index - start);
-            if (str != "" && str != ".")
-            {
-                if (str == "..")
-                {
-                    if (!St.empty())
-                    {
-                        St.pop_back();
-                    }
-                }
-                else
-                {
-                    St.push_back(str);
-                }
+        int start = 0, end = 0;
+        while (end < n) {
+            while (end < n && path[end] != '/') {
+                ++end;
             }
-            start = index + 1;
-        }
-        
-        string str = path.substr(start);
-        if (str != "" && str != ".")
-        {
-            if (str == "..")
-            {
-                if (!St.empty())
-                {
+            string s= path.substr(start, end - start);
+            if (s == "..") {
+                if (!St.empty()) {
                     St.pop_back();
                 }
             }
-            else
-            {
-                St.push_back(str);
+            else if (s != "" && s != ".") {
+                St.push_back(s);
             }
+            start = ++end;
         }
         
-        
-        if (St.empty())
-        {
+        if (St.empty()) {
             return "/";
         }
-        
         string result;
-        for (string str : St)
-        {
-            result += "/" + str;
+        for (string s : St) {
+            result += "/" + s;
         }
-        
         return result;
     }
 };
