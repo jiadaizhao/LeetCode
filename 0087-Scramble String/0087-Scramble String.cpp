@@ -2,10 +2,6 @@ class Solution {
 public:
     bool isScramble(string s1, string s2) {
         int n = s1.size();
-        if (n == 0)
-        {
-            return true;
-        }
         
         if (s1 == s2)
         {
