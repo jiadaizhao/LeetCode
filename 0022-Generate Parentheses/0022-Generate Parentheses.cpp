@@ -1,32 +1,39 @@
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
- * };
- */
 class Solution {
 public:
-    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
-        ListNode dummy = ListNode(-1);
-        ListNode *p = &dummy;
-        while (l1 && l2)
+    vector<string> generateParenthesis(int n) {
+        vector<string> result;
+        string path = "";
+        dfs(path, n, n, result);
+        return result;
+    }
+    
+private:
+    void dfs(string& path, int left, int right, vector<string>& result)
+    {
+        if (left == 0 && right == 0)
         {
-            if (l1->val <= l2->val)
-            {
-                p->next = l1;
-                l1 = l1->next;
-            }
-            else
-            {
-                p->next = l2;
-                l2 = l2->next;
-            }
-            p = p->next;
+            result.push_back(path);
+            return;
         }
         
-        p->next = l1 ? l1 : l2;
-        return dummy.next;
+        if (left == right)
+        {
+            path.push_back('(');
+            dfs(path, left - 1, right, result);
+            path.pop_back();
+        }
+        else if (left < right)
+        {
+            if (left > 0)
+            {
+                path.push_back('(');
+                dfs(path, left - 1, right, result);
+                path.pop_back();
+            }
+            
+            path.push_back(')');
+            dfs(path, left, right - 1, result);
+            path.pop_back();
+        }
     }
 };
