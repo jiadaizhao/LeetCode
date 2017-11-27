@@ -11,8 +11,7 @@ public:
     ListNode* swapPairs(ListNode* head) {
         ListNode dummy(-1);
         ListNode* p = &dummy;
-        while (head && head->next)
-        {
+        while (head && head->next) {
             ListNode* next = head->next->next;
             p->next = head->next;
             head->next->next = head;

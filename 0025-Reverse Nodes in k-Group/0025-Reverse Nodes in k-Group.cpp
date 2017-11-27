@@ -12,8 +12,7 @@ public:
         ListNode dummy(-1);
         dummy.next = head;
         ListNode* p = &dummy;
-        while (p)
-        {
+        while (p) {
             p = reverseNextK(p, k);
         }
         
@@ -21,14 +20,11 @@ public:
     }
     
 private:
-    ListNode* reverseNextK(ListNode* head, int k)
-    {
+    ListNode* reverseNextK(ListNode* head, int k) {
         ListNode* curr = head->next;
         ListNode* tail = head->next;
-        for (int i = 0; i < k; ++i)
-        {
-            if (tail == nullptr)
-            {
+        for (int i = 0; i < k; ++i) {
+            if (tail == nullptr) {
                 return nullptr;
             }
             tail = tail->next;
@@ -38,12 +34,10 @@ private:
         return curr;
     }
 
-    ListNode* reverseList(ListNode* head, ListNode* tail)
-    {
+    ListNode* reverseList(ListNode* head, ListNode* tail) {
         ListNode* curr = head;
         ListNode* prev = tail;
-        while (curr != tail)
-        {
+        while (curr != tail) {
             ListNode* next = curr->next;
             curr->next = prev;
             prev = curr;

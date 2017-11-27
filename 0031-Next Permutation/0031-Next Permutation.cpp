@@ -7,19 +7,16 @@ public:
             return;
         }
         
-        int i;
-        for (i = n - 2; i >= 0; --i)
-        {
-            if (nums[i] < nums[i + 1])
-            {
-                int j = n - 1;
-                while (nums[j] <= nums[i])
-                {
-                    --j;
-                }
-                swap(nums[i], nums[j]);
-                break;
+        int i = n - 2;
+        while (i >= 0 && nums[i] >= nums[i + 1]) {
+            --i;
+        }
+        if (i >= 0) {
+            int j = n - 1;
+            while (nums[j] <= nums[i]) {
+                --j;
             }
+            swap(nums[i], nums[j]);
         }
         
         reverse(nums.begin() + i + 1, nums.end());

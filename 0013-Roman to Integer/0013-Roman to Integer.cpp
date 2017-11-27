@@ -3,15 +3,12 @@ public:
     int romanToInt(string s) {
         int result = 0;
         int curr, prev;
-        for (int i = 0; i < s.size(); ++i)
-        {
+        for (int i = 0; i < s.size(); ++i) {
             curr = romanMap(s[i]);
-            if (i != 0 && curr > prev)
-            {
+            if (i != 0 && curr > prev) {
                 result += curr - 2 * prev;
             }
-            else
-            {
+            else {
                 result += curr;
             }
             prev = curr;
@@ -23,8 +20,7 @@ public:
 private:
     int romanMap(char c) {
         int result = 0;
-        switch (c)
-        {
+        switch (c) {
             case 'I':
                 result = 1;
                 break;

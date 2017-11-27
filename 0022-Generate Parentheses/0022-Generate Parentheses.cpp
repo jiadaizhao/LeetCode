@@ -8,24 +8,19 @@ public:
     }
     
 private:
-    void dfs(string& path, int left, int right, vector<string>& result)
-    {
-        if (left == 0 && right == 0)
-        {
+    void dfs(string& path, int left, int right, vector<string>& result) {
+        if (left == 0 && right == 0) {
             result.push_back(path);
             return;
         }
         
-        if (left == right)
-        {
+        if (left == right) {
             path.push_back('(');
             dfs(path, left - 1, right, result);
             path.pop_back();
         }
-        else if (left < right)
-        {
-            if (left > 0)
-            {
+        else if (left < right) {
+            if (left > 0) {
                 path.push_back('(');
                 dfs(path, left - 1, right, result);
                 path.pop_back();

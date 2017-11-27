@@ -4,8 +4,7 @@
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-        if (s.size() == 0)
-        {
+        if (s.size() == 0) {
             return 0;
         }
         
@@ -13,10 +12,8 @@ public:
         
         int j = 0;
         int maxLen = 0;
-        for (int i = 0; i < s.size(); ++i)
-        {
-            while (j < s.size() && table[s[j]] == 0)
-            {
+        for (int i = 0; i < s.size(); ++i) {
+            while (j < s.size() && table[s[j]] == 0) {
                 ++table[s[j]];
                 ++j;
             }
@@ -32,8 +29,7 @@ public:
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-        if (s.size() == 0)
-        {
+        if (s.size() == 0) {
             return 0;
         }
         
@@ -42,13 +38,11 @@ public:
         int start = 0;
         int count = 0;
         int maxCount = 0;
-        for (int i = 0; i < s.size(); ++i)
-        {
+        for (int i = 0; i < s.size(); ++i) {
             ++table[s[i]];
             ++count;
 
-            while (table[s[i]] > 1)
-            {
+            while (table[s[i]] > 1) {
                 --table[s[start]];
                 --count;
                 ++start;

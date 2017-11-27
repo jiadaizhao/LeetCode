@@ -13,13 +13,11 @@ public:
         dummy.next = head;
         ListNode* slow = &dummy;
         ListNode* fast = &dummy;
-        for (int i = 0; i < n; ++i)
-        {
+        for (int i = 0; i < n; ++i) {
             fast = fast->next;
         }
         
-        while (fast && fast->next)
-        {
+        while (fast && fast->next) {
             slow = slow->next;
             fast = fast->next;
         }

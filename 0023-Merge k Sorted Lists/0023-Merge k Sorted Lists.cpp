@@ -9,8 +9,7 @@
 class Solution {
 public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
-        if (lists.size() == 0)
-        {
+        if (lists.size() == 0) {
             return nullptr;
         }
         
@@ -18,14 +17,8 @@ public:
     }
     
 private:
-    ListNode* mergeKLists(vector<ListNode*>& lists, int start, int end)
-    {
-        if (start > end)
-        {
-            return nullptr;
-        }
-        else if (start == end)
-        {
+    ListNode* mergeKLists(vector<ListNode*>& lists, int start, int end) {
+        if (start == end) {
             return lists[start];
         }
         
@@ -35,19 +28,15 @@ private:
         return mergeTwoLists(left, right);
     }
     
-    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2)
-    {
+    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
         ListNode dummy = ListNode(-1);
         ListNode* p = &dummy;
-        while (l1 && l2)
-        {
-            if (l1->val <= l2->val)
-            {
+        while (l1 && l2) {
+            if (l1->val <= l2->val) {
                 p->next = l1;
                 l1 = l1->next;
             }
-            else
-            {
+            else {
                 p->next = l2;
                 l2 = l2->next;
             }

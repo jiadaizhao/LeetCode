@@ -4,10 +4,8 @@ public:
         int m = num1.size();
         int n = num2.size();
         vector<int> product(m + n);
-        for (int i = m - 1; i >= 0; --i)
-        {
-            for (int j = n - 1; j >= 0; --j)
-            {
+        for (int i = m - 1; i >= 0; --i) {
+            for (int j = n - 1; j >= 0; --j) {
                 int p1 = i + j;
                 int p2 = i + j + 1;
                 int sum = (num1[i] - '0') * (num2[j] - '0') + product[p2];
@@ -16,15 +14,15 @@ public:
             }
         }
         
-        string result;
-        for (int p : product)
-        {
-            if (result.size() || p != 0)
-            {
-                result += '0' + p;
-            }
+        int i = 0;
+        while (i < product.size() - 1 && product[i] == 0) {
+            ++i;
         }
-        
-        return result.size() ? result : "0";
+
+        string result;
+        while (i < product.size()) {
+            result += '0' + product[i++];
+        }
+        return result;
     }
 };

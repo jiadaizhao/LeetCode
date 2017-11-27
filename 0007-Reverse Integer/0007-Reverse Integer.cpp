@@ -8,16 +8,14 @@ public:
         long result = 0;
         int sign = (x > 0) ? 1 : -1;
         x = abs(x);
-        while (x)
-        {
+        while (x) {
             int val = x % 10;
             result = result * 10 + val;
             x /= 10;
         }
         
         result *= sign;
-        if (result > INT_MAX || result < INT_MIN)
-        {
+        if (result > INT_MAX || result < INT_MIN) {
             return 0;
         }
         

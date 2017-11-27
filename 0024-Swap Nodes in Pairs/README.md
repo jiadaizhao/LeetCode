@@ -4,7 +4,7 @@ Difficulty: Medium
 
 https://leetcode.com/problems/swap-nodes-in-pairs/description/
 
-MGiven a linked list, swap every two adjacent nodes and return its head.
+Given a linked list, swap every two adjacent nodes and return its head.
 
 For example,
 

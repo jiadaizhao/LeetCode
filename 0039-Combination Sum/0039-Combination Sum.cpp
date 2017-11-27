@@ -2,8 +2,7 @@ class Solution {
 public:
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
         vector<vector<int>> result;
-        if (candidates.size() == 0)
-        {
+        if (candidates.size() == 0) {
             return result;
         }
         sort(candidates.begin(), candidates.end());
@@ -13,18 +12,14 @@ public:
     }
 
 private:
-    void dfs(vector<int>& candidates, int start, int sum, int target, vector<int>& path, vector<vector<int>>& result)
-    {
-        if (sum == target)
-        {
+    void dfs(vector<int>& candidates, int start, int sum, int target, vector<int>& path, vector<vector<int>>& result) {
+        if (sum == target) {
             result.push_back(path);
             return;
         }
         
-        for (int i = start; i < candidates.size(); ++i)
-        {
-            if (candidates[i] + sum > target)
-            {
+        for (int i = start; i < candidates.size(); ++i) {
+            if (candidates[i] + sum > target) {
                 break;
             }
             
