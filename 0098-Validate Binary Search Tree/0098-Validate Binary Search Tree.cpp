@@ -10,26 +10,21 @@
 class Solution {
 public:
     bool isValidBST(TreeNode* root) {
-        if (root == nullptr)
-        {
+        if (root == nullptr) {
             return true;
         }
         
         stack<TreeNode*> St;
         TreeNode* node = root;
         TreeNode* prev = nullptr;
-        while (!St.empty() || node)
-        {
-            if (node)
-            {
+        while (!St.empty() || node) {
+            if (node) {
                 St.push(node);
                 node = node->left;
             }
-            else
-            {
+            else {
                 node = St.top();
-                if (prev && node->val <= prev->val)
-                {
+                if (prev && node->val <= prev->val) {
                     return false;
                 }
                 prev = node;

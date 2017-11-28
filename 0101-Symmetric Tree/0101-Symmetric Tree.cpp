@@ -11,8 +11,7 @@
 class Solution {
 public:
     bool isSymmetric(TreeNode* root) {
-        if (root == nullptr)
-        {
+        if (root == nullptr) {
             return true;
         }
 
@@ -20,25 +19,21 @@ public:
         Q.push(root->left);
         Q.push(root->right);
         
-        while (!Q.empty())
-        {
+        while (!Q.empty()) {
             TreeNode* p = Q.front();
             Q.pop();
             TreeNode* q = Q.front();
             Q.pop();
             
-            if (!p && !q)
-            {
+            if (!p && !q) {
                 continue;
             }
             
-            if (!p || !q)
-            {
+            if (!p || !q) {
                 return false;
             }
             
-            if (p->val != q->val)
-            {
+            if (p->val != q->val) {
                 return false;
             }
             
@@ -65,8 +60,7 @@ public:
 class Solution {
 public:
     bool isSymmetric(TreeNode* root) {
-        if (root == nullptr)
-        {
+        if (root == nullptr) {
             return true;
         }
         return isSymmetric(root->left, root->right);
@@ -74,13 +68,11 @@ public:
     
 private:
     bool isSymmetric(TreeNode* p, TreeNode* q) {
-        if (!p && !q)
-        {
+        if (!p && !q) {
             return true;
         }
         
-        if (!p || !q)
-        {
+        if (!p || !q) {
             return false;
         }
         

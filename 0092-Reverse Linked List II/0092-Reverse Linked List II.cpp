@@ -13,16 +13,14 @@ public:
         dummy.next = head;
         ListNode* p = &dummy;
         int i = 0;
-        while (i < m - 1)
-        {
+        while (i < m - 1) {
             p = p->next;
             ++i;
         }
         
         ListNode* curr = p->next;
         ListNode* prev = nullptr;
-        while (i < n)
-        {
+        while (i < n) {
             ListNode* next = curr->next;
             curr->next = prev;
             prev = curr;
