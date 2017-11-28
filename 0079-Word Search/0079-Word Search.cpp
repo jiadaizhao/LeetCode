@@ -1,12 +1,9 @@
 class Solution {
 public:
     bool exist(vector<vector<char>>& board, string word) {
-        for (int i = 0; i < board.size(); ++i)
-        {
-            for (int j = 0; j < board[i].size(); ++j)
-            {
-                if (dfs(board, i, j, word, 0))
-                {
+        for (int i = 0; i < board.size(); ++i) {
+            for (int j = 0; j < board[i].size(); ++j) {
+                if (dfs(board, i, j, word, 0)) {
                     return true;
                 }
             }
@@ -16,20 +13,16 @@ public:
     }
     
 private:
-    bool dfs(vector<vector<char>>& board, int i, int j, string& word, int start)
-    {
-        if (start == word.size())
-        {
+    bool dfs(vector<vector<char>>& board, int i, int j, string& word, int start) {
+        if (start == word.size()) {
             return true;
         }
         
-        if (i < 0 || i >= board.size() || j < 0 || j >= board[i].size())
-        {
+        if (i < 0 || i >= board.size() || j < 0 || j >= board[i].size()) {
             return false;
         }
         
-        if (board[i][j] == '#' || board[i][j] != word[start])
-        {
+        if (board[i][j] == '#' || board[i][j] != word[start]) {
             return false;
         }
         

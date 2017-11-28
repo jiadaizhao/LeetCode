@@ -12,14 +12,11 @@ public:
     vector<Interval> merge(vector<Interval>& intervals) {
         sort(intervals.begin(), intervals.end(), [](Interval& i1, Interval& i2){return i1.start < i2.start;});
         vector<Interval> result;
-        for (Interval i : intervals)
-        {
-            if (result.size() && result.back().end >= i.start)
-            {
+        for (Interval i : intervals) {
+            if (result.size() && result.back().end >= i.start) {
                 result.back().end = max(result.back().end, i.end);
             }
-            else
-            {
+            else {
                 result.push_back(i);
             }
         }

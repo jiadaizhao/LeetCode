@@ -12,18 +12,14 @@ public:
     vector<Interval> insert(vector<Interval>& intervals, Interval newInterval) {
         vector<Interval> result;
         int i;
-        for (i = 0; i < intervals.size(); ++i)
-        {
-            if (newInterval.start > intervals[i].end)
-            {
+        for (i = 0; i < intervals.size(); ++i) {
+            if (newInterval.start > intervals[i].end) {
                 result.push_back(intervals[i]);
             }
-            else if (newInterval.end < intervals[i].start)
-            {
+            else if (newInterval.end < intervals[i].start) {
                 break;
             }
-            else
-            {
+            else {
                 newInterval.start = min(intervals[i].start, newInterval.start);
                 newInterval.end = max(intervals[i].end, newInterval.end);
             }
@@ -31,8 +27,7 @@ public:
         
         result.push_back(newInterval);
 
-        while (i < intervals.size())
-        {
+        while (i < intervals.size()) {
             result.push_back(intervals[i++]);
         }
         

@@ -1,27 +1,15 @@
 class Solution {
 public:
-    string addBinary(string a, string b) {
-        if (a == "")
-        {
-            return b;
-        }
-        else if (b == "")
-        {
-            return a;
-        }
-        
+    string addBinary(string a, string b) {     
         string result;
         int carry = 0;
-        while (a.size() || b.size())
-        {
+        while (a.size() || b.size()) {
             int val1 = 0, val2 = 0;
-            if (a.size())
-            {
+            if (a.size()) {
                 val1 = a.back() - '0';
                 a.pop_back();
             }
-            if (b.size())
-            {
+            if (b.size()) {
                 val2 = b.back() - '0';
                 b.pop_back();
             }
@@ -31,8 +19,7 @@ public:
             result += '0' + sum;
         }
         
-        if (carry)
-        {
+        if (carry) {
             result += '1';
         }
         

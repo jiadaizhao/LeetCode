@@ -7,26 +7,20 @@ public:
         
         dp[0][0] = 0;
         
-        for (int i = 1; i <= m; ++i)
-        {
+        for (int i = 1; i <= m; ++i) {
             dp[i][0] = i;
         }
         
-        for (int j = 1; j <= n; ++j)
-        {
+        for (int j = 1; j <= n; ++j) {
             dp[0][j] = j;
         }
         
-        for (int i = 1; i <= m; ++i)
-        {
-            for (int j = 1; j <= n; ++j)
-            {
-                if (word1[i - 1] == word2[j - 1])
-                {
+        for (int i = 1; i <= m; ++i) {
+            for (int j = 1; j <= n; ++j) {
+                if (word1[i - 1] == word2[j - 1]) {
                     dp[i][j] = dp[i - 1][j - 1];
                 }
-                else
-                {
+                else {
                     dp[i][j] = 1 + min(dp[i - 1][j - 1], min(dp[i][j - 1], dp[i - 1][j]));
                 }
             }
@@ -44,22 +38,17 @@ public:
         int n = word2.size();
         
         vector<int> dp(1 + n);
-        for (int j = 0; j <= n; ++j)
-        {
+        for (int j = 0; j <= n; ++j) {
             dp[j] = j;
         }
-        for (int i = 1; i <= m; ++i)
-        {
+        for (int i = 1; i <= m; ++i) {
             vector<int> temp(1 + n);
             temp[0] = i;
-            for (int j = 1; j <= n; ++j)
-            {
-                if (word1[i - 1] == word2[j - 1])
-                {
+            for (int j = 1; j <= n; ++j) {
+                if (word1[i - 1] == word2[j - 1]) {
                     temp[j] = dp[j - 1];
                 }
-                else
-                {
+                else {
                     temp[j] = 1 + min(dp[j - 1], min(temp[j - 1], dp[j]));
                 }
             }

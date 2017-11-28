@@ -9,11 +9,9 @@ public:
         return result;
     }
 private:
-    void dfs(vector<int>& nums, int start, vector<int>& path, vector<vector<int>>& result)
-    {
+    void dfs(vector<int>& nums, int start, vector<int>& path, vector<vector<int>>& result) {
         result.push_back(path);
-        for (int i = start; i < nums.size(); ++i)
-        {
+        for (int i = start; i < nums.size(); ++i) {
             path.push_back(nums[i]);
             dfs(nums, i + 1, path, result);
             path.pop_back();
@@ -28,13 +26,10 @@ public:
         int n = nums.size();
         int limit = 1 << n;
         vector<vector<int>> result;
-        for (int i = 0; i < limit; ++i)
-        {
+        for (int i = 0; i < limit; ++i) {
             vector<int> path;
-            for (int j = 0; j < n; ++j)
-            {
-                if (i & (1 << j))
-                {
+            for (int j = 0; j < n; ++j) {
+                if (i & (1 << j)) {
                     path.push_back(nums[j]);
                 }
             }
