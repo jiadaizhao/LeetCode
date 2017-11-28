@@ -7,6 +7,13 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+struct pairhash {
+    template<typename T, typename U>
+    size_t operator()(const pair<T, U> &p) const {
+        return hash<T>()(p.first) ^ hash<U>()(p.second);
+    }
+};
+
 class Solution {
 public:
     vector<TreeNode*> generateTrees(int n) {
@@ -18,35 +25,23 @@ public:
     }
     
 private:
-    map<pair<int, int>, vector<TreeNode*>> table;
-    vector<TreeNode*> helper(int start, int end)
-    {
-        if (end < start)
-        {
+    unordered_map<pair<int, int>, vector<TreeNode*>, pairhash> table;
+    vector<TreeNode*> helper(int start, int end) {
+        if (end < start) {
             return vector<TreeNode*>(1, nullptr);
         }
         
-        if (table.find({start, end}) != table.end())
-        {
+        if (table.find({start, end}) != table.end()) {
             return table[{start, end}];
         }
         
         vector<TreeNode*> result;
-        if (start == end)
-        {
-            result.push_back(new TreeNode(start));
-            table[{start, end}] = result;
-            return result;
-        }
         
-        for (int i = start; i <= end; ++i)
-        {
+        for (int i = start; i <= end; ++i) {
             vector<TreeNode*> lefts = helper(start, i - 1);
             vector<TreeNode*> rights = helper(i + 1, end);
-            for (TreeNode* left : lefts)
-            {
-                for (TreeNode* right : rights)
-                {
+            for (TreeNode* left : lefts) {
+                for (TreeNode* right : rights) {
                     TreeNode* root = new TreeNode(i);
                     root->left = left;
                     root->right = right;

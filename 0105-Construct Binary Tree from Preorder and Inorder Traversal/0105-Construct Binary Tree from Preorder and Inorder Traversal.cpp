@@ -10,8 +10,7 @@
 class Solution {
 public:
     TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
-        if (preorder.size() == 0)
-        {
+        if (preorder.size() == 0) {
             return nullptr;
         }
         int preIndex = 0;
@@ -19,19 +18,15 @@ public:
     }
     
 private:
-    TreeNode* buildTree(vector<int>& preorder, int& preIndex, vector<int>& inorder, int inStart, int inEnd)
-    {
-        if (inStart > inEnd)
-        {
+    TreeNode* buildTree(vector<int>& preorder, int& preIndex, vector<int>& inorder, int inStart, int inEnd) {
+        if (inStart > inEnd) {
             return nullptr;
         }
         
         TreeNode* root = new TreeNode(preorder[preIndex++]);
         int index = inStart;
-        for (int i = inStart; i <= inEnd; ++i)
-        {
-            if (root->val == inorder[i])
-            {
+        for (int i = inStart; i <= inEnd; ++i) {
+            if (root->val == inorder[i]) {
                 index = i;
                 break;
             }

@@ -14,10 +14,8 @@ public:
     }
     
 private:
-    TreeNode* helper(vector<int>& nums, int start, int end)
-    {
-        if (start > end)
-        {
+    TreeNode* helper(vector<int>& nums, int start, int end) {
+        if (start > end) {
             return nullptr;
         }
         

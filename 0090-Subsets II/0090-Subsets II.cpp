@@ -8,13 +8,10 @@ public:
         return result;
     }
 private:
-    void dfs(vector<int>& nums, int start, vector<int>& path, vector<vector<int>>& result)
-    {
+    void dfs(vector<int>& nums, int start, vector<int>& path, vector<vector<int>>& result) {
         result.push_back(path);
-        for (int i = start; i < nums.size(); ++i)
-        {
-            if (i == start || nums[i] != nums[i - 1])
-            {
+        for (int i = start; i < nums.size(); ++i) {
+            if (i == start || nums[i] != nums[i - 1]) {
                 path.push_back(nums[i]);
                 dfs(nums, i + 1, path, result);
                 path.pop_back();

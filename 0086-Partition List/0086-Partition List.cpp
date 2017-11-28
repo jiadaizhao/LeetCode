@@ -13,15 +13,12 @@ public:
         ListNode *p1 = &dummy1;
         ListNode dummy2 = ListNode(-1);
         ListNode *p2 = &dummy2;
-        while (head)
-        {
-            if (head->val < x)
-            {
+        while (head) {
+            if (head->val < x) {
                 p1->next = head;
                 p1 = p1->next;
             }
-            else
-            {
+            else {
                 p2->next = head;
                 p2 = p2->next;
             }

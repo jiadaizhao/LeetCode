@@ -15,11 +15,8 @@ public:
     }
     
 private:
-    bool helper(TreeNode* root, int& h)
-    {
-        if (root == nullptr)
-        {
-            h = 0;
+    bool helper(TreeNode* root, int& h) {
+        if (root == nullptr) {
             return true;
         }
         

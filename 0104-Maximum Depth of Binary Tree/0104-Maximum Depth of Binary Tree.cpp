@@ -11,8 +11,7 @@
 class Solution {
 public:
     int maxDepth(TreeNode* root) {
-        if (root == nullptr)
-        {
+        if (root == nullptr) {
             return 0;
         }
         
@@ -27,28 +26,23 @@ public:
 class Solution {
 public:
     int maxDepth(TreeNode* root) {
-        if (root == nullptr)
-        {
+        if (root == nullptr) {
             return 0;
         }
         
         queue<TreeNode*> Q;
         Q.push(root);
         int depth = 0;
-        while (!Q.empty())
-        {
+        while (!Q.empty()) {
             ++depth;
             int qs = Q.size();
-            for (int i = 0; i < qs; ++i)
-            {
+            for (int i = 0; i < qs; ++i) {
                 TreeNode* node = Q.front();
                 Q.pop();
-                if (node->left)
-                {
+                if (node->left) {
                     Q.push(node->left);
                 }
-                if (node->right)
-                {
+                if (node->right) {
                     Q.push(node->right);
                 }
             }

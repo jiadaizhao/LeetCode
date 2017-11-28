@@ -10,8 +10,7 @@
 class Solution {
 public:
     void recoverTree(TreeNode* root) {
-        if (root == nullptr)
-        {
+        if (root == nullptr) {
             return;
         }
         
@@ -20,21 +19,16 @@ public:
         TreeNode* curr = root;
         TreeNode* prev = nullptr;
         stack<TreeNode*> St;
-        while (!St.empty() || curr)
-        {
-            if (curr)
-            {
+        while (!St.empty() || curr) {
+            if (curr) {
                 St.push(curr);
                 curr = curr->left;
             }
-            else
-            {
+            else {
                 curr = St.top();
                 St.pop();
-                if (prev && curr->val < prev->val)
-                {
-                    if (!first)
-                    {
+                if (prev && curr->val < prev->val) {
+                    if (!first) {
                         first = prev;
                     }
                     second = curr;
