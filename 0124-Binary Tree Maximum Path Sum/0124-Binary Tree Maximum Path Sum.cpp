@@ -15,10 +15,8 @@ public:
         return maxSum;
     }
 private:
-    int helper(TreeNode* root, int& maxSum)
-    {
-        if (root == nullptr)
-        {
+    int helper(TreeNode* root, int& maxSum) {
+        if (root == nullptr) {
             return 0;
         }
         

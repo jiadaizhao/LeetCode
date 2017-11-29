@@ -10,14 +10,12 @@
 class Solution {
 public:
     bool hasPathSum(TreeNode* root, int sum) {
-        if (root == nullptr)
-        {
+        if (root == nullptr) {
             return false;
         }
         
         sum -= root->val;
-        if (sum == 0 && root->left == nullptr && root->right == nullptr)
-        {
+        if (sum == 0 && root->left == nullptr && root->right == nullptr) {
             return true;
         }
         

@@ -17,17 +17,14 @@ public:
     }
     
 private:
-    void dfs(TreeNode* root, int sum, vector<int>& path, vector<vector<int>>& result)
-    {
-        if (root == nullptr)
-        {
+    void dfs(TreeNode* root, int sum, vector<int>& path, vector<vector<int>>& result) {
+        if (root == nullptr) {
             return;
         }
         
         sum -= root->val;
         path.push_back(root->val);
-        if (sum == 0 && root->left == nullptr && root->right == nullptr)
-        {
+        if (sum == 0 && root->left == nullptr && root->right == nullptr) {
             result.push_back(path);
         }
         dfs(root->left, sum, path, result);

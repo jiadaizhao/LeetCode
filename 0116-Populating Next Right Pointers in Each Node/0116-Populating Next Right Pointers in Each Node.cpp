@@ -10,18 +10,14 @@ class Solution {
 public:
     void connect(TreeLinkNode *root) {
         TreeLinkNode* node = root;
-        while (node)
-        {
+        while (node) {
             TreeLinkNode* p = node;
-            while (p)
-            {
-                if (p->left)
-                {
+            while (p) {
+                if (p->left) {
                     p->left->next = p->right;
                 }
                 
-                if (p->right && p->next)
-                {
+                if (p->right && p->next) {
                     p->right->next = p->next->left;
                 }
                 

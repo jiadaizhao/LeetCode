@@ -12,31 +12,23 @@ public:
         TreeLinkNode* curr = root;
         TreeLinkNode* head = nullptr;
         TreeLinkNode* prev = nullptr;
-        while (curr)
-        {
-            while (curr)
-            {
-                if (curr->left)
-                {
-                    if (prev)
-                    {
+        while (curr) {
+            while (curr) {
+                if (curr->left) {
+                    if (prev) {
                         prev->next = curr->left;
                     }
-                    else
-                    {
+                    else {
                         head = curr->left;
                     }
                     prev = curr->left;
                 }
                 
-                if (curr->right)
-                {
-                    if (prev)
-                    {
+                if (curr->right) {
+                    if (prev) {
                         prev->next = curr->right;
                     }
-                    else
-                    {
+                    else {
                         head = curr->right;
                     }
                     prev = curr->right;

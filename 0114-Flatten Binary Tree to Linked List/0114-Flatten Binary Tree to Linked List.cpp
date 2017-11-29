@@ -10,31 +10,26 @@
 class Solution {
 public:
     void flatten(TreeNode* root) {
-        if (root == nullptr)
-        {
+        if (root == nullptr) {
             return;
         }
         
         stack<TreeNode*> St;
         St.push(root);
-        while (!St.empty())
-        {
+        while (!St.empty()) {
             TreeNode* node = St.top();
             St.pop();
             
-            if (node->right)
-            {
+            if (node->right) {
                 St.push(node->right);
             }
             
-            if (node->left)
-            {
+            if (node->left) {
                 St.push(node->left);
             }
             
             node->left = nullptr;
-            if (!St.empty())
-            {
+            if (!St.empty()) {
                 node->right = St.top();
             }
         }
