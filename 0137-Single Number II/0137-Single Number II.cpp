@@ -1,16 +1,14 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        vector<int> bits(32);
+        int sum = 0;
         int result = 0;
-        for (int i = 0; i < 32; ++i)
-        {
-            for (int num : nums)
-            {
-                bits[i] += num >> i & 1;
-                bits[i] %= 3;
+        for (int i = 0; i < 32; ++i) {
+            sum = 0;
+            for (int num : nums) {
+                sum += num >> i & 1;
             }
-            result += bits[i] << i;
+            result += (sum % 3) << i;
         }
         
         return result;
@@ -38,8 +36,7 @@ public:
         two' = (~one') & (two ^ num)
         */
         int one = 0, two = 0;
-        for (int num : nums)
-        {
+        for (int num : nums) {
             one = (one ^ num) & (~two);
             two = (~one) & (two ^ num);
         }

@@ -5,8 +5,7 @@ public:
     }
     
     int get(int key) {
-        if (cacheMap.find(key) == cacheMap.end())
-        {
+        if (cacheMap.find(key) == cacheMap.end()) {
             return -1;
         }
         
@@ -16,18 +15,15 @@ public:
     }
     
     void put(int key, int value) {
-        if (get(key) == -1)
-        {
-            if (cacheList.size() == capacity)
-            {
+        if (get(key) == -1) {
+            if (cacheList.size() == capacity) {
                 cacheMap.erase(cacheList.back().first);
                 cacheList.pop_back();
             }
             cacheList.push_front({key, value});
             cacheMap[key] = cacheList.begin();
         }
-        else
-        {
+        else {
             cacheList.begin()->second = value; 
         }
     }

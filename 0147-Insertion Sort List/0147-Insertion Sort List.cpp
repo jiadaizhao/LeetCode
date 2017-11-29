@@ -12,16 +12,13 @@ public:
         ListNode dummy(-1);
         ListNode* prev = &dummy;
         ListNode* curr = head;
-        while (curr)
-        {
+        while (curr) {
             ListNode* next = curr->next;
-            if (!prev->next || prev->next->val > curr->val)
-            {
+            if (!prev->next || prev->next->val > curr->val) {
                 prev = &dummy;
             }
             
-            while (prev->next && prev->next->val <= curr->val)
-            {
+            while (prev->next && prev->next->val <= curr->val) {
                 prev = prev->next;
             }
             

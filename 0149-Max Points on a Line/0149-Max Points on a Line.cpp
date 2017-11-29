@@ -18,29 +18,23 @@ class Solution {
 public:
     int maxPoints(vector<Point>& points) {
         int n = points.size();
-        if (n <= 2)
-        {
+        if (n <= 2) {
             return n;
         }
         
         int maxNum = 0;
-        for (int i = 0; i < n; ++i)
-        {
+        for (int i = 0; i < n; ++i) {
             int same = 0, vertical = 0;
             unordered_map<pair<int, int>, int, pairhash> table;
             int localMax = 0;
-            for (int j = i + 1; j < n; ++j)
-            {
-                if (points[j].x == points[i].x && points[j].y == points[i].y)
-                {
+            for (int j = i + 1; j < n; ++j) {
+                if (points[j].x == points[i].x && points[j].y == points[i].y) {
                     ++same;
                 }
-                else if (points[j].x == points[i].x)
-                {
+                else if (points[j].x == points[i].x) {
                     ++vertical;
                 }
-                else
-                {
+                else {
                     int a = points[j].x - points[i].x;
                     int b = points[j].y - points[i].y;
                     int c = gcd(a, b);
@@ -58,15 +52,12 @@ public:
     }
     
 private:
-    int gcd(int a, int b)
-    {
-        while (b)
-        {
+    int gcd(int a, int b) {
+        while (b) {
             int temp = a;
             a = b;
             b = temp % b;
-        }
-        
+        }        
         return a;
     }
 };
