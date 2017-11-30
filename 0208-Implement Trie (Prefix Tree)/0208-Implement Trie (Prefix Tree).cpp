@@ -1,10 +1,17 @@
 class TrieNode {
 public:
     TrieNode() {
-        next.resize(26);
+        memset(next, NULL, sizeof(next));
         isEnd = false;
     }
-    vector<TrieNode*> next;
+    ~TrieNode() {
+        for (TrieNode* p : next) {
+            if (p) {
+                delete p;
+            }
+        }
+    }
+    TrieNode* next[26];
     bool isEnd;
 };
 
@@ -14,15 +21,17 @@ public:
     Trie() {
         root = new TrieNode();
     }
+
+    ~Trie() {
+        delete root;
+    }
     
     /** Inserts a word into the trie. */
     void insert(string word) {
         TrieNode* node = root;
-        for (char c : word)
-        {
+        for (char c : word) {
             int i = c - 'a';
-            if (node->next[i] == nullptr)
-            {
+            if (node->next[i] == nullptr) {
                 node->next[i] = new TrieNode();
             }
             node = node->next[i];
@@ -34,11 +43,9 @@ public:
     /** Returns if the word is in the trie. */
     bool search(string word) {
         TrieNode* node = root;
-        for (char c : word)
-        {
+        for (char c : word) {
             int i = c - 'a';
-            if (node->next[i] == nullptr)
-            {
+            if (node->next[i] == nullptr) {
                 return false;
             }
             node = node->next[i];
@@ -50,11 +57,9 @@ public:
     /** Returns if there is any word in the trie that starts with the given prefix. */
     bool startsWith(string prefix) {
         TrieNode* node = root;
-        for (char c : prefix)
-        {
+        for (char c : prefix) {
             int i = c - 'a';
-            if (node->next[i] == nullptr)
-            {
+            if (node->next[i] == nullptr) {
                 return false;
             }
             node = node->next[i];

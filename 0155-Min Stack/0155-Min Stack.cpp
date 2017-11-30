@@ -6,16 +6,13 @@ public:
     }
     
     void push(int x) {
-        if (S.empty())
-        {
+        if (S.empty()) {
             minVal = x;
             S.push(0);
         }
-        else
-        {
+        else {
             S.push(x - minVal);
-            if (x < minVal)
-            {
+            if (x < minVal) {
                 minVal = x;
             }
         }
@@ -24,8 +21,7 @@ public:
     void pop() {
         long top = S.top();
         S.pop();
-        if (top < 0)
-        {
+        if (top < 0) {
             minVal -= top;
         }
     }

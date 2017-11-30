@@ -2,12 +2,10 @@ class Solution {
 public:
     int rob(vector<int>& nums) {
         int n = nums.size();
-        if (n == 0)
-        {
+        if (n == 0) {
             return 0;
         }
-        else if (n == 1)
-        {
+        else if (n == 1) {
             return nums[0];
         }
 
@@ -17,8 +15,7 @@ public:
 private:
     int rob(vector<int>& nums, int start, int end) {
         int dp0 = 0, dp1 = 0;
-        for (int i = start; i <= end; ++i)
-        {
+        for (int i = start; i <= end; ++i) {
             int dp2 = max(dp1, dp0 + nums[i]);
             dp0 = dp1;
             dp1 = dp2;

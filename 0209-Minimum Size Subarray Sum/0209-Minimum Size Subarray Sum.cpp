@@ -5,28 +5,23 @@ public:
         int minSize = n + 1;
         int j = 0;
         int sum = 0;
-        for (int i = 0; i < n; ++i)
-        {
-            while (j < n && sum < s)
-            {
+        for (int i = 0; i < n; ++i) {
+            while (j < n && sum < s) {
                 sum += nums[j];
                 ++j;
             }
             
-            if (sum >= s)
-            {
+            if (sum >= s) {
                 minSize = min(minSize, j - i);
             }
             
             sum -= nums[i];
         }
         
-        if (minSize == n + 1)
-        {
+        if (minSize == n + 1) {
             return 0;
         }
-        else
-        {
+        else {
             return minSize;
         }
     }

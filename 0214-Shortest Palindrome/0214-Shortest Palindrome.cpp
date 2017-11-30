@@ -8,18 +8,14 @@ public:
         int len = 0;
         int i = 1;
         vector<int> lps(n);
-        while (i < n)
-        {
-            if (str[i] == str[len])
-            {
+        while (i < n) {
+            if (str[i] == str[len]) {
                 lps[i++] = ++len;
             }
-            else if (len != 0)
-            {
+            else if (len != 0) {
                 len = lps[len - 1];
             }
-            else
-            {
+            else {
                 lps[i++] = 0;
             }
         }

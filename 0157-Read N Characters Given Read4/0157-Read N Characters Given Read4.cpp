@@ -10,13 +10,11 @@ public:
      */
     int read(char *buf, int n) {
         int i = 0;
-        while (i < n)
-        {
+        while (i < n) {
             int num = read4(buf);
             i += num;
             buf += num;
-            if (num < 4)
-            {
+            if (num < 4) {
                 break;
             }            
         }

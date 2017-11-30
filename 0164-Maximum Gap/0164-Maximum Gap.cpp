@@ -2,8 +2,7 @@ class Solution {
 public:
     int maximumGap(vector<int>& nums) {
         int n = nums.size();
-        if (n < 2)
-        {
+        if (n < 2) {
             return 0;
         }
         
@@ -15,10 +14,8 @@ public:
         vector<int> bucketMax(n - 1, INT_MIN);
         
         int maxGap = 0;
-        for (int i : nums)
-        {
-            if (i == minI || i == maxI)
-            {
+        for (int i : nums) {
+            if (i == minI || i == maxI) {
                 continue;
             }
             
@@ -28,10 +25,8 @@ public:
         }
         
         int previous = minI;
-        for (int i = 0; i < n - 1; ++i)
-        {
-            if (bucketMin[i] == INT_MAX)
-            {
+        for (int i = 0; i < n - 1; ++i) {
+            if (bucketMin[i] == INT_MAX) {
                 continue;
             }
             

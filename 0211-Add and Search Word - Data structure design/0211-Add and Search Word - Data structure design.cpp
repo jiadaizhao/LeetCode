@@ -1,14 +1,21 @@
 class TrieNode {
 public:
-    TrieNode () {
-        next.resize(26);
+    TrieNode() {
+        memset(next, NULL, sizeof(next)); 
         isEnd = false;
     }
+
+    ~TrieNode() {
+        for (TrieNode* p : next) {
+            if (p) {
+                delete p;
+            }
+        }
+    }
     
-    vector<TrieNode*> next;
+    TrieNode* next[26];
     bool isEnd;
 };
-
 
 class WordDictionary {
 public:
@@ -17,14 +24,16 @@ public:
         root = new TrieNode();
     }
     
+    ~WordDictionary() {
+        delete root;
+    }
+
     /** Adds a word into the data structure. */
     void addWord(string word) {
         TrieNode* node = root;
-        for (char c : word)
-        {
+        for (char c : word) {
             int i = c - 'a';
-            if (node->next[i] == nullptr)
-            {
+            if (node->next[i] == nullptr) {
                 node->next[i] = new TrieNode();
             }
             node = node->next[i];
@@ -39,29 +48,22 @@ public:
 
 private:
     TrieNode* root;
-    bool search(string word, TrieNode* node)
-    {
-        for (int i = 0; i < word.size(); ++i)
-        {
-            if (word[i] == '.')
-            {
+    bool search(string word, TrieNode* node) {
+        for (int i = 0; i < word.size(); ++i) {
+            if (word[i] == '.') {
                 TrieNode* tmp = node;
-                for (int j = 0; j < 26; ++j)
-                {
+                for (int j = 0; j < 26; ++j) {
                     node = tmp->next[j];
-                    if (node != nullptr && search(word.substr(i + 1), node))
-                    {
+                    if (node != nullptr && search(word.substr(i + 1), node)) {
                         return true;
                     }
                 }
                 
                 return false;
             }
-            else
-            {
+            else {
                 int index = word[i] - 'a';
-                if (node->next[index] == nullptr)
-                {
+                if (node->next[index] == nullptr) {
                     return false;
                 }
                 node = node->next[index];

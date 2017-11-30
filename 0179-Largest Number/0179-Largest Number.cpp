@@ -1,30 +1,20 @@
 class Solution {
 public:
     string largestNumber(vector<int>& nums) {
-        if (nums.size() == 0)
-        {
+        if (nums.size() == 0) {
             return "";
         }
         vector<string> strs;
-        bool allZero = true;
-        for (int num : nums)
-        {
-            if (num)
-            {
-                allZero = false;
-            }
+        for (int num : nums) {
             strs.push_back(to_string(num));
         }
         
-        if (allZero)
-        {
+        sort(strs.begin(), strs.end(), cmp());
+        if (strs[0] == "0") {
             return "0";
         }
-        
-        sort(strs.begin(), strs.end(), cmp());
         string result;
-        for (string s : strs)
-        {
+        for (string s : strs) {
             result += s;
         }
         

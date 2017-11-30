@@ -10,8 +10,7 @@
 class BSTIterator {
 public:
     BSTIterator(TreeNode *root) {
-        while (root)
-        {
+        while (root) {
             St.push(root);
             root = root->left;
         }
@@ -29,8 +28,7 @@ public:
         St.pop();
         node = node->right;
         
-        while (node)
-        {
+        while (node) {
             St.push(node);
             node = node->left;
         }

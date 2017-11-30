@@ -10,16 +10,14 @@
 class Solution {
 public:
     TreeNode* upsideDownBinaryTree(TreeNode* root) {
-        if (root == nullptr || root->left == nullptr)
-        {
+        if (root == nullptr || root->left == nullptr) {
             return root;
         }
         
         TreeNode* curr = root;
         TreeNode* prev = nullptr;
         TreeNode* prevRight = nullptr;
-        while (curr)
-        {
+        while (curr) {
             TreeNode* next = curr->left;
             curr->left = prevRight;
             prevRight = curr->right;
