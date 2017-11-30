@@ -12,16 +12,13 @@ public:
     int countNodes(TreeNode* root) {
         int h = height(root);
         int count = 0;
-        while (root)
-        {
+        while (root) {
             int rh = height(root->right);
-            if (rh == h - 1)
-            {
+            if (rh == h - 1) {
                 count += (1 << h);
                 root = root->right;
             }
-            else
-            {
+            else {
                 count += (1 << (h - 1));
                 root = root->left;
             }
@@ -32,11 +29,9 @@ public:
     }
     
 private:
-    int height(TreeNode* root)
-    {
+    int height(TreeNode* root) {
         int h = -1;
-        while (root)
-        {
+        while (root) {
             ++h;
             root = root->left;
         }

@@ -12,19 +12,15 @@ public:
     int kthSmallest(TreeNode* root, int k) {
         stack<TreeNode*> St;
         TreeNode* p = root;
-        while (!St.empty() || p)
-        {
-            if (p)
-            {
+        while (!St.empty() || p) {
+            if (p) {
                 St.push(p);
                 p = p->left;
             }
-            else
-            {
+            else {
                 p = St.top();
                 St.pop();
-                if (--k == 0)
-                {
+                if (--k == 0) {
                     return p->val;
                 }
                 p = p->right;

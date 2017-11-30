@@ -9,8 +9,7 @@ public:
     void push(int x) {
         Q.push(x);
         int qs = Q.size();
-        while (qs > 1)
-        {
+        while (qs > 1) {
             Q.push(Q.front());
             Q.pop();
             --qs;
