@@ -19,10 +19,8 @@ public:
     
     /** Get the front element. */
     int peek() {
-        if (S2.empty())
-        {
-            while (!S1.empty())
-            {
+        if (S2.empty()) {
+            while (!S1.empty()) {
                 S2.push(S1.top());
                 S1.pop();
             }

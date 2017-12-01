@@ -2,28 +2,22 @@ class Solution {
 public:
     vector<string> findStrobogrammatic(int n) {
         vector<string> result;
-        if (n <= 0)
-        {
+        if (n <= 0) {
             return result;
         }
         
-        if (n % 2)
-        {
+        if (n % 2) {
             --n;
             result = {"0", "1", "8"};
         }
-        else
-        {
+        else {
             result = {""};
         }
         
-        while (n)
-        {
+        while (n) {
             vector<string> temp;
-            for (string s : result)
-            {
-                if (n != 2)
-                {
+            for (string s : result) {
+                if (n != 2) {
                     temp.push_back("0" + s + "0");
                 }
                 temp.push_back("1" + s + "1");                

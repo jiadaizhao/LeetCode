@@ -1,8 +1,8 @@
-# 249. Group Shifted Strings
+# 250. Count Univalue Subtrees
 
 Difficulty: Medium
 
-https://leetcode.com/problems/group-shifted-strings/description/
+https://leetcode.com/problems/count-univalue-subtrees/description/
 
 Given a binary tree, count the number of uni-value subtrees.
 

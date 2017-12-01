@@ -1,20 +1,16 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-        if (s.size() != t.size())
-        {
+        if (s.size() != t.size()) {
             return false;
         }
         vector<int> table(26);
-        for (char c : s)
-        {
+        for (char c : s) {
             ++table[c - 'a'];
         }
         
-        for (char c : t)
-        {
-            if (--table[c - 'a'] < 0)
-            {
+        for (char c : t) {
+            if (--table[c - 'a'] < 0) {
                 return false;
             }
         }
