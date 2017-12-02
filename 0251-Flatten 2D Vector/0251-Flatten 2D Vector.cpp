@@ -4,21 +4,23 @@ public:
         begin = vec2d.begin();
         curr = 0;
         end = vec2d.end();
+        while (begin != end && curr == begin->size()) {
+            ++begin;
+            curr = 0;
+        }
     }
 
     int next() {
         int result = *(begin->begin() + curr);
         ++curr;
+        while (begin != end && curr == begin->size()) {
+            ++begin;
+            curr = 0;
+        }
         return result;
     }
 
     bool hasNext() {
-        while (begin != end && curr == begin->size())
-        {
-            ++begin;
-            curr = 0;
-        }
-        
         return begin != end;
     }
 private:
@@ -31,4 +33,3 @@ private:
  * Vector2D i(vec2d);
  * while (i.hasNext()) cout << i.next();
  */
- 

@@ -12,23 +12,19 @@ public:
     int minMeetingRooms(vector<Interval>& intervals) {
         vector<pair<int, int>> time;
         
-        for (Interval i : intervals)
-        {
+        for (Interval i : intervals) {
             time.push_back({i.start, 1});
             time.push_back({i.end, 0});
         }
         
-        sort(time.begin(), time.end(), cmp());
+        sort(time.begin(), time.end());
         int count = 0;
         int maxCount = 0;
-        for (auto t : time)
-        {
-            if (t.second)
-            {
+        for (auto t : time) {
+            if (t.second) {
                 ++count;
             }
-            else
-            {
+            else {
                 --count;
             }
             maxCount = max(maxCount, count);
@@ -36,19 +32,4 @@ public:
         
         return maxCount;
     }
-    
-private:
-    struct cmp {
-        bool operator() (pair<int, int> p1, pair<int, int> p2)
-        {
-            if (p1.first == p2.first)
-            {
-                return p1.second < p2.second;
-            }
-            else
-            {
-                return p1.first < p2.first;
-            }
-        }
-    };
 };

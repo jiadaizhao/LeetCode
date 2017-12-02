@@ -12,39 +12,30 @@ public:
     vector<int> closestKValues(TreeNode* root, double target, int k) {
         stack<TreeNode*> pre;
         stack<TreeNode*> suc;
-        while (root)
-        {
-            if (root->val <= target)
-            {
+        while (root) {
+            if (root->val <= target) {
                 pre.push(root);
                 root = root->right;
             }
-            else
-            {
+            else {
                 suc.push(root);
                 root = root->left;
             }
         }
         
         vector<int> result;
-        while (k--)
-        {
-            if (pre.empty())
-            {
+        while (k--) {
+            if (pre.empty()) {
                 result.push_back(getNextSuccessor(suc));
             }
-            else if (suc.empty())
-            {
+            else if (suc.empty()) {
                 result.push_back(getNextPredecessor(pre));
             }
-            else
-            {
-                if (abs(pre.top()->val - target) < abs(suc.top()->val - target))
-                {
+            else {
+                if (abs(pre.top()->val - target) < abs(suc.top()->val - target)) {
                     result.push_back(getNextPredecessor(pre));
                 }
-                else
-                {
+                else {
                     result.push_back(getNextSuccessor(suc));
                 }
             }
@@ -54,14 +45,12 @@ public:
     }
     
 private:
-    int getNextPredecessor(stack<TreeNode*>& pre)
-    {
+    int getNextPredecessor(stack<TreeNode*>& pre) {
         TreeNode* curr = pre.top();
         pre.pop();
         int res = curr->val;
         curr = curr->left;
-        while (curr)
-        {
+        while (curr) {
             pre.push(curr);
             curr = curr->right;
         }
@@ -69,14 +58,12 @@ private:
         return res;
     }
     
-    int getNextSuccessor(stack<TreeNode*>& suc)
-    {
+    int getNextSuccessor(stack<TreeNode*>& suc) {
         TreeNode* curr = suc.top();
         suc.pop();
         int res = curr->val;
         curr = curr->right;
-        while (curr)
-        {
+        while (curr) {
             suc.push(curr);
             curr = curr->left;
         }

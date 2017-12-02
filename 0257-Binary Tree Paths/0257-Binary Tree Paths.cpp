@@ -17,16 +17,13 @@ public:
     }
     
 private:
-    void dfs(TreeNode* root, string path, vector<string>& result)
-    {
-        if (root == nullptr)
-        {
+    void dfs(TreeNode* root, string path, vector<string>& result) {
+        if (root == nullptr) {
             return;
         }
         
         path += (path.size() ? "->" : "") + to_string(root->val);
-        if (root->left == nullptr && root->right == nullptr)
-        {
+        if (root->left == nullptr && root->right == nullptr) {
             result.push_back(path);
             return;
         }

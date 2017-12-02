@@ -14,7 +14,7 @@ Return 2. Because there are two triplets which sums are less than 2:
 [-2, 0, 3]
 ```
 **Follow up:**  
-Could you solve it in O(n2) runtime?
+Could you solve it in O(n<sup>2</sup>) runtime?
 
 Companies: Google
 

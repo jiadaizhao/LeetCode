@@ -4,8 +4,7 @@ public:
     // Encodes a list of strings to a single string.
     string encode(vector<string>& strs) {
         string result;
-        for (string& str : strs)
-        {
+        for (string& str : strs) {
             result += to_string(str.size()) + '@' + str;
         }
         return result;
@@ -15,11 +14,9 @@ public:
     vector<string> decode(string s) {
         vector<string> result;
         int i = 0;
-        while (i < s.size())
-        {
+        while (i < s.size()) {
             int len = 0;
-            while (i < s.size() && s[i] != '@')
-            {
+            while (i < s.size() && s[i] != '@') {
                 len = len * 10 + (s[i] - '0');
                 ++i;
             }

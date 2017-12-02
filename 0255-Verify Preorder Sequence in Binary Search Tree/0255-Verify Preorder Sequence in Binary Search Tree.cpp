@@ -3,14 +3,11 @@ public:
     bool verifyPreorder(vector<int>& preorder) {
         int root = INT_MIN;
         stack<int> St;
-        for (int num : preorder)
-        {
-            if (num < root)
-            {
+        for (int num : preorder) {
+            if (num < root) {
                 return false;
             }
-            while (!St.empty() && St.top() < num)
-            {
+            while (!St.empty() && St.top() < num) {
                 root = St.top();
                 St.pop();
             }
@@ -28,14 +25,11 @@ public:
     bool verifyPreorder(vector<int>& preorder) {
         int root = INT_MIN;
         int i = 0;
-        for (int num : preorder)
-        {
-            if (num < root)
-            {
+        for (int num : preorder) {
+            if (num < root) {
                 return false;
             }
-            while (i && preorder[i - 1] < num)
-            {
+            while (i && preorder[i - 1] < num) {
                 root = preorder[--i];
             }
             

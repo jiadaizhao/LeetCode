@@ -5,25 +5,20 @@ class Solution {
 public:
     int firstBadVersion(int n) {
         long start = 1, end = n;
-        while (start + 1 < end)
-        {
+        while (start + 1 < end) {
             long mid = start + (end - start) / 2;
-            if (isBadVersion(mid))
-            {
+            if (isBadVersion(mid)) {
                 end = mid;
             }
-            else
-            {
+            else {
                 start = mid + 1;
             }
         }
         
-        if (isBadVersion(start))
-        {
+        if (isBadVersion(start)) {
             return start;
         }
-        else
-        {
+        else {
             return end;
         }
     }

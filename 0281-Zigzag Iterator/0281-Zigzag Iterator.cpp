@@ -9,25 +9,19 @@ public:
     }
 
     int next() {
-        if (begin1 == end1)
-        {
+        if (begin1 == end1) {
             return *begin2++;
         }
-        else if (begin2 == end2)
-        {
+        else if (begin2 == end2) {
             return *begin1++;
         }
-        else
-        {
+        else {
             int val;
-            if (printV1)
-            {
+            if (printV1) {
                 val = *begin1++;
             }
-            else
-            {
-                val = *begin2++;
-                
+            else {
+                val = *begin2++;                
             }
             printV1 = !printV1;
             return val;
@@ -54,12 +48,10 @@ private:
  class ZigzagIterator {
 public:
     ZigzagIterator(vector<int>& v1, vector<int>& v2) {
-        if (v1.begin() != v1.end())
-        {
+        if (v1.begin() != v1.end()) {
             Q.emplace(v1.begin(), v1.end());
         }
-        if (v2.begin() != v2.end())
-        {
+        if (v2.begin() != v2.end()) {
             Q.emplace(v2.begin(), v2.end());
         }
     }
@@ -69,8 +61,7 @@ public:
         auto it = p.first;
         Q.pop();
         int val = *(it);
-        if (++it != p.second)
-        {
+        if (++it != p.second) {
             Q.emplace(it, p.second);
         }
         return val;

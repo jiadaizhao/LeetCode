@@ -8,12 +8,9 @@ public:
     }
     
 private:
-    void dfs(int start, int n, vector<int>& path, vector<vector<int>>& result)
-    {
-        for (int i = start; i * i <=  n; ++i)
-        {
-            if (n % i == 0)
-            {
+    void dfs(int start, int n, vector<int>& path, vector<vector<int>>& result) {
+        for (int i = start; i * i <=  n; ++i) {
+            if (n % i == 0) {
                 path.push_back(i);
                 dfs(i, n / i, path, result);
                 path.push_back(n / i);
