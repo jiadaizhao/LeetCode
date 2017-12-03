@@ -4,14 +4,11 @@ public:
         int count = 0;
         long miss = 1;
         int i = 0;
-        while (miss <= n)
-        {
-            if (i < nums.size() && nums[i] <= miss)
-            {
+        while (miss <= n) {
+            if (i < nums.size() && nums[i] <= miss) {
                 miss += nums[i++];
             }
-            else
-            {
+            else {
                 miss <<= 1;
                 ++count;
             }

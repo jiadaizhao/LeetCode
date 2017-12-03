@@ -1,29 +1,19 @@
 class Solution {
 public:
-    bool canWin(string s) {
-        int n = s.size();
-        if (n <= 1)
-        {
-            return false;
-        }
-        
+    bool canWin(string s) {        
         return helper(s);
     }
     
     bool helper(string& s) {
-        if (table.find(s) != table.end())
-        {
+        if (table.find(s) != table.end()) {
             return table[s];
         }
         
         int n = s.size();
-        for (int i = 0; i < n - 1; ++i)
-        {
-            if (s[i] == '+' && s[i + 1] == '+')
-            {
+        for (int i = 0; i < n - 1; ++i) {
+            if (s[i] == '+' && s[i + 1] == '+') {
                 s[i] = s[i + 1] = '-';
-                if (!helper(s))
-                {
+                if (!helper(s)) {
                     s[i] = s[i + 1] = '+';
                     return table[s] = true;
                 }

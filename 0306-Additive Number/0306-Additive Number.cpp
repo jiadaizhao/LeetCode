@@ -2,24 +2,19 @@ class Solution {
 public:
     bool isAdditiveNumber(string num) {
         int n = num.size();
-        if (n < 3)
-        {
+        if (n < 3) {
             return false;
         }
         
-        for (int i = 1; i <= n / 2; ++i)
-        {
-            for (int j = 1; j <= n / 2; ++j)
-            {
-                if (n - i - j < max(i, j))
-                {
+        for (int i = 1; i <= n / 2; ++i) {
+            for (int j = 1; j <= n / 2; ++j) {
+                if (n - i - j < max(i, j)) {
                     break;
                 }
                 
                 string s1 = num.substr(0, i);
                 string s2 = num.substr(i, j);
-                if (dfs(num, i + j, s1, s2))
-                {
+                if (dfs(num, i + j, s1, s2)) {
                     return true;
                 }
             }
@@ -29,38 +24,31 @@ public:
     }
     
 private:
-    bool dfs(string& num, int start, string& s1, string& s2)
-    {
-        if (start == num.size())
-        {
+    bool dfs(string& num, int start, string& s1, string& s2) {
+        if (start == num.size()) {
             return true;
         }
         
-        if (s1.size() > 1 && s1[0] == '0' || s2.size() > 1 && s2[0] == '0' || (s1.size() > 1 || s2.size() > 1) && num[start] == '0')
-        {
+        if (s1.size() > 1 && s1[0] == '0' || s2.size() > 1 && s2[0] == '0' || (s1.size() > 1 || s2.size() > 1) && num[start] == '0') {
             return false;
         }
         
         string sum = add(s1, s2);
         string s3 = num.substr(start, sum.size());
-        if (sum != s3)
-        {
+        if (sum != s3) {
             return false;
         }
-        else
-        {
+        else {
             return dfs(num, start + sum.size(), s2, sum);
         }
     }
     
-    string add(string& s1, string& s2)
-    {
+    string add(string& s1, string& s2) {
         string result;
         int carry = 0;
         int i = s1.size() - 1;
         int j = s2.size() - 1;
-        while (i >= 0 || j >= 0)
-        {
+        while (i >= 0 || j >= 0) {
             int sum = carry;
             sum += (i >= 0) ? s1[i--] - '0' : 0;
             sum += (j >= 0) ? s2[j--] - '0' : 0;
@@ -69,8 +57,7 @@ private:
             result += '0' + sum;
         }
         
-        if (carry)
-        {
+        if (carry) {
             result += '1';
         }
         reverse(result.begin(), result.end());

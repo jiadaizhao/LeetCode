@@ -2,15 +2,13 @@ class Solution {
 public:
     vector<int> countSmaller(vector<int>& nums) {
         int n = nums.size();
-        if (n == 0)
-        {
-            return vector<int>();
+        if (n == 0) {
+            return {};
         }
         
         vector<int> result(n);
         vector<int> index(n);
-        for (int i = 0; i < n; ++i)
-        {
+        for (int i = 0; i < n; ++i) {
             index[i] = i;
         }
         vector<int> temp(n);
@@ -19,10 +17,8 @@ public:
     }
     
 private:
-    void mergeSort(vector<int>& index, int start, int end, vector<int>& nums, vector<int>& temp, vector<int>& result)
-    {
-        if (start < end)
-        {
+    void mergeSort(vector<int>& index, int start, int end, vector<int>& nums, vector<int>& temp, vector<int>& result) {
+        if (start < end) {
             int mid = start + (end - start) / 2;
             mergeSort(index, start, mid, nums, temp, result);
             mergeSort(index, mid + 1, end, nums, temp, result);
@@ -30,15 +26,12 @@ private:
         }
     }
     
-    void merge(vector<int>& index, int start, int mid, int end, vector<int>& nums, vector<int>& temp, vector<int>& result)
-    {
+    void merge(vector<int>& index, int start, int mid, int end, vector<int>& nums, vector<int>& temp, vector<int>& result) {
         int i = start, j = mid + 1;
         int k = start;
         int count = 0;
-        while (i <= mid)
-        {
-            while (j <= end && nums[index[j]] < nums[index[i]])
-            {
+        while (i <= mid) {
+            while (j <= end && nums[index[j]] < nums[index[i]]) {
                 ++count;
                 temp[k++] = index[j++];
             }
@@ -46,13 +39,11 @@ private:
             temp[k++] = index[i++];
         }
         
-        while (j <= end)
-        {
+        while (j <= end) {
             temp[k++] = index[j++];
         }
         
-        for (int i = start; i <= end; ++i)
-        {
+        for (int i = start; i <= end; ++i) {
             index[i] = temp[i];
         }
     }

@@ -1,18 +1,14 @@
 class ValidWordAbbr {
 public:
     ValidWordAbbr(vector<string> dictionary) {
-        for (string s : dictionary)
-        {
+        for (string s : dictionary) {
             string key = getKey(s);
-            if (table.find(key) != table.end())
-            {
-                if (table[key] != s)
-                {
+            if (table.find(key) != table.end()) {
+                if (table[key] != s) {
                     table[key] = "";
                 }                
             }
-            else
-            {
+            else {
                 table[key] = s;
             }
         }
@@ -26,8 +22,7 @@ public:
 private:
     unordered_map<string, string> table;
     string getKey(string s) {
-        if (s.size() <= 2)
-        {
+        if (s.size() <= 2) {
             return s;
         }
         

@@ -9,8 +9,7 @@
 class Solution {
 public:
     ListNode* oddEvenList(ListNode* head) {
-        if (head == nullptr || head->next == nullptr)
-        {
+        if (head == nullptr || head->next == nullptr) {
             return head;
         }
         
@@ -19,15 +18,12 @@ public:
         ListNode* p1 = &dummy1;
         ListNode* p2 = &dummy2;
         bool odd = true;
-        while (head)
-        {
-            if (odd)
-            {
+        while (head) {
+            if (odd) {
                 p1->next = head;
                 p1 = p1->next;
             }
-            else
-            {
+            else {
                 p2->next = head;
                 p2 = p2->next;
             }

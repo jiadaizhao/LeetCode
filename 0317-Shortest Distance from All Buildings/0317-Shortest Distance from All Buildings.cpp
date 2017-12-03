@@ -2,8 +2,7 @@ class Solution {
 public:
     int shortestDistance(vector<vector<int>>& grid) {
         int m = grid.size();
-        if (m == 0)
-        {
+        if (m == 0) {
             return 0;
         }
         int n = grid[0].size();
@@ -11,26 +10,19 @@ public:
         vector<vector<int>> visitedTimes(m, vector<int>(n));
         int count = 0;
         int minDist = -1;
-        for (int i = 0; i < m; ++i)
-        {
-            for (int j = 0; j < n; ++j)
-            {
-                if (grid[i][j] == 1)
-                {
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                if (grid[i][j] == 1) {
                     ++count;
                     bfs(grid, i, j, distance, visitedTimes);
                 }
             }
         }
         
-        for (int i = 0; i < m; ++i)
-        {
-            for (int j = 0; j < n; ++j)
-            {
-                if (visitedTimes[i][j] == count)
-                {
-                    if (minDist == -1 || distance[i][j] < minDist)
-                    {
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                if (visitedTimes[i][j] == count) {
+                    if (minDist == -1 || distance[i][j] < minDist) {
                         minDist = distance[i][j];
                     }
                 }
@@ -41,8 +33,7 @@ public:
     }
     
 private:
-    void bfs(vector<vector<int>>& grid, int x, int y, vector<vector<int>>& distance, vector<vector<int>>& visitedTimes)
-    {
+    void bfs(vector<vector<int>>& grid, int x, int y, vector<vector<int>>& distance, vector<vector<int>>& visitedTimes) {
         int m = grid.size();
         int n = grid[0].size();
         vector<vector<bool>> visited(m, vector<bool>(n));
@@ -52,21 +43,17 @@ private:
         int dist = 0;
         vector<int> dx = {-1, 1, 0, 0};
         vector<int> dy = {0, 0, -1, 1};
-        while (!Q.empty())
-        {
+        while (!Q.empty()) {
             ++dist;
             int qs = Q.size();
-            for (int i = 0; i < qs; ++i)
-            {
+            for (int i = 0; i < qs; ++i) {
                 int xx = Q.front().first;
                 int yy = Q.front().second;
                 Q.pop();
-                for (int k = 0; k < 4; ++k)
-                {
+                for (int k = 0; k < 4; ++k) {
                     int nx = xx + dx[k];
                     int ny = yy + dy[k];
-                    if (nx >= 0 && nx < m && ny >= 0 && ny < n && !visited[nx][ny] && grid[nx][ny] == 0)
-                    {
+                    if (nx >= 0 && nx < m && ny >= 0 && ny < n && !visited[nx][ny] && grid[nx][ny] == 0) {
                         Q.push({nx, ny});
                         visited[nx][ny] = true;
                         distance[nx][ny] += dist;

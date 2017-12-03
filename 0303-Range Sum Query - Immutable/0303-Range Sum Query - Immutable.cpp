@@ -3,8 +3,7 @@ public:
     NumArray(vector<int> nums) {
         int n = nums.size();
         sums = vector<int>(1 + n);
-        for (int i = 1; i <= n; ++i)
-        {
+        for (int i = 1; i <= n; ++i) {
             sums[i] = sums[i - 1] + nums[i - 1];
         }
     }

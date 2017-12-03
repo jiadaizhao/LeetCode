@@ -15,28 +15,23 @@ public:
         return maxLen;
     }
 private:
-    int helper(TreeNode* root, int& maxLen)
-    {
-        if (root == nullptr)
-        {
+    int helper(TreeNode* root, int& maxLen) {
+        if (root == nullptr) {
             return 0;
         }
         
         int leftLen = helper(root->left, maxLen);
         int rightLen = helper(root->right, maxLen);
         int len = 1;
-        if (root->left && root->val == root->left->val - 1)
-        {
+        if (root->left && root->val == root->left->val - 1) {
             len = 1 + leftLen;
         }
         
-        if (root->right && root->val == root->right->val - 1)
-        {
+        if (root->right && root->val == root->right->val - 1) {
             len = max(len, 1 + rightLen);
         }
         
-        if (len > maxLen)
-        {
+        if (len > maxLen) {
             maxLen = len;
         }
         

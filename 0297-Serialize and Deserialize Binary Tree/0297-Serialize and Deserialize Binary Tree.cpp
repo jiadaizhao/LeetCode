@@ -12,18 +12,15 @@ public:
 
     // Encodes a tree to a single string.
     string serialize(TreeNode* root) {
-        if (root == nullptr)
-        {
+        if (root == nullptr) {
             return "[]";
         }
         
         vector<TreeNode*> nodes;
         nodes.push_back(root);
-        for (int i = 0; i < nodes.size(); ++i)
-        {
+        for (int i = 0; i < nodes.size(); ++i) {
             TreeNode* node = nodes[i];
-            if (node == nullptr)
-            {
+            if (node == nullptr) {
                 continue;
             }
 
@@ -31,21 +28,17 @@ public:
             nodes.push_back(node->right);
         }
         
-        while (nodes.back() == nullptr)
-        {
+        while (nodes.back() == nullptr) {
             nodes.pop_back();
         }
         
         string str = "[";
         str += to_string(nodes[0]->val);
-        for (int i = 1; i < nodes.size(); ++i)
-        {
-            if (nodes[i] != nullptr)
-            {
+        for (int i = 1; i < nodes.size(); ++i) {
+            if (nodes[i] != nullptr) {
                 str += "," + to_string(nodes[i]->val);
             }
-            else
-            {
+            else {
                 str += ",null";
             }
         }
@@ -56,8 +49,7 @@ public:
 
     // Decodes your encoded data to tree.
     TreeNode* deserialize(string data) {
-        if (data == "[]")
-        {
+        if (data == "[]") {
             return nullptr;
         }
         
@@ -66,24 +58,19 @@ public:
         queue<TreeNode*> Q;
         Q.push(root);
         bool leftChild = true;
-        for (int i = 1; i < str.size(); ++i)
-        {
-            if (str[i] != "null")
-            {
+        for (int i = 1; i < str.size(); ++i) {
+            if (str[i] != "null") {
                 TreeNode* node = new TreeNode(stoi(str[i]));
-                if (leftChild)
-                {
+                if (leftChild) {
                     Q.front()->left = node;
                 }
-                else
-                {
+                else {
                     Q.front()->right = node;
                 }
                 Q.push(node);
             }
             
-            if (!leftChild)
-            {
+            if (!leftChild) {
                 Q.pop();
             }
             leftChild = !leftChild;
@@ -93,18 +80,15 @@ public:
     }
 
 private:
-    vector<string> split(string data, string delim)
-    {
+    vector<string> split(string data, string delim) {
         vector<string> result;
         int lastIndex = 0, index;
-        while ((index = data.find(delim, lastIndex)) != string::npos)
-        {
+        while ((index = data.find(delim, lastIndex)) != string::npos) {
             result.push_back(data.substr(lastIndex, index - lastIndex));
             lastIndex = index + delim.size();
         }
         
-        if (lastIndex != data.size())
-        {
+        if (lastIndex != data.size()) {
             result.push_back(data.substr(lastIndex, data.size() - lastIndex));
         }
         

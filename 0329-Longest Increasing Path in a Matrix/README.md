@@ -4,16 +4,31 @@ Difficulty: Hard
 
 https://leetcode.com/problems/longest-increasing-path-in-a-matrix/description/
 
-Given an integer array nums, return the number of range sums that lie in [lower, upper] inclusive.
-Range sum S(i, j) is defined as the sum of the elements in nums between indices i and j (i ≤ j), inclusive.
+Given an integer matrix, find the length of the longest increasing path.
 
-**Note:**  
-A naive algorithm of O(n2) is trivial. You MUST do better than that.
+From each cell, you can either move to four directions: left, right, up or down. You may NOT move diagonally or move outside of the boundary (i.e. wrap-around is not allowed).
 
-**Example:**  
-Given nums = [-2, 5, -1], lower = -2, upper = 2,  
-Return 3.  
-The three ranges are : [0, 0], [2, 2], [0, 2] and their respective sums are: -2, -1, 2.
+**Example 1:**  
+```
+nums = [
+  [9,9,4],
+  [6,6,8],
+  [2,1,1]
+]
+```
+Return 4
+The longest increasing path is [1, 2, 6, 9].
+
+**Example 2:**  
+```
+nums = [
+  [3,4,5],
+  [3,2,6],
+  [2,2,1]
+]
+```
+Return 4
+The longest increasing path is [3, 4, 5, 6]. Moving diagonally is not allowed.
 
 **Credits:**  
 Special thanks to @dietpepsi for adding this problem and creating all test cases.

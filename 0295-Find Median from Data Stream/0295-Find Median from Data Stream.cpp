@@ -9,20 +9,17 @@ public:
         pq1.push(num);
         pq2.push(pq1.top());
         pq1.pop();
-        if (pq1.size() < pq2.size())
-        {
+        if (pq1.size() < pq2.size()) {
             pq1.push(pq2.top());
             pq2.pop();
         }
     }
     
     double findMedian() {
-        if (pq1.size() == pq2.size())
-        {
+        if (pq1.size() == pq2.size()) {
             return (pq1.top() + pq2.top()) / 2.0;
         }
-        else
-        {
+        else {
             return pq1.top();
         }
     }

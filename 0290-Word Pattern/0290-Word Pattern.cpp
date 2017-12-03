@@ -7,21 +7,17 @@ public:
         int n = pattern.size();
         unordered_map<string, char> table;
         unordered_set<char> chars;
-        while (getline(ss, s, ' '))
-        {
-            if (i >= n)
-            {
+        while (getline(ss, s, ' ')) {
+            if (i >= n) {
                 return false;
             }
             
             bool exist = (table.find(s) != table.end());
-            if (exist && table[s] != pattern[i])
-            {
+            if (exist && table[s] != pattern[i]) {
                 return false;
             }
             
-            if (!exist && chars.find(pattern[i]) != chars.end())
-            {
+            if (!exist && chars.find(pattern[i]) != chars.end()) {
                 return false;
             }
             

@@ -6,8 +6,7 @@ public:
         
         bit = vector<int>(1 + n);
         numsCopy = vector<int>(n);
-        for (int i = 0; i < n; ++i)
-        {
+        for (int i = 0; i < n; ++i) {
             update(i, nums[i]);
         }
     }
@@ -16,8 +15,7 @@ public:
         int index = i + 1;
         int diff = val - numsCopy[i];
         numsCopy[i] = val;
-        while (index < bit.size())
-        {
+        while (index < bit.size()) {
             bit[index] += diff;
             index += (-index) & index;
         }
@@ -32,8 +30,7 @@ private:
     vector<int> numsCopy;
     int read(int index) {
         int sum = 0;
-        while (index > 0)
-        {
+        while (index > 0) {
             sum += bit[index];
             index -= (-index) & index;
         }
@@ -80,14 +77,12 @@ private:
     private:
     SegmentTreeNode* root;
     SegmentTreeNode* build(vector<int>& nums, int start, int end) {
-        if (start > end)
-        {
+        if (start > end) {
             return nullptr;
         }
         
         SegmentTreeNode* root = new SegmentTreeNode(start, end, nums[start]);
-        if (start != end)
-        {
+        if (start != end) {
             int mid = start + (end - start) / 2;
             root->left = build(nums, start, mid);
             root->right = build(nums, mid + 1, end);
@@ -98,20 +93,17 @@ private:
     }
     
     int query(SegmentTreeNode* root, int start, int end) {
-        if (root->start == start && root->end == end)
-        {
+        if (root->start == start && root->end == end) {
             return root->sum;
         }
         
         int mid = root->start + (root->end - root->start) / 2;
         int sum = 0;
-        if (start <= mid)
-        {
+        if (start <= mid) {
             sum += query(root->left, start, min(mid, end));
         }
         
-        if (end > mid)
-        {
+        if (end > mid) {
             sum += query(root->right, max(mid + 1, start), end);
         }
         
@@ -119,19 +111,16 @@ private:
     }
     
     void modify(SegmentTreeNode* root, int index, int value) {
-        if (root->start == index && root->end == index)
-        {
+        if (root->start == index && root->end == index) {
             root->sum = value;
             return;
         }
         
         int mid = root->start + (root->end - root->start) / 2;
-        if (index >= root->start && index <= mid)
-        {
+        if (index >= root->start && index <= mid) {
             modify(root->left, index, value);
         }
-        else if (index > mid && index <= root->end)
-        {
+        else if (index > mid && index <= root->end) {
             modify(root->right, index, value);
         }
         

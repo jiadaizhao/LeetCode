@@ -2,17 +2,14 @@ class NumMatrix {
 public:
     NumMatrix(vector<vector<int>> matrix) {
         int m = matrix.size();
-        if (m == 0)
-        {
+        if (m == 0) {
             return;
         }
         int n = matrix[0].size();
         sums = vector<vector<int>>(1 + m, vector<int>(1 + n));
         
-        for (int i = 1; i <= m; ++i)
-        {
-            for (int j = 1; j <= n; ++j)
-            {
+        for (int i = 1; i <= m; ++i) {
+            for (int j = 1; j <= n; ++j) {
                 sums[i][j] = sums[i - 1][j] + sums[i][j - 1] - sums[i - 1][j - 1] + matrix[i - 1][j - 1];
             }
         }
