@@ -20,37 +20,30 @@ public:
         @return The game's score after the move. Return -1 if game over. 
         Game over when snake crosses the screen boundary or bites its body. */
     int move(string direction) {
-        if (direction == "U")
-        {
+        if (direction == "U") {
             --head.first;
         }
-        else if (direction == "L")
-        {
+        else if (direction == "L") {
             --head.second;
         }
-        else if (direction == "R")
-        {
+        else if (direction == "R") {
             ++head.second;
         }
-        else
-        {
+        else {
             ++head.first;
         }
         
         auto tail = Q.front();
         if (head.first < 0 || head.first >= h || head.second < 0 || head.second >= w || 
-            (head.first != tail.first || head.second != tail.second) && snake.count(head.first * w + head.second))
-        {
+            (head.first != tail.first || head.second != tail.second) && snake.count(head.first * w + head.second)) {
             return -1;
         }
         
         
-        if (foodIndex < food.size() && head.first == food[foodIndex].first && head.second == food[foodIndex].second)
-        {
+        if (foodIndex < food.size() && head.first == food[foodIndex].first && head.second == food[foodIndex].second) {
             ++foodIndex;
         }
-        else
-        {
+        else {
             Q.pop();
             snake.erase(tail.first * w + tail.second);
         }

@@ -32,8 +32,7 @@ public:
         followed.erase(id);
     }
 
-    void post(int id)
-    {
+    void post(int id) {
         Tweet* t = new Tweet(id);
         t->next = head;
         head = t;
@@ -49,8 +48,7 @@ public:
 
     /** Compose a new tweet. */
     void postTweet(int userId, int tweetId) {
-        if (userMap.find(userId) == userMap.end())
-        {
+        if (userMap.find(userId) == userMap.end()) {
             userMap[userId] = User(userId);
         }
 
@@ -60,31 +58,26 @@ public:
     /** Retrieve the 10 most recent tweet ids in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user herself. Tweets must be ordered from most recent to least recent. */
     vector<int> getNewsFeed(int userId) {
         vector<int> result;
-        if (userMap.find(userId) == userMap.end())
-        {
+        if (userMap.find(userId) == userMap.end()) {
             return result;
         }
 
         unordered_set<int> users = userMap[userId].followed;
         priority_queue<Tweet*, vector<Tweet*>, cmp> pq;
-        for (int user : users)
-        {
+        for (int user : users) {
             Tweet* head = userMap[user].head;
-            if (head)
-            {
+            if (head) {
                 pq.push(head);
             }            
         }
 
         int count = 0;
-        while (!pq.empty() && count < 10)
-        {
+        while (!pq.empty() && count < 10) {
             Tweet* t = pq.top();
             pq.pop();
             result.push_back(t->id);
             ++count;
-            if (t->next)
-            {
+            if (t->next) {
                 pq.push(t->next);
             }
         }
@@ -94,13 +87,11 @@ public:
 
     /** Follower follows a followee. If the operation is invalid, it should be a no-op. */
     void follow(int followerId, int followeeId) {
-        if (userMap.find(followerId) == userMap.end())
-        {
+        if (userMap.find(followerId) == userMap.end()) {
             userMap[followerId] = User(followerId);
         }
 
-        if (userMap.find(followeeId) == userMap.end())
-        {
+        if (userMap.find(followeeId) == userMap.end()) {
             userMap[followeeId] = User(followeeId);
         }
 
@@ -109,8 +100,7 @@ public:
 
     /** Follower unfollows a followee. If the operation is invalid, it should be a no-op. */
     void unfollow(int followerId, int followeeId) {
-        if (followerId == followeeId || userMap.find(followerId) == userMap.end() || userMap.find(followeeId) == userMap.end())
-        {
+        if (followerId == followeeId || userMap.find(followerId) == userMap.end() || userMap.find(followeeId) == userMap.end()) {
             return;
         }
         userMap[followerId].unfollow(followeeId);

@@ -4,15 +4,12 @@ public:
         stringstream ss(preorder);
         string s;
         int degree = 1;
-        while (getline(ss, s, ','))
-        {
+        while (getline(ss, s, ',')) {
             --degree;
-            if (degree < 0)
-            {
+            if (degree < 0) {
                 return false;
             }
-            if (s != "#")
-            {
+            if (s != "#") {
                 degree += 2;
             }
         }

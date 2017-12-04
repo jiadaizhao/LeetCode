@@ -8,8 +8,7 @@ public:
     /** Record a hit.
         @param timestamp - The current timestamp (in seconds granularity). */
     void hit(int timestamp) {
-        while (!Q.empty() && Q.front() <= timestamp - 300)
-        {
+        while (!Q.empty() && Q.front() <= timestamp - 300) {
             Q.pop();
         }
         Q.push(timestamp);
@@ -18,8 +17,7 @@ public:
     /** Return the number of hits in the past 5 minutes.
         @param timestamp - The current timestamp (in seconds granularity). */
     int getHits(int timestamp) {
-        while (!Q.empty() && Q.front() <= timestamp - 300)
-        {
+        while (!Q.empty() && Q.front() <= timestamp - 300) {
             Q.pop();
         }
         return Q.size();

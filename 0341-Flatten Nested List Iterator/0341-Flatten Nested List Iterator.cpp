@@ -18,8 +18,7 @@
 class NestedIterator {
 public:
     NestedIterator(vector<NestedInteger> &nestedList) {
-        for (int i = nestedList.size() - 1; i >= 0; --i)
-        {
+        for (int i = nestedList.size() - 1; i >= 0; --i) {
             St.push(nestedList[i]);
         }
     }
@@ -31,18 +30,15 @@ public:
     }
 
     bool hasNext() {
-        while (!St.empty())
-        {
+        while (!St.empty()) {
             NestedInteger ni = St.top();
-            if (ni.isInteger())
-            {
+            if (ni.isInteger()) {
                 return true;
             }
             
             St.pop();
             auto nil = ni.getList();
-            for (int i = nil.size() - 1; i >= 0; --i)
-            {
+            for (int i = nil.size() - 1; i >= 0; --i) {
                 St.push(nil[i]);
             }
         }

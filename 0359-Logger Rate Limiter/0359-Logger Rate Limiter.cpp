@@ -9,12 +9,10 @@ public:
         If this method returns false, the message will not be printed.
         The timestamp is in seconds granularity. */
     bool shouldPrintMessage(int timestamp, string message) {
-        if (table.find(message) != table.end() && timestamp - table[message] < 10)
-        {
+        if (table.find(message) != table.end() && timestamp - table[message] < 10) {
             return false;
         }
-        else
-        {
+        else {
             table[message] = timestamp;
             return true;
         }

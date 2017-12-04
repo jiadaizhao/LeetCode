@@ -16,18 +16,15 @@ public:
     
     void addNum(int val) {
         auto it = table.lower_bound(Interval(val, val));
-        if (it != table.begin())
-        {
+        if (it != table.begin()) {
             auto prev = it;
             --prev;
-            if (prev->end >= val - 1)
-            {
+            if (prev->end >= val - 1) {
                 it = prev;
             }
         }
         int start = val, end = val;
-        while (it != table.end() && it->start <= val + 1 && it->end >= val - 1)
-        {
+        while (it != table.end() && it->start <= val + 1 && it->end >= val - 1) {
             start = min(start, it->start);
             end = max(end, it->end);
             it = table.erase(it);
@@ -37,8 +34,7 @@ public:
     
     vector<Interval> getIntervals() {
         vector<Interval> result;
-        for (auto val : table)
-        {
+        for (auto val : table) {
             result.push_back(val);
         }
         return result;
@@ -46,8 +42,7 @@ public:
     
 private:
     struct cmp {
-        bool operator()(Interval i1, Interval i2)
-        {
+        bool operator()(Interval i1, Interval i2) {
             return i1.start < i2.start;
         }
     };

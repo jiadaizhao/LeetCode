@@ -4,8 +4,7 @@ public:
         int count = 1;
         int product = 9;
         int base = 9;
-        for (int i = 1; i <= n && i <= 10; ++i)
-        {
+        for (int i = 1; i <= n && i <= 10; ++i) {
             count += product;
             product *= base;
             --base;

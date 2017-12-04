@@ -17,8 +17,7 @@ public:
 private:
     vector<int> robHelper(TreeNode* root) {
         vector<int> result(2);
-        if (root == nullptr)
-        {
+        if (root == nullptr) {
             return result;
         }
         

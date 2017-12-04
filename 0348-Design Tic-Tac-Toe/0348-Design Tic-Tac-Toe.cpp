@@ -21,22 +21,18 @@ public:
         int n = rows.size();
         rows[row] += val;
         cols[col] += val;
-        if (row == col)
-        {
+        if (row == col) {
             diag += val;
         }
         
-        if (row + col == n - 1)
-        {
+        if (row + col == n - 1) {
             antidiag += val;
         }
         
-        if (abs(rows[row]) == n || abs(cols[col]) == n || abs(diag) == n || abs(antidiag) == n)
-        {
+        if (abs(rows[row]) == n || abs(cols[col]) == n || abs(diag) == n || abs(antidiag) == n) {
             return player;
         }
-        else
-        {
+        else {
             return 0;
         }        
     }

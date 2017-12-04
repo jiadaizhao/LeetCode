@@ -7,8 +7,7 @@ public:
     }
     
     double next(int val) {
-        if (Q.size() == capacity)
-        {
+        if (Q.size() == capacity) {
             sum -= Q.front();
             Q.pop();
         }

@@ -11,18 +11,15 @@ public:
         int minX = INT_MAX;
         int maxX = INT_MIN;
         unordered_set<pair<int, int>, pairhash> table;
-        for (auto& p : points)
-        {
+        for (auto& p : points) {
             minX = min(minX, p.first);
             maxX = max(maxX, p.first);
             table.insert(p);
         }
         
         int sum = minX + maxX;
-        for (auto& p : points)
-        {
-            if (table.find({sum - p.first, p.second}) == table.end())
-            {
+        for (auto& p : points) {
+            if (table.find({sum - p.first, p.second}) == table.end()) {
                 return false;
             }
         }

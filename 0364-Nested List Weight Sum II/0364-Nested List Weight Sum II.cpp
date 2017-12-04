@@ -35,17 +35,13 @@ public:
     }
 
 private:
-    int depth(vector<NestedInteger>& nestedList)
-    {
+    int depth(vector<NestedInteger>& nestedList) {
         int d = 0;
-        for (NestedInteger ni : nestedList)
-        {
-            if (ni.isInteger())
-            {
+        for (NestedInteger ni : nestedList) {
+            if (ni.isInteger()) {
                 d = max(d, 1);
             }
-            else
-            {
+            else {
                 d = max(d, 1 + depth(ni.getList()));
             }
         }
@@ -53,17 +49,13 @@ private:
         return d;
     }
 
-    int helper(vector<NestedInteger>& nestedList, int weight)
-    {
+    int helper(vector<NestedInteger>& nestedList, int weight) {
         int sum = 0;
-        for (NestedInteger ni : nestedList)
-        {
-            if (ni.isInteger())
-            {
+        for (NestedInteger ni : nestedList) {
+            if (ni.isInteger()) {
                 sum += ni.getInteger() * weight;
             }
-            else
-            {
+            else {
                 sum += helper(ni.getList(), weight - 1);
             }
         }
@@ -77,20 +69,15 @@ class Solution {
 public:
     int depthSumInverse(vector<NestedInteger>& nestedList) {
         int unweighted = 0, weighted = 0;
-        while (!nestedList.empty())
-        {
+        while (!nestedList.empty()) {
             vector<NestedInteger> nextLevel;
-            for (NestedInteger ni : nestedList)
-            {
-                if (ni.isInteger())
-                {
+            for (NestedInteger ni : nestedList) {
+                if (ni.isInteger()) {
                     unweighted += ni.getInteger();
                 }                    
-                else
-                {
+                else {
                     vector<NestedInteger>& temp = ni.getList();
-                    for (NestedInteger& t : temp)
-                    {
+                    for (NestedInteger& t : temp) {
                         nextLevel.push_back(t);
                     }                    
                 }                    

@@ -22,17 +22,13 @@ public:
     }
 
 private:
-    int helper(vector<NestedInteger>& nestedList, int weight)
-    {
+    int helper(vector<NestedInteger>& nestedList, int weight) {
         int sum = 0;
-        for (NestedInteger ni : nestedList)
-        {
-            if (ni.isInteger())
-            {
+        for (NestedInteger ni : nestedList) {
+            if (ni.isInteger()) {
                 sum += ni.getInteger() * weight;
             }
-            else
-            {
+            else {
                 sum += helper(ni.getList(), weight + 1);
             }
         }
