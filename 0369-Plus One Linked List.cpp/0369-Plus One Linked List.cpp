@@ -9,45 +9,37 @@
  class Solution {
 public:
     ListNode* plusOne(ListNode* head) {
-        if (head == nullptr)
-        {
+        if (head == nullptr) {
             return nullptr;
         }
         ListNode* lastNodeNot9 = nullptr;
         ListNode* node = head;
-        while (node)
-        {
-            if (node->val != 9)
-            {
+        while (node) {
+            if (node->val != 9) {
                 lastNodeNot9 = node;
             }
             node = node->next;
         }
         
-        if (!lastNodeNot9)
-        {
+        if (!lastNodeNot9) {
             node = head;
         }
-        else
-        {
+        else {
             node = lastNodeNot9->next;
             ++lastNodeNot9->val;
         }
         
-        while (node)
-        {
+        while (node) {
             node->val = 0;
             node = node->next;
         }
         
-        if (!lastNodeNot9)
-        {
+        if (!lastNodeNot9) {
             ListNode* res = new ListNode(1);
             res->next = head;
             return res;
         }
-        else
-        {
+        else {
             return head;
         }
     }

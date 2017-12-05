@@ -16,19 +16,16 @@ public:
     }
     
 private:
-    int height(TreeNode* root, vector<vector<int>>& result)
-    {
-        if (root == nullptr)
-        {
+    int height(TreeNode* root, vector<vector<int>>& result) {
+        if (root == nullptr) {
             return -1;
         }
         
         int leftHeight = height(root->left, result);
         int rightHeight = height(root->right, result);
         int h = 1 + max(leftHeight, rightHeight);
-        if (result.size() <= h)
-        {
-            result.push_back(vector<int>());
+        if (result.size() <= h) {
+            result.push_back({});
         }
         result[h].push_back(root->val);
         return h;

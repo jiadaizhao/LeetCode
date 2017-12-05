@@ -12,8 +12,7 @@ public:
     /** Returns a random shuffling of the array. */
     vector<int> shuffle() {
         vector<int> seed(nums);
-        for (int i = 0; i < nums.size(); ++i)
-        {
+        for (int i = 1; i < nums.size(); ++i) {
             int j = rand() % (i + 1);
             swap(seed[i], seed[j]);
         }

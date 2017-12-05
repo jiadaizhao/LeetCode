@@ -33,26 +33,20 @@ public:
         stack<NestedInteger> St;
         St.push(NestedInteger());
         string num;
-        for (char c : s)
-        {
-            if (c == '[')
-            {
+        for (char c : s) {
+            if (c == '[') {
                 St.push(NestedInteger());
             }
-            else if (c == '-' || isdigit(c))
-            {
+            else if (c == '-' || isdigit(c)) {
                 num += c;
             }
-            else
-            {
-                if (num.size())
-                {
+            else {
+                if (num.size()) {
                     St.top().add(NestedInteger(stoi(num)));
                     num = "";
                 }
                 
-                if (c == ']')
-                {
+                if (c == ']') {
                     NestedInteger temp = St.top();
                     St.pop();
                     St.top().add(temp);
@@ -60,8 +54,7 @@ public:
             }
         }
         
-        if (num.size())
-        {
+        if (num.size()) {
             St.top().add(NestedInteger(stoi(num)));
             num = "";
         }

@@ -19,10 +19,8 @@ public:
         int result = head->val;
         ListNode* node = head->next;
         int i = 2;
-        while (node)
-        {
-            if (rand() % i == 0)
-            {
+        while (node) {
+            if (rand() % i == 0) {
                 result = node->val;
             }
             

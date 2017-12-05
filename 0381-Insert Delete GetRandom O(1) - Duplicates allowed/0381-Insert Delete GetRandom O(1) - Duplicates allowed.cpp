@@ -15,8 +15,7 @@ public:
     
     /** Removes a value from the collection. Returns true if the collection contained the specified element. */
     bool remove(int val) {
-        if (indexTable.find(val) == indexTable.end())
-        {
+        if (indexTable.find(val) == indexTable.end()) {
             return false;
         }
         
@@ -26,8 +25,7 @@ public:
         nums[index] = last;
         nums.pop_back();
         indexTable[val].pop_back();
-        if (indexTable[val].size() == 0)
-        {
+        if (indexTable[val].size() == 0) {
             indexTable.erase(val);
         }        
         return true;
@@ -39,7 +37,9 @@ public:
     }
     
 private:
+    // first is val, second is index in indexTable[val].
     vector<pair<int, int>> nums;
+    // first is val, second is vector of indices in nums.
     unordered_map<int, vector<int>> indexTable;
 };
 

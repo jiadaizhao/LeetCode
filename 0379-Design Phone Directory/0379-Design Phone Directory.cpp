@@ -6,8 +6,7 @@ public:
         used.resize(maxNumbers);
         dict.resize(maxNumbers);
         index = 0;
-        for (int i = 0; i < maxNumbers; ++i)
-        {
+        for (int i = 0; i < maxNumbers; ++i) {
             dict[i] = i;
         }
     }
@@ -15,8 +14,7 @@ public:
     /** Provide a number which is not assigned to anyone.
         @return - Return an available number. Return -1 if none is available. */
     int get() {
-        if (index == used.size())
-        {
+        if (index == used.size()) {
             return -1;
         }
         
@@ -32,8 +30,7 @@ public:
     
     /** Recycle or release a number. */
     void release(int number) {
-        if (check(number))
-        {
+        if (check(number)) {
             return;
         }
         

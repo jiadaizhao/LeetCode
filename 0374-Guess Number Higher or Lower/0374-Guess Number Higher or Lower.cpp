@@ -7,30 +7,24 @@ class Solution {
 public:
     int guessNumber(int n) {
         int start = 1, end = n;
-        while (start + 1 < end)
-        {
+        while (start + 1 < end) {
             int mid = start + (end - start) / 2;
             int result = guess(mid);
-            if (result < 0)
-            {
+            if (result < 0) {
                 end = mid - 1;
             }
-            else if (result > 0)
-            {
+            else if (result > 0) {
                 start = mid + 1;
             }
-            else
-            {
+            else {
                 return mid;
             }
         }
         
-        if (guess(start) == 0)
-        {
+        if (guess(start) == 0) {
             return start;
         }
-        else
-        {
+        else {
             return end;
         }
     }
