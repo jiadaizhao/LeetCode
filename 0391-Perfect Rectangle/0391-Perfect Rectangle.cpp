@@ -2,8 +2,7 @@ class Solution {
 public:
     bool isRectangleCover(vector<vector<int>>& rectangles) {
         int n = rectangles.size();
-        if (n == 0)
-        {
+        if (n == 0) {
             return false;
         }
         
@@ -11,8 +10,7 @@ public:
         int x1 = INT_MAX, y1 = INT_MAX;
         int x2 = INT_MIN, y2 = INT_MIN;
         unordered_set<string> table;
-        for (auto& rec : rectangles)
-        {
+        for (auto& rec : rectangles) {
             x1 = min(x1, rec[0]);
             y1 = min(y1, rec[1]);
             x2 = max(x2, rec[2]);
@@ -25,14 +23,11 @@ public:
             points[2] = to_string(rec[2]) + " " + to_string(rec[1]);
             points[3] = to_string(rec[2]) + " " + to_string(rec[3]);
             
-            for (int i = 0; i < points.size(); ++i)
-            {
-                if (table.find(points[i]) != table.end())
-                {
+            for (int i = 0; i < points.size(); ++i) {
+                if (table.find(points[i]) != table.end()) {
                     table.erase(points[i]);
                 }
-                else
-                {
+                else {
                     table.insert(points[i]);
                 }
             }

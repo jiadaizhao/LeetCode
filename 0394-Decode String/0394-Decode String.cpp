@@ -6,16 +6,12 @@ public:
     }
     
 private:
-    string helper(string& s, int& i)
-    {
+    string helper(string& s, int& i) {
         string result = "";
-        while (i < s.size() && s[i] != ']')
-        {
-            if (isdigit(s[i]))
-            {
+        while (i < s.size() && s[i] != ']') {
+            if (isdigit(s[i])) {
                 int num = 0;
-                while (i < s.size() && isdigit(s[i]))
-                {
+                while (i < s.size() && isdigit(s[i])) {
                     num = num * 10 + (s[i] - '0');
                     ++i;
                 }
@@ -23,13 +19,11 @@ private:
                 ++i;
                 string temp = helper(s, i);
                 ++i;
-                while (num--)
-                {
+                while (num--) {
                     result += temp;
                 }
             }
-            else
-            {
+            else {
                 result += s[i++];
             }
         }

@@ -4,10 +4,8 @@ public:
         int m = s.size();
         int n = t.size();
         int p1 = 0, p2 = 0;
-        while (p1 < m && p2 < n)
-        {
-            if (s[p1] == t[p2])
-            {
+        while (p1 < m && p2 < n) {
+            if (s[p1] == t[p2]) {
                 ++p1;
             }
             ++p2;

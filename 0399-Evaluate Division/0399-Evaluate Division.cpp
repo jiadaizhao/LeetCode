@@ -2,27 +2,22 @@ class Solution {
 public:
     vector<double> calcEquation(vector<pair<string, string>> equations, vector<double>& values, vector<pair<string, string>> queries) {
         int n = equations.size();
-        for (int i = 0; i < n; ++i)
-        {
+        for (int i = 0; i < n; ++i) {
             string eq1 = equations[i].first;
             string eq2 = equations[i].second;
             Node *node1, *node2;
-            if (table.find(equations[i].first) != table.end())
-            {
+            if (table.find(equations[i].first) != table.end()) {
                 node1 = table[eq1];
             }
-            else
-            {
+            else {
                 node1 = new Node(values[i]);
                 table[eq1] = node1;
             }
             
-            if (table.find(equations[i].second) != table.end())
-            {
+            if (table.find(equations[i].second) != table.end()) {
                 node2 = table[eq2];
             }
-            else
-            {
+            else {
                 node2 = new Node(1);
                 table[eq2] = node2;
             }
@@ -30,13 +25,10 @@ public:
             Node* parent1 = findParent(node1);
             Node* parent2 = findParent(node2);
             
-            if (parent1 != parent2)
-            {
+            if (parent1 != parent2) {
                 double ratio = node2->val * values[i] / node1->val;
-                for (auto it = table.begin(); it != table.end(); ++it)
-                {
-                    if (findParent(it->second) == parent1)
-                    {
+                for (auto it = table.begin(); it != table.end(); ++it) {
+                    if (findParent(it->second) == parent1) {
                         it->second->val *= ratio;
                     }
                 }
@@ -45,14 +37,11 @@ public:
         }
         
         vector<double> result;
-        for (auto& p : queries)
-        {
-            if (table.find(p.first) == table.end() || table.find(p.second) == table.end() || findParent(table[p.first]) != findParent(table[p.second]))
-            {
+        for (auto& p : queries) {
+            if (table.find(p.first) == table.end() || table.find(p.second) == table.end() || findParent(table[p.first]) != findParent(table[p.second])) {
                 result.push_back(-1);
             }
-            else
-            {
+            else {
                 result.push_back(table[p.first]->val / table[p.second]->val);
             }
         }
@@ -68,13 +57,11 @@ private:
     };
     unordered_map<string, Node*> table;
     
-    Node* findParent(Node* node)
-    {
-        if (node->parent == node)
-        {
-            return node;
+    Node* findParent(Node* node) {
+        while (node->parent != node) {
+            node->parent = node->parent->parent;
+            node = node->parent;
         }
-        
-        return node->parent = findParent(node->parent);
+        return node;
     }
 };

@@ -3,8 +3,7 @@ public:
     int findNthDigit(int n) {
         long count = 9;
         int base = 1;
-        while (n - count * base > 0)
-        {
+        while (n - count * base > 0) {
             n -= count * base;
             count *= 10;
             ++base;

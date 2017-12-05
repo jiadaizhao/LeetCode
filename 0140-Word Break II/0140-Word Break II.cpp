@@ -3,8 +3,7 @@ public:
     vector<string> wordBreak(string s, vector<string>& wordDict) {
         unordered_set<string> wordSet;
         int maxLen = 0;
-        for (string w : wordDict)
-        {
+        for (string w : wordDict) {
             maxLen = max(maxLen, (int)(w.size()));
             wordSet.insert(w);
         }
@@ -20,8 +19,7 @@ private:
         }
         
         vector<string> result;        
-        if (wordSet.find(s) != wordSet.end())
-        {
+        if (wordSet.find(s) != wordSet.end()) {
             result.push_back(s);
         }
         
