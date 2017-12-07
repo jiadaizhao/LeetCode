@@ -6,22 +6,17 @@ public:
         table[0] = -1;
         int maxLen = 0;
         int sum = 0;
-        for (int i = 0; i < nums.size(); ++i)
-        {
-            if (nums[i])
-            {
+        for (int i = 0; i < nums.size(); ++i) {
+            if (nums[i]) {
                 ++sum;
             }
-            else
-            {
+            else {
                 --sum;
             }
-            if (table.find(sum) != table.end())
-            {
+            if (table.find(sum) != table.end()) {
                 maxLen = max(maxLen, i - table[sum]);
             }
-            else
-            {
+            else {
                 table[sum] = i;
             }
         }

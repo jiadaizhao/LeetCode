@@ -4,8 +4,7 @@ public:
     // Encodes a URL to a shortened URL.
     string encode(string longUrl) {
         string key;
-        do
-        {
+        do {
             key = getKey();
         } while (table.find(key) != table.end());
         
@@ -23,11 +22,9 @@ public:
 private:
     unordered_map<string, string> table;
     
-    string getKey()
-    {
+    string getKey() {
         string s;
-        for (int i = 0; i < 6; ++i)
-        {
+        for (int i = 0; i < 6; ++i) {
             s += seed[rand() % seed.size()];
         }
         return s;

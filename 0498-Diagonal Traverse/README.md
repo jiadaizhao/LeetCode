@@ -1,8 +1,8 @@
-# 496. Next Greater Element I
+# 498. Diagonal Traverse
 
-Difficulty: Easy
+Difficulty: Medium
 
-https://leetcode.com/problems/next-greater-element-i/description/
+https://leetcode.com/problems/diagonal-traverse/description/
 
 Given a matrix of M x N elements (M rows, N columns), return all elements of the matrix in diagonal order as shown in the below image.
 

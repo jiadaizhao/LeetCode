@@ -1,27 +1,23 @@
 class Solution {
 public:
     string convertToBase7(int num) {
-        if (num == 0)
-        {
+        if (num == 0) {
             return "0";
         }
         
         string result;
         int sign = 1;
-        if (num < 0)
-        {
+        if (num < 0) {
             sign = -1;
         }
         
         long n = abs(num);
-        while (n)
-        {
+        while (n) {
             result += '0' + (n % 7);
             n /= 7;
         }
         
-        if (sign == -1)
-        {
+        if (sign == -1) {
             result += '-';
         }
         reverse(result.begin(), result.end());

@@ -10,59 +10,36 @@
 class Solution {
 public:
     TreeNode* str2tree(string s) {
-        if (s.size() == 0)
-        {
+        if (s.size() == 0) {
             return nullptr;
         }
-        return helper(s, 0, s.size() - 1);
+        int i = 0;
+        return helper(s, i);
     }
     
 private:
-    TreeNode* helper(string& s, int start, int end)
-    {
-        if (start > end)
-        {
-            return nullptr;
-        }
-        
-        int sign = 1;
+    TreeNode* helper(string& s, int& i) {
         int num = 0;
-        int i = start;
-        if (s[i] == '-')
-        {
+        int sign = 1;
+        if (s[i] == '-') {
             ++i;
             sign = -1;
         }
-        
-        while (i <= end && isdigit(s[i]))
-        {
+        while (i < s.size() && isdigit(s[i])) {
             num = num * 10 + (s[i++] - '0');
         }
         
-        num *= sign;
-        TreeNode* root = new TreeNode(num);
-        if (i <= end)
-        {
-            int balance = 1;
-            start = i + 1;
-            int j = i + 1;
-            while (balance)
-            {
-                if (s[j] == '(')
-                {
-                    ++balance;
-                }
-                else if (s[j] == ')')
-                {
-                    --balance;
-                }
-                ++j;
-            }
+        TreeNode* root = new TreeNode(num * sign);
+        if (i < s.size() && s[i] == '(') {
+            ++i; // '('
+            root->left = helper(s, i);
+            ++i; // ')'
             
-            TreeNode* left = helper(s, start, j - 2);
-            TreeNode* right = helper(s, j + 1, end - 1);
-            root->left = left;
-            root->right = right;
+            if (i < s.size() && s[i] == '(') {
+                ++i; // '('
+                root->right = helper(s, i);
+                ++i; // ')'
+            }
         }
         
         return root;
@@ -82,17 +59,13 @@ public:
         int i = 0;
         while (i < n) {
             char c = s[i];
-            if (c == ')') {
-                St.pop();
-            }
-            else if (isdigit(c) || c == '-') {
+            if (isdigit(c) || c == '-') {
                 int sign = 1;
                 int num = 0;
                 if (c == '-') {
                     ++i;
                     sign = -1;
                 }
-                int j = i;
                 while (i < n && isdigit(s[i])) {                    
                     num = num * 10 + (s[i] - '0');
                     ++i;
@@ -108,9 +81,13 @@ public:
                     }
                 }
                 St.push(node);
-                --i;
             }
-            ++i;
+            else {
+                if (c == ')') {
+                    St.pop();
+                }
+                ++i;
+            }
         }
         
         return St.top();

@@ -10,13 +10,12 @@
 class Solution {
 public:
     vector<int> findFrequentTreeSum(TreeNode* root) {
+        maxCount = 0;
         treeSum(root);
 
         vector<int> result;
-        for (auto t : table)
-        {
-            if (t.second == maxCount)
-            {
+        for (auto t : table) {
+            if (t.second == maxCount) {
                 result.push_back(t.first);
             }
         }
@@ -27,18 +26,15 @@ public:
 private:
     unordered_map<int, int> table;
     int maxCount;
-    int treeSum(TreeNode* root)
-    {
-        if (root == nullptr)
-        {
+    int treeSum(TreeNode* root) {
+        if (root == nullptr) {
             return 0;
         }
         
         int left = treeSum(root->left);
         int right = treeSum(root->right);
         int sum = left + root->val + right;
-        if (++table[sum] > maxCount)
-        {
+        if (++table[sum] > maxCount) {
             maxCount = table[sum];
         }
         return sum;

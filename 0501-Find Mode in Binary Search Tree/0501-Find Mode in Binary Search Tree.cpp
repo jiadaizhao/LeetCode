@@ -25,10 +25,8 @@ private:
     int modeCount;
     int currVal;
     int currCount;
-    void inorder(TreeNode* root, vector<int>& result)
-    {
-        if (root == nullptr)
-        {
+    void inorder(TreeNode* root, vector<int>& result) {
+        if (root == nullptr) {
             return;
         }
         
@@ -37,28 +35,22 @@ private:
         inorder(root->right, result);
     }
     
-    void handleVal(int val, vector<int>& result)
-    {
-        if (val != currVal)
-        {
+    void handleVal(int val, vector<int>& result) {
+        if (val != currVal) {
             currVal = val;
             currCount = 0;
         }
         
         ++currCount;
-        if (currCount > maxCount)
-        {
+        if (currCount > maxCount) {
             maxCount = currCount;
             modeCount = 1;
         }
-        else if (currCount == maxCount)
-        {
+        else if (currCount == maxCount) {
             ++modeCount;
-            if (result.size())
-            {
+            if (result.size()) {
                 result[modeCount - 1] = val;
             }
-        }
-        
+        }        
     }
 };

@@ -2,35 +2,28 @@ class Solution {
 public:
     vector<string> findRelativeRanks(vector<int>& nums) {
         int n = nums.size();
-        if (n == 0)
-        {
+        if (n == 0) {
             return vector<string>();
         }
         vector<pair<int, int>> cells(n);
-        for (int i = 0; i < n; ++i)
-        {
+        for (int i = 0; i < n; ++i) {
             cells[i] = {i, nums[i]};
         }
         
         sort(cells.begin(), cells.end(), cmp());
         vector<string> result(n);
-        for (int i = 0; i < n; ++i)
-        {
+        for (int i = 0; i < n; ++i) {
             string rank;
-            if (i == 0)
-            {
+            if (i == 0) {
                 rank = "Gold Medal";
             }
-            else if (i == 1)
-            {
+            else if (i == 1) {
                 rank = "Silver Medal";
             }
-            else if (i == 2)
-            {
+            else if (i == 2) {
                 rank = "Bronze Medal";
             }
-            else
-            {
+            else {
                 rank = to_string(i + 1);
             }
             
@@ -42,7 +35,7 @@ public:
     
 private:
     struct cmp {
-        bool operator() (pair<int, int>& p1, pair<int, int>& p2) {
+        bool operator() (const pair<int, int>& p1, const pair<int, int>& p2) const {
             return p1.second > p2.second;
         }    
     };

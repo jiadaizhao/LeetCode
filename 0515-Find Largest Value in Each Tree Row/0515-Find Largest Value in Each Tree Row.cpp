@@ -11,28 +11,23 @@ class Solution {
 public:
     vector<int> largestValues(TreeNode* root) {
         vector<int> result;
-        if (root == nullptr)
-        {
+        if (root == nullptr) {
             return result;
         }
         queue<TreeNode*> Q;
         Q.push(root);
-        while (!Q.empty())
-        {
+        while (!Q.empty()) {
             int qs = Q.size();
             int maxVal = Q.front()->val;
-            for (int i = 0; i < qs; ++i)
-            {
+            for (int i = 0; i < qs; ++i) {
                 TreeNode* node = Q.front();
                 Q.pop();
                 maxVal = max(maxVal, node->val);
-                if (node->left)
-                {
+                if (node->left) {
                     Q.push(node->left);
                 }
                 
-                if (node->right)
-                {
+                if (node->right) {
                     Q.push(node->right);
                 }
             }

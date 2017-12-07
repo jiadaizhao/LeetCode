@@ -5,21 +5,17 @@ public:
         int n = dict.size();
         vector<string> result(n);
         vector<int> prev(n, 1);
-        for (int i = 0; i < dict.size(); ++i)
-        {
+        for (int i = 0; i < dict.size(); ++i) {
             string str = getAbbreviation(dict[i], 1);
             result[i] = str;
             ++table[str];
         }
         
         bool unique;
-        do
-        {
+        do {
             unique = true;
-            for (int i = 0; i < n; ++i)
-            {
-                if (table[result[i]] > 1)
-                {
+            for (int i = 0; i < n; ++i) {
+                if (table[result[i]] > 1) {
                     unique = false;
                     ++prev[i];
                     string str = getAbbreviation(dict[i], prev[i]);
@@ -33,10 +29,8 @@ public:
     }
     
 private:
-    string getAbbreviation(string& s, int prev)
-    {
-        if (prev >= (int)(s.size()) - 2)
-        {
+    string getAbbreviation(string& s, int prev) {
+        if (prev >= (int)(s.size()) - 2) {
             return s;
         }
         

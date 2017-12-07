@@ -8,18 +8,14 @@ public:
     }
     
 private:
-    void dfs(vector<int>& used, int start, int N, int& count)
-    {
-        if (start == N + 1)
-        {
+    void dfs(vector<int>& used, int start, int N, int& count) {
+        if (start == N + 1) {
             ++count;
             return;
         }
         
-        for (int i = 1; i <= N; ++i)
-        {
-            if (!used[i - 1] && (i % start == 0 || start % i == 0))
-            {
+        for (int i = 1; i <= N; ++i) {
+            if (!used[i - 1] && (i % start == 0 || start % i == 0)) {
                 used[i - 1] = 1;
                 dfs(used, start + 1, N, count);
                 used[i - 1] = 0;
@@ -39,18 +35,14 @@ public:
     }
     
 private:
-    void dfs(vector<int>& used, int start, int N, int& count)
-    {
-        if (start == 0)
-        {
+    void dfs(vector<int>& used, int start, int N, int& count) {
+        if (start == 0) {
             ++count;
             return;
         }
         
-        for (int i = N; i >= 1; --i)
-        {
-            if (!used[i - 1] && (i % start == 0 || start % i == 0))
-            {
+        for (int i = N; i >= 1; --i) {
+            if (!used[i - 1] && (i % start == 0 || start % i == 0)) {
                 used[i - 1] = 1;
                 dfs(used, start - 1, N, count);
                 used[i - 1] = 0;

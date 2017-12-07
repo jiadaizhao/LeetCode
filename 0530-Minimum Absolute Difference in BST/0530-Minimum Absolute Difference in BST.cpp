@@ -14,18 +14,14 @@ public:
         TreeNode* node = root;
         int minDiff = INT_MAX;
         TreeNode* prev = nullptr;
-        while (node || !St.empty())
-        {
-            if (node)
-            {
+        while (node || !St.empty()) {
+            if (node) {
                 St.push(node);
                 node = node->left;
             }
-            else
-            {
+            else {
                 node = St.top();
-                if (prev)
-                {
+                if (prev) {
                     minDiff = min(minDiff, node->val - prev->val);
                 }
                 prev = node;
