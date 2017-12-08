@@ -11,28 +11,22 @@
 public:
     vector<int> boundaryOfBinaryTree(TreeNode* root) {
         vector<int> result;
-        if (root == nullptr)
-        {
+        if (root == nullptr) {
             return result;
         }
         
         // Left boundary
         TreeNode* node = root;
-        if (root->left == nullptr && root->right)
-        {
+        if (root->left == nullptr && root->right) {
             result.push_back(root->val);
         }
-        else
-        {
-            while (node->left || node->right)
-            {
+        else {
+            while (node->left || node->right) {
                 result.push_back(node->val);
-                if (node->left)
-                {
+                if (node->left) {
                     node = node->left;
                 }
-                else
-                {
+                else {
                     node = node->right;
                 }
             }
@@ -42,44 +36,36 @@ public:
         stack<TreeNode*> St;        
         St.push(root);
         
-        while (!St.empty())
-        {
+        while (!St.empty()) {
             node = St.top();
             St.pop();
             
-            if (node->left == nullptr && node->right == nullptr)
-            {
+            if (node->left == nullptr && node->right == nullptr) {
                 result.push_back(node->val);
             }
             
-            if (node->right)
-            {
+            if (node->right) {
                 St.push(node->right);
             }
             
-            if (node->left)
-            {
+            if (node->left) {
                 St.push(node->left);
             }
         }
         
         // Right boundary
         node = root->right;
-        while (node && (node->right || node->left))
-        {
+        while (node && (node->right || node->left)) {
             St.push(node);
-            if (node->right)
-            {
+            if (node->right) {
                 node = node->right;
             }
-            else
-            {
+            else {
                 node = node->left;
             }
         }
         
-        while (!St.empty())
-        {
+        while (!St.empty()) {
             result.push_back(St.top()->val);
             St.pop();
         }

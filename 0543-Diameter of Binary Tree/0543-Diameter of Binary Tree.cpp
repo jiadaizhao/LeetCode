@@ -10,8 +10,7 @@
  class Solution {
 public:
     int diameterOfBinaryTree(TreeNode* root) {
-        if (root == nullptr)
-        {
+        if (root == nullptr) {
             return 0;
         }
         
@@ -21,10 +20,8 @@ public:
     }
     
 private:
-    int helper(TreeNode* root, int& maxLen)
-    {
-        if (root == nullptr)
-        {
+    int helper(TreeNode* root, int& maxLen) {
+        if (root == nullptr) {
             return 0;
         }
         

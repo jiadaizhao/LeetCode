@@ -13,15 +13,12 @@ public:
         stack<TreeNode*> St;
         TreeNode* node = root;
         int presum = 0;
-        while (node || !St.empty())
-        {
-            if (node)
-            {
+        while (node || !St.empty()) {
+            if (node) {
                 St.push(node);
                 node = node->right;
             }
-            else
-            {
+            else {
                 node = St.top();
                 St.pop();
                 node->val += presum;

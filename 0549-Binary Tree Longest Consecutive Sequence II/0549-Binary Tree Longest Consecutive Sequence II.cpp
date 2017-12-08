@@ -15,10 +15,8 @@ public:
         return maxLen;
     }
 private:
-    void helper(TreeNode* root, int& downLen, int& upLen, int& maxLen)
-    {
-        if (root == nullptr)
-        {
+    void helper(TreeNode* root, int& downLen, int& upLen, int& maxLen) {
+        if (root == nullptr) {
             return;
         }
         
@@ -27,33 +25,26 @@ private:
         int rDownLen = 0, rUpLen = 0;
         helper(root->right, rDownLen, rUpLen, maxLen);
         
-        if (root->left)
-        {
-            if (root->val == root->left->val - 1)
-            {
+        if (root->left) {
+            if (root->val == root->left->val - 1) {
                 downLen = 1 + lDownLen;
             }
-            else if (root->val == root->left->val + 1)
-            {
+            else if (root->val == root->left->val + 1) {
                 upLen = 1 + lUpLen;
             }
         }
         
-        if (root->right)
-        {
-            if (root->val == root->right->val - 1)
-            {
+        if (root->right) {
+            if (root->val == root->right->val - 1) {
                 downLen = max(downLen, 1 + rDownLen);
             }
-            else if (root->val == root->right->val + 1)
-            {
+            else if (root->val == root->right->val + 1) {
                 upLen = max(upLen, 1 + rUpLen);
             }
         }
         
         int len = downLen + 1 + upLen;
-        if (len > maxLen)
-        {
+        if (len > maxLen) {
             maxLen = len;
         }
     }

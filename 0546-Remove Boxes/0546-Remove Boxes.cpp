@@ -5,8 +5,7 @@ class Solution {
 public:
     int removeBoxes(vector<int>& boxes) {
         int n = boxes.size();
-        if (n == 0)
-        {
+        if (n == 0) {
             return 0;
         }
         
@@ -17,27 +16,22 @@ public:
 
 private:
     int dfs(vector<int>& boxes, int dp[][maxn][maxn], int i, int j, int k) {
-        if (i > j)
-        {
+        if (i > j) {
             return 0;
         }
         
-        if (dp[i][j][k])
-        {
+        if (dp[i][j][k]) {
             return dp[i][j][k];
         }        
 
-        while (i < j && boxes[i] == boxes[i + 1])
-        {
+        while (i < j && boxes[i] == boxes[i + 1]) {
             ++i;
             ++k;
         }
 
         int maxVal = dfs(boxes, dp, i + 1, j, 0) + (k + 1) * (k + 1);
-        for (int m = i + 2; m <= j; ++m)
-        {
-            if (boxes[i] == boxes[m])
-            {
+        for (int m = i + 2; m <= j; ++m) {
+            if (boxes[i] == boxes[m]) {
                 maxVal = max(maxVal, dfs(boxes, dp, i + 1, m - 1, 0) + dfs(boxes, dp, m, j, k + 1));
             }
         }

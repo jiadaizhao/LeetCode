@@ -10,33 +10,28 @@ public:
     }
     
 private:
-    vector<int> extract(string& s)
-    {
+    vector<int> extract(string& s) {
         int i = 0;
         int signx = 1, signy = 1;
         int x = 0, y = 0;
-        if (s[i] == '-')
-        {
+        if (s[i] == '-') {
             ++i;
             signx = -1;
         }
         
-        while (s[i] != '+')
-        {
+        while (s[i] != '+') {
             x = x * 10 + (s[i++] - '0');
         }
         
         x *= signx;
         
         ++i;
-        if (s[i] == '-')
-        {
+        if (s[i] == '-') {
             ++i;
             signy = -1;
         }
         
-        while (s[i] != 'i')
-        {
+        while (s[i] != 'i') {
             y = y * 10 + (s[i++] - '0');
         }
         y *= signy;

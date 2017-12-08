@@ -16,10 +16,8 @@ public:
     }
     
 private:
-    int findSum(TreeNode* root, int& sum)
-    {
-        if (root == nullptr)
-        {
+    int findSum(TreeNode* root, int& sum) {
+        if (root == nullptr) {
             return 0;
         }
         

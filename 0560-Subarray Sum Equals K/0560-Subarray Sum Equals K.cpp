@@ -6,8 +6,7 @@ public:
         int sum = 0;
         table[0] = 1;
         int count = 0;
-        for (int num : nums)
-        {
+        for (int num : nums) {
             sum += num;
             count += table[sum - k];
             ++table[sum];
