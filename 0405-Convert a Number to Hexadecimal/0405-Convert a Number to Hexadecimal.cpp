@@ -1,21 +1,17 @@
 class Solution {
 public:
     string toHex(int num) {
-        if (num == 0)
-        {
+        if (num == 0) {
             return "0";
         }
         unsigned int n = num;
         string result;
-        while (n)
-        {
+        while (n) {
             int temp = n % 16;
-            if (temp > 9)
-            {
+            if (temp > 9) {
                 result += 'a' + (temp - 10);
             }
-            else
-            {
+            else {
                 result += '0' + temp;
             }
             n /= 16;

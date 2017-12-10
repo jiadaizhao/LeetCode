@@ -3,20 +3,16 @@ public:
     int findMaximumXOR(vector<int>& nums) {
         int result = 0;
         int mask = 0;
-        for (int b = 30; b >= 0; --b)
-        {
+        for (int b = 30; b >= 0; --b) {
             mask |= (1 << b);
             unordered_set<int> table;
-            for (int& num : nums)
-            {
+            for (int& num : nums) {
                 table.insert(num & mask);
             }
             
             int candidate = result | (1 << b);
-            for (int i : table)
-            {
-                if (table.find(candidate ^ i) != table.end())
-                {
+            for (int i : table) {
+                if (table.find(candidate ^ i) != table.end()) {
                     result = candidate;
                     break;
                 }
@@ -31,9 +27,16 @@ public:
 class TrieNode {
 public:
     TrieNode() {
-        next.resize(2);
+        memset(next, NULL, sizeof(next));
     }
-    vector<TrieNode*> next;
+    ~TrieNode() {
+        for (TrieNode* p : next) {
+            if (p) {
+                delete p;
+            }
+        }
+    }
+    TrieNode* next[2];
 };
 
 class Solution {
@@ -41,25 +44,22 @@ public:
     int findMaximumXOR(vector<int>& nums) {
         TrieNode* root = buildTrie(nums);
         int result = 0;
-        for (int& num : nums)
-        {
+        for (int& num : nums) {
             result = max(result, findMaxXOR(root, num));
         }
         
+        delete root;
         return result;
     }
     
     TrieNode* buildTrie(vector<int>& nums) {
         TrieNode* root = new TrieNode();
         TrieNode* node = root;
-        for (int& num : nums)
-        {
+        for (int& num : nums) {
             node = root;
-            for (int i = 30; i >= 0; --i)
-            {
+            for (int i = 30; i >= 0; --i) {
                 int index = (num & (1 << i)) ? 1 : 0;
-                if (node->next[index] == nullptr)
-                {
+                if (node->next[index] == nullptr) {
                     node->next[index] = new TrieNode();
                 }
                 node = node->next[index];
@@ -69,21 +69,17 @@ public:
         return root;
     }
     
-    int findMaxXOR(TrieNode* root, int num)
-    {
+    int findMaxXOR(TrieNode* root, int num) {
         TrieNode* node = root;
         int result = 0;
-        for (int i = 30; i >= 0; --i)
-        {
+        for (int i = 30; i >= 0; --i) {
             int mask = 1 << i;
             int index = (num & mask) ? 0 : 1;
-            if (node->next[index] != nullptr)
-            {
+            if (node->next[index] != nullptr) {
                 node = node->next[index];
                 result |= mask;
             }
-            else
-            {
+            else {
                 node = node->next[1 - index];
             }
         }

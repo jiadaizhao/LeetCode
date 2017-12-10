@@ -14,60 +14,47 @@ public:
         dummy.left = root;
         TreeNode* parent = &dummy;
         TreeNode* p = root;
-        while (p)
-        {
-            if (p->val == key)
-            {
+        while (p) {
+            if (p->val == key) {
                 break;
             }
             
             parent = p;
-            if (p->val < key)
-            {
+            if (p->val < key) {
                 p = p->right;
             }
-            else
-            {
+            else {
                 p = p->left;
             }
         }
         
-        if (p == nullptr)
-        {
+        if (p == nullptr) {
             return dummy.left;
         }
         
-        if (p->right == nullptr)
-        {
-            if (parent->left == p)
-            {
+        if (p->right == nullptr) {
+            if (parent->left == p) {
                 parent->left = p->left;
             }
-            else
-            {
+            else {
                 parent->right = p->left;
             }
             delete p;
         }
-        else if (p->right->left == nullptr)
-        {
-            if (parent->left == p)
-            {
+        else if (p->right->left == nullptr) {
+            if (parent->left == p) {
                 parent->left = p->right;
             }
-            else
-            {
+            else {
                 parent->right = p->right;
             }
             p->right->left = p->left;
             delete p;
         }
-        else
-        {
+        else {
             parent = p->right;
             TreeNode* curr = parent->left;
-            while (curr->left)
-            {
+            while (curr->left) {
                 parent = curr;
                 curr = curr->left;
             }

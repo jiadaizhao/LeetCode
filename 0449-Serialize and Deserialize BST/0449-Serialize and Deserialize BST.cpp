@@ -12,42 +12,34 @@ public:
 
     // Encodes a tree to a single string.
     string serialize(TreeNode* root) {
-        if (root == nullptr)
-        {
+        if (root == nullptr) {
             return "";
         }
         
         vector<TreeNode*> Q;
         Q.push_back(root);
-        for (int i = 0; i < Q.size(); ++i)
-        {
+        for (int i = 0; i < Q.size(); ++i) {
             TreeNode* node = Q[i];
-            if (node == nullptr)
-            {
+            if (node == nullptr) {
                 continue;
             }
             Q.push_back(node->left);
             Q.push_back(node->right);
         }
         
-        while (Q.back() == nullptr)
-        {
+        while (Q.back() == nullptr) {
             Q.pop_back();
         }
         
         string result;
-        for (TreeNode* node : Q)
-        {
-            if (node == nullptr)
-            {
+        for (TreeNode* node : Q) {
+            if (node == nullptr) {
                 result += ",null";
             }
-            else if (result.size())
-            {
+            else if (result.size()) {
                 result += "," + to_string(node->val);
             }
-            else
-            {
+            else {
                 result += to_string(node->val);
             }
         }
@@ -57,8 +49,7 @@ public:
 
     // Decodes your encoded data to tree.
     TreeNode* deserialize(string data) {
-        if (data.size() == 0)
-        {
+        if (data.size() == 0) {
             return nullptr;
         }
         stringstream ss(data);
@@ -66,31 +57,24 @@ public:
         string s;
         TreeNode* root = nullptr;
         bool left = true;
-        while (getline(ss, s, ','))
-        {
-            if (root == nullptr)
-            {
+        while (getline(ss, s, ',')) {
+            if (root == nullptr) {
                 root = new TreeNode(stoi(s));
                 Q.push(root);
             }
-            else
-            {
-                if (s != "null")
-                {
+            else {
+                if (s != "null") {
                     TreeNode* node = new TreeNode(stoi(s));
-                    if (left)
-                    {
+                    if (left) {
                         Q.front()->left = node;
                     }
-                    else
-                    {
+                    else {
                         Q.front()->right = node;
                     }
                     Q.push(node);
                 }
                 
-                if (!left)
-                {
+                if (!left) {
                     Q.pop();
                 }
                 

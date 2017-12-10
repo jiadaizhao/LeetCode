@@ -6,19 +6,15 @@ public:
         vector<int> table(26);
         int count = 0;
         int j = 0;
-        for (int i = 0; i < n; ++i)
-        {
-            while (j < n)
-            {
+        for (int i = 0; i < n; ++i) {
+            while (j < n) {
                 ++table[s[j] - 'A'];
                 count = max(count, table[s[j] - 'A']);
                 ++j;
-                if (j - i <= count + k)
-                {
+                if (j - i <= count + k) {
                     maxLen = max(maxLen, j - i);
                 }
-                else
-                {
+                else {
                     break;
                 }
             }

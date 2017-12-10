@@ -10,8 +10,7 @@
 class Solution {
 public:
     int pathSum(TreeNode* root, int sum) {
-        if (root == nullptr)
-        {
+        if (root == nullptr) {
             return 0;
         }
         
@@ -23,16 +22,13 @@ public:
         return leftNum + rightNum + count;
     }
 private:
-    void dfs(TreeNode* root, int sum, int& count)
-    {
-        if (root == nullptr)
-        {
+    void dfs(TreeNode* root, int sum, int& count) {
+        if (root == nullptr) {
             return;
         }
         
         sum -= root->val;
-        if (sum == 0)
-        {
+        if (sum == 0) {
             ++count;
         }
         dfs(root->left, sum, count);

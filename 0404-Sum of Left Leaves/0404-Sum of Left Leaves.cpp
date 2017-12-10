@@ -16,15 +16,12 @@ public:
     }
     
 private:
-    void helper(TreeNode* root, TreeNode* parent, int& sum)
-    {
-        if (root == nullptr)
-        {
+    void helper(TreeNode* root, TreeNode* parent, int& sum) {
+        if (root == nullptr) {
             return;
         }
         
-        if (root->left == nullptr && root->right == nullptr && parent && parent->left == root)
-        {
+        if (root->left == nullptr && root->right == nullptr && parent && parent->left == root) {
             sum += root->val;
         }
         

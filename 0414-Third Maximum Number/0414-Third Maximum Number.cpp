@@ -2,11 +2,9 @@ class Solution {
 public:
     int thirdMax(vector<int>& nums) {
         set<int> table;
-        for (int& num : nums)
-        {
+        for (int& num : nums) {
             table.insert(num);
-            if (table.size() > 3)
-            {
+            if (table.size() > 3) {
                 table.erase(table.begin());
             }
         }

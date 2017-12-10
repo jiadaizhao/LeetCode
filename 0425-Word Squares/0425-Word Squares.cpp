@@ -1,10 +1,18 @@
 class TrieNode {
 public:
-    TrieNode () {
-        next.resize(26);
+    TrieNode() {
+        memset(next, NULL, sizeof(next));
+    }
+
+    ~TrieNode() {
+        for (TrieNode* p : next) {
+            if (p) {
+                delete p;
+            }
+        }
     }
     
-    vector<TrieNode*> next;
+    TrieNode* next[26];
     vector<string> prefix;
 };
 
@@ -14,37 +22,32 @@ public:
     vector<vector<string>> wordSquares(vector<string>& words) {
         vector<vector<string>> result;
         int m = words.size();
-        if (m == 0)
-        {
+        if (m == 0) {
             return result;
         }
         int n = words[0].size();
         
         TrieNode* root = new TrieNode();
-        for (string& word : words)
-        {
+        for (string& word : words) {
             insert(word, root);
         }
         
         vector<string> path;
-        for (int i = 0; i < m; ++i)
-        {
+        for (int i = 0; i < m; ++i) {
             path.push_back(words[i]);
             dfs(root, n, path, result);
             path.pop_back();
         }
         
+        delete root;
         return result;
     }
     
 private:
-    void insert(string word, TrieNode* node)
-    {
-        for (char c : word)
-        {
+    void insert(string word, TrieNode* node) {
+        for (char c : word) {
             int i = c - 'a';
-            if (node->next[i] == nullptr)
-            {
+            if (node->next[i] == nullptr) {
                 node->next[i] = new TrieNode();
             }
             node = node->next[i];
@@ -52,14 +55,11 @@ private:
         }
     }
     
-    vector<string> findCandidates(TrieNode* node, string prefix)
-    {
-        for (char c : prefix)
-        {
+    vector<string> findCandidates(TrieNode* node, string prefix) {
+        for (char c : prefix) {
             int i = c - 'a';
-            if (node->next[i] == nullptr)
-            {
-                return vector<string>();
+            if (node->next[i] == nullptr) {
+                return {};
             }
             node = node->next[i];
         }
@@ -67,24 +67,20 @@ private:
         return node->prefix;
     }
     
-    void dfs(TrieNode* root, int n, vector<string>& path, vector<vector<string>>& result)
-    {
-        if (path.size() == n)
-        {
+    void dfs(TrieNode* root, int n, vector<string>& path, vector<vector<string>>& result) {
+        if (path.size() == n) {
             result.push_back(path);
             return;
         }
         
         string prefix;
         int index = path.size();
-        for (string& p : path)
-        {
+        for (string& p : path) {
             prefix += p[index];
         }
         
         vector<string> candidates = findCandidates(root, prefix);
-        for (string& candidate : candidates)
-        {
+        for (string& candidate : candidates) {
             path.push_back(candidate);
             dfs(root, n, path, result);
             path.pop_back();

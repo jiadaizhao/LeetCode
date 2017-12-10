@@ -2,10 +2,8 @@ class Solution {
 public:
     string originalDigits(string s) {
         vector<int> count(10);
-        for (char c : s)
-        {
-            switch (c)
-            {
+        for (char c : s) {
+            switch (c) {
                 case 'z':
                     ++count[0]; // 0
                     break;
@@ -46,10 +44,8 @@ public:
         count[9] -= count[5] + count[6] + count[8];
         
         string result;
-        for (int i = 0; i < count.size(); ++i)
-        {
-            while (count[i]--)
-            {
+        for (int i = 0; i < count.size(); ++i) {
+            while (count[i]--) {
                 result += '0' + i;
             }
         }
