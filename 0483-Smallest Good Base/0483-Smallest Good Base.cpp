@@ -4,15 +4,12 @@ public:
         string result;
         long num = stol(n);
         int maxm = log2(num);
-        for (int m = maxm; m > 1; --m)
-        {
+        for (int m = maxm; m > 1; --m) {
             long k = pow(num, 1.0 / m);
             long temp = num;
             bool found = true;
-            while (temp)
-            {
-                if (temp % k != 1)
-                {
+            while (temp) {
+                if (temp % k != 1) {
                     found = false;
                     break;
                 }
@@ -20,8 +17,7 @@ public:
                 temp = (temp - 1) / k;
             }
             
-            if (found)
-            {
+            if (found) {
                 return to_string(k);
             }
         }

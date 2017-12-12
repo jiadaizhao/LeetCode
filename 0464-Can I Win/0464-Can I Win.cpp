@@ -1,13 +1,11 @@
 class Solution {
 public:
     bool canIWin(int maxChoosableInteger, int desiredTotal) {
-        if (maxChoosableInteger >= desiredTotal)
-        {
+        if (maxChoosableInteger >= desiredTotal) {
             return true;
         }
         
-        if ((1 + maxChoosableInteger) * maxChoosableInteger / 2 < desiredTotal)
-        {
+        if ((1 + maxChoosableInteger) * maxChoosableInteger / 2 < desiredTotal) {
             return false;
         }
         
@@ -17,26 +15,20 @@ public:
     
 private:
     unordered_map<int, bool> cache;
-    bool helper(int used, int maxChoosableInteger, int desiredTotal)
-    {
-        if (desiredTotal <= 0)
-        {
+    bool helper(int used, int maxChoosableInteger, int desiredTotal) {
+        if (desiredTotal <= 0) {
             return false;
         }
-        if (cache.find(used) != cache.end())
-        {
+        if (cache.find(used) != cache.end()) {
             return cache[used];
         }
         
         int key = used;
-        for (int bit = 1; bit <= maxChoosableInteger; ++bit)
-        {
+        for (int bit = 1; bit <= maxChoosableInteger; ++bit) {
             int mask = 1 << bit;
-            if ((used & mask) == 0)
-            {
+            if ((used & mask) == 0) {
                 used |= mask;
-                if (!helper(used, maxChoosableInteger, desiredTotal - bit))
-                {
+                if (!helper(used, maxChoosableInteger, desiredTotal - bit)) {
                     return cache[key] = true;
                 }
                 

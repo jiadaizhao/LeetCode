@@ -3,8 +3,7 @@ public:
     int findMinStep(string board, string hand) {
         int res = INT_MAX;
         vector<int> table(26);
-        for (char h : hand)
-        {
+        for (char h : hand) {
             ++table[h - 'A'];
         }
         
@@ -13,28 +12,22 @@ public:
     }
     
 private:
-    int helper(string board, vector<int>& table)
-    {
+    int helper(string board, vector<int>& table) {
         board = removeConsecutive(board);
-        if (board.empty())
-        {
+        if (board.empty()) {
             return 0;
         }
         int cnt = INT_MAX;
-        for (int i = 0, j = 0; j <= board.size(); ++j)
-        {
-            if (j < board.size() && board[i] == board[j])
-            {
+        for (int i = 0, j = 0; j <= board.size(); ++j) {
+            if (j < board.size() && board[i] == board[j]) {
                 continue;
             }
             
             int need = 3 - (j - i);
-            if (table[board[i] - 'A'] >= need)
-            {
+            if (table[board[i] - 'A'] >= need) {
                 table[board[i] - 'A'] -= need;
                 int res = helper(board.substr(0, i) + board.substr(j), table);
-                if (res != INT_MAX)
-                {
+                if (res != INT_MAX) {
                     cnt = min(cnt, res + need);
                 }
                 table[board[i] - 'A'] += need;
@@ -46,17 +39,13 @@ private:
         return cnt;
     }
     
-    string removeConsecutive(string board)
-    {
-        for (int i = 0, j = 0; j <= board.size(); ++j)
-        {
-            if (i < board.size() && board[i] == board[j])
-            {
+    string removeConsecutive(string board) {
+        for (int i = 0, j = 0; j <= board.size(); ++j) {
+            if (i < board.size() && board[i] == board[j]) {
                 continue;
             }
             
-            if (j - i >= 3)
-            {
+            if (j - i >= 3) {
                 return removeConsecutive(board.substr(0, i) + board.substr(j));
             }
             

@@ -5,24 +5,19 @@ public:
         result[0] = 1;
         int candidate = 2;
         int i = 1;
-        while (i <= s.size())
-        {
+        while (i <= s.size()) {
             result[i] = i + 1;            
-            if (s[i - 1] == 'D')
-            {
+            if (s[i - 1] == 'D') {
                 int j = i;
-                while (i <= s.size() && s[i - 1] == 'D')
-                {
+                while (i <= s.size() && s[i - 1] == 'D') {
                     ++i;
                 }
                 
-                for (int k = j - 1, c = i; k < i; ++k, --c)
-                {
+                for (int k = j - 1, c = i; k < i; ++k, --c) {
                     result[k] = c;
                 }
             }
-            else
-            {
+            else {
                 ++i;
             }
         }
