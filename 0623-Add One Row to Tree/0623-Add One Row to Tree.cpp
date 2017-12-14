@@ -10,8 +10,7 @@
 class Solution {
 public:
     TreeNode* addOneRow(TreeNode* root, int v, int d) {
-        if (d == 1)
-        {
+        if (d == 1) {
             TreeNode* node = new TreeNode(v);
             node->left = root;
             return node;
@@ -23,12 +22,10 @@ public:
     
 private:
     void helper(TreeNode* root, int v, int d) {
-        if (root == nullptr)
-        {
+        if (root == nullptr) {
             return;
         }
-        if (d == 2)
-        {
+        if (d == 2) {
             TreeNode* nleft = new TreeNode(v);
             TreeNode* nright = new TreeNode(v);
             nleft->left = root->left;
@@ -36,8 +33,7 @@ private:
             root->left = nleft;
             root->right = nright;
         }
-        else
-        {
+        else {
             helper(root->left, v, d - 1);
             helper(root->right, v, d - 1);
         }

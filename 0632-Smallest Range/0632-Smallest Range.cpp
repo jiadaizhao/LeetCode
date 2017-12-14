@@ -54,20 +54,17 @@ public:
         vector<pair<int, int>> A;
         int k = nums.size();
         priority_queue<Node> pq;
-        for (int i = 0; i < k; ++i)
-        {
+        for (int i = 0; i < k; ++i) {
             pq.emplace(nums[i][0], i, 0);
         }
         
-        while (!pq.empty())
-        {
+        while (!pq.empty()) {
             int val = pq.top().val;
             int row = pq.top().row;
             int col = pq.top().col;
             pq.pop();
             A.emplace_back(val, row);
-            if (col < nums[row].size() - 1)
-            {
+            if (col < nums[row].size() - 1) {
                 ++col;
                 pq.emplace(nums[row][col], row, col);
             }
@@ -78,31 +75,25 @@ public:
         vector<int> minRange = {A.front().first, A.back().first};
         int j = 0;
         int n = A.size();
-        for (int i = 0; i < n - k + 1; ++i)
-        {
-            while (j < n && count != k)
-            {
-                if (++used[A[j].second] == 1)
-                {
+        for (int i = 0; i < n - k + 1; ++i) {
+            while (j < n && count != k) {
+                if (++used[A[j].second] == 1) {
                     ++count;
                 }
                 ++j;
             }
                         
-            if (count == k)
-            {
+            if (count == k) {
                 int left = A[i].first;
                 int right = A[j - 1].first;
                 if (right - left < minRange[1] - minRange[0] ||
-                    (right - left == minRange[1] - minRange[0] && left < minRange[0]))
-                {
+                    (right - left == minRange[1] - minRange[0] && left < minRange[0])) {
                     minRange[0] = left;
                     minRange[1] = right;
                 }                
             }
                 
-            if (used[A[i].second]-- == 1)
-            {
+            if (used[A[i].second]-- == 1) {
                 --count;
             }
         }

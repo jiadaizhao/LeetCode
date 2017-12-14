@@ -9,13 +9,11 @@ public:
     void set(int r, char c, int v) {
         int row = r - 1;
         int col = c - 'A';
-        if (cells[row][col].val == v)
-        {
+        if (cells[row][col].val == v) {
             return;
         }
         int index = row * width + col;
-        for (auto it = cells[row][col].count.begin(); it != cells[row][col].count.end(); ++it)
-        {
+        for (auto it = cells[row][col].count.begin(); it != cells[row][col].count.end(); ++it) {
             int nr = it->first / width;
             int nc = it->first % width;
             cells[nr][nc].neighbors.erase(index);
@@ -23,17 +21,15 @@ public:
                 
         cells[row][col].count.clear();
         cells[row][col].val = v;
-        vector<vector<bool>> visited = vector<vector<bool>>(height, vector<bool>(width));
+        vector<vector<bool>> visited(height, vector<bool>(width));
         stack<pair<int, int>> St;
         topologicalSort(row, col, St, visited);
         
-        while (!St.empty())
-        {
+        while (!St.empty()) {
             int nr = St.top().first;
             int nc = St.top().second;
             St.pop();
-            if (cells[nr][nc].count.size())
-            {
+            if (cells[nr][nc].count.size()) {
                 cells[nr][nc].val = calculateSum(cells[nr][nc].count); 
             }                       
         }        
@@ -48,28 +44,23 @@ public:
         int row = r - 1;
         int col = c - 'A';
         int index = row * width + col;
-        for (string& str : strs)
-        {
+        for (string& str : strs) {
             size_t loc = str.find(":");
-            if (loc == string::npos)
-            {
+            if (loc == string::npos) {
                 int nr = stoi(str.substr(1)) - 1;
                 int nc = str[0] - 'A';
                 cells[nr][nc].neighbors.insert(index);
                 ++count[nr * width + nc];
             }
-            else
-            {
+            else {
                 string leftTop = str.substr(0, loc);
                 string rightBottom = str.substr(loc + 1);
                 int rs = stoi(leftTop.substr(1)) - 1;
                 int re = stoi(rightBottom.substr(1)) - 1;
                 int cs = leftTop[0] - 'A';
                 int ce = rightBottom[0] - 'A';
-                for (int i = rs; i <= re; ++i)
-                {
-                    for (int j = cs; j <= ce; ++j)
-                    {
+                for (int i = rs; i <= re; ++i) {
+                    for (int j = cs; j <= ce; ++j) {
                         cells[i][j].neighbors.insert(index);
                         ++count[i * width + j];
                     }
@@ -88,8 +79,7 @@ private:
         int val;
         unordered_map<int, int> count;
         unordered_set<int> neighbors;
-        Cell ()
-        {
+        Cell() {
             val = 0;
         }
     };
@@ -98,14 +88,12 @@ private:
     int width;
     
     void topologicalSort(int r, int c, stack<pair<int, int>>& St, vector<vector<bool>>& visited) {
-        if (visited[r][c])
-        {
+        if (visited[r][c]) {
             return;
         }
         
         visited[r][c] = true;
-        for (auto it = cells[r][c].neighbors.begin(); it != cells[r][c].neighbors.end(); ++it)
-        {
+        for (auto it = cells[r][c].neighbors.begin(); it != cells[r][c].neighbors.end(); ++it) {
             int index = *it;
             topologicalSort(index / width, index % width, St, visited);
         }
@@ -113,11 +101,9 @@ private:
         St.push({r, c});
     }
     
-    int calculateSum(unordered_map<int, int>& count)
-    {
+    int calculateSum(unordered_map<int, int>& count) {
         int sum = 0;
-        for (auto it = count.begin(); it != count.end(); ++it)
-        {
+        for (auto it = count.begin(); it != count.end(); ++it) {
             int index = it->first;
             sum += cells[index / width][index % width].val * (it->second);
         }

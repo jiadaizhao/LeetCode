@@ -10,8 +10,7 @@
 class Solution {
 public:
     bool isSubtree(TreeNode* s, TreeNode* t) {
-        if (s == nullptr || t == nullptr)
-        {
+        if (s == nullptr || t == nullptr) {
             return s == t;
         }
         
@@ -20,8 +19,7 @@ public:
     
 private:
     bool isSameTree(TreeNode* p, TreeNode* q) {
-        if (p == nullptr || q == nullptr)
-        {
+        if (p == nullptr || q == nullptr) {
             return p == q;
         }
         

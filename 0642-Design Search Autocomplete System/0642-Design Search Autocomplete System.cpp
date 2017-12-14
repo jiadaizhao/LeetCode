@@ -3,30 +3,19 @@ struct Node {
     string sentence;
     Node(int t, string s): times(t), sentence(s) {}
     bool operator < (Node node) const {
-        if (times == node.times)
-        {
+        if (times == node.times) {
             return sentence < node.sentence;
         }
         return times > node.times;
     }
 };
 
-struct cmp {
-    bool operator () (Node* n1, Node* n2) {
-        if (n1->times == n2->times)
-        {
-            return n1->sentence > n2->sentence;
-        }
-        return n1->times < n2->times;
-    }
-};
-
 struct TrieNode {
     TrieNode() {
-        next.resize(27);
+        memset(next, NULL, sizeof(next));
         times = 0;
     }
-    vector<TrieNode*> next;
+    TrieNode* next[27];
     int times;
     ~TrieNode() {
         for (auto p : next) {
@@ -43,26 +32,22 @@ public:
         root = new TrieNode();
         currNode = root;
         curr = "";
-        for (int i = 0; i < sentences.size(); ++i)
-        {
+        for (int i = 0; i < sentences.size(); ++i) {
             insert(root, sentences[i], times[i]);
         }
     }
     
     vector<string> input(char c) {
-        if (c == '#')
-        {
+        if (c == '#') {
             insert(root, curr, 1);
             curr = "";
             currNode = root;
             return {};
         }
-        else
-        {
+        else {
             curr += c;
             int index = (c == ' ') ? 26 : c - 'a';
-            if (currNode == nullptr || currNode->next[index] == nullptr)
-            {
+            if (currNode == nullptr || currNode->next[index] == nullptr) {
                 currNode = nullptr;
                 return {};
             }
@@ -70,18 +55,15 @@ public:
             vector<Node> candidates;
             dfs(currNode, curr, candidates);
             priority_queue<Node> pq;
-            for (auto& node : candidates)
-            {
+            for (auto& node : candidates) {
                 pq.push(node);
-                if (pq.size() > 3)
-                {
+                if (pq.size() > 3) {
                     pq.pop();
                 }
             }
             
             vector<string> result;
-            while (!pq.empty())
-            {
+            while (!pq.empty()) {
                 result.push_back(pq.top().sentence);
                 pq.pop();
             }
@@ -101,11 +83,9 @@ private:
     TrieNode* currNode;
     void insert(TrieNode* root, string sentence, int times) {
         TrieNode* node = root;
-        for (char c : sentence)
-        {
+        for (char c : sentence) {
             int index = (c == ' ') ? 26 : c - 'a';
-            if (node->next[index] == nullptr)
-            {
+            if (node->next[index] == nullptr) {
                 node->next[index] = new TrieNode();
             }
             node = node->next[index];
@@ -113,23 +93,18 @@ private:
         node->times += times;
     }
     
-    void dfs(TrieNode* node, string s, vector<Node>& candidates)
-    {
-        if (node->times)
-        {
+    void dfs(TrieNode* node, string s, vector<Node>& candidates) {
+        if (node->times) {
             candidates.emplace_back(node->times, s);
         }
         
-        for (int i = 0; i < 26; ++i)
-        {
-            if (node->next[i])
-            {
+        for (int i = 0; i < 26; ++i) {
+            if (node->next[i]) {
                 dfs(node->next[i], s + char('a' + i), candidates);
             }
         }
         
-        if (node->next[26])
-        {
+        if (node->next[26]) {
             dfs(node->next[26], s + ' ', candidates);
         }
     }
@@ -154,22 +129,12 @@ struct Node {
     }
 };
 
-struct cmp {
-    bool operator () (Node* n1, Node* n2) {
-        if (n1->times == n2->times)
-        {
-            return n1->sentence < n2->sentence;
-        }
-        return n1->times > n2->times;
-    }
-};
-
 class TrieNode {
 public:
     TrieNode() {
-        next.resize(27);
+        memset(next, NULL, sizeof(next));
     }
-    vector<TrieNode*> next;
+    TrieNode* next[27];
     unordered_map<string, int> strMap;
     ~TrieNode() {
         for (auto p : next) {
@@ -206,22 +171,18 @@ public:
                 return{};
             }
             currNode = currNode->next[index];
-            priority_queue<Node*, vector<Node*>, cmp> pq;
+            priority_queue<Node> pq;
             for (auto it = currNode->strMap.begin(); it != currNode->strMap.end(); ++it) {
-                pq.emplace(new Node(it->second, it->first));
+                pq.emplace(it->second, it->first);
                 if (pq.size() > 3) {
-                    // Node* q = pq.top();
                     pq.pop();
-                    // delete q;
                 }
             }
 
             vector<string> result;
             while (!pq.empty()) {
-                result.push_back(pq.top()->sentence);
-                // Node* q = pq.top();
+                result.push_back(pq.top().sentence);
                 pq.pop();
-                // delete q;
             }
             reverse(result.begin(), result.end());
             return result;
@@ -262,8 +223,7 @@ struct Node {
 
 struct cmp {
     bool operator () (Node* n1, Node* n2) {
-        if (n1->times == n2->times)
-        {
+        if (n1->times == n2->times) {
             return n1->sentence > n2->sentence;
         }
         return n1->times < n2->times;
@@ -272,9 +232,9 @@ struct cmp {
 
 struct TrieNode {
     TrieNode() {
-        next.resize(27);
+        memset(next, NULL, sizeof(next));
     }
-    vector<TrieNode*> next;
+    TrieNode* next[27];
     set<Node*, cmp> table;
     unordered_map<string, set<Node*>::iterator> strMap;
     ~TrieNode() {
@@ -296,34 +256,29 @@ public:
         root = new TrieNode();
         currNode = root;
         curr = "";
-        for (int i = 0; i < sentences.size(); ++i)
-        {
+        for (int i = 0; i < sentences.size(); ++i) {
             insert(root, sentences[i], times[i]);
         }
     }
     
     vector<string> input(char c) {
-        if (c == '#')
-        {
+        if (c == '#') {
             insert(root, curr, 1);
             curr = "";
             currNode = root;
             return {};
         }
-        else
-        {
+        else {
             curr += c;
             int index = (c == ' ') ? 26 : c - 'a';
-            if (currNode == nullptr || currNode->next[index] == nullptr)
-            {
+            if (currNode == nullptr || currNode->next[index] == nullptr) {
                 currNode = nullptr;
                 return {};
             }
             currNode = currNode->next[index];
             vector<string> result;
             int i = 0;
-            for (auto it = currNode->table.rbegin(); it != currNode->table.rend() && i < 3; ++it, ++i)
-            {
+            for (auto it = currNode->table.rbegin(); it != currNode->table.rend() && i < 3; ++it, ++i) {
                 result.push_back((*it)->sentence);
             }
             return result;            
@@ -340,21 +295,17 @@ private:
     TrieNode* currNode;
     void insert(TrieNode* root, string sentence, int times) {
         TrieNode* node = root;
-        for (char c : sentence)
-        {
+        for (char c : sentence) {
             int index = (c == ' ') ? 26 : c - 'a';
-            if (node->next[index] == nullptr)
-            {
+            if (node->next[index] == nullptr) {
                 node->next[index] = new TrieNode();
             }
             node = node->next[index];
             Node* n = nullptr;
-            if (node->strMap.find(sentence) == node->strMap.end())
-            {
+            if (node->strMap.find(sentence) == node->strMap.end()) {
                 n = new Node(times, sentence);
             }
-            else
-            {
+            else {
                 auto it = node->strMap[sentence];                
                 n = new Node((*it)->times + times, sentence);
                 node->table.erase(it);

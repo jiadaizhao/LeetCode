@@ -14,24 +14,19 @@ public:
         int n = points.size();
         vector<Point> hull;
 
-        for (int i = 0; i < n; ++i)
-        {
-            while (hull.size() >= 2 && orientation(hull[hull.size() - 2], hull.back(), points[i]) < 0)
-            {
+        for (int i = 0; i < n; ++i) {
+            while (hull.size() >= 2 && orientation(hull[hull.size() - 2], hull.back(), points[i]) < 0) {
                 hull.pop_back();
             }
             hull.push_back(points[i]);
         }
         
-        if (hull.size() == n)
-        {
+        if (hull.size() == n) {
             return hull;
         }
         
-        for (int i = n - 2; i >= 0; --i)
-        {
-            while (hull.size() >= 2 && orientation(hull[hull.size() - 2], hull.back(), points[i]) < 0)
-            {
+        for (int i = n - 2; i >= 0; --i) {
+            while (hull.size() >= 2 && orientation(hull[hull.size() - 2], hull.back(), points[i]) < 0) {
                 hull.pop_back();
             }
             hull.push_back(points[i]);
@@ -45,19 +40,16 @@ public:
 private:
     struct cmp {
         bool operator() (Point p1, Point p2) {
-            if (p1.x == p2.x)
-            {
+            if (p1.x == p2.x) {
                 return p1.y < p2.y;
             }
-            else
-            {
+            else {
                 return p1.x < p2.x;
             }
         }
     };
     
-    int orientation(Point p, Point q, Point r)
-    {
+    int orientation(Point p, Point q, Point r) {
         return (q.x - p.x) * (r.y - q.y) - (q.y - p.y) * (r.x - q.x);
     }
 };

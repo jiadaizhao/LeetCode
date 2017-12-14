@@ -3,32 +3,26 @@ public:
     StringIterator(string compressedString) {
         start = 0;
         str = compressedString;
-        if (str.size())
-        {
+        if (str.size()) {
             c = str[start++];
         }
         count = 0;
         
-        while (start < str.size() && isdigit(str[start]))
-        {
+        while (start < str.size() && isdigit(str[start])) {
             count = count * 10 + (str[start] - '0');
             ++start;
         }
     }
     
     char next() {
-        if (hasNext())
-        {
+        if (hasNext()) {
             char result = c;
             --count;
-            if (count == 0)
-            {
-                if (start < str.size())
-                {
+            if (count == 0) {
+                if (start < str.size()) {
                     c = str[start++];
                 }
-                while (start < str.size() && isdigit(str[start]))
-                {
+                while (start < str.size() && isdigit(str[start])) {
                     count = count * 10 + (str[start] - '0');
                     ++start;
                 }
@@ -36,14 +30,13 @@ public:
             
             return result;
         }
-        else
-        {
+        else {
             return ' ';
         }
     }
     
     bool hasNext() {
-        return count;        
+        return count != 0;        
     }
     
 private:

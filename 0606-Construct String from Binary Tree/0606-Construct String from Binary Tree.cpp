@@ -11,19 +11,16 @@ class Solution {
 public:
     string tree2str(TreeNode* t) {
         string result;
-        if (t == nullptr)
-        {
+        if (t == nullptr) {
             return "";
         }
         
         result += to_string(t->val);
-        if (t->right)
-        {
+        if (t->right) {
             result += '(' + tree2str(t->left) + ')';
             result += '(' + tree2str(t->right) + ')';
         }
-        else if (t->left)
-        {
+        else if (t->left) {
             result += '(' + tree2str(t->left) + ')';
         }
         

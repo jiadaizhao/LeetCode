@@ -31,6 +31,7 @@ Output:
 3. The number of files given is in the range of [1,20000].
 4. You may assume no files or directories share the same name in the same directory.
 5. You may assume each given directory info represents a unique directory. Directory path and file info are separated by a single blank space.
+
 **Follow-up beyond contest:**
 1. Imagine you are given a real file system, how will you search files? DFS or BFS?
 2. If the file content is very large (GB level), how will you modify your solution?

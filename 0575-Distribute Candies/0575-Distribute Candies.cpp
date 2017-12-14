@@ -2,8 +2,7 @@ class Solution {
 public:
     int distributeCandies(vector<int>& candies) {
         unordered_set<int> table;
-        for (int i : candies)
-        {
+        for (int i : candies) {
             table.insert(i);
         }
         

@@ -6,27 +6,22 @@ public:
         int sign = 1;
         int numerator = 0, denominator = 0;
         vector<int> result = {0, 1};
-        while (i < n)
-        {
-            if (expression[i] == '-')
-            {
+        while (i < n) {
+            if (expression[i] == '-') {
                 sign = -1;
                 ++i;
             }
-            else if (expression[i] == '+')
-            {
+            else if (expression[i] == '+') {
                 ++i;
             }
             
-            while (i < n && isdigit(expression[i]))
-            {
+            while (i < n && isdigit(expression[i])) {
                 numerator = numerator * 10 + (expression[i++] - '0');
             }
             
             ++i; // '/'
             
-            while (i < n && isdigit(expression[i]))
-            {
+            while (i < n && isdigit(expression[i])) {
                 denominator = denominator * 10 + (expression[i++] - '0');
             }
             
@@ -40,8 +35,7 @@ public:
     }
     
 private:
-    vector<int> fractionSum(int num1, int den1, int num2, int den2)
-    {
+    vector<int> fractionSum(int num1, int den1, int num2, int den2) {
         vector<int> result(2);
         result[1] = den1 * den2;
         result[0] = num1 * den2 + num2 * den1;
@@ -51,12 +45,10 @@ private:
         return result;
     }
     
-    int GCD(int a, int b)
-    {
+    int GCD(int a, int b) {
         a = abs(a);
         b = abs(b);
-        while (b)
-        {
+        while (b) {
             int temp = a;
             a = b;
             b = temp % b;

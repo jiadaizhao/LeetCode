@@ -5,9 +5,8 @@ public:
         int m = arrays.size();
         int minNum = arrays[0].front();
         int maxNum = arrays[0].back();
-        for (int i = 1; i < m; ++i)
-        {
-            maxDist = max(maxDist, max(abs(arrays[i].back() - minNum), abs(arrays[i].front() - maxNum)));
+        for (int i = 1; i < m; ++i) {
+            maxDist = max({maxDist, abs(arrays[i].back() - minNum), abs(arrays[i].front() - maxNum)});
             minNum = min(minNum, arrays[i].front());
             maxNum = max(maxNum, arrays[i].back());
         }

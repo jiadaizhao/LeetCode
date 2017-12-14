@@ -8,27 +8,21 @@ public:
         int num = 0;
         bool prenum = false;
         int sign = 1;
-        while (i < n && equation[i] != '=')
-        {
-            if (isdigit(equation[i]))
-            {
+        while (equation[i] != '=') {
+            if (isdigit(equation[i])) {
                 num = num * 10 + (equation[i] - '0');
                 prenum = true;
             }
-            else if (equation[i] == 'x')
-            {
-                if (prenum)
-                {
+            else if (equation[i] == 'x') {
+                if (prenum) {
                     leftx += sign * num;
                 }
-                else
-                {
+                else {
                     leftx += sign;
                 }
                 num = 0;
             }
-            else
-            {
+            else {
                 leftsum += sign * num;
                 sign = (equation[i] == '+') ? 1 : -1;
                 num = 0;
@@ -44,27 +38,21 @@ public:
         sign = 1;
         prenum = false;
         
-        while (i < n)
-        {
-            if (isdigit(equation[i]))
-            {
+        while (i < n) {
+            if (isdigit(equation[i])) {
                 num = num * 10 + (equation[i] - '0');
                 prenum = true;
             }
-            else if (equation[i] == 'x')
-            {
-                if (prenum)
-                {
+            else if (equation[i] == 'x') {
+                if (prenum) {
                     rightx += sign * num;
                 }
-                else
-                {
+                else {
                     rightx += sign;
                 }
                 num = 0;
             }
-            else
-            {
+            else {
                 rightsum += sign * num;
                 sign = (equation[i] == '+') ? 1 : -1;
                 num = 0;
@@ -78,19 +66,15 @@ public:
         int xnum = leftx - rightx;
         int val = rightsum - leftsum;
         
-        if (xnum == 0)
-        {
-            if (val == 0)
-            {
+        if (xnum == 0) {
+            if (val == 0) {
                 return "Infinite solutions";
             }
-            else
-            {
+            else {
                 return "No solution";
             }
         }
-        else
-        {
+        else {
             return "x=" + to_string(val / xnum);
         }
     }

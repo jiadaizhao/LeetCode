@@ -3,8 +3,7 @@ public:
     int minDistance(int height, int width, vector<int>& tree, vector<int>& squirrel, vector<vector<int>>& nuts) {
         int sum = 0;
         int maxDiff = INT_MIN;
-        for (auto nut : nuts)
-        {
+        for (auto nut : nuts) {
             int nutTreeDist = abs(tree[0] - nut[0]) + abs(tree[1] - nut[1]);
             sum += nutTreeDist * 2;
             int nutSquirrelDist = abs(squirrel[0] - nut[0]) + abs(squirrel[1] - nut[1]);

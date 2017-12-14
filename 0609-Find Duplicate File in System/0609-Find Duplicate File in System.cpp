@@ -2,28 +2,23 @@ class Solution {
 public:
     vector<vector<string>> findDuplicate(vector<string>& paths) {
         unordered_map<string, vector<string>> table;
-        for (string path : paths)
-        {
+        for (string path : paths) {
             string dir;
             int i = 0;
-            while (i < path.size() && path[i] != ' ')
-            {
+            while (i < path.size() && path[i] != ' ') {
                 dir += path[i++];
             }
             ++i;
             
-            while (i < path.size())
-            {
+            while (i < path.size()) {
                 string file;
-                while (i < path.size() && path[i] != '(')
-                {
+                while (i < path.size() && path[i] != '(') {
                     file += path[i++];
                 }
 
                 ++i;
                 string content;
-                while (i < path.size() && path[i] != ')')
-                {
+                while (i < path.size() && path[i] != ')') {
                     content += path[i++];
                 }
                 table[content].push_back(dir + '/' + file);
@@ -32,10 +27,8 @@ public:
         }
         
         vector<vector<string>> result;
-        for (auto t : table)
-        {
-            if (t.second.size() > 1)
-            {
+        for (auto t : table) {
+            if (t.second.size() > 1) {
                 result.push_back(t.second);
             }
         }

@@ -4,7 +4,7 @@ Difficulty: Easy
 
 https://leetcode.com/problems/sum-of-square-numbers/description/
 
-Given a non-negative integer c, your task is to decide whether there're two integers a and b such that a2 + b2 = c.
+Given a non-negative integer c, your task is to decide whether there're two integers a and b such that a<sup>2</sup> + b<sup>2</sup> = c.
 
 **Example 1:**
 ```

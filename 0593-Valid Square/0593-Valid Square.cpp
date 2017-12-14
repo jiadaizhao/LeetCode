@@ -9,8 +9,7 @@ public:
         ++table[distanceSq(p2, p4)];
         ++table[distanceSq(p3, p4)];
         
-        if (table.size() != 2)
-        {
+        if (table.size() != 2) {
             return false;
         }
         
@@ -20,8 +19,7 @@ public:
     }
     
 private:
-    int distanceSq(vector<int>& p1, vector<int>& p2)
-    {
+    int distanceSq(vector<int>& p1, vector<int>& p2) {
         return (p1[0] - p2[0]) * (p1[0] - p2[0]) + (p1[1] - p2[1]) * (p1[1] - p2[1]);
     }
 };
