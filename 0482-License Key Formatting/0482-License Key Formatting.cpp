@@ -3,12 +3,9 @@ public:
     string licenseKeyFormatting(string S, int K) {
         string result;
         int j = 0;
-        for (int i = S.size() - 1; i >= 0; --i)
-        {
-            if (S[i] != '-')
-            {
-                if (j == K)
-                {
+        for (int i = S.size() - 1; i >= 0; --i) {
+            if (S[i] != '-') {
+                if (j == K) {
                     result += '-';
                     j = 0;
                 }

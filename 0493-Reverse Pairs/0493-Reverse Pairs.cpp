@@ -2,8 +2,7 @@ class Solution {
 public:
     int reversePairs(vector<int>& nums) {
         int n = nums.size();
-        if (n == 0)
-        {
+        if (n == 0) {
             return 0;
         }
         
@@ -15,10 +14,8 @@ public:
     }
     
 private:
-    void mergeSort(vector<int>& nums, int start, int end, vector<int>& temp, int& count)
-    {
-        if (start < end)
-        {
+    void mergeSort(vector<int>& nums, int start, int end, vector<int>& temp, int& count) {
+        if (start < end) {
             int mid = start + (end - start) / 2;
             mergeSort(nums, start, mid, temp, count);
             mergeSort(nums, mid + 1, end, temp, count);
@@ -26,45 +23,27 @@ private:
         }
     }
     
-    void merge(vector<int>& nums, int start, int mid, int end, vector<int>& temp, int& count)
-    {
+    void merge(vector<int>& nums, int start, int mid, int end, vector<int>& temp, int& count) {
         int i = start, j = mid + 1, p = mid + 1;
         int k = start;
-        while (i <= mid && j <= end)
-        {
-            while (p <= end && nums[i] > 2LL * nums[p])
-            {
+        while (i <= mid) {
+            while (p <= end && nums[i] > 2LL * nums[p]) {
                 ++p;
             }
             
-            if (nums[i] <= nums[j])
-            {
-                count += p - (mid + 1);
-                temp[k++] = nums[i++];
-            }
-            else
-            {
+            count += p - (mid + 1);
+            
+            while (j <= end && nums[j] < nums[i]) {
                 temp[k++] = nums[j++];
             }
-        }
-        
-        while (i <= mid)
-        {
-            while (p <= end && nums[i] > 2LL * nums[p])
-            {
-                ++p;
-            }
-            count += p - (mid + 1);
             temp[k++] = nums[i++];
         }
         
-        while (j <= end)
-        {
+        while (j <= end) {
             temp[k++] = nums[j++];
         }
         
-        for (int i = start; i <= end; ++i)
-        {
+        for (int i = start; i <= end; ++i) {
             nums[i] = temp[i];
         }
     }

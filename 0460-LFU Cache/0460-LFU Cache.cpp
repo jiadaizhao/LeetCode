@@ -5,8 +5,7 @@ public:
     }
     
     int get(int key) {
-        if (cacheMap.find(key) == cacheMap.end())
-        {
+        if (cacheMap.find(key) == cacheMap.end()) {
             return -1;
         }
         
@@ -15,8 +14,7 @@ public:
         ++node->freq;
         freqMap[node->freq].push_front(key);
         node->it = freqMap[node->freq].begin();
-        if (freqMap[minFreq].size() == 0)
-        {
+        if (freqMap[minFreq].size() == 0) {
             minFreq = node->freq;
         }
         
@@ -24,15 +22,12 @@ public:
     }
     
     void put(int key, int value) {
-        if (capacity <= 0)
-        {
+        if (capacity <= 0) {
             return;
         }
         
-        if (get(key) == -1)
-        {
-            if (cacheMap.size() == capacity)
-            {
+        if (get(key) == -1) {
+            if (cacheMap.size() == capacity) {
                 int popKey = freqMap[minFreq].back();
                 cacheMap.erase(popKey);
                 freqMap[minFreq].pop_back();
@@ -44,8 +39,7 @@ public:
             node->it = freqMap[1].begin();
             cacheMap[key] = node;
         }
-        else
-        {
+        else {
             cacheMap[key]->val = value;
         }
     }

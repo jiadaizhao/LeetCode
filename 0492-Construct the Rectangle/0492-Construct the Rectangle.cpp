@@ -3,10 +3,8 @@ public:
     vector<int> constructRectangle(int area) {
         vector<int> result(2);
         int W;
-        for (W = sqrt(area); W >= 1; --W)
-        {
-            if (area % W == 0)
-            {
+        for (W = sqrt(area); W >= 1; --W) {
+            if (area % W == 0) {
                 break;
             }
         }
