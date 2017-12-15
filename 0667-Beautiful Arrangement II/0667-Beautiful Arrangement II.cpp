@@ -4,14 +4,11 @@ public:
         vector<int> result(n);
         int start = 1, end = n;
         int i = 0;
-        while (start <= end)
-        {
-            if (k > 1)
-            {
+        while (start <= end) {
+            if (k > 1) {
                 result[i] = (k-- % 2 == 0) ? start++ : end--;
             }
-            else
-            {
+            else {
                 result[i] = end--;
             }
             ++i;

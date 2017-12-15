@@ -18,8 +18,7 @@ struct Node {
 class Solution {
 public:
     int widthOfBinaryTree(TreeNode* root) {
-        if (root == nullptr)
-        {
+        if (root == nullptr) {
             return 0;
         }
         int maxWidth = 0;
@@ -27,27 +26,22 @@ public:
 
         Q.emplace(1, root);
         
-        while (!Q.empty())
-        {
+        while (!Q.empty()) {
             int qs = Q.size();
             int left = -1, right = -1;
-            for (int i = 0; i < qs; ++i)
-            {
+            for (int i = 0; i < qs; ++i) {
                 Node* node = &(Q.front());
                 Q.pop();
-                if (left == -1)
-                {
+                if (left == -1) {
                     left = node->index;
                 }
 
                 right = node->index;
-                if (node->treeNode->left)
-                {
+                if (node->treeNode->left) {
                     Q.emplace(node->index * 2, node->treeNode->left);
                 }
 
-                if (node->treeNode->right)
-                {
+                if (node->treeNode->right) {
                     Q.emplace(node->index * 2 + 1, node->treeNode->right);
                 }
             }

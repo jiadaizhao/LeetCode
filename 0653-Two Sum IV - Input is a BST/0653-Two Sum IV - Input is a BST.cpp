@@ -10,30 +10,25 @@
 class Solution {
 public:
     bool findTarget(TreeNode* root, int k) {
-        if (root == nullptr)
-        {
+        if (root == nullptr) {
             return false;
         }
         
         stack<TreeNode*> St;
         St.push(root);
-        while (!St.empty())
-        {
+        while (!St.empty()) {
             TreeNode* node = St.top();
-            if (table.find(k - node->val) != table.end())
-            {
+            if (table.find(k - node->val) != table.end()) {
                 return true;
             }
             table.insert(node->val);
             St.pop();
             
-            if (node->right)
-            {
+            if (node->right) {
                 St.push(node->right);
             }
             
-            if (node->left)
-            {
+            if (node->left) {
                 St.push(node->left);
             }
         }
