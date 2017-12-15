@@ -4,18 +4,14 @@ public:
         vector<int> result(2);
         int n = nums.size();
         vector<int> table(n);
-        for (int i = 0; i < n; ++i)
-        {
-            if (++table[nums[i] - 1] == 2)
-            {
+        for (int i = 0; i < n; ++i) {
+            if (++table[nums[i] - 1] == 2) {
                 result[0] = nums[i];
             }
         }
         
-        for (int i = 0; i < n; ++i)
-        {
-            if (table[i] == 0)
-            {
+        for (int i = 0; i < n; ++i) {
+            if (table[i] == 0) {
                 result[1] = i + 1;
                 break;
             }

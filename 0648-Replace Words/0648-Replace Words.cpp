@@ -1,11 +1,9 @@
 class TrieNode {
 public:
-    vector<TrieNode*> next;
-    bool isEnd;
+    TrieNode* next[26];
     string str;
     TrieNode() {
-        next.resize(26);
-        isEnd = false;
+        memset(next, NULL, sizeof(next));
         str = "";
     }
     ~TrieNode() {
@@ -17,33 +15,27 @@ public:
     }
 };
 
-
 class Solution {
 public:
     string replaceWords(vector<string>& dict, string sentence) {
         TrieNode* root = new TrieNode();
-        for (string word : dict)
-        {
+        for (string word : dict) {
             insert(root, word);
         }
         
         int n = sentence.size();
-        int i = 0;
-        string word;
+        int i = 0;        
         string result;
-        while (i < n)
-        {
-            while (i < n && sentence[i] != ' ')
-            {
+        while (i < n) {
+            string word;
+            while (i < n && sentence[i] != ' ') {
                 word += sentence[i++];
             }
             
             result += findRoot(root, word);
-            if (i < n)
-            {
+            if (i < n) {
                 result += ' ';
             }            
-            word = "";
             ++i;
         }
         
@@ -52,33 +44,25 @@ public:
     }
 
 private:
-    void insert(TrieNode* root, string word)
-    {
+    void insert(TrieNode* root, string word) {
         TrieNode* node = root;
-        for (char c : word)
-        {
-            if (node->next[c - 'a'] == nullptr)
-            {
+        for (char c : word) {
+            if (node->next[c - 'a'] == nullptr) {
                 node->next[c - 'a'] = new TrieNode();
             }
             node = node->next[c - 'a'];
         }
-        node->isEnd = true;
         node->str = word;
     }
     
-    string findRoot(TrieNode* root, string word)
-    {
+    string findRoot(TrieNode* root, string word) {
         TrieNode* node = root;
-        for (char c : word)
-        {
-            if (node->next[c - 'a'] == nullptr)
-            {
+        for (char c : word) {
+            if (node->next[c - 'a'] == nullptr) {
                 return word;
             }
             node = node->next[c - 'a'];
-            if (node->isEnd)
-            {
+            if (node->str.size()) {
                 return node->str;
             }
         }

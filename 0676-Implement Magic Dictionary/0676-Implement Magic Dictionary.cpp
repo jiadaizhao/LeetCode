@@ -7,11 +7,9 @@ public:
     
     /** Build a dictionary through a list of words */
     void buildDict(vector<string> dict) {
-        for (string s : dict)
-        {
+        for (string s : dict) {
             words.insert(s);
-            for (int i = 0; i < s.size(); ++i)
-            {
+            for (int i = 0; i < s.size(); ++i) {
                 string sub = s.substr(0, i) + '*' + s.substr(i + 1);
                 ++table[sub];
             }
@@ -22,11 +20,9 @@ public:
     /** Returns if there is any word in the trie that equals to the given word after modifying exactly one character */
     bool search(string word) {
         bool found = (words.find(word) != words.end());
-        for (int i = 0; i < word.size(); ++i)
-        {
+        for (int i = 0; i < word.size(); ++i) {
             string sub = word.substr(0, i) + '*' + word.substr(i + 1);            
-            if ((found && table[sub] > 1) || (!found && table[sub] >= 1))
-            {
+            if ((found && table[sub] > 1) || (!found && table[sub] >= 1)) {
                 return true;
             }
         }

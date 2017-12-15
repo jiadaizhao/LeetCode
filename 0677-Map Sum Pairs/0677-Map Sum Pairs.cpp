@@ -1,17 +1,9 @@
 class TrieNode {
 public:
-    vector<TrieNode*> next;
+    unordered_map<char, TrieNode*> next;
     int sum;
     TrieNode() {
-        next.resize(256);
         sum = 0;
-    }
-    ~TrieNode() {
-        for (auto p : next) {
-            if (p) {
-                delete p;
-            }
-        }
     }
 };
 
@@ -35,7 +27,7 @@ public:
         
         TrieNode* node = root;
         for (char c : key) {
-            if (node->next[c] == nullptr) {
+            if (node->next.find(c) == node->next.end()) {
                 node->next[c] = new TrieNode();
             }
             node = node->next[c];
@@ -46,7 +38,7 @@ public:
     int sum(string prefix) {
         TrieNode* node = root;
         for (char c : prefix) {
-            if (node->next[c] == nullptr) {
+            if (node->next.find(c) == node->next.end()) {
                 return 0;
             }
             node = node->next[c];

@@ -2,19 +2,15 @@ class Solution {
 public:
     int cutOffTree(vector<vector<int>>& forest) {
         int m = forest.size();
-        if (m == 0)
-        {
+        if (m == 0) {
             return 0;
         }
         
         int n = forest[0].size();
         vector<Node> trees;
-        for (int i = 0; i < m; ++i)
-        {
-            for (int j = 0; j < n; ++j)
-            {
-                if (forest[i][j] > 1)
-                {
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                if (forest[i][j] > 1) {
                     trees.emplace_back(i, j, forest[i][j]);
                 }
             }
@@ -24,10 +20,8 @@ public:
         
         int count = 0;
         int startx = 0, starty = 0;
-        for (int i = 0; i < trees.size(); ++i)
-        {
-            if (!bfs(startx, starty, trees[i], forest, count))
-            {
+        for (int i = 0; i < trees.size(); ++i) {
+            if (!bfs(startx, starty, trees[i], forest, count)) {
                 return -1;
             }
             startx = trees[i].row;
@@ -49,8 +43,7 @@ private:
         }
     };
     
-    bool bfs(int startx, int starty, Node& node, vector<vector<int>>& forest, int& count)
-    {
+    bool bfs(int startx, int starty, Node& node, vector<vector<int>>& forest, int& count) {
         int m = forest.size();
         int n = forest[0].size();
         vector<vector<bool>> visited(m, vector<bool>(n));
@@ -62,24 +55,20 @@ private:
         
         Q.emplace(startx, starty, 0);
         visited[startx][starty] = true;
-        while (!Q.empty())
-        {
+        while (!Q.empty()) {
             int x = Q.front().row;
             int y = Q.front().col;
             int d = Q.front().val;
-            if (x == targetx && y == targety)
-            {
+            if (x == targetx && y == targety) {
                 count += d;
                 forest[x][y] = 1;
                 return true;
             }
             Q.pop();
-            for (int k = 0; k < dx.size(); ++k)
-            {
+            for (int k = 0; k < dx.size(); ++k) {
                 int nx = x + dx[k];
                 int ny = y + dy[k];
-                if (nx >= 0 && nx < m && ny >= 0 && ny < n && !visited[nx][ny] && forest[nx][ny] != 0)
-                {
+                if (nx >= 0 && nx < m && ny >= 0 && ny < n && !visited[nx][ny] && forest[nx][ny] != 0) {
                     Q.emplace(nx, ny, d + 1);
                     visited[nx][ny] = true;
                 }

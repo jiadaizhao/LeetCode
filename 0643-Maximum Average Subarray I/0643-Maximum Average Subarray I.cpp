@@ -4,14 +4,12 @@ public:
         int n = nums.size();
         int i = 0;
         int sum = 0;
-        while (i < k)
-        {
+        while (i < k) {
             sum += nums[i++];
         }
         
         int maxSum = sum;
-        while (i < n)
-        {
+        while (i < n) {
             sum += nums[i] - nums[i - k];
             maxSum = max(maxSum, sum);
             ++i;

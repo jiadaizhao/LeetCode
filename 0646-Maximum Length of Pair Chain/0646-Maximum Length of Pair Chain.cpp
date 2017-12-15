@@ -6,12 +6,9 @@ public:
         int maxLen = 1;
         int n = pairs.size();
         vector<int> dp(n, 1);
-        for (int i = 0; i < n; ++i)
-        {
-            for (int j = 0; j < i; ++j)
-            {
-                if (pairs[j][1] < pairs[i][0])
-                {
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < i; ++j) {
+                if (pairs[j][1] < pairs[i][0]) {
                     dp[i] = max(dp[i], dp[j] + 1);
                 }
             }
@@ -31,10 +28,8 @@ public:
         int n = pairs.size();
         int prev = pairs[0][1];
         int maxLen = 1;
-        for (int i = 1; i < n; ++i)
-        {
-            if (pairs[i][0] > prev)
-            {
+        for (int i = 1; i < n; ++i) {
+            if (pairs[i][0] > prev) {
                 ++maxLen;
                 prev = pairs[i][1];
             }
