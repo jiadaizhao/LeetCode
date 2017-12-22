@@ -27,7 +27,7 @@ public:
             }
             
             if (count == 0 && j - i < minSize) {
-                minSize = min(minSize, j - i);
+                minSize = j - i;
                 result = s.substr(i, minSize);
             }
             
