@@ -55,3 +55,44 @@ private:
  * obj.addNum(val);
  * vector<Interval> param_2 = obj.getIntervals();
  */
+
+class SummaryRanges {
+public:
+    /** Initialize your data structure here. */
+    SummaryRanges() {
+        
+    }
+    
+    void addNum(int val) {
+        auto l = table.lower_bound(val);
+        if (l != table.begin()) {
+            --l;
+            if (l->second < val - 1) {
+                ++l;
+            }
+        }
+        
+        auto r = table.upper_bound(val + 1);
+        int left = val, right = val;
+        if (l != r) {
+            left = min(left, l->first);
+            right = max(right, (--r)->second);
+            table.erase(l, ++r);
+        }
+        
+        table[left] = right;
+    }
+    
+    vector<Interval> getIntervals() {
+        vector<Interval> result;
+        for (auto t : table) {
+            result.emplace_back(t.first, t.second);
+        }
+        return result;
+    }
+    
+private:
+    map<int, int> table;
+};
+
+
