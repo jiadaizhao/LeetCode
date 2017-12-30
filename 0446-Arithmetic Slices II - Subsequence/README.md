@@ -22,7 +22,7 @@ A subsequence slice (P0, P1, ..., Pk) of array A is called arithmetic if the seq
 
 The function should return the number of arithmetic subsequence slices in the array A.
 
-The input contains N integers. Every integer is in the range of -231 and 231-1 and 0 ≤ N ≤ 1000. The output is guaranteed to be less than 2<sup>31</sup>-1.
+The input contains N integers. Every integer is in the range of -2<sup>31</sup> and 2<sup>31</sup>-1 and 0 ≤ N ≤ 1000. The output is guaranteed to be less than 2<sup>31</sup>-1.
 
 
 Example:

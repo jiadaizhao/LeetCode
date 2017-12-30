@@ -2,8 +2,9 @@ class Solution {
 public:
     string minAbbreviation(string target, vector<string>& dictionary) {
         int m = target.size();
+        vector<int> dict;
         int candidate = 0;
-        for (string& s : dictionary) {
+        for (string s : dictionary) {
             if (s.size() != m) {
                 continue;
             }
@@ -17,40 +18,40 @@ public:
             candidate |= mask;
         }
         
-        int minLen = INT_MAX;
-        int minAbbr = 0;
         int bm = 1 << m;
-        dfs(1, 0, bm, candidate, 1, minLen, minAbbr);
+        int minLen = m;
+        int minAbbr = (1 << m) - 1;
+        dfs(dict, 1, 0, bm, candidate, 1, minLen, minAbbr);
 
         string result;
-        int prev = m - 1;
-        for (int i = m - 1; i >= 0; --i) {
-            if (minAbbr & 1) {
-                if (prev - i > 0) {
-                    result = to_string(prev - i) + result;
+        int prev = 0;
+        int b = (1 << (m - 1));
+        for (int i = 0; i < m; ++i) {
+            if (minAbbr & b) {
+                if (i - prev > 0) {
+                    result += to_string(i - prev);
                 }
-                prev = i - 1;
-                result = target[i] + result;
+                prev = i + 1;
+                result += target[i];
             }
-            else if (i == 0) {
-                result = to_string(prev + 1) + result;
+            else if (i == m - 1) {
+                result += to_string(m - prev);
             }
-            minAbbr >>= 1;
+            b >>= 1;
         }
-
+        
         return result;
     }
     
 private:
-    vector<int> dict;
-    void dfs(int start, int mask, int bm, int candidate, int len, int& minLen, int& minAbbr) {
+    void dfs(vector<int>& dict, int start, int mask, int bm, int candidate, int len, int& minLen, int& minAbbr) {
         if (len >= minLen) {
             return;
         }
         
         bool match = true;
-        for (int& dm : dict) {
-            if ((dm & mask) == 0) {
+        for (int dm : dict) {
+            if ((mask & dm) == 0) {
                 match = false;
                 break;
             }
@@ -63,12 +64,17 @@ private:
         else {
             for (int b = start; b < bm; b <<= 1) {
                 if (candidate & b) {
-                    if (b == start || (b << 1) == bm) {
-                        dfs(b << 1, mask | b, bm, candidate, len + 1, minLen, minAbbr);
+                    int nextLen;
+                    if (b == start && (b << 1) == bm) {
+                        nextLen = len;
+                    }
+                    else if (b == start || (b << 1) == bm) {
+                        nextLen = len + 1;
                     }
                     else {
-                        dfs(b << 1, mask | b, bm, candidate, len + 2, minLen, minAbbr);
-                    }                    
+                        nextLen = len + 2;
+                    }
+                    dfs(dict, b << 1, mask | b, bm, candidate, nextLen, minLen, minAbbr);
                 }
             }
         }

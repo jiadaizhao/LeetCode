@@ -18,24 +18,23 @@ public:
             }
             else {
                 nrow = nextRow;
-                nrow->strs.push_front(key);
+                nrow->cols.push_front(key);
             }
-            cache[key] = {nrow, nrow->strs.begin()};
-            row->strs.erase(col);
-            if (row->strs.empty()) {
+            row->cols.erase(col);
+            if (row->cols.size() == 0) {
                 matrix.erase(row);
-            }
+            }            
         }
         else {
-            if (matrix.empty() || matrix.begin()->val != 1) {
+            if (matrix.size() == 0 || matrix.begin()->val != 1) {
                 nrow = matrix.emplace(matrix.begin(), key, 1);
             }
             else {
                 nrow = matrix.begin();
-                nrow->strs.push_front(key);
+                nrow->cols.push_front(key);
             }
-            cache[key] = {nrow, nrow->strs.begin()};
         }
+        cache[key] = {nrow, nrow->cols.begin()};
     }
     
     /** Decrements an existing key by 1. If Key's value is 1, remove it from the data structure. */
@@ -47,7 +46,7 @@ public:
         list<Row>::iterator nrow;
         auto row = cache[key].first;
         auto col = cache[key].second;
-        if (row->val == 1)  {
+        if (row->val == 1) {
             cache.erase(key);
         }
         else {
@@ -58,32 +57,32 @@ public:
             }
             else {
                 nrow = prevRow;
-                nrow->strs.push_front(key);
+                nrow->cols.push_front(key);
             }
-            cache[key] = {nrow, nrow->strs.begin()};
+            
+            cache[key] = {nrow, nrow->cols.begin()};        
         }
-        
-        row->strs.erase(col);
-        if (row->strs.empty()) {
+        row->cols.erase(col);
+        if (row->cols.size() == 0) {
             matrix.erase(row);
         }
     }
     
     /** Returns one of the keys with maximal value. */
     string getMaxKey() {
-        return matrix.empty() ? "" : matrix.back().strs.front();
+        return matrix.size() ? matrix.back().cols.front() : "";
     }
     
     /** Returns one of the keys with Minimal value. */
     string getMinKey() {
-        return matrix.empty() ? "" : matrix.front().strs.front();
+        return matrix.size() ? matrix.front().cols.front() : "";
     }
     
 private:
     struct Row {
-        list<string> strs;
+        list<string> cols;
         int val;
-        Row(string s, int v): strs({s}), val(v) {}
+        Row(string s, int v): cols({s}), val(v) {}
     };
     list<Row> matrix;
     unordered_map<string, pair<list<Row>::iterator, list<string>::iterator>> cache;
@@ -97,4 +96,3 @@ private:
  * string param_3 = obj.getMaxKey();
  * string param_4 = obj.getMinKey();
  */
- 
