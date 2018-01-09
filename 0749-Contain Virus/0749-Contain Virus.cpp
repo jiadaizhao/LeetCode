@@ -63,20 +63,18 @@ private:
             vector<int>& perimeters, unordered_set<int>& visited) {
         int m = grid.size();
         int n = grid[0].size();
-        if (visited.find(r * n + c) == visited.end()) {
-            visited.insert(r * n + c);
-            regions.back().push_back(r * n + c);            
-            for (int k = 0; k < dr.size(); ++k) {
-                int nr = r + dr[k];
-                int nc = c + dc[k];
-                if (nr >= 0 && nr < m && nc >= 0 && nc < n && visited.find(nr * n + nc) == visited.end()) {
-                    if (grid[nr][nc] == 1) {
-                        dfs(grid, nr, nc, regions, frontiers, perimeters, visited);
-                    }
-                    else if (grid[nr][nc] == 0) {
-                        frontiers.back().insert(nr * n + nc);
-                        ++perimeters.back();
-                    }
+        visited.insert(r * n + c);
+        regions.back().push_back(r * n + c);            
+        for (int k = 0; k < dr.size(); ++k) {
+            int nr = r + dr[k];
+            int nc = c + dc[k];
+            if (nr >= 0 && nr < m && nc >= 0 && nc < n) {
+                if (visited.find(nr * n + nc) == visited.end() && grid[nr][nc] == 1) {
+                    dfs(grid, nr, nc, regions, frontiers, perimeters, visited);
+                }
+                else if (grid[nr][nc] == 0) {
+                    frontiers.back().insert(nr * n + nc);
+                    ++perimeters.back();
                 }
             }
         }

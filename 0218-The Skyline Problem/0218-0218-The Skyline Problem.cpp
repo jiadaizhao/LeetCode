@@ -2,6 +2,36 @@ class Solution {
 public:
     vector<pair<int, int>> getSkyline(vector<vector<int>>& buildings) {
         vector<pair<int, int>> result;
+        int i = 0, n = buildings.size();
+        priority_queue<pair<int, int>> live;
+        int x;
+        while (i < n || !live.empty()) {
+            if (live.empty() || (i < n && buildings[i][0] <= live.top().second)) {
+                x = buildings[i][0];
+                while (i < n && buildings[i][0] == x) {
+                    live.emplace(buildings[i][2], buildings[i][1]);
+                    ++i;
+                }
+            }
+            else {
+                x = live.top().second;
+                while (!live.empty() && live.top().second <= x) {
+                    live.pop();
+                }                
+            }
+            int height = live.empty() ? 0 : live.top().first;
+            if (result.size() == 0 || height != result.back().second) {
+                result.emplace_back(x, height);
+            }
+        }
+        return result;
+    }
+};
+
+class Solution {
+public:
+    vector<pair<int, int>> getSkyline(vector<vector<int>>& buildings) {
+        vector<pair<int, int>> result;
         int n = buildings.size();
         if (n == 0) {
             return result;

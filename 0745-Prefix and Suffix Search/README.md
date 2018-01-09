@@ -1,4 +1,4 @@
-# 746. Prefix and Suffix Search
+# 745. Prefix and Suffix Search
 
 Difficulty: Hard
 

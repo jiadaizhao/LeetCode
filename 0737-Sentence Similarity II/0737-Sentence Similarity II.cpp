@@ -25,7 +25,7 @@ public:
                 continue;
             }
             
-            if (findParent(words1[i]) != findParent(words2[i])) {
+            if (!parent.count(words1[i]) || !parent.count(words2[i]) || findParent(words1[i]) != findParent(words2[i])) {
                 return false;
             }
         }

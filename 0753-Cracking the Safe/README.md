@@ -1,4 +1,4 @@
-# 754. Cracking the Safe
+# 753. Cracking the Safe
 
 Difficulty: Hard
 
