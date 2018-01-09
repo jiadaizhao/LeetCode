@@ -1,4 +1,4 @@
-# 744. Network Delay Time
+# 743. Network Delay Time
 
 Difficulty: Medium
 
