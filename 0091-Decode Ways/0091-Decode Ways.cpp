@@ -31,15 +31,13 @@ public:
             return 0;
         }
         
-        int dp0 = 1, dp1 = 0, dp2 = 0;
+        int dp0 = 1, dp1 = 0;
         if (s[0] != '0') {
             dp1 = 1;
         }
-        if (n == 1) {
-            return dp1;
-        }
+
         for (int i = 2; i <= n; ++i) {
-            dp2 = 0;
+            int dp2 = 0;
             if (s[i - 1] != '0') {
                 dp2 += dp1;
             }
@@ -51,6 +49,6 @@ public:
             dp1 = dp2;
         }
         
-        return dp2;
+        return dp1;
     }
 };
