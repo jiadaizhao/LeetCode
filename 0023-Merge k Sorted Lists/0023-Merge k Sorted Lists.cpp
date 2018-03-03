@@ -47,3 +47,40 @@ private:
         return dummy.next;
     }
 };
+
+// Non-recursive
+class Solution {
+public:
+    ListNode* mergeKLists(vector<ListNode*>& lists) {
+        int n = lists.size();
+        int interval = 1;
+        while (interval < n) {
+            for (int i = 0; i < n - interval; i += interval * 2) {
+                lists[i] = mergeLists(lists[i], lists[i + interval]);
+            }
+            interval *= 2;
+        }
+        
+        return n > 0 ? lists[0] : nullptr;
+    }
+    
+private:
+    ListNode* mergeLists(ListNode* l1, ListNode* l2) {
+        ListNode dummy(-1);
+        ListNode* p = &dummy;
+        while (l1 && l2) {
+            if (l1->val <= l2->val) {
+                p->next = l1;
+                l1 = l1->next;
+            }
+            else {
+                p->next = l2;
+                l2 = l2->next;
+            }
+            p = p->next;
+        }
+        
+        p->next = l1 ? l1 : l2;
+        return dummy.next;
+    }
+};
