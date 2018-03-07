@@ -14,18 +14,13 @@ private:
             return;
         }
         
-        if (left == right) {
+        if (left > 0) {
             path.push_back('(');
             dfs(path, left - 1, right, result);
             path.pop_back();
         }
-        else if (left < right) {
-            if (left > 0) {
-                path.push_back('(');
-                dfs(path, left - 1, right, result);
-                path.pop_back();
-            }
-            
+        
+        if (left < right) {
             path.push_back(')');
             dfs(path, left, right - 1, result);
             path.pop_back();

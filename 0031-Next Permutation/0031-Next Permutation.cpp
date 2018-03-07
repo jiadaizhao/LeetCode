@@ -2,8 +2,7 @@ class Solution {
 public:
     void nextPermutation(vector<int>& nums) {
         int n = nums.size();
-        if (n <= 1)
-        {
+        if (n <= 1) {
             return;
         }
         
