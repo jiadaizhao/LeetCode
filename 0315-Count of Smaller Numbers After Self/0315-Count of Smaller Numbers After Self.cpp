@@ -48,3 +48,49 @@ private:
         }
     }
 };
+
+class Solution {
+public:
+    vector<int> countSmaller(vector<int>& nums) {
+        int n = nums.size();
+        if (n == 0) {
+            return {};
+        }
+        
+        vector<int> result(n);
+        Node* root = nullptr;
+        for (int i = n - 1; i >= 0; --i) {
+            root = insert(root, nums[i], i, 0, result);
+        }
+        return result;
+    }
+    
+private:
+    struct Node {
+        Node *left;
+        Node *right;
+        int val;
+        int sum;
+        int dup;
+        Node(int v, int s): left(NULL), right(NULL), val(v), sum(s), dup(1){} 
+    };
+    
+    Node* insert(Node* root, int num, int index, int presum, vector<int>& result) {
+        if (root == nullptr) {
+            root = new Node(num, 0);
+            result[index] = presum;
+        }
+        else if (root->val == num) {
+            ++root->dup;
+            result[index] = presum + root->sum;
+        }
+        else if (root->val > num) {
+            ++root->sum;
+            root->left = insert(root->left, num, index, presum, result);
+        }
+        else {
+            root->right = insert(root->right, num, index, presum + root->dup + root->sum, result);
+        }
+        return root;
+    }
+};

@@ -1,52 +1,41 @@
 class Solution {
 public:
     vector<int> numIslands2(int m, int n, vector<pair<int, int>>& positions) {
-        vector<int> result;
-        if (m <= 0 || n <= 0) {
-            result;
-        }
-        
+        vector<int> result(positions.size());
         vector<int> parent(m * n, -1);
+        vector<int> dr = {-1, 1, 0, 0};
+        vector<int> dc = {0, 0, -1, 1};
         int count = 0;
-        vector<int> deltaX = {-1, 1, 0, 0};
-        vector<int> deltaY = {0, 0, -1, 1};
-        for (auto& p : positions) {
-            int i = p.first;
-            int j = p.second;
-            int pos = i * n + j;
-            if (parent[pos] == -1) {
+        for (int i = 0; i < positions.size(); ++i) {
+            int r = positions[i].first;
+            int c = positions[i].second;
+            if (parent[r * n + c] == -1) {
+                parent[r * n + c] = r * n + c;
                 ++count;
-                parent[pos] = pos;
-                for (int k = 0; k < deltaX.size(); ++k) {
-                    int x = i + deltaX[k];
-                    int y = j + deltaY[k];
-                    int npos = x * n + y;
-                    if (x < 0 || x >= m || y < 0 || y >= n || parent[npos] == -1) {
-                        continue;
-                    }
-                    
-                    int posParent = findParent(parent, pos);
-                    int nposParent = findParent(parent, npos);
-                    if (nposParent != posParent) {
-                        --count;
-                        parent[posParent] = nposParent;
+                for (int k = 0; k < dr.size(); ++k) {
+                    int nr = r + dr[k];
+                    int nc = c + dc[k];
+                    if (nr >= 0 && nr < m && nc >= 0 && nc < n && parent[nr * n + nc] != -1) {
+                        int p1 = findParent(parent, r * n + c);
+                        int p2 = findParent(parent, nr * n + nc);
+                        if (p1 != p2) {
+                            --count;
+                            parent[p2] = p1;
+                        }
                     }
                 }
             }
-
-            result.push_back(count);
+            result[i] = count;
         }
-        
         return result;
     }
     
 private:
-    int findParent(vector<int>& parent, int pos) {
-        while (parent[pos] != pos) {
-            parent[pos] = parent[parent[pos]];
-            pos = parent[pos];
+    int findParent(vector<int>& parent, int i) {
+        while (parent[i] != i) {
+            parent[i] = parent[parent[i]];
+            i = parent[i];
         }
-        
-        return pos;
+        return i;
     }
 };

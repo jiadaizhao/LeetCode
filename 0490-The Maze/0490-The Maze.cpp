@@ -13,9 +13,6 @@ public:
             int x = Q.front().first;
             int y = Q.front().second;
             Q.pop();
-            if (x == destination[0] && y == destination[1]) {
-                return true;
-            }
             
             for (int i = 0; i < dx.size(); ++i) {
                 int nx = x + dx[i];
@@ -27,7 +24,10 @@ public:
                 
                 nx -= dx[i];
                 ny -= dy[i];
-                if (!visited[nx][ny]) {
+                if (nx == destination[0] && ny == destination[1]) {
+                    return true;
+                }
+                if (!visited[nx][ny]) {                    
                     Q.emplace(nx, ny);
                     visited[nx][ny] = true;
                 }                
