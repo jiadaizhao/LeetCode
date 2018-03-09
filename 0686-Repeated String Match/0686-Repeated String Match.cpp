@@ -42,3 +42,21 @@ public:
         return -1;   
     }
 };
+
+class Solution {
+public:
+    int repeatedStringMatch(string A, string B) {
+        int n = A.size();
+        int m = B.size();
+        string s = A;
+        while (s.size() < B.size()) {
+            s += A;
+        }
+        s += A;
+        int index = s.find(B);
+        if (index == -1) {
+            return -1;
+        }
+        return (index + m + n - 1) / n;
+    }
+};

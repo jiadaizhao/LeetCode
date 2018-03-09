@@ -26,12 +26,11 @@ public:
         if (n == 0) {
             return 0;
         }
-        else if (n == 1) {
+        if (n == 1) {
             return k;
         }
         
-        int dp0 = k;
-        int dp1 = k * k;
+        int dp0 = k, dp1 = k * k;
         for (int i = 3; i <= n; ++i) {
             int dp2 = (dp0 + dp1) * (k - 1);
             dp0 = dp1;
