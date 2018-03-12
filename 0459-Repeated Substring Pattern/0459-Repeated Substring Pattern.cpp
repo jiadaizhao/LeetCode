@@ -27,3 +27,11 @@ public:
         return lps[m - 1] && (m % (m - lps[m - 1]) == 0);
     }
 };
+
+class Solution {
+public:
+    bool repeatedSubstringPattern(string s) {
+        string ss = s.substr(1) + s.substr(0, s.size() - 1);
+        return ss.find(s) != -1; 
+    }
+};

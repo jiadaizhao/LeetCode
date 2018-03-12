@@ -27,3 +27,9 @@ while the minimum difference in this tree is 1, it occurs between node 1 and nod
 
 1. The size of the BST will be between 2 and 100.
 2. The BST is always valid, each node's value is an integer, and each node's value is different.
+
+Companies: Google
+
+Related Topics: Binary Search Tree
+
+Similar Questions: Binary Tree Inorder Traversal

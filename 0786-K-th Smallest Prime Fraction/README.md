@@ -24,3 +24,9 @@ Output: [1, 7]
 * A will have length between 2 and 2000.
 * Each A[i] will be between 1 and 30000.
 * K will be between 1 and A.length * (A.length + 1) / 2.
+
+Companies: Pony.ai
+
+Related Topics: Bianry Search, Heap
+
+Similar Questions: Kth Smallest Element in a Sorted Matrix, Kth Smallest Number in Multiplication Table, Find K-th Smallest Pair Distance

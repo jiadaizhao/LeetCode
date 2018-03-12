@@ -28,3 +28,7 @@ Output: 0
 
 1. answers will have length at most 1000.
 2. Each answers[i] will be an integer in the range [0, 999].
+
+Companies: Wish
+
+Related Topics: Hash Table, Math

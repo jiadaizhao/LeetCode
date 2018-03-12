@@ -20,3 +20,9 @@ Output: ["12345"]
 
 * S will be a string with length at most 12.
 * S will consist only of letters or digits.
+
+Companies: Facebook, Yelp
+
+Related Topics: Backtracking, Bit Manipulation
+
+Similar Questions: Subsets

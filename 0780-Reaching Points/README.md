@@ -26,3 +26,7 @@ Output: True
 **Note:**
 
 * sx, sy, tx, ty will all be integers in the range [1, 10^9].
+
+Companies: Google, Coursera
+
+Related Topics: Math
