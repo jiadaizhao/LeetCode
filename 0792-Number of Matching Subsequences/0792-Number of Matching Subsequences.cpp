@@ -27,3 +27,31 @@ public:
         return count;
     }
 };
+
+// Time Complexity: O(S.length + sum(words[i].length). 
+
+class Solution {
+public:
+    int numMatchingSubseq(string S, vector<string>& words) {
+        vector<pair<int, int>> table[26];
+        for (int i = 0; i < words.size(); ++i) {
+            table[words[i][0] - 'a'].emplace_back(i, 0);
+        }
+        
+        int count = 0;
+        for (char c : S) {
+            auto p = table[c - 'a'];
+            table[c - 'a'].clear();
+            for (auto it : p) {
+                ++it.second;
+                if (it.second == words[it.first].size()) {
+                    ++count;
+                }
+                else {
+                    table[words[it.first][it.second] - 'a'].emplace_back(it);
+                }
+            }
+        }
+        return count;
+    }
+};

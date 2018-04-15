@@ -34,3 +34,7 @@ When we erase the brick at (1, 0), the brick at (1, 1) has already disappeared d
 * The number of erasures will not exceed the area of the grid.
 * It is guaranteed that each erasure will be different from any other erasure, and located inside the grid.
 * An erasure may refer to a location with no brick - if it does, no bricks drop.
+
+Companies: Google
+
+Related Topics: Union Find

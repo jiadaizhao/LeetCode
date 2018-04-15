@@ -25,3 +25,7 @@ This is the highest among any shorthand color.
 * color is a valid RGB color: for i > 0, color[i] is a hexadecimal digit from 0 to f
 * Any answer which has the same (highest) similarity as the best answer will be accepted.
 * All inputs and outputs should use lowercase letters, and the output is 7 characters.
+
+Companies: Google
+
+Related Topics: Math, String

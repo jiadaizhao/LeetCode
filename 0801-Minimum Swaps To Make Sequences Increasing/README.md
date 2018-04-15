@@ -24,3 +24,7 @@ which are both strictly increasing.
 
 * A, B are arrays with the same length, and that length will be in the range [1, 1000].
 * A[i], B[i] are integer values in the range [0, 2000].
+
+Companies: Facebook, Amazom
+
+Related Topics: Dynamic Programming
