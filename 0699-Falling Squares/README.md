@@ -1,4 +1,4 @@
-# 0699. Falling Squares
+# 699. Falling Squares
 
 Difficulty: Hard
 
