@@ -23,23 +23,28 @@ public:
 */
 class Solution {
 public:
-    Node* construct(vector<vector<int>>& grid) {
-        if (grid.size() == 0) {
-            return nullptr;
+    Node* intersect(Node* quadTree1, Node* quadTree2) {
+        if (quadTree1->isLeaf) {
+            if (quadTree1->val) {
+                return quadTree1;
+            }
+            else {
+                return quadTree2;
+            }
         }
-        return construct(grid, 0, 0, grid.size() - 1, grid.size() - 1);
-    }
-    
-private:
-    Node* construct(vector<vector<int>>& grid, int row1, int col1, int row2, int col2) {        
-        if (row1 == row2 && col1 == col2) {
-            return new Node(grid[row1][col1], true, nullptr, nullptr, nullptr, nullptr);
+        else if (quadTree2->isLeaf) {
+            if (quadTree2->val) {
+                return quadTree2;
+            }
+            else {
+                return quadTree1;
+            }
         }
-        
-        Node* topLeft = construct(grid, row1, col1, (row1 + row2) / 2, (col1 + col2) / 2);
-        Node* topRight = construct(grid, row1, (col1 + col2 + 1) / 2, (row1 + row2) / 2, col2);
-        Node* bottomLeft = construct(grid, (row1 + row2 + 1) / 2, col1, row2, (col1 + col2) / 2);
-        Node* bottomRight = construct(grid, (row1 + row2 + 1) / 2, (col1 + col2 + 1) / 2, row2, col2);
+                
+        Node* topLeft = intersect(quadTree1->topLeft, quadTree2->topLeft);
+        Node* topRight = intersect(quadTree1->topRight, quadTree2->topRight);
+        Node* bottomLeft = intersect(quadTree1->bottomLeft, quadTree2->bottomLeft);
+        Node* bottomRight = intersect(quadTree1->bottomRight, quadTree2->bottomRight);
         bool val = topLeft->val;
         if (topLeft->isLeaf && topRight->isLeaf && bottomLeft->isLeaf && bottomRight->isLeaf && 
             topRight->val == val && bottomLeft->val == val && bottomRight->val == val) {
