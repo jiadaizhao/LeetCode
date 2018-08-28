@@ -34,6 +34,4 @@ Explanation: 4 boats (3), (3), (4), (5)
 * 1 <= people.length <= 50000
 * 1 <= people[i] <= limit <= 30000
 
-Companies: National Instruments
-
-Related Topics: Stack
+Related Topics: Two Pointers, Greedy
