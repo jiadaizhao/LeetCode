@@ -4,19 +4,29 @@ Difficulty: Easy
 
 https://leetcode.com/problems/palindrome-number/description/
 
-Determine whether an integer is a palindrome. Do this without extra space.
+Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
 
-click to show spoilers.
+Example 1:
+```
+Input: 121
+Output: true
+```
+Example 2:
+```
+Input: -121
+Output: false
+Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+```
+Example 3:
+```
+Input: 10
+Output: false
+Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
+```
 
-Some hints:
+Follow up:
 
-Could negative integers be palindromes? (ie, -1)
-
-If you are thinking of converting the integer to string, note the restriction of using extra space.
-
-You could also try reversing an integer. However, if you have solved the problem "Reverse Integer", you know that the reversed integer might overflow. How would you handle such case?
-
-There is a more generic way of solving this problem.
+Coud you solve it without converting the integer to a string?
 
 Related Topics: Math
 

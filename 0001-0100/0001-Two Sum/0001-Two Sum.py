@@ -1,17 +1,12 @@
 class Solution:
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        d = {}
-        result = [0] * 2
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        table = {}
+        result = [0, 0]
         for i, num in enumerate(nums):
-            if target - num in d:
-                result[0] = d[target - num]
+            if target - num in table:
+                result[0] = table[target - num]
                 result[1] = i
                 break
             else:
-                d[num] = i
+                table[num] = i
         return result

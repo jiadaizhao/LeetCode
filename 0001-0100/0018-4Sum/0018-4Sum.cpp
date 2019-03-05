@@ -29,12 +29,7 @@ public:
                         --end;
                     }
                     else {
-                        vector<int> path(4);
-                        path[0] = nums[i];
-                        path[1] = nums[j];
-                        path[2] = nums[start];
-                        path[3] = nums[end];
-                        result.push_back(path);
+                        result.push_back({nums[i], nums[j], nums[start], nums[end]});
                         
                         ++start;
                         --end;

@@ -1,19 +1,15 @@
 class Solution:
-    def convert(self, s, numRows):
-        """
-        :type s: str
-        :type numRows: int
-        :rtype: str
-        """
+    def convert(self, s: str, numRows: int) -> str:
         if numRows == 1:
             return s
-        L = [''] * numRows
-        index, step = 0, 1
-        for i in range(len(s)):
-            L[index] += s[i]
+        result = ['']*numRows
+        step = 1
+        index = 0
+        for c in s:
+            result[index] += c
             if index == 0:
                 step = 1
             elif index == numRows - 1:
                 step = -1
             index += step
-        return ''.join(L)
+        return ''.join(result)
