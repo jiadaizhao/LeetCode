@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
+https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 
 Given a linked list, remove the n-th node from the end of list and return its head.
 

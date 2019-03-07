@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/reverse-integer/description/
+https://leetcode.com/problems/reverse-integer/
 
 Given a 32-bit signed integer, reverse digits of an integer.
 

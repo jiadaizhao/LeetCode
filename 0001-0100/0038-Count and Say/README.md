@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/count-and-say/description/
+https://leetcode.com/problems/count-and-say/
 
 The count-and-say sequence is the sequence of integers with the first five terms as following:
 

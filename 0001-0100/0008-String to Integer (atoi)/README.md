@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/string-to-integer-atoi/description/
+https://leetcode.com/problems/string-to-integer-atoi/
 
 Implement atoi which converts a string to an integer.
 

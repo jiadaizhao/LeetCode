@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/permutations/description/
+https://leetcode.com/problems/permutations/
 
 Given a collection of distinct numbers, return all possible permutations.
 
