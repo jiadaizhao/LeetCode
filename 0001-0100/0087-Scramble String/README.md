@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/scramble-string/description/
+https://leetcode.com/problems/scramble-string/
 
 Given a string s1, we may represent it as a binary tree by partitioning it to two non-empty substrings recursively.
 
@@ -43,5 +43,16 @@ r   g  ta  e
 We say that "rgtae" is a scrambled string of "great".
 
 Given two strings s1 and s2 of the same length, determine if s2 is a scrambled string of s1.
+
+Example 1:
+```
+Input: s1 = "great", s2 = "rgeat"
+Output: true
+```
+Example 2:
+```
+Input: s1 = "abcde", s2 = "caebd"
+Output: false
+```
 
 Related Topics: Dynamic Programming, String

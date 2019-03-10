@@ -2,15 +2,16 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/subsets/description/
+https://leetcode.com/problems/subsets/
 
-Given a set of distinct integers, nums, return all possible subsets.
+Given a set of distinct integers, nums, return all possible subsets (the power set).
 
 Note: The solution set must not contain duplicate subsets.
 
-For example,
-If nums = [1,2,3], a solution is:
+Example:
 ```
+Input: nums = [1,2,3]
+Output:
 [
   [3],
   [1],

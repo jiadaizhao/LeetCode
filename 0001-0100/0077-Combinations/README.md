@@ -2,13 +2,14 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/combinations/description/
+https://leetcode.com/problems/combinations/
 
 Given two integers n and k, return all possible combinations of k numbers out of 1 ... n.
 
-For example,
-If n = 4 and k = 2, a solution is:
+Example:
 ```
+Input: n = 4, k = 2
+Output:
 [
   [2,4],
   [3,4],
