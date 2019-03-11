@@ -9,15 +9,6 @@ Given two words (beginWord and endWord), and a dictionary's word list, find the 
 1. Only one letter can be changed at a time.
 2. Each transformed word must exist in the word list. Note that beginWord is not a transformed word.
 
-For example,
-
-Given:  
-beginWord = "hit"  
-endWord = "cog"  
-wordList = ["hot","dot","dog","lot","log","cog"]  
-As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog",  
-return its length 5.
-
 **Note:**  
 * Return 0 if there is no such transformation sequence.
 * All words have the same length.
@@ -25,7 +16,30 @@ return its length 5.
 * You may assume no duplicates in the word list.
 * You may assume beginWord and endWord are non-empty and are not the same.
 
-**UPDATE (2017/1/20):**  
-The wordList parameter had been changed to a list of strings (instead of a set of strings). Please reload the code definition to get the latest changes.
+Example 1:
+```
+Input:
+beginWord = "hit",
+endWord = "cog",
+wordList = ["hot","dot","dog","lot","log","cog"]
+
+Output: 5
+
+Explanation: As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog",
+return its length 5.
+```
+Example 2:
+```
+Input:
+beginWord = "hit"
+endWord = "cog"
+wordList = ["hot","dot","dog","lot","log"]
+
+Output: 0
+
+Explanation: The endWord "cog" is not in wordList, therefore no possible transformation.
+```
 
 Companies: Amazon, LinkedIn, Snapchat, Facebook, Yelp
+
+Related Topics: Breadth-first Search

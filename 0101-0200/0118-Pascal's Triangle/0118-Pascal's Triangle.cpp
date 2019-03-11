@@ -3,19 +3,12 @@ public:
     vector<vector<int>> generate(int numRows) {
         vector<vector<int>> result;
         for (int i = 0; i < numRows; ++i) {
-            vector<int> path;
-            path.push_back(1);
-            if (i != 0) {
-                vector<int>& prev = result[i - 1];
-                for (int j = 0; j < i - 1; ++j) {
-                    path.push_back(prev[j] + prev[j + 1]);
-                }
-                path.push_back(1);
+            vector<int> row(i + 1, 1);
+            for (int j = 1; j < i; ++j) {
+                row[j] = result[i - 1][j - 1] + result[i - 1][j];
             }
-            
-            result.push_back(path);
+            result.push_back(row);
         }
-        
         return result;
     }
 };

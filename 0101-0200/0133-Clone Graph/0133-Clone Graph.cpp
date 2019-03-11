@@ -1,27 +1,34 @@
-/**
- * Definition for undirected graph.
- * struct UndirectedGraphNode {
- *     int label;
- *     vector<UndirectedGraphNode *> neighbors;
- *     UndirectedGraphNode(int x) : label(x) {};
- * };
- */
- class Solution {
+/*
+// Definition for a Node.
+class Node {
 public:
-    UndirectedGraphNode *cloneGraph(UndirectedGraphNode *node) {
+    int val;
+    vector<Node*> neighbors;
+
+    Node() {}
+
+    Node(int _val, vector<Node*> _neighbors) {
+        val = _val;
+        neighbors = _neighbors;
+    }
+};
+*/
+class Solution {
+public:
+    Node* cloneGraph(Node* node) {
         if (node == nullptr) {
             return nullptr;
         }
-        unordered_map<UndirectedGraphNode*, UndirectedGraphNode*> table;
-        table[node] = new UndirectedGraphNode(node->label);
-        queue<UndirectedGraphNode*> Q;
+        unordered_map<Node*, Node*> table;
+        table[node] = new Node(node->val);
+        queue<Node*> Q;
         Q.push(node);
         while (!Q.empty()) {
-            UndirectedGraphNode* n = Q.front();
+            Node* n = Q.front();
             Q.pop();
-            for (UndirectedGraphNode* neighbor : n->neighbors) {
+            for (Node* neighbor : n->neighbors) {
                 if (table.find(neighbor) == table.end()) {
-                    table[neighbor] = new UndirectedGraphNode(neighbor->label);
+                    table[neighbor] = new Node(neighbor->val);
                     Q.push(neighbor);
                 }
                 table[n]->neighbors.push_back(table[neighbor]);

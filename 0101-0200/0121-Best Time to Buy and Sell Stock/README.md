@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 
 Say you have an array for which the i<sup>th</sup> element is the price of a given stock on day i.
 

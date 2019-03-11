@@ -15,12 +15,13 @@ public:
                 --end;
             }
             
-            if (tolower(s[start]) != tolower(s[end])) {
-                return false;
+            if (start < end) {
+                if (tolower(s[start]) != tolower(s[end])) {
+                    return false;
+                }
+                ++start;
+                --end;
             }
-            
-            ++start;
-            --end;
         }
         
         return true;

@@ -2,13 +2,14 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/pascals-triangle/description/
+https://leetcode.com/problems/pascals-triangle/
 
-Given numRows, generate the first numRows of Pascal's triangle.
+Given a non-negative integer numRows, generate the first numRows of Pascal's triangle.
 
-For example, given numRows = 5,
-Return
+Example:
 ```
+Input: 5
+Output:
 [
      [1],
     [1,1],
