@@ -18,6 +18,6 @@ Output:
 ]
 ```
 
-Related Topics: Dynamic Programming
+Related Topics: Backtracking
 
-Similar Questions: Palindrome Partitioning
+Similar Questions: Palindrome Partitioning II

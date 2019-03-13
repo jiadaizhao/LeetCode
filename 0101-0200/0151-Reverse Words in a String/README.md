@@ -2,26 +2,33 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/reverse-words-in-a-string/description/
+https://leetcode.com/problems/reverse-words-in-a-string/
 
 Given an input string, reverse the string word by word.
 
-For example,
-Given s = "the sky is blue",
-return "blue is sky the".
+Example 1:
+```
+Input: "the sky is blue"
+Output: "blue is sky the"
+```
+Example 2:
+```
+Input: "  hello world!  "
+Output: "world! hello"
+Explanation: Your reversed string should not contain leading or trailing spaces.
+```
+Example 3:
+```
+Input: "a good   example"
+Output: "example good a"
+Explanation: You need to reduce multiple spaces between two words to a single space in the reversed string.
+```
 
-Update (2015-02-12):
-For C programmers: Try to solve it in-place in O(1) space.
+Note:
 
-click to show clarification.
-
-**Clarification:**  
-* What constitutes a word?  
-A sequence of non-space characters constitutes a word.
-* Could the input string contain leading or trailing spaces?  
-Yes. However, your reversed string should not contain leading or trailing spaces.
-* How about multiple spaces between two words?  
-Reduce them to a single space in the reversed string.
+* A word is defined as a sequence of non-space characters.
+* Input string may contain leading or trailing spaces. However, your reversed string should not contain leading or trailing spaces.
+* You need to reduce multiple spaces between two words to a single space in the reversed string.
 
 Companies: Microsoft, Snapchat, Apple, Bloomberg, Yelp
 

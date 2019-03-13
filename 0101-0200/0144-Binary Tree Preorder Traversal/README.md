@@ -2,22 +2,23 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/binary-tree-preorder-traversal/description/
+https://leetcode.com/problems/binary-tree-preorder-traversal/
 
 Given a binary tree, return the preorder traversal of its nodes' values.
 
-For example:  
-Given binary tree {1,#,2,3},
+Example:
 ```
+Input: [1,null,2,3]
    1
     \
      2
     /
    3
-```
-return [1,2,3].
 
-**Note:** Recursive solution is trivial, could you do it iteratively?
+Output: [1,2,3]
+```
+
+Follow up: Recursive solution is trivial, could you do it iteratively?
 
 Related Topics: Tree, Stack
 

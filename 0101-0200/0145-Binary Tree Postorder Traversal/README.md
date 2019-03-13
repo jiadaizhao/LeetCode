@@ -2,22 +2,22 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/binary-tree-postorder-traversal/description/
+https://leetcode.com/problems/binary-tree-postorder-traversal/
 
 Given a binary tree, return the postorder traversal of its nodes' values.
 
-For example:  
-Given binary tree {1,#,2,3},
+Example:
 ```
+Input: [1,null,2,3]
    1
     \
      2
     /
    3
-```
-return [3,2,1].
 
-**Note:** Recursive solution is trivial, could you do it iteratively?
+Output: [3,2,1]
+```
+Follow up: Recursive solution is trivial, could you do it iteratively?
 
 Related Topics: Tree, Stack
 

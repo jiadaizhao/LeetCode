@@ -17,6 +17,6 @@ Explanation: The palindrome partitioning ["aa","b"] could be produced using 1 cu
 
 Companies: Bloomberg
 
-Related Topics: Backtracking
+Related Topics: Dynamic Programming
 
-Similar Questions: Palindrome Partitioning II
+Similar Questions: Palindrome Partitioning
