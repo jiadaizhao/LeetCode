@@ -2,9 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/excel-sheet-column-number/description/
-
-Related to question Excel Sheet Column Title
+https://leetcode.com/problems/excel-sheet-column-number/
 
 Given a column title as appear in an Excel sheet, return its corresponding column number.
 
@@ -17,9 +15,23 @@ For example:
     Z -> 26
     AA -> 27
     AB -> 28 
+    ...
 ```
-**Credits:**  
-Special thanks to @ts for adding this problem and creating all test cases.
+Example 1:
+```
+Input: "A"
+Output: 1
+```
+Example 2:
+```
+Input: "AB"
+Output: 28
+```
+Example 3:
+```
+Input: "ZY"
+Output: 701
+```
 
 Companies: Microsoft, Uber
 

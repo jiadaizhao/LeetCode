@@ -2,12 +2,25 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/implement-trie-prefix-tree/description/
+https://leetcode.com/problems/implement-trie-prefix-tree/
 
 Implement a trie with insert, search, and startsWith methods.
 
-**Note:**  
-You may assume that all inputs are consist of lowercase letters a-z.
+Example:
+```
+Trie trie = new Trie();
+
+trie.insert("apple");
+trie.search("apple");   // returns true
+trie.search("app");     // returns false
+trie.startsWith("app"); // returns true
+trie.insert("app");   
+trie.search("app");     // returns true
+```
+Note:
+
+* You may assume that all inputs are consist of lowercase letters a-z.
+* All inputs are guaranteed to be non-empty strings.
 
 Companies: Google, Uber, Facebook, Twitter, Microsoft, Bloomberg
 

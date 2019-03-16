@@ -2,13 +2,19 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/bitwise-and-of-numbers-range/description/
+https://leetcode.com/problems/bitwise-and-of-numbers-range/
 
 Given a range [m, n] where 0 <= m <= n <= 2147483647, return the bitwise AND of all numbers in this range, inclusive.
 
-For example, given the range [5, 7], you should return 4.
-
-**Credits:** 
-Special thanks to @amrsaqr for adding this problem and creating all test cases.
+Example 1:
+```
+Input: [5,7]
+Output: 4
+```
+Example 2:
+```
+Input: [0,1]
+Output: 0
+```
 
 Related Topics: Bit Manipulation
