@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/rectangle-area/description/
+https://leetcode.com/problems/rectangle-area/
 
 Find the total area covered by two rectilinear rectangles in a 2D plane.
 
@@ -10,10 +10,13 @@ Each rectangle is defined by its bottom left corner and top right corner as show
 
 ![alt text](rectangle_area.png)
 
-Rectangle Area
-Assume that the total area is never beyond the maximum possible value of int.
+Example:
+```
+Input: A = -3, B = 0, C = 3, D = 4, E = 0, F = -1, G = 9, H = 2
+Output: 45
+```
+Note:
 
-**Credits:**  
-Special thanks to @mithmatt for adding this problem, creating the above image and all test cases.
+Assume that the total area is never beyond the maximum possible value of int.
 
 Related Topics:Math

@@ -14,5 +14,5 @@ class Solution:
                 elif token == '*':
                     St.append(a * b)
                 else:
-                    St.append(int(float(a) / b))
+                    St.append(int(a / b))
         return St[-1]

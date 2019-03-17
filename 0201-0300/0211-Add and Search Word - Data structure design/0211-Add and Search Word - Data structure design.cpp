@@ -51,10 +51,8 @@ private:
     bool search(string word, TrieNode* node) {
         for (int i = 0; i < word.size(); ++i) {
             if (word[i] == '.') {
-                TrieNode* tmp = node;
                 for (int j = 0; j < 26; ++j) {
-                    node = tmp->next[j];
-                    if (node != nullptr && search(word.substr(i + 1), node)) {
+                    if (node->next[j] && search(word.substr(i + 1), node->next[j])) {
                         return true;
                     }
                 }

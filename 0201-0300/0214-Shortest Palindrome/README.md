@@ -2,18 +2,20 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/shortest-palindrome/description/
+https://leetcode.com/problems/shortest-palindrome/
 
-Given a string S, you are allowed to convert it to a palindrome by adding characters in front of it. Find and return the shortest palindrome you can find by performing this transformation.
+Given a string s, you are allowed to convert it to a palindrome by adding characters in front of it. Find and return the shortest palindrome you can find by performing this transformation.
 
-For example:
-
-Given "aacecaaa", return "aaacecaaa".
-
-Given "abcd", return "dcbabcd".
-
-**Credits:**  
-Special thanks to @ifanchu for adding this problem and creating all test cases. Thanks to @Freezen for additional test cases.
+Example 1:
+```
+Input: "aacecaaa"
+Output: "aaacecaaa"
+```
+Example 2:
+```
+Input: "abcd"
+Output: "dcbabcd"
+```
 
 Companies: Pocket Gems, Google
 

@@ -2,12 +2,27 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/power-of-two/description/
+https://leetcode.com/problems/power-of-two/
 
 Given an integer, write a function to determine if it is a power of two.
 
-**Credits:**  
-Special thanks to @jianchao.li.fighter for adding this problem and creating all test cases.
+Example 1:
+```
+Input: 1
+Output: true 
+Explanation: 20 = 1
+```
+Example 2:
+```
+Input: 16
+Output: true
+Explanation: 24 = 16
+```
+Example 3:
+```
+Input: 218
+Output: false
+```
 
 Companies: Google
 
