@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/range-sum-query-immutable/description/
+https://leetcode.com/problems/range-sum-query-immutable/
 
 Given an integer array nums, find the sum of the elements between indices i and j (i ≤ j), inclusive.
 

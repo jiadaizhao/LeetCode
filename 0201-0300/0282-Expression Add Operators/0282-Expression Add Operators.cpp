@@ -2,23 +2,16 @@ class Solution {
 public:
     vector<string> addOperators(string num, int target) {
         vector<string> result;
-        long currVal;
-        for (int i = 1; i <= num.size(); ++i) {
-            string path = num.substr(0, i);
-            currVal = stol(path);
-            if (path != to_string(currVal)) {
-                break;
-            }
-            dfs(num, i, currVal, currVal, ' ', path, target, result);
+        if (num.size() != 0) {
+            dfs(num, 0, "", 0, 0, target, result);
         }
-        
         return result;
     }
-    
+
 private:
-    void dfs(string num, int start, long preVal, long currVal, char preOp, string path, int target, vector<string>& result) {
+    void dfs(string &num, int start, string path, long sum, long prev, int target, vector<string> &result) {
         if (start == num.size()) {
-            if (currVal == target) {
+            if (sum == target) {
                 result.push_back(path);
             }
             return;
@@ -26,23 +19,19 @@ private:
         
         for (int i = start; i < num.size(); ++i) {
             string temp = num.substr(start, i - start + 1);
-            long cv = stol(temp);
-            if (temp != to_string(cv)) {
+            long curr = stol(temp);
+            if (temp != to_string(curr)) {
                 break;
             }
-            dfs(num, i + 1, cv, currVal + cv, '+', path + '+' + temp, target, result);
-            dfs(num, i + 1, cv, currVal - cv, '-', path + '-' + temp, target, result);
-            long val;
-            if (preOp == '+') {
-                val = currVal - preVal + preVal * cv;
-            }
-            else if (preOp == '-') {
-                val = currVal + preVal - preVal * cv;
+            
+            if (start == 0) {
+                dfs(num, i + 1, temp, curr, curr, target, result);
             }
             else {
-                val = currVal * cv;
+                dfs(num, i + 1, path + "+" + temp, sum + curr, curr, target, result);
+                dfs(num, i + 1, path + "-" + temp, sum - curr, -curr, target, result);
+                dfs(num, i + 1, path + "*" + temp, sum - prev + prev * curr, prev * curr, target, result);
             }
-            dfs(num, i + 1, preVal * cv, val, preOp, path + '*' + temp, target, result);
         }
     }
 };

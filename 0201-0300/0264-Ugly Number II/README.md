@@ -2,16 +2,23 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/ugly-number-ii/description/
+https://leetcode.com/problems/ugly-number-ii/
 
 Write a program to find the n-th ugly number.
 
-Ugly numbers are positive numbers whose prime factors only include 2, 3, 5. For example, 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 is the sequence of the first 10 ugly numbers.
+Ugly numbers are positive numbers whose prime factors only include 2, 3, 5.
 
-Note that 1 is typically treated as an ugly number, and n does not exceed 1690.
+Example:
+```
+Input: n = 10
+Output: 12
+Explanation: 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 is the sequence of the first 10 ugly numbers.
+```
 
-**Credits:**
-Special thanks to @jianchao.li.fighter for adding this problem and creating all test cases.
+Note:  
+
+1. 1 is typically treated as an ugly number.
+2. n does not exceed 1690.
 
 Related Topics: Dynamic Programming, Heap, Math
 

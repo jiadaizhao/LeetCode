@@ -2,21 +2,27 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/remove-invalid-parentheses/description/
+https://leetcode.com/problems/remove-invalid-parentheses/
 
 Remove the minimum number of invalid parentheses in order to make the input string valid. Return all possible results.
 
 Note: The input string may contain letters other than the parentheses ( and ).
 
-Examples:
+Example 1:
 ```
-"()())()" -> ["()()()", "(())()"]
-"(a)())()" -> ["(a)()()", "(a())()"]
-")(" -> [""]
+Input: "()())()"
+Output: ["()()()", "(())()"]
 ```
-
-**Credits:**  
-Special thanks to @hpplayer for adding this problem and creating all test cases.
+Example 2:
+```
+Input: "(a)())()"
+Output: ["(a)()()", "(a())()"]
+```
+Example 3:
+```
+Input: ")("
+Output: [""]
+```
 
 Companies: Facebook
 

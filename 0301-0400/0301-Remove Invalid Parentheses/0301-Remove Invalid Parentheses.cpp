@@ -27,9 +27,10 @@ private:
             return;
         }
         
-        string revs(s);
-        reverse(revs.begin(), revs.end());
+        
         if (left == '(') {
+            string revs(s);
+            reverse(revs.begin(), revs.end());
             removeParantheses(revs, 0, 0, right, left, result);
         }
         else {

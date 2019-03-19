@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/different-ways-to-add-parentheses/description/
+https://leetcode.com/problems/different-ways-to-add-parentheses/
 
 Given a string of numbers and operators, return all possible results from computing all the different possible ways to group numbers and operators. The valid operators are +, - and *.
 
@@ -25,9 +25,6 @@ Input: "2*3-4*5"
 (((2*3)-4)*5) = 10
 ```
 Output: [-34, -14, -10, -10, 10]
-
-**Credits:**  
-Special thanks to @mithmatt for adding this problem and creating all test cases.
 
 Related Topics: Divide and Conquer
 
