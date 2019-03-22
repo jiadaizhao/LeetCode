@@ -9,27 +9,24 @@ public:
             table[word] = i;
         }
         
-        if (table.find("") != table.end()) {
-            int j = table[""];
-            for (int i = 0; i < words.size(); ++i) {
-                if (i != j && isPalindrome(words[i])) {
-                    result.push_back({j, i});
+                
+        for (int i = 0; i < words.size(); ++i) {
+            for (int j = 1; j <= words[i].size(); ++j) {
+                string left = words[i].substr(0, j);
+                string right = words[i].substr(j);
+                if (isPalidrome(right) && table.count(left) && table[left] != i) {
+                    result.push_back({i, table[left]});
+                }
+                if (isPalidrome(left) && table.count(right) && table[right] != i) {
+                    result.push_back({table[right], i});
                 }
             }
         }
         
-        for (int i = 0; i < words.size(); ++i) {
-            string word = words[i];
-            for (int j = 0; j < word.size(); ++j) {
-                string left = word.substr(0, j);
-                string right = word.substr(j);
-                
-                if (table.find(left) != table.end() && table[left] != i && isPalindrome(right)) {
-                    result.push_back({i, table[left]});
-                }
-                
-                if (table.find(right) != table.end() && table[right] != i && isPalindrome(left)) {
-                    result.push_back({table[right], i});
+        if (table.count("")) {
+            for (int i = 0; i < words.size(); ++i) {
+                if (words[i] != "" && isPalidrome(words[i])) {
+                    result.push_back({i, table[""]});
                 }
             }
         }
@@ -38,11 +35,10 @@ public:
     }
     
 private:
-    bool isPalindrome(string s) {
+    bool isPalidrome(string s) {
         if (s.size() == 0) {
             return true;
         }
-        
         int start = 0, end = s.size() - 1;
         while (start < end) {
             if (s[start] != s[end]) {
@@ -51,7 +47,6 @@ private:
             ++start;
             --end;
         }
-        
         return true;
     }
 };

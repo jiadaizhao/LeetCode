@@ -2,15 +2,21 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/reverse-vowels-of-a-string/description/
+https://leetcode.com/problems/reverse-vowels-of-a-string/
 
 Write a function that takes a string as input and reverse only the vowels of a string.
 
 **Example 1:**  
-Given s = "hello", return "holle".
+```
+Input: "hello"
+Output: "holle"
+```
 
 **Example 2:**  
-Given s = "leetcode", return "leotcede".
+```
+Input: "leetcode"
+Output: "leotcede"
+```
 
 **Note:**  
 The vowels does not include the letter "y".

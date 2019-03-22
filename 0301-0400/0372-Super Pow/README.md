@@ -2,27 +2,20 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/sum-of-two-integers/description/
+https://leetcode.com/problems/sum-of-two-integers/
 
-Your task is to calculate ab mod 1337 where a is a positive integer and b is an extremely large positive integer given in the form of an array.
+Your task is to calculate a<sup>b</sup> mod 1337 where a is a positive integer and b is an extremely large positive integer given in the form of an array.
 
-Example1:
+Example 1:
 ```
-a = 2
-b = [3]
-
-Result: 8
+Input: a = 2, b = [3]
+Output: 8
 ```
-Example2:
+Example 2:
 ```
-a = 2
-b = [1,0]
-
-Result: 1024
+Input: a = 2, b = [1,0]
+Output: 1024
 ```
-
-Credits:
-Special thanks to @Stomach_ache for adding this problem and creating all test cases.
 
 Related Topics: Math
 

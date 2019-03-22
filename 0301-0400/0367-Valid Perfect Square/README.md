@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/valid-perfect-square/description/
+https://leetcode.com/problems/valid-perfect-square/
 
 Given a positive integer num, write a function which returns True if num is a perfect square else False.
 
@@ -18,9 +18,6 @@ Example 2:
 Input: 14
 Returns: False
 ```
-
-**Credits:**  
-Special thanks to @elmirap for adding this problem and creating all test cases.
 
 Companies: LinkedIn
 

@@ -7,13 +7,8 @@ public:
         }
         
         vector<vector<int>> dp(2 + n, vector<int>(2 + n));
-        for (int i = 1; i <= n; ++i) {
-            int left = (i > 1) ? nums[i - 2] : 1;
-            int right = (i < n) ? nums[i] : 1;
-            dp[i][i] = left * nums[i - 1] * right;
-        }
         
-        for (int l = 2; l <= n; ++l) {
+        for (int l = 1; l <= n; ++l) {
             for (int i = 1; i <= n - l + 1; ++i) {
                 int j = i + l - 1;
                 for (int k = i; k <= j; ++k) {
