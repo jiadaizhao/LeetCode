@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/decode-string/description/
+https://leetcode.com/problems/decode-string/
 
 Given an encoded string, return it's decoded string.
 

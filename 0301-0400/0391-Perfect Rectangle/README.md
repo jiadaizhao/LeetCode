@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/perfect-rectangle/description/
+https://leetcode.com/problems/perfect-rectangle/
 
 Given N axis-aligned rectangles where N > 0, determine if they all together form an exact cover of a rectangular region.
 

@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/description/
+https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/
 
 Given a n x n matrix where each of the rows and columns are sorted in ascending order, find the kth smallest element in the matrix.
 
@@ -19,8 +19,9 @@ k = 8,
 
 return 13.
 ```
+
 **Note:**  
-You may assume k is always valid, 1 ≤ k ≤ n2.
+You may assume k is always valid, 1 ≤ k ≤ n<sup>2</sup>.
 
 Companies: Google, Twitter
 

@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/insert-delete-getrandom-o1/description/
+https://leetcode.com/problems/insert-delete-getrandom-o1/
 
 Design a data structure that supports all following operations in average O(1) time.
 

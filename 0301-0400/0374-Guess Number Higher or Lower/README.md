@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/guess-number-higher-or-lower/description/
+https://leetcode.com/problems/guess-number-higher-or-lower/
 
 We are playing the Guess Game. The game is as follows:
 
@@ -16,11 +16,11 @@ You call a pre-defined API guess(int num) which returns 3 possible results (-1, 
  1 : My number is higher
  0 : Congrats! You got it!
  ```
+
 Example:
 ```
-n = 10, I pick 6.
-
-Return 6.
+Input: n = 10, pick = 6
+Output: 6
 ```
 
 Companies: Google

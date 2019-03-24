@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/rotate-function/description/
+https://leetcode.com/problems/rotate-function/
 
 Given an array of integers A and let n to be its length.
 

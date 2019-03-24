@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/mini-parser/description/
+https://leetcode.com/problems/mini-parser/
 
 Given a nested list of integers represented as a string, implement a parser to deserialize it.
 
@@ -15,11 +15,11 @@ Each element is either an integer, or a list -- whose elements may also be integ
 * String contains only digits 0-9, [, - ,, ].
 
 **Example 1:**
-
+```
 Given s = "324",
 
 You should return a NestedInteger object which contains a single integer 324.
-
+```
 **Example 2:**
 ```
 Given s = "[123,[456,[789]]]",

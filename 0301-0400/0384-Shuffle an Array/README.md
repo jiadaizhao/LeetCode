@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/shuffle-an-array/description/
+https://leetcode.com/problems/shuffle-an-array/
 
 Shuffle a set of numbers without duplicates.
 

@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/guess-number-higher-or-lower-ii/description/
+https://leetcode.com/problems/guess-number-higher-or-lower-ii/
 
 We are playing the Guess Game. The game is as follows:
 
@@ -25,9 +25,6 @@ Game over. 8 is the number I picked.
 You end up paying $5 + $7 + $9 = $21.
 ```
 Given a particular n ≥ 1, find out how much money you need to have to guarantee a win.
-
-**Credits:**  
-Special thanks to @agave and @StefanPochmann for adding this problem and creating all test cases.
 
 Companies: Google
 

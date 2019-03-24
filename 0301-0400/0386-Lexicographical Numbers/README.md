@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/lexicographical-numbers/description/
+https://leetcode.com/problems/lexicographical-numbers/
 
 Given an integer n, return 1 - n in lexicographical order.
 

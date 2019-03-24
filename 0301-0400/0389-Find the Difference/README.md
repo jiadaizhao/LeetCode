@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/find-the-difference/description/
+https://leetcode.com/problems/find-the-difference/
 
 Given two strings s and t which consist of only lowercase letters.
 

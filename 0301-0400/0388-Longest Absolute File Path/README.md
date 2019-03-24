@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/longest-absolute-file-path/description/
+https://leetcode.com/problems/longest-absolute-file-path/
 
 Suppose we abstract our file system by a string in the following manner:
 
