@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/k-th-smallest-in-lexicographical-order/description/
+https://leetcode.com/problems/k-th-smallest-in-lexicographical-order/
 
 Given integers n and k, find the lexicographically k-th smallest integer in the range from 1 to n.
 

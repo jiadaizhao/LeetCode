@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/number-of-segments-in-a-string/description/
+https://leetcode.com/problems/number-of-segments-in-a-string/
 
 Count the number of segments in a string, where a segment is defined to be a contiguous sequence of non-space characters.
 

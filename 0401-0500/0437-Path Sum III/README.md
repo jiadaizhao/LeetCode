@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/path-sum-iii/description/
+https://leetcode.com/problems/path-sum-iii/
 
 You are given a binary tree in which each node contains an integer value.
 

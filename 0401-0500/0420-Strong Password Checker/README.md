@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/strong-password-checker/description/
+https://leetcode.com/problems/strong-password-checker/
 
 A password is considered strong if below conditions are all met:
 

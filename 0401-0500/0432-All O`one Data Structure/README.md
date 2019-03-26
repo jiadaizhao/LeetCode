@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/all-oone-data-structure/description/
+https://leetcode.com/problems/all-oone-data-structure/
 
 Implement a data structure supporting the following operations:
 
