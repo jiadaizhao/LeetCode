@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/implement-rand10-using-rand7/description/
+https://leetcode.com/problems/implement-rand10-using-rand7/
 
 Given a function rand7 which generates a uniform random integer in the range 1 to 7, write a function rand10 which generates a uniform random integer in the range 1 to 10.
 

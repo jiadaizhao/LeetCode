@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/total-hamming-distance/description/
+https://leetcode.com/problems/total-hamming-distance/
 
 The Hamming distance between two integers is the number of positions at which the corresponding bits are different.
 

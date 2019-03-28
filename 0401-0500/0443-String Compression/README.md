@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/string-compression/description/
+https://leetcode.com/problems/string-compression/
 
 Given an array of characters, compress it in-place.
 
@@ -17,7 +17,7 @@ After you are done modifying the input array in-place, return the new length of 
 Could you solve it using only O(1) extra space?
 
 
-Example 1:
+**Example 1:**
 ```
 Input:
 ["a","a","b","b","c","c","c"]
@@ -28,7 +28,7 @@ Return 6, and the first 6 characters of the input array should be: ["a","2","b",
 Explanation:
 "aa" is replaced by "a2". "bb" is replaced by "b2". "ccc" is replaced by "c3".
 ```
-Example 2:
+**Example 2:**
 ```
 Input:
 ["a"]
@@ -39,7 +39,7 @@ Return 1, and the first 1 characters of the input array should be: ["a"]
 Explanation:
 Nothing is replaced.
 ```
-Example 3:
+**Example 3:**
 ```
 Input:
 ["a","b","b","b","b","b","b","b","b","b","b","b","b"]

@@ -20,7 +20,7 @@ public:
             for (int p = 0; p < k; ++p) {
                 if (nextIndex[p] == j) {
                     int prefixCount = repeatCount[p];
-                    int repeatedPattenCount = (repeatCount[k] - repeatCount[p]) * (n1 - p) / (k - p);
+                    int repeatedPattenCount = (n1 - p) / (k - p) * (repeatCount[k] - repeatCount[p]);
                     int suffixCount = repeatCount[p + (n1 - p) % (k - p)] - repeatCount[p];
                     return (prefixCount + repeatedPattenCount + suffixCount) / n2;
                 }

@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/lfu-cache/description/
+https://leetcode.com/problems/lfu-cache/
 
 Design and implement a data structure for Least Frequently Used (LFU) cache. It should support the following operations: get and put.
 
@@ -13,7 +13,7 @@ Follow up:
 Could you do both operations in O(1) time complexity?
 
 Example:
-
+```
 LFUCache cache = new LFUCache( 2 /* capacity */ );
 
 cache.put(1, 1);
@@ -26,6 +26,7 @@ cache.put(4, 4);    // evicts key 1.
 cache.get(1);       // returns -1 (not found)
 cache.get(3);       // returns 3
 cache.get(4);       // returns 4
+```
 
 Companies: Google, Amazon
 

@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/validate-ip-address/description/
+https://leetcode.com/problems/validate-ip-address/
 
 Write a function to check whether an input string is a valid IPv4 address or IPv6 address or neither.
 

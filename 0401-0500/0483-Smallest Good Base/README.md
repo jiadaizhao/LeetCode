@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/smallest-good-base/description/
+https://leetcode.com/problems/smallest-good-base/
 
 For an integer n, we call k>=2 a good base of n, if all digits of n base k are 1.
 

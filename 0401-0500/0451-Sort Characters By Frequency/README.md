@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/sort-characters-by-frequency/description/
+https://leetcode.com/problems/sort-characters-by-frequency/
 
 Given a string, sort it in decreasing order based on the frequency of characters.
 

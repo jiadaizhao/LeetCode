@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/ones-and-zeroes/description/
+https://leetcode.com/problems/ones-and-zeroes/
 
 In the computer world, use restricted resource you have to generate maximum benefit is what we always want to pursue.
 

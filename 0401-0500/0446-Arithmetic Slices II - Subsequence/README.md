@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/arithmetic-slices-ii-subsequence/description/
+https://leetcode.com/problems/arithmetic-slices-ii-subsequence/
 
 A sequence of numbers is called arithmetic if it consists of at least three elements and if the difference between any two consecutive elements is the same.
 

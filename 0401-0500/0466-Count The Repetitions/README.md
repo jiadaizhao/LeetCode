@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/count-the-repetitions/description/
+https://leetcode.com/problems/count-the-repetitions/
 
 Define S = [s,n] as the string S which consists of n connected strings s. For example, ["abc", 3] ="abcabcabc".
 

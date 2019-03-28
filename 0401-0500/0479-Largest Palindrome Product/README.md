@@ -1,8 +1,8 @@
 # 479. Largest Palindrome Product
 
-Difficulty: Easy
+Difficulty: Hard
 
-https://leetcode.com/problems/largest-palindrome-product/description/
+https://leetcode.com/problems/largest-palindrome-product/
 
 Find the largest palindrome made from the product of two n-digit numbers.
 
