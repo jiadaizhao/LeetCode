@@ -5,44 +5,33 @@ public:
         if (m == 0) {
             return {};
         }
-        
         int n = matrix[0].size();
-        if (n == 0) {
-            return {};
-        }
-        
         vector<int> result(m * n);
-        int k = 0;
-        int i = 0, j = 0;
-        bool up = true;
-        while (k < m * n) {
-            result[k++] = matrix[i][j];
-            if (up) {
-                if (i - 1 >= 0 && j + 1 < n) {
-                    --i;
-                    ++j;
+        int row = 0, col = 0;
+        for (int k = 0; k < result.size(); ++k) {
+            result[k] = matrix[row][col];
+            if ((row + col) & 1) {
+                if (row == m - 1) {
+                    col += 1;
                 }
-                else if (j + 1 < n) {
-                    ++j;
-                    up = false;
+                else if (col == 0) {
+                    row += 1;
                 }
                 else {
-                    ++i;
-                    up = false;
+                    row += 1;
+                    col -= 1;
                 }
             }
             else {
-                if (i + 1 < m && j - 1 >= 0) {
-                    ++i;
-                    --j;
+                if (col == n - 1) {
+                    row += 1;
                 }
-                else if (i + 1 < m) {
-                    ++i;
-                    up = true;
+                else if (row == 0) {
+                    col += 1;
                 }
                 else {
-                    ++j;
-                    up = true;
+                    row -= 1;
+                    col += 1;
                 }
             }
         }

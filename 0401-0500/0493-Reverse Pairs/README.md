@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/reverse-pairs/description/
+https://leetcode.com/problems/reverse-pairs/
 
 Given an array nums, we call (i, j) an important reverse pair if i < j and nums[i] > 2*nums[j].
 
