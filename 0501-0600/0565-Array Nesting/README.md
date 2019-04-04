@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/find-the-closest-palindrome/description/
+https://leetcode.com/problems/find-the-closest-palindrome/
 
 A zero-indexed array A consisting of N different integers is given. The array contains all integers in the range [0, N - 1].
 

@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/super-washing-machines/description/
+https://leetcode.com/problems/super-washing-machines/
 
 You have n super washing machines on a line. Initially, each washing machine has some dresses or is empty.
 

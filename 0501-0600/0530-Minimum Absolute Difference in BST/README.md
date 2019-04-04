@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/minimum-absolute-difference-in-bst/description/
+https://leetcode.com/problems/minimum-absolute-difference-in-bst/
 
 Given a binary search tree with non-negative values, find the minimum absolute difference between values of any two nodes.
 

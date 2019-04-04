@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/minesweeper/description/
+https://leetcode.com/problems/minesweeper/
 
 Let's play the minesweeper game (Wikipedia, online game)!
 

@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/find-the-closest-palindrome/description/
+https://leetcode.com/problems/find-the-closest-palindrome/
 
 Given an integer n, find the closest integer (not including itself), which is a palindrome.
 

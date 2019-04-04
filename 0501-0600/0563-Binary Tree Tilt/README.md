@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/binary-tree-tilt/description/
+https://leetcode.com/problems/binary-tree-tilt/
 
 Given a binary tree, return the tilt of the whole tree.
 

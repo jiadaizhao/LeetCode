@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/maximum-depth-of-n-ary-tree/description/
+https://leetcode.com/problems/maximum-depth-of-n-ary-tree/
 
 Given a n-ary tree, find its maximum depth.
 

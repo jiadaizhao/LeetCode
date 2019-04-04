@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/encode-and-decode-tinyurl/description/
+https://leetcode.com/problems/encode-and-decode-tinyurl/
 
 >Note: This is a companion problem to the System Design problem: Design TinyURL.
 

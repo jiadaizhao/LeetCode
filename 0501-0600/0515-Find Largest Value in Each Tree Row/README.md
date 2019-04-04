@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/find-largest-value-in-each-tree-row/description/
+https://leetcode.com/problems/find-largest-value-in-each-tree-row/
 
 You need to find the largest value in each row of a binary tree.
 

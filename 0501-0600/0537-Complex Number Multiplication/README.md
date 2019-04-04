@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/complex-number-multiplication/description/
+https://leetcode.com/problems/complex-number-multiplication/
 
 Given two strings representing two complex numbers.
 
