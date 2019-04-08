@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/dota2-senate/description/
+https://leetcode.com/problems/dota2-senate/
 
 In the world of Dota2, there are two parties: the Radiant and the Dire.
 

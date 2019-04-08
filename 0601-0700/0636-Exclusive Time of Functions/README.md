@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/exclusive-time-of-functions/description/
+https://leetcode.com/problems/exclusive-time-of-functions/
 
 Given the running logs of n functions that are executed in a nonpreemptive single threaded CPU, find the exclusive time of these functions.
 

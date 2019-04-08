@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/design-circular-deque/description/
+https://leetcode.com/problems/design-circular-deque/
 
 Design your implementation of the circular double-ended queue (deque).
 

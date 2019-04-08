@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/strange-printer/description/
+https://leetcode.com/problems/strange-printer/
 
 There is a strange printer with the following two special requirements:
 

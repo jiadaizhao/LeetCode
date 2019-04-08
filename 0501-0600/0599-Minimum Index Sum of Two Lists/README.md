@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/minimum-index-sum-of-two-lists/description/
+https://leetcode.com/problems/minimum-index-sum-of-two-lists/
 
 Suppose Andy and Doris want to choose a restaurant for dinner, and they both have a list of favorite restaurants represented by strings.
 
@@ -28,7 +28,7 @@ Explanation: The restaurant they both like and have the least index sum is "Shog
 1. The length of both lists will be in the range of [1, 1000].
 2. The length of strings in both lists will be in the range of [1, 30].
 3. The index is starting from 0 to the list length minus 1.
-No duplicates in both lists.
+4. No duplicates in both lists.
 
 Companies: Yelp
 

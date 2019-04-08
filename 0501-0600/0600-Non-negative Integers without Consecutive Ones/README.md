@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/non-negative-integers-without-consecutive-ones/description/
+https://leetcode.com/problems/non-negative-integers-without-consecutive-ones/
 
 Given a positive integer n, find the number of non-negative integers less than or equal to n, whose binary representations do NOT contain consecutive ones.
 

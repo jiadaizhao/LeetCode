@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/palindromic-substrings/description/
+https://leetcode.com/problems/palindromic-substrings/
 
 Given a string, your task is to count how many palindromic substrings in this string.
 

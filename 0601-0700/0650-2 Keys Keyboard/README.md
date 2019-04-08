@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/2-keys-keyboard/description/
+https://leetcode.com/problems/2-keys-keyboard/
 
 Initially on a notepad only one character 'A' is present. You can perform two operations on this notepad for each step:
 

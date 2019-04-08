@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/add-bold-tag-in-string/description/
+https://leetcode.com/problems/add-bold-tag-in-string/
 
 Given the root of a binary tree, then value v and depth d, you need to add a row of nodes with value v at the given depth d. The root node is at depth 1.
 

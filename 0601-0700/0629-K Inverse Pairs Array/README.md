@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/k-inverse-pairs-array/description/
+https://leetcode.com/problems/k-inverse-pairs-array/
 
 Given two integers n and k, find how many different arrays consist of numbers from 1 to n such that there are exactly k inverse pairs.
 

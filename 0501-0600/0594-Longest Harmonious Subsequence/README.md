@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/longest-harmonious-subsequence/description/
+https://leetcode.com/problems/longest-harmonious-subsequence/
 
 We define a harmonious array is an array where the difference between its maximum value and its minimum value is exactly 1.
 

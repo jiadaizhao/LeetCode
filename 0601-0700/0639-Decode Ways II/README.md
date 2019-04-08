@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/decode-ways-ii/description/
+https://leetcode.com/problems/decode-ways-ii/
 
 A message containing letters from A-Z is being encoded to numbers using the following mapping way:
 ```

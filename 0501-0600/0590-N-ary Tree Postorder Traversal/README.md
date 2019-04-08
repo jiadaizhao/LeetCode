@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/n-ary-tree-postorder-traversal/description/
+https://leetcode.com/problems/n-ary-tree-postorder-traversal/
 
 Given an n-ary tree, return the postorder traversal of its nodes' values.
 

@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/shopping-offers/description/
+https://leetcode.com/problems/shopping-offers/
 
 In LeetCode Store, there are some kinds of items to sell. Each item has a price.
 

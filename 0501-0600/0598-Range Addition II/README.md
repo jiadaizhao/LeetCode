@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/range-addition-ii/description/
+https://leetcode.com/problems/range-addition-ii/
 
 Given an m * n matrix M initialized with all 0's and several update operations.
 

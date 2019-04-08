@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/print-binary-tree/description/
+https://leetcode.com/problems/print-binary-tree/
 
 Print a binary tree in an m*n 2D string array following these rules:
 

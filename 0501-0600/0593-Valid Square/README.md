@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/valid-square/description/
+https://leetcode.com/problems/valid-square/
 
 Given the coordinates of four points in 2D space, return whether the four points could construct a square.
 

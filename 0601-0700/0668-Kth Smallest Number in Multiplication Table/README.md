@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/kth-smallest-number-in-multiplication-table/description/
+https://leetcode.com/problems/kth-smallest-number-in-multiplication-table/
 
 Given two integers n and k, you need to construct a list which contains n different positive integers ranging from 1 to n and obeys the following requirement: 
 Nearly every one have used the Multiplication Table. But could you find out the k-th smallest number quickly from the multiplication table?
