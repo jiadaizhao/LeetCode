@@ -81,11 +81,16 @@ public:
             root->left = deleteNode(root->left, key);
         }
         else {
+            TreeNode* result = nullptr;
             if (root->left == nullptr) {
-                return root->right;
+                result = root->right;
+                delete root;
+                return result;
             }
             else if (root->right == nullptr) {
-                return root->left;
+                result = root->left;
+                delete root;
+                return result;
             }
             TreeNode* node = findMin(root->right);
             root->val = node->val;
