@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/design-hashmap/description/
+https://leetcode.com/problems/design-hashmap/
 
 Design a HashMap without using any built-in hash table libraries.
 

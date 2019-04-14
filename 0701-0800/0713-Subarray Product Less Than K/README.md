@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/subarray-product-less-than-k/description/
+https://leetcode.com/problems/subarray-product-less-than-k/
 
 Your are given an array of positive integers nums.
 

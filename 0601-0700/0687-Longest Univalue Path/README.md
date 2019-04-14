@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/longest-univalue-path/description/
+https://leetcode.com/problems/longest-univalue-path/
 
 Given a binary tree, find the length of the longest path where each node in the path has the same value. This path may or may not pass through the root.
 

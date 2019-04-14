@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/map-sum-pairs/description/
+https://leetcode.com/problems/map-sum-pairs/
 
 Implement a MapSum class with insert, and sum methods.
 

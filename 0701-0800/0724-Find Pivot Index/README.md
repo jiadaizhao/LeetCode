@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/find-pivot-index/description/
+https://leetcode.com/problems/find-pivot-index/
 
 Given an array of integers nums, write a method that returns the "pivot" index of this array.
 

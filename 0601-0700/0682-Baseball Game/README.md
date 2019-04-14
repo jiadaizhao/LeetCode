@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/baseball-game/description/
+https://leetcode.com/problems/baseball-game/
 
 You're now a baseball game point recorder.
 

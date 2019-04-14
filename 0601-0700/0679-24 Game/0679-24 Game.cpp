@@ -25,11 +25,7 @@ private:
                     dfs(nums, used, curr / nums[bit], target)) {
                     return true;
                 }
-                
-                if (curr != 0 && dfs(nums, used, nums[bit] / curr, target)) {
-                    return true;
-                }
-                
+                                
                 if (dfs(nums, used, nums[bit], target - curr) || dfs(nums, used, nums[bit], curr - target) ||
                     dfs(nums, used, nums[bit], target + curr)) {
                     return true;

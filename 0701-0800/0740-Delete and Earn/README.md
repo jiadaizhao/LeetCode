@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/delete-and-earn/description/
+https://leetcode.com/problems/delete-and-earn/
 
 Given an array nums of integers, you can perform operations on the array.
 

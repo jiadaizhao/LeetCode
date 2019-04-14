@@ -2,45 +2,37 @@ class Solution {
 public:
     vector<string> removeComments(vector<string>& source) {
         vector<string> result;
-        bool blockStart = false;
-        for (string& s : source) {
-            string path;
-            bool newLine = true;
-            bool currentLineBlockStart = false;
-            for (int i = 0; i < s.size(); ++i) {
-                if (blockStart) {
-                    if (i < s.size() - 1 && s[i] == '*' && s[i + 1] == '/') {
-                        blockStart = false;
-                        if (!currentLineBlockStart) {
-                            newLine = false;
-                        }                        
-                        ++i;
+        bool inBlock = false;
+        string newLine;
+        for (string s : source) {
+            if (!inBlock) {
+                newLine = "";
+            }
+            int i = 0;
+            while (i < s.size()) {
+                if (!inBlock) {
+                    if (s.substr(i, 2) == "/*") {
+                        inBlock = true;
+                        i += 2;
                     }
-                }
-                else {
-                    if (i < s.size() - 1 && s[i] == '/' && s[i + 1] == '*') {
-                        currentLineBlockStart = true;
-                        blockStart = true;
-                        ++i;
-                    }
-                    else if (i < s.size() - 1 && s[i] == '/' && s[i + 1] == '/') {
+                    else if (s.substr(i, 2) == "//") {
                         break;
                     }
                     else {
-                        path += s[i];
+                        newLine += s[i++];
                     }
                 }
-            }
-            
-            if (path.size() == 0) {
-                continue;
-            }
-            
-            if (newLine || result.size() == 0) {
-                result.push_back(path);
+                else if (s.substr(i, 2) == "*/") {
+                    inBlock = false;
+                    i += 2;
+                }
+                else {
+                    i += 1;
+                }
             } 
-            else {
-                result.back() += path;
+            
+            if (newLine != "" && !inBlock) {
+                result.push_back(newLine);
             }
         }
         

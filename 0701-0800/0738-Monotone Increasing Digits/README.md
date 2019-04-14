@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/monotone-increasing-digits/description/
+https://leetcode.com/problems/monotone-increasing-digits/
 
 Given a non-negative integer N, find the largest number that is less than or equal to N with monotone increasing digits.
 

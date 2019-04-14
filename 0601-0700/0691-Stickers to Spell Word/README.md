@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/stickers-to-spell-word/description/
+https://leetcode.com/problems/stickers-to-spell-word/
 
 We are given N different types of stickers. Each sticker has a lowercase English word on it.
 

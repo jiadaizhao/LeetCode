@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/maximum-sum-of-3-non-overlapping-subarrays/description/
+https://leetcode.com/problems/maximum-sum-of-3-non-overlapping-subarrays/
 
 In a given array nums of positive integers, find three non-overlapping subarrays with maximum sum.
 

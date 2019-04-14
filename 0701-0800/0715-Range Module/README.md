@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/range-module/description/
+https://leetcode.com/problems/range-module/
 
 A Range Module is a module that tracks ranges of numbers. Your task is to design and implement the following interfaces in an efficient manner.
 

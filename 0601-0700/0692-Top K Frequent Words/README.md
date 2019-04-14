@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/top-k-frequent-words/description/
+https://leetcode.com/problems/top-k-frequent-words/
 
 Given a non-empty list of words, return the k most frequent elements.
 

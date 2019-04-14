@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/number-of-atoms/description/
+https://leetcode.com/problems/number-of-atoms/
 
 Given a chemical formula (given as a string), return the count of each atom.
 

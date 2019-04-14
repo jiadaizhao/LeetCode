@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/random-pick-with-blacklist/description/
+https://leetcode.com/problems/random-pick-with-blacklist/
 
 Given a blacklist B containing unique integers from [0, N), write a function to return a uniform random integer from [0, N) which is **NOT** in B.
 

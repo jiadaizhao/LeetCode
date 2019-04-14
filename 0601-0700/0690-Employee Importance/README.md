@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/employee-importance/description/
+https://leetcode.com/problems/employee-importance/
 
 You are given a data structure of employee information, which includes the employee's unique id, his importance value and his direct subordinates' id.
 

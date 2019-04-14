@@ -8,7 +8,7 @@ public:
             return 2;
         }
         if (n == 2) {
-            return 4 - m % 2;
+            return m == 1 ? 3 : 4;
         }
         if (m == 1) {
             return 4;

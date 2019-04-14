@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/implement-magic-dictionary/description/
+https://leetcode.com/problems/implement-magic-dictionary/
 
 Implement a magic directory with buildDict, and search methods.
 

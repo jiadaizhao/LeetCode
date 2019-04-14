@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/design-hashset/description/
+https://leetcode.com/problems/design-hashset/
 
 Design a HashSet without using any built-in hash table libraries.
 

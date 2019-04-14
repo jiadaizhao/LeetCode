@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/my-calendar-ii/description/
+https://leetcode.com/problems/my-calendar-ii/
 
 Implement a MyCalendarTwo class to store your events. A new event can be added if adding the event will not cause a triple booking.
 

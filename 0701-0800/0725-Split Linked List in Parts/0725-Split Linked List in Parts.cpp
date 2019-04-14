@@ -16,28 +16,24 @@ public:
             head = head->next;
         }
         
-        int count = len / k;
-        int remain = len % k;
-        vector<ListNode*> result;
+        int count = len / k, remain = len % k;
+        vector<ListNode*> result(k);
         head = root;
-        while (head) {
+        for (int i = 0; i < k && head; ++i) {
+            result[i] = head;
             ListNode* prev = nullptr;
-            result.push_back(head);
-            for (int i = 0; i < count; ++i) {
+            for (int j = 0; j < count; ++j) {
                 prev = head;
                 head = head->next;
             }
-            
             if (remain > 0) {
                 prev = head;
                 head = head->next;
                 --remain;
             }
-            
-            prev->next = nullptr;            
+            prev->next = nullptr;
         }
         
-        result.resize(k);
         return result;
     }
 };

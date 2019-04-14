@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/my-calendar-iii/description/
+https://leetcode.com/problems/my-calendar-iii/
 
 Implement a MyCalendarThree class to store your events. A new event can always be added.
 

@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/count-different-palindromic-subsequences/description/
+https://leetcode.com/problems/count-different-palindromic-subsequences/
 
 Given a string S, find the number of different non-empty palindromic subsequences in S, and return that number modulo 10^9 + 7.
 

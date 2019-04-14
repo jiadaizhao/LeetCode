@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/1-bit-and-2-bit-characters/description/
+https://leetcode.com/problems/1-bit-and-2-bit-characters/
 
 We have two special characters. The first character can be represented by one bit 0. The second character can be represented by two bits (10 or 11).
 

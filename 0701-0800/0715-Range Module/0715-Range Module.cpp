@@ -5,14 +5,14 @@ public:
     }
     
     void addRange(int left, int right) {
-        auto l = table.lower_bound(left), r = table.upper_bound(right);
+        auto l = table.lower_bound(left);
         if (l != table.begin()) {
             --l;
             if (l->second < left) {
                 ++l;
             }
         }
-        
+        auto r = table.upper_bound(right);
         if (l != r) {
             left = min(left, l->first);
             right = max(right, (--r)->second);
@@ -22,22 +22,19 @@ public:
     }
     
     bool queryRange(int left, int right) {
-        auto it = table.upper_bound(left);
-        if (it == table.begin() || (--it)->second < right) {
-            return false;
-        }
-        return true;        
+        auto l = table.upper_bound(left);
+        return l != table.begin() && (--l)->second >= right;
     }
     
     void removeRange(int left, int right) {
-        auto l = table.lower_bound(left), r = table.upper_bound(right);
+        auto l = table.lower_bound(left);
         if (l != table.begin()) {
             --l;
-            if (l->second <= left) {
+            if (l->second < left) {
                 ++l;
             }
         }
-        
+        auto r = table.upper_bound(right);
         if (l != r) {
             int ll = min(left, l->first);
             int rr = max(right, (--r)->second);
@@ -47,7 +44,7 @@ public:
             }
             if (rr > right) {
                 table[right] = rr;
-            }            
+            }
         }
     }
     

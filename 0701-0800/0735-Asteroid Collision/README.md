@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/asteroid-collision/description/
+https://leetcode.com/problems/asteroid-collision/
 
 We are given an array asteroids of integers representing asteroids in a row.
 

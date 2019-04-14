@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/falling-squares/description/
+https://leetcode.com/problems/falling-squares/
 
 On an infinite number line (x-axis), we drop given squares in the order they are given.
 

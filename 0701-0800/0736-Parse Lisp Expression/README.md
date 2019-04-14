@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/parse-lisp-expression/description/
+https://leetcode.com/problems/parse-lisp-expression/
 
 You are given a string expression representing a Lisp-like expression to return the integer value of.
 

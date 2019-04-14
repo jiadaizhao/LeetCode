@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/number-of-longest-increasing-subsequence/description/
+https://leetcode.com/problems/number-of-longest-increasing-subsequence/
 
 Given an unsorted array of integers, find the number of longest increasing subsequence.
 

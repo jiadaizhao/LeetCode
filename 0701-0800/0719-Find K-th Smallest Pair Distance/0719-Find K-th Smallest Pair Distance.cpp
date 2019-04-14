@@ -1,11 +1,20 @@
 class Solution {
 public:
     int smallestDistancePair(vector<int>& nums, int k) {
-        sort(nums.begin(), nums.end());        
+        sort(nums.begin(), nums.end());
         int low = 0, high = nums.back() - nums.front();
+
         while (low < high) {
             int mid = low + (high - low) / 2;
-            if (count(nums, mid) >= k) {
+            int count = 0, left = 0;
+            for (int right = 1; right < nums.size(); ++right) {
+                while (nums[right] - nums[left] > mid) {
+                    ++left;
+                }
+                count += right - left;
+            }
+            
+            if (count >= k) {
                 high = mid;
             }
             else {
@@ -13,25 +22,5 @@ public:
             }
         }
         return low;
-    }
-    
-private:
-    int count(vector<int>& nums, int target) {
-        int sum = 0;
-        int start = 0, end = 1;
-        while (end < nums.size()) {
-            if (nums[end] - nums[start] <= target) {                
-                sum += end - start;
-                ++end;
-            }
-            else {
-                ++start;
-                if (start == end) {
-                    ++end;
-                }
-            }            
-        }
-
-        return sum;
     }
 };

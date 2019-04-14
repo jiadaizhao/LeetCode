@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/self-dividing-numbers/description/
+https://leetcode.com/problems/self-dividing-numbers/
 
 A self-dividing number is a number that is divisible by every digit it contains.
 

@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/split-linked-list-in-parts/description/
+https://leetcode.com/problems/split-linked-list-in-parts/
 
 Given a (singly) linked list with head node root, write a function to split the linked list into k consecutive linked list "parts".
 
