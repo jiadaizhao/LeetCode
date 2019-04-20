@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/contain-virus/description/
+https://leetcode.com/problems/contain-virus/
 
 A virus is spreading rapidly, and your task is to quarantine the infected area by installing walls.
 

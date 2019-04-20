@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/pyramid-transition-matrix/description/
+https://leetcode.com/problems/pyramid-transition-matrix/
 
 We are stacking blocks to form a pyramid. Each block has a color which is a one letter string, like `'Z'`.
 

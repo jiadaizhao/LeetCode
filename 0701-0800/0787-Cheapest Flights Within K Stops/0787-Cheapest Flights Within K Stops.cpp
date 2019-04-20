@@ -21,7 +21,7 @@ public:
 class Solution {
 public:
     int findCheapestPrice(int n, vector<vector<int>>& flights, int src, int dst, int K) {
-        vector<vector<int>> weights(n, vector<int>(n, -1));
+        vector<vector<int>> weights(n, vector<int>(n));
         for (auto f : flights) {
             weights[f[0]][f[1]] = f[2];
         }
@@ -34,12 +34,14 @@ public:
             int cost = node.cost;
             int stop = node.stop;
             pq.pop();
-            if (dist.count(city)) continue;            
             if (city == dst) return cost;
-            dist[city] = cost;
-            for (int i = 0; i < n; ++i) {
-                if (weights[city][i] != -1 && stop <= K && !dist.count(i)) {
-                    pq.emplace(i, cost + weights[city][i], stop + 1);
+            if (dist.count(city * n + stop)) continue;
+            dist[city * n + stop] = cost;
+            if (stop <= K) {
+                for (int i = 0; i < n; ++i) {
+                    if (weights[city][i] > 0) {
+                        pq.emplace(i, cost + weights[city][i], stop + 1);
+                    }
                 }
             }
         }

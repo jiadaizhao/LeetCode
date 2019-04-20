@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/network-delay-time/description/
+https://leetcode.com/problems/network-delay-time/
 
 There are N network nodes, labelled 1 to N.
 

@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/special-binary-string/description/
+https://leetcode.com/problems/special-binary-string/
 
 Special binary strings are binary strings with the following two properties:
 

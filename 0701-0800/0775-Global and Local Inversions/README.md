@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/global-and-local-inversions/description/
+https://leetcode.com/problems/global-and-local-inversions/
 
 We have some permutation A of [0, 1, ..., N - 1], where N is the length of A.
 

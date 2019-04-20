@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/k-th-smallest-prime-fraction/description/
+https://leetcode.com/problems/k-th-smallest-prime-fraction/
 
 A sorted list A contains 1, plus some number of primes.  Then, for every p < q in the list, we consider the fraction p/q.
 

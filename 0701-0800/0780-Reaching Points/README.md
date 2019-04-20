@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/reaching-points/description/
+https://leetcode.com/problems/reaching-points/
 
 A move consists of taking a point (x, y) and transforming it to either (x, x+y) or (x+y, y).
 

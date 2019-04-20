@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/cherry-pickup/description/
+https://leetcode.com/problems/cherry-pickup/
 
 In a N x N grid representing a field of cherries, each cell is one of three possible integers.
 

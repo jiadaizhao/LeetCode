@@ -57,3 +57,39 @@ class Solution2:
                 return step
 
         return 0
+
+
+# Faster bidirection with swap
+class Solution3:
+    def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
+        if endWord not in wordList:
+            return 0
+        table = collections.defaultdict(list)
+        L = len(beginWord)
+        for word in wordList:
+            for i in range(L):
+                table[word[:i] + '*' + word[i + 1:]].append(word)
+                
+        step = 1
+        visitedBegin = set([beginWord])
+        visitedEnd = set([endWord])
+        visited = set([beginWord])
+        while visitedBegin and visitedEnd:
+            if len(visitedBegin) > len(visitedEnd):
+                visitedBegin, visitedEnd = visitedEnd, visitedBegin
+            
+            step += 1
+            temp = set()
+            for w in visitedBegin:
+                for i in range(L):
+                    nw = w[:i] + '*' + w[i+1:]
+                    for word in table[nw]:
+                        if word in visitedEnd:
+                            return step
+                        if word not in visited:
+                            temp.add(word)
+                            visited.add(word)                
+
+            visitedBegin = temp
+
+        return 0

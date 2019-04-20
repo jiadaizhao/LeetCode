@@ -42,11 +42,10 @@ public:
             winO = true;
         }
         
-        if (winX) {
-            if (winO) return false;
-            if (countX == countO) return false;
+        if (winX && countX != countO + 1) {
+            return false;
         }
-        else if (winO && countX > countO) {
+        else if (winO && countX != countO) {
             return false;
         }
         return true;

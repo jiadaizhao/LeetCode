@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/max-chunks-to-make-sorted-ii/description/
+https://leetcode.com/problems/max-chunks-to-make-sorted-ii/
 
 This question is the same as "Max Chunks to Make Sorted" except the integers of the given array are not necessarily distinct, the input array could be up to length 2000, and the elements could be up to 10**8.
 

@@ -2,7 +2,7 @@ class Solution {
 public:
     int numTilings(int N) {
         int MOD = 1000000007;
-        vector<int> dp(1 + N);
+        int dp[1001];
         dp[0] = 1;
         dp[1] = 1;
         dp[2] = 2;

@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/reach-a-number/description/
+https://leetcode.com/problems/reach-a-number/
 
 You are standing at position 0 on an infinite number line. There is a goal at position target.
 

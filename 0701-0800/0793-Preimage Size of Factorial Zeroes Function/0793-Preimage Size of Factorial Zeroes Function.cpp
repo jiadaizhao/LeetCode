@@ -1,7 +1,7 @@
 class Solution {
 public:
     int preimageSizeFZF(int K) {
-        long long start = 1, end = LONG_MAX;
+        long long start = 1, end = ((long long)K + 1) * 5;
         while (start <= end) {
             long long mid = start + (end - start) / 2;
             long long count = trailingZeroes(mid);
@@ -24,8 +24,8 @@ private:
     long long trailingZeroes(long long n) {
         long long count = 0;
         while (n >= 5) {
-            count += n / 5;
             n /= 5;
+            count += n;
         }
         
         return count;

@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/is-graph-bipartite/description/
+https://leetcode.com/problems/is-graph-bipartite/
 
 Given a graph, return true if and only if it is bipartite.
 

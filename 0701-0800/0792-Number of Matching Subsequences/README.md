@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/number-of-matching-subsequences/description/
+https://leetcode.com/problems/number-of-matching-subsequences/
 
 Given string S and a dictionary of words words, find the number of words[i] that is a subsequence of S.
 ```

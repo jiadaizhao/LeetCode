@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/prefix-and-suffix-search/description/
+https://leetcode.com/problems/prefix-and-suffix-search/
 
 Given many words, words[i] has weight i.
 

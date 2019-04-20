@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/transform-to-chessboard/description/
+https://leetcode.com/problems/transform-to-chessboard/
 
 An N x N board contains only 0s and 1s. In each move, you can swap any 2 rows with each other, or any 2 columns with each other.
 

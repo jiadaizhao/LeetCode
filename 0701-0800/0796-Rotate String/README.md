@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/rotate-string/description/
+https://leetcode.com/problems/rotate-string/
 
 We are given two strings, A and B.
 

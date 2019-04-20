@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/set-intersection-size-at-least-two/description/
+https://leetcode.com/problems/set-intersection-size-at-least-two/
 
 An integer interval [a, b] (for integers a < b) is a set of all consecutive integers from a to b, including a and b.
 

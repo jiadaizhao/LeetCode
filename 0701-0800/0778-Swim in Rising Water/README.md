@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/swim-in-rising-water/description/
+https://leetcode.com/problems/swim-in-rising-water/
 
 On an N x N grid, each square grid[i][j] represents the elevation at that point (i,j).
 

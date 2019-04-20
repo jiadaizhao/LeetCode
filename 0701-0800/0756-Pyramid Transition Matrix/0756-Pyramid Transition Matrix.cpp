@@ -12,7 +12,7 @@ public:
     
 private:
     unordered_map<string, bool> cache;
-    bool dfs(string s, int start, string path, vector<vector<vector<int>>>& matrix) {       
+    bool dfs(string s, int start, string path, vector<vector<vector<int>>>& matrix) {        
         if (start == s.size() - 1) {
             if (s.size() == 2) {
                 return cache[s] = true;
@@ -21,7 +21,7 @@ private:
                 return cache[path];
             }
             
-            return cache[path] = dfs(path, 0, "", matrix);
+            return dfs(path, 0, "", matrix);
         }
         
         for (int i : matrix[s[start] - 'A'][s[start + 1] - 'A']) {
