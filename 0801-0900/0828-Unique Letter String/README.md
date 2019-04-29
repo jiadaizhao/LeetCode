@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/unique-letter-string/description/
+https://leetcode.com/problems/unique-letter-string/
 
 
 A character is unique in string S if it occurs exactly once in it.

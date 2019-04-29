@@ -1,36 +1,27 @@
 import collections
-
 class Solution:
-    def numBusesToDestination(self, routes, S, T):
-        """
-        :type routes: List[List[int]]
-        :type S: int
-        :type T: int
-        :rtype: int
-        """
+    def numBusesToDestination(self, routes: List[List[int]], S: int, T: int) -> int:
         if S == T:
             return 0
-        n = len(routes)
-        stationToBus = collections.defaultdict(set)
-        for i in range(n):
+        stationToBus = collections.defaultdict(list)
+        for i in range(len(routes)):
             for station in routes[i]:
-                stationToBus[station].add(i)
-        
+                stationToBus[station].append(i)
+                
+        Q = collections.deque([S])
+        visitedStation = set([S])
         visitedBus = set()
-        visitedStation = set()
-        Q = [S]
-        visitedStation.add(S)
         step = 0
-        while len(Q):
-            qs = len(Q)
+        while Q:
             step += 1
-            for i in range(qs):
-                s = Q.pop(0)
+            qs = len(Q)
+            for _ in range(qs):
+                s = Q.popleft()
                 for nb in stationToBus[s]:
                     if nb not in visitedBus:
                         visitedBus.add(nb)
                         for ns in routes[nb]:
-                            if (ns == T):
+                            if ns == T:
                                 return step
                             if ns not in visitedStation:
                                 Q.append(ns)

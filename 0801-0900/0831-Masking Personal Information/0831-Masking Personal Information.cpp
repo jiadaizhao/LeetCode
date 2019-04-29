@@ -4,8 +4,13 @@ public:
         int at = S.find('@');
         if (at == string::npos) {
             vector<string> country = {"", "+*-", "+**-", "+***-"};
-            S = regex_replace(S, regex("[^0-9]"), "");
-            return country[S.size() - 10] + "***-***-" + S.substr(S.size() - 4);
+            string str;
+            for (char c : S) {
+                if (isdigit(c)) {
+                    str += c;
+                }
+            }
+            return country[str.size() - 10] + "***-***-" + str.substr(str.size() - 4);
         }
         else {
             transform(S.begin(), S.end(), S.begin(), ::tolower);

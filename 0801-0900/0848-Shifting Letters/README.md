@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/shifting-letters/description/
+https://leetcode.com/problems/shifting-letters/
 
 We have a string S of lowercase letters, and an integer array shifts.
 

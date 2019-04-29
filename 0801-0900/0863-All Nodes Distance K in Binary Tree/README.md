@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/description/
+https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/
 
 We are given a binary tree (with root node root), a target node, and an integer value K.
 

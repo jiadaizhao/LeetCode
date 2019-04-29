@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/minimum-cost-to-hire-k-workers/description/
+https://leetcode.com/problems/minimum-cost-to-hire-k-workers/
 
 There are N workers.  The i-th worker has a quality[i] and a minimum wage expectation wage[i].
 

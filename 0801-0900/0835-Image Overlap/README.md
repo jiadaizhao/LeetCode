@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/find-and-replace-in-string/description/
+https://leetcode.com/problems/find-and-replace-in-string/
 
 
 Two images A and B are given, represented as binary, square matrices of the same size.  (A binary matrix has only 0s and 1s as values.)

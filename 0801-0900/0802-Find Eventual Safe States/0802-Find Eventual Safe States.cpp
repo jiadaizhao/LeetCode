@@ -4,24 +4,23 @@ public:
         int n = graph.size();
         vector<vector<int>> edges(n);
         vector<int> degrees(n);
-        for (int i = 0; i < n; ++i) {
-            degrees[i] = graph[i].size();
-            for (int j : graph[i]) {
-                edges[j].push_back(i);
-            }
-        }
-        
         queue<int> Q;
         for (int i = 0; i < n; ++i) {
+            degrees[i] = graph[i].size();
             if (degrees[i] == 0) {
                 Q.push(i);
             }
+            else {
+                for (int j : graph[i]) {
+                    edges[j].push_back(i);
+                }
+            }           
         }
-        
-        vector<int> result;
+      
+        vector<bool> safe(n);
         while (!Q.empty()) {
             int u = Q.front();
-            result.push_back(u);
+            safe[u] = true;
             Q.pop();
             for (int v : edges[u]) {
                 if (--degrees[v] == 0) {
@@ -29,7 +28,12 @@ public:
                 }
             }
         }
-        sort(result.begin(), result.end());
+        vector<int> result;
+        for (int i = 0; i < n; ++i) {
+            if (safe[i]) {
+                result.push_back(i);
+            }
+        }
         return result;
     }
 };

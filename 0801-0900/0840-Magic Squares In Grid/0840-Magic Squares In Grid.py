@@ -1,30 +1,15 @@
 class Solution:
-    def numMagicSquaresInside(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
-        def isMagic(grid, r, c):
-            count = [0] * 10
-            for i in range(3):
-                for j in range(3):
-                    if grid[r + i][c + j] < 1 or grid[r + i][c + j] > 9:
-                        return False
-                    count[grid[r + i][c + j]] += 1
-                    if count[grid[r + i][c + j]] > 1:
-                        return False
-            return (grid[r][c] + grid[r][c + 1] + grid[r][c + 2] ==
-                   grid[r + 1][c] + grid[r + 1][c + 1] + grid[r + 1][c + 2] ==
-                   grid[r + 2][c] + grid[r + 2][c + 1] + grid[r + 2][c + 2] ==
-                   grid[r][c] + grid[r + 1][c] + grid[r + 2][c] ==
-                   grid[r][c + 1] + grid[r + 1][c + 1] + grid[r + 2][c + 1] ==
-                   grid[r][c + 2] + grid[r + 1][c + 2] + grid[r + 2][c + 2] ==
-                   grid[r][c] + grid[r + 1][c + 1] + grid[r + 2][c + 2] ==
-                   grid[r][c + 2] + grid[r + 1][c + 1] + grid[r + 2][c] == 15)
+    def numMagicSquaresInside(self, grid: List[List[int]]) -> int:
+        def isMagic(a,b,c,d,e,f,g,h,i):
+            return (sorted([a,b,c,d,e,f,g,h,i]) == list(range(1, 10)) and
+                (a+b+c == d+e+f == g+h+i == a+d+g ==
+                 b+e+h == c+f+i == a+e+i == c+e+g == 15))
         
         count = 0
         for i in range(len(grid) - 2):
             for j in range(len(grid[0]) - 2):
-                if grid[i + 1][j + 1] == 5 and isMagic(grid, i, j):
+                if grid[i + 1][j + 1] == 5 and isMagic(grid[i][j], grid[i][j+1], grid[i][j+2],
+                                                       grid[i+1][j], grid[i+1][j+1], grid[i+1][j+2],
+                                                       grid[i+2][j], grid[i+2][j+1], grid[i+2][j+2]):
                     count += 1
         return count

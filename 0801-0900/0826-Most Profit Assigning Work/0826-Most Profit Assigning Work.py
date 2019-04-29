@@ -1,13 +1,6 @@
 class Solution:
-    def maxProfitAssignment(self, difficulty, profit, worker):
-        """
-        :type difficulty: List[int]
-        :type profit: List[int]
-        :type worker: List[int]
-        :rtype: int
-        """
-        jobs = list(zip(difficulty, profit))
-        jobs.sort()
+    def maxProfitAssignment(self, difficulty: List[int], profit: List[int], worker: List[int]) -> int:
+        jobs = sorted(zip(difficulty, profit))
         total = i = maxProfit = 0
         for w in sorted(worker):
             while i < len(jobs) and jobs[i][0] <= w:

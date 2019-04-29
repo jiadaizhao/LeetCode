@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/making-a-large-island/description/
+https://leetcode.com/problems/making-a-large-island/
 
 In a 2D grid of 0s and 1s, we change at most one 0 to a 1.
 

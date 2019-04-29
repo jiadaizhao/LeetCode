@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/linked-list-components/description/
+https://leetcode.com/problems/linked-list-components/
 
 We are given head, the head node of a linked list containing unique integer values.
 

@@ -1,21 +1,17 @@
 class Solution:
-    def shortestToChar(self, S, C):
-        """
-        :type S: str
-        :type C: str
-        :rtype: List[int]
-        """
-        n = len(S)
-        result = []
-        prev = -n
+    def shortestToChar(self, S: str, C: str) -> List[int]:
+        prev = -len(S)
+        result = [0] * len(S)
         for i, c in enumerate(S):
             if c == C:
                 prev = i
-            result.append(i - prev)
+            else:
+                result[i] = i - prev
         
-        prev = n * 2
-        for i in range(n - 1, -1, -1):
+        prev = len(S) * 2
+        for i in range(len(S) - 1, -1, -1):
             if S[i] == C:
                 prev = i
-            result[i] = min(result[i], prev - i)
+            else:
+                result[i] = min(result[i], prev - i)
         return result

@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/new-21-game/description/
+https://leetcode.com/problems/new-21-game/
 
 Alice plays the following game, loosely based on the card game "21".
 

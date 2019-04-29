@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/lemonade-change/description/
+https://leetcode.com/problems/lemonade-change/
 
 At a lemonade stand, each lemonade costs $5. 
 

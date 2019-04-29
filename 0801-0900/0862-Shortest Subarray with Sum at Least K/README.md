@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/description/
+https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/
 
 Return the length of the shortest, non-empty, contiguous subarray of A with sum at least K.
 

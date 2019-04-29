@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/score-after-flipping-matrix/description/
+https://leetcode.com/problems/score-after-flipping-matrix/
 
 We have a two dimensional matrix A where each value is 0 or 1.
 

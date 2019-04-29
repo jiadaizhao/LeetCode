@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/friends-of-appropriate-ages/description/
+https://leetcode.com/problems/friends-of-appropriate-ages/
 
 Some people will make friend requests. The list of their ages is given and ages[i] is the age of the ith person. 
 

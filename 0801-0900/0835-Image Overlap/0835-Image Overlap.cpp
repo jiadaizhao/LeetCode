@@ -6,11 +6,11 @@ public:
         for (int i = 0; i < n; ++i) {
             for (int j = 0; j < n; ++j) {
                 if (A[i][j] == 1) {
-                    A1.push_back(i * n + j);
+                    A1.push_back(i * n * 2 + j);
                 }
                 
                 if (B[i][j] == 1) {
-                    B1.push_back(i * n + j);
+                    B1.push_back(i * n * 2 + j);
                 }
             }
         }

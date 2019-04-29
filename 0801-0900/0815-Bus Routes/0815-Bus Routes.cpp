@@ -3,11 +3,11 @@ public:
     int numBusesToDestination(vector<vector<int>>& routes, int S, int T) {
         if (S == T) return 0;
         int n = routes.size();
-        unordered_map<int, unordered_set<int>> stationToBus;
+        unordered_map<int, vector<int>> stationToBus;
         unordered_set<int> visitedBus, visitedStation;
         for (int i = 0; i < n; ++i) {
             for (int station : routes[i]) {
-                stationToBus[station].insert(i);
+                stationToBus[station].push_back(i);
             }
         }
         

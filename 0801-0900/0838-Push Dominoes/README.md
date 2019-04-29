@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/push-dominoes/description/
+https://leetcode.com/problems/push-dominoes/
 
 There are N dominoes in a line, and we place each domino vertically upright.
 

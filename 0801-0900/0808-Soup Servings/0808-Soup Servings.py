@@ -1,23 +1,16 @@
 class Solution:
-    table = {}
-    def soupServings(self, N):
-        """
-        :type N: int
-        :rtype: float
-        """
+    def soupServings(self, N: int) -> float:
         if N >= 5000:
             return 1
-        def soupServings(a, b):
+        table = {}
+        def dfs(a, b):
             if a <= 0 and b <= 0:
                 return 0.5
             if a <= 0:
                 return 1
-            if  b <= 0:
+            if b <= 0:
                 return 0
-            if (a, b) in self.table:
-                return self.table[(a, b)]
-            self.table[(a, b)] = 0.25 * (soupServings(a - 4, b) + soupServings(a - 3, b - 1) + \
-                                         soupServings(a - 2, b - 2) + soupServings(a - 1, b - 3))
-            return self.table[(a, b)]
-        N = (N + 24) // 25
-        return soupServings(N, N)
+            if (a, b) not in table:
+                table[(a, b)] = 0.25*(dfs(a - 4, b) + dfs(a - 3, b - 1) + dfs(a - 2, b - 2) + dfs(a - 1, b - 3))
+            return table[(a, b)]
+        return dfs((N + 24)//25, (N + 24)//25)

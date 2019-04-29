@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/binary-trees-with-factors/description/
+https://leetcode.com/problems/binary-trees-with-factors/
 
 Given an array of unique integers, each integer is strictly greater than 1.
 

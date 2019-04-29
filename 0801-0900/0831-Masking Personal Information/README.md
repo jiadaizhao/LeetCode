@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/masking-personal-information/description/
+https://leetcode.com/problems/masking-personal-information/
 
 We are given a personal information string S, which may represent either an email address or a phone number.
 

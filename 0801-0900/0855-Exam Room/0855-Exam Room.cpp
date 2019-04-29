@@ -7,9 +7,53 @@ public:
     int seat() {
         int res = 0;
         if (seats.size()) {
+            int maxGap = *seats.begin();
+            int prev = *seats.begin();
+            for (int curr : seats) {
+                int gap = (curr - prev) / 2;
+                if (gap > maxGap) {
+                    maxGap = gap;
+                    res = prev + gap;
+                }
+                prev = curr;
+            }
+            
+            if (N - 1 - *seats.rbegin() > maxGap) {
+                res = N - 1;
+            }
+        }
+        seats.insert(res);
+        return res;
+    }
+    
+    void leave(int p) {
+        seats.erase(p);
+    }
+    
+private:
+    int N;
+    set<int> seats;
+};
+
+/**
+ * Your ExamRoom object will be instantiated and called as such:
+ * ExamRoom* obj = new ExamRoom(N);
+ * int param_1 = obj->seat();
+ * obj->leave(p);
+ */
+
+class ExamRoom {
+public:
+    ExamRoom(int N) {
+        this->N = N;
+    }
+    
+    int seat() {
+        int res = 0;
+        if (seats.size()) {
             int first = *seats.begin(), last = *seats.rbegin();
             int maxGap = gapTable.empty() ? -1 : gapTable.rbegin()->first;
-            // cout << "maxGap is " << maxGap << endl;
+
             if (maxGap == -1 || first >= maxGap / 2 || N - 1 - last > maxGap / 2) {
                 if (first >= N - 1 - last) {
                     res = 0;
@@ -56,6 +100,7 @@ private:
     map<int, set<int>> gapTable;
     set<int> seats;
     void addGap(int len, int index) {
+        // gap with odd length is equivalent to even length when divided by 2
         len -= len & 1;
         gapTable[len].insert(index);
     }

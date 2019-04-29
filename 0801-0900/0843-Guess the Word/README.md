@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/guess-the-word/description/
+https://leetcode.com/problems/guess-the-word/
 
 This problem is an interactive problem new to the LeetCode platform.
 

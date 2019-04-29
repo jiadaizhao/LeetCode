@@ -1,20 +1,15 @@
 class Solution:
-    def numFactoredBinaryTrees(self, A):
-        """
-        :type A: List[int]
-        :rtype: int
-        """
+    def numFactoredBinaryTrees(self, A: List[int]) -> int:
         MOD = 1000000007
-        n = len(A)
         A.sort()
         table = {x: i for i, x in enumerate(A)}
-        dp = [1] * n
+        dp = [1] * len(A)
         total = 0
-        for i in range(n):
+        for i in range(len(A)):
             for j in range(i):
                 if A[i] % A[j] == 0:
-                    num = A[i] / A[j]
+                    num = A[i] // A[j]
                     if num in table:
-                        dp[i] += dp[j] * dp[table[num]]
-            total += dp[i]
-        return total % MOD
+                        dp[i] = (dp[i] + dp[j] * dp[table[num]]) % MOD
+            total = (total + dp[i]) % MOD
+        return total

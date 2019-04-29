@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/flipping-an-image/description/
+https://leetcode.com/problems/flipping-an-image/
 
 Given a binary matrix A, we want to flip the image horizontally, then invert it, and return the resulting image.
 

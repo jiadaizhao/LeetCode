@@ -1,16 +1,11 @@
 import collections
 class Solution:
-    def subdomainVisits(self, cpdomains):
-        """
-        :type cpdomains: List[str]
-        :rtype: List[str]
-        """
+    def subdomainVisits(self, cpdomains: List[str]) -> List[str]:
         table = collections.Counter()
         for cpdomain in cpdomains:
-            num, s = cpdomain.split()
-            num = int(num)
-            for i in range(len(s) - 1, 0, -1):
-                if s[i] == '.':
-                    table[s[i + 1 :]] += num
-            table[s] += num
-        return ["%d %s" % (table[k], k) for k in table]
+            wi = cpdomain.index(' ')
+            count = int(cpdomain[:wi])
+            names = cpdomain[wi+1:].split('.')
+            for i in range(len(names)):
+                table['.'.join(names[i:])] += count
+        return ['{} {}'.format(v, k) for k, v in table.items()]

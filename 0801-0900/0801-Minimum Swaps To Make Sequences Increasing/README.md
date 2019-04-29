@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/minimum-swaps-to-make-sequences-increasing/description/
+https://leetcode.com/problems/minimum-swaps-to-make-sequences-increasing/
 
 We have two integer sequences A and B of the same non-zero length.
 

@@ -2,7 +2,6 @@ class Solution {
 public:
     vector<int> splitIntoFibonacci(string S) {
         int n = S.size();        
-        vector<int> result;
         for (int i = 1; i <= min(10, n / 2); ++i) {
             string s1 = S.substr(0, i);
             if (i > 1 && s1[0] == '0') {
@@ -20,8 +19,8 @@ public:
                 }
                 int num2 = stol(s2);
                 vector<int> path = {num1, num2};
-                if (dfs(S, i + j, path, num1, num2, result)) {
-                    return result;
+                if (dfs(S, i + j, path, num1, num2)) {
+                    return path;
                 }
             }
         }
@@ -30,13 +29,15 @@ public:
     }
 
 private:
-    bool dfs(string& S, int start, vector<int>& path, int num1, int num2, vector<int>& result) {
+    bool dfs(string& S, int start, vector<int>& path, int num1, int num2) {
         if (start == S.size()) {
-            result = path;
             return true;
         }
         
-        int sum = num1 + num2;
+        long long sum = (long long)num1 + num2;
+        if (sum > INT_MAX) {
+            return false;
+        }
         string ss = to_string(sum);
         string s3 = S.substr(start, ss.size());
         if (ss != s3) {
@@ -44,9 +45,7 @@ private:
         }
         else {
             path.push_back(sum);
-            bool ret = dfs(S, start + ss.size(), path, num2, sum, result);
-            path.pop_back();
-            return ret;
+            return dfs(S, start + ss.size(), path, num2, sum);
         }
     }
 };

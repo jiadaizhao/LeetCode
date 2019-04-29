@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/split-array-with-same-average/description/
+https://leetcode.com/problems/split-array-with-same-average/
 
 In a given integer array A, we must move every element of A to either list B or list C. (B and C initially start empty.)
 

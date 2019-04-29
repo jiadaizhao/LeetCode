@@ -1,29 +1,25 @@
+import collections
 class Solution:
-    def sumOfDistancesInTree(self, N, edges):
-        """
-        :type N: int
-        :type edges: List[List[int]]
-        :rtype: List[int]
-        """
+    def sumOfDistancesInTree(self, N: int, edges: List[List[int]]) -> List[int]:
         graph = collections.defaultdict(list)
         for u, v in edges:
             graph[u].append(v)
             graph[v].append(u)
-        sums = [0] * N
-        counts = [1] * N
-        def dfs1(curr, prev, graph, sums, counts):
+        
+        count = [1] * N
+        ans = [0] * N
+        def dfs1(curr, prev):
             for next in graph[curr]:
                 if next != prev:
-                    dfs1(next, curr, graph, sums, counts)
-                    sums[curr] += sums[next] + counts[next]
-                    counts[curr] += counts[next]
+                    dfs1(next, curr)
+                    ans[curr] += ans[next] + count[next]
+                    count[curr] += count[next]
                     
-        def dfs2(curr, prev, graph, sums, counts):
+        def dfs2(curr, prev):
             for next in graph[curr]:
                 if next != prev:
-                    sums[next] = sums[curr] - counts[next] + len(graph) - counts[next]               
-                    dfs2(next, curr, graph, sums, counts)
-                    
-        dfs1(0, -1, graph, sums, counts)
-        dfs2(0, -1, graph, sums, counts)
-        return sums
+                    ans[next] = ans[curr] - count[next] + N - count[next]
+                    dfs2(next, curr)
+        dfs1(0, -1)
+        dfs2(0, -1)
+        return ans

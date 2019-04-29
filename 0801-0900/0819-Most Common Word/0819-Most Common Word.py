@@ -1,23 +1,16 @@
+import re
 import collections
-
 class Solution:
-    def mostCommonWord(self, paragraph, banned):
-        """
-        :type paragraph: str
-        :type banned: List[str]
-        :rtype: str
-        """
+    def mostCommonWord(self, paragraph: str, banned: List[str]) -> str:
         ban = set(banned)
-        count = collections.Counter(word.strip("!?',;.") for word in paragraph.lower().split())
+        words = re.findall(r'\w+', paragraph.lower())
+        maxCount = 0
+        table = collections.Counter()
+        for word in words:
+            if word not in ban:
+                table[word] += 1
+                if table[word] > maxCount:
+                    maxCount = table[word]
+                    result = word
 
-        result, maxCount = '', 0
-        for word in count:
-            if count[word] > maxCount and word not in ban:
-                result, maxCount = word, count[word]
         return result
-
-sol = Solution()
-paragraph = "Bob. hIt, baLl"
-banned = ["bob", "hit"]
-result = sol.mostCommonWord(paragraph, banned)
-print(result)

@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/hand-of-straights/description/
+https://leetcode.com/problems/hand-of-straights/
 
 Alice has a hand of cards, given as an array of integers.
 

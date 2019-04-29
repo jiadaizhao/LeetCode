@@ -2,11 +2,7 @@ import collections
 from functools import reduce
 
 class Solution:
-    def minimumLengthEncoding(self, words):
-        """
-        :type words: List[str]
-        :rtype: int
-        """
+    def minimumLengthEncoding(self, words: List[str]) -> int:
         table = set(words)
         for word in words:
             for i in range(1, len(word)):
@@ -34,3 +30,18 @@ class Solution:
         return sum(len(word) + 1
                    for i, word in enumerate(words)
                    if len(nodes[i]) == 0)
+
+class TrieNode:
+    def __init__(self):
+        self.next = collections.defaultdict(TrieNode)
+
+class Solution3:
+    def minimumLengthEncoding(self, words: List[str]) -> int:
+        root = TrieNode()
+        table = []
+        for word in set(words):
+            node = root
+            for c in word[::-1]:
+                node = node.next[c]
+            table.append((node, len(word) + 1))
+        return sum(l for node, l in table if not node.next)

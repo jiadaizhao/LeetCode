@@ -1,11 +1,5 @@
 class Solution:
-    def new21Game(self, N, K, W):
-        """
-        :type N: int
-        :type K: int
-        :type W: int
-        :rtype: float
-        """
+    def new21Game(self, N: int, K: int, W: int) -> float:
         if K == 0:
             return 1
         presum = [0] * (1 + N)

@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/positions-of-large-groups/description/
+https://leetcode.com/problems/positions-of-large-groups/
 
 
 In a string S of lowercase letters, these letters form consecutive groups of the same character.

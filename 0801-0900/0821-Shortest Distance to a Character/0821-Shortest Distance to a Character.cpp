@@ -8,7 +8,9 @@ public:
             if (S[i] == C) {
                 prev = i;
             }
-            result[i] = i - prev;
+            else {
+                result[i] = i - prev;
+            }         
         }
         
         prev = n * 2;
@@ -16,7 +18,9 @@ public:
             if (S[i] == C) {
                 prev = i;
             }
-            result[i] = min(result[i], prev - i);
+            else {
+                result[i] = min(result[i], prev - i);
+            }
         }
         
         return result;

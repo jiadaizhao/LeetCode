@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/most-profit-assigning-work/description/
+https://leetcode.com/problems/most-profit-assigning-work/
 
 We have jobs: difficulty[i] is the difficulty of the ith job, and profit[i] is the profit of the ith job. 
 

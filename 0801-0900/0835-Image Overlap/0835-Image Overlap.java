@@ -5,11 +5,11 @@ class Solution {
         for (int i = 0; i < n; ++i) {
             for (int j = 0; j < n; ++j) {
                 if (A[i][j] == 1) {
-                    A1.add(i * n + j);
+                    A1.add(i * n * 2 + j);
                 }
                 
                 if (B[i][j] == 1) {
-                    B1.add(i * n + j);
+                    B1.add(i * n * 2 + j);
                 }
             }
         }

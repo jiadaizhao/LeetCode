@@ -1,10 +1,6 @@
 class Solution:
-    def consecutiveNumbersSum(self, N):
-        """
-        :type N: int
-        :rtype: int
-        """
-        N *= 2
+    def consecutiveNumbersSum(self, N: int) -> int:
+        N *= 2;
         count = 1
         i = 2
         while i * i <= N:

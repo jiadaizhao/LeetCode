@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/find-and-replace-in-string/description/
+https://leetcode.com/problems/find-and-replace-in-string/
 
 To some string S, we will perform some replacement operations that replace groups of letters with new ones (not necessarily the same size).
 

@@ -7,7 +7,9 @@ class Solution {
             if (S.charAt(i) == C) {
                 prev = i;
             }
-            result[i] = i - prev;
+            else {
+                result[i] = i - prev;
+            } 
         }
         
         prev = n * 2;
@@ -15,9 +17,10 @@ class Solution {
             if (S.charAt(i) == C) {
                 prev = i;
             }
-            result[i] = Math.min(result[i], prev - i);
+            else {
+                result[i] = Math.min(result[i], prev - i);
+            }   
         }
-        return result;
-        
+        return result;    
     }
 }

@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/car-fleet/description/
+https://leetcode.com/problems/car-fleet/
 
 N cars are going to the same destination along a one lane road.  The destination is target miles away.
 

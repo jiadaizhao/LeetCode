@@ -6,23 +6,21 @@ public:
         for (auto r : richer) {
             graph[r[1]].push_back(r[0]);
         }
-        vector<int> result(n);
-        iota(result.begin(), result.end(), 0);
-        unordered_set<int> visited;
+        vector<int> result(n, -1);
         for (int i = 0; i < n; ++i) {
-            if (!visited.count(i)) {
-                dfs(graph, i, visited, quiet, result);
+            if (result[i] == -1) {
+                dfs(graph, i, quiet, result);
             }
         }
         return result;
     }
     
 private:
-    void dfs(vector<vector<int>>& graph, int curr, unordered_set<int>& visited, vector<int>& quiet, vector<int>& result) {
-        visited.insert(curr);
+    void dfs(vector<vector<int>>& graph, int curr, vector<int>& quiet, vector<int>& result) {
+        result[curr] = curr;
         for (int next : graph[curr]) {
-            if (!visited.count(next)) {
-                dfs(graph, next, visited, quiet, result);                
+            if (result[next] == -1) {
+                dfs(graph, next, quiet, result);                
             }
             if (quiet[result[next]] < quiet[result[curr]]) {
                 result[curr] = result[next];

@@ -1,22 +1,18 @@
 class Solution:
-    def pushDominoes(self, dominoes):
-        """
-        :type dominoes: str
-        :rtype: str
-        """
+    def pushDominoes(self, dominoes: str) -> str:
         result = list(dominoes)
         last = -1
-        for i in range(len(dominoes)):
-            if dominoes[i] == 'L':
+        for i, d in enumerate(dominoes):
+            if d == 'L':
                 if last != -1 and dominoes[last] == 'R':
-                    j = (i + last) // 2
-                    if ((i + last) & 1) == 0:
+                    j = (last + i) // 2
+                    if ((i - last) & 1) == 0:
                         result[j] = '.'
                 else:
                     j = last
-                for k in range(j + 1, i):
+                for k in range(j+1, i):
                     result[k] = 'L'
-            if dominoes[i] != '.':
+            if d != '.':
                 last = i
             elif last != -1 and dominoes[last] == 'R':
                 result[i] = 'R'

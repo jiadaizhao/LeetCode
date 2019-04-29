@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/card-flipping-game/description/
+https://leetcode.com/problems/card-flipping-game/
 
 On a table are N cards, with a positive integer printed on the front and back of each card (possibly different).
 

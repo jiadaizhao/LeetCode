@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/similar-string-groups/description/
+https://leetcode.com/problems/similar-string-groups/
 
 Two strings X and Y are similar if we can swap two letters (in different positions) of X, so that it equals Y.
 

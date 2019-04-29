@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/sum-of-distances-in-tree/description/
+https://leetcode.com/problems/sum-of-distances-in-tree/
 
 An undirected, connected tree with N nodes labelled 0...N-1 and N-1 edges are given.
 

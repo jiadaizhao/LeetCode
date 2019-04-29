@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/short-encoding-of-words/description/
+https://leetcode.com/problems/short-encoding-of-words/
 
 Given a list of words, we may encode it by writing a reference string S and a list of indexes A.
 

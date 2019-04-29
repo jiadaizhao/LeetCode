@@ -1,15 +1,24 @@
+import collections
 class Solution:
-    def canVisitAllRooms(self, rooms):
-        """
-        :type rooms: List[List[int]]
-        :rtype: bool
-        """
-        visited = {0}
-        Q = [0]
-        while len(Q):
-            index = Q.pop(0)
+    def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
+        visited = [False]*len(rooms)
+        Q = collections.deque([0])
+        while Q:
+            index = Q.popleft()
+            visited[index] = True
             for k in rooms[index]:
-                if k not in visited:
+                if not visited[k]:
                     Q.append(k)
-                    visited.add(k)
-        return len(visited) == len(rooms)
+        return all(visited)
+
+class Solution2:
+    def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
+        visited = [False]*len(rooms)
+        St = [0]
+        while St:
+            index = St.pop()
+            visited[index] = True
+            for k in rooms[index]:
+                if not visited[k]:
+                    St.append(k)
+        return all(visited)

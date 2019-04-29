@@ -1,9 +1,5 @@
 class Solution:
-    def xorGame(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
+    def xorGame(self, nums: List[int]) -> bool:
         x = 0
         for num in nums:
             x ^= num
