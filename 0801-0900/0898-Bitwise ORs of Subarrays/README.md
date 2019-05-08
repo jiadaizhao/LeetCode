@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/bitwise-ors-of-subarrays/description/
+https://leetcode.com/problems/bitwise-ors-of-subarrays/
 
 We have an array A of non-negative integers.
 

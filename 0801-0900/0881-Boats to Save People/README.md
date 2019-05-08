@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/boats-to-save-people/description/
+https://leetcode.com/problems/boats-to-save-people/
 
 The i-th person has weight people[i], and each boat can carry a maximum weight of limit.
 

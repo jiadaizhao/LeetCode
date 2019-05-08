@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/surface-area-of-3d-shapes/description/
+https://leetcode.com/problems/surface-area-of-3d-shapes/
 
 
 On a N * N grid, we place some 1 * 1 * 1 cubes.

@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/transpose-matrix/description/
+https://leetcode.com/problems/transpose-matrix/
 
 Given a matrix A, return the transpose of A.
 

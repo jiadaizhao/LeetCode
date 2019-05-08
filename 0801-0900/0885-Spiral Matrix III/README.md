@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/spiral-matrix-iii/description/
+https://leetcode.com/problems/spiral-matrix-iii/
 
 On a 2 dimensional grid with R rows and C columns, we start at (r0, c0) facing east.
 

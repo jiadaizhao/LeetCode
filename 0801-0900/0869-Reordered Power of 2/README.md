@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/reordered-power-of-2/description/
+https://leetcode.com/problems/reordered-power-of-2/
 
 Starting with a positive integer N, we reorder the digits in any order (including the original order) such that the leading digit is not zero.
 

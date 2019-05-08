@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/sum-of-subsequence-widths/description/
+https://leetcode.com/problems/sum-of-subsequence-widths/
 
 
 Given an array of integers A, consider all non-empty subsequences of A.

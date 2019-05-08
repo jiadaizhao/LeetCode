@@ -1,10 +1,10 @@
+'''
+The floor number we can check given m moves and k eggs.
+dp[m][k] = dp[m - 1][k - 1] + dp[m - 1][k] + 1
+'''
+
 class Solution:
-    def superEggDrop(self, K, N):
-        """
-        :type K: int
-        :type N: int
-        :rtype: int
-        """
+    def superEggDrop(self, K: int, N: int) -> int:
         dp = [0] * (K + 1)
         m = 0
         while dp[K] < N:

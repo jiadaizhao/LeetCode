@@ -6,11 +6,7 @@
 #         self.right = None
 
 class Solution:
-    def increasingBST(self, root):
-        """
-        :type root: TreeNode
-        :rtype: TreeNode
-        """
+    def increasingBST(self, root: TreeNode) -> TreeNode:
         St = []
         node = root
         prev = None

@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/smallest-subtree-with-all-the-deepest-nodes/description/
+https://leetcode.com/problems/smallest-subtree-with-all-the-deepest-nodes/
 
 Given a binary tree rooted at root, the depth of each node is the shortest distance to the root.
 

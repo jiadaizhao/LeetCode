@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/orderly-queue/description/
+https://leetcode.com/problems/orderly-queue/
 
 A string S of lowercase letters is given.  Then, we may make any number of moves.
 

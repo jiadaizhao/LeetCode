@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/super-egg-drop/description/
+https://leetcode.com/problems/super-egg-drop/
 
 You are given K eggs, and you have access to a building with N floors from 1 to N. 
 

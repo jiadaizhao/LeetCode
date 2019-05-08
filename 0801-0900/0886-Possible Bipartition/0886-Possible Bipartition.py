@@ -1,11 +1,6 @@
 import collections
 class Solution:
-    def possibleBipartition(self, N, dislikes):
-        """
-        :type N: int
-        :type dislikes: List[List[int]]
-        :rtype: bool
-        """
+    def possibleBipartition(self, N: int, dislikes: List[List[int]]) -> bool:
         graph = collections.defaultdict(list)
         for u, v in dislikes:
             graph[u].append(v)
@@ -14,11 +9,11 @@ class Solution:
         colors = {}
         def dfs(curr, col):
             colors[curr] = col
-            for nex in graph[curr]:
-                if nex not in colors:
-                    if not dfs(nex, col ^ 1):
+            for next in graph[curr]:
+                if next not in colors:
+                    if not dfs(next, col ^ 1):
                         return False
-                elif colors[curr] == colors[nex]:
+                elif colors[curr] == colors[next]:
                     return False
             return True
         

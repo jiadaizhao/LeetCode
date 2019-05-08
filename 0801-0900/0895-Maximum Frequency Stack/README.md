@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/maximum-frequency-stack/description/
+https://leetcode.com/problems/maximum-frequency-stack/
 
 
 Implement FreqStack, a class which simulates the operation of a stack-like data structure.

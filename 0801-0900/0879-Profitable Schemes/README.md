@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/profitable-schemes/description/
+https://leetcode.com/problems/profitable-schemes/
 
 There are G people in a gang, and a list of various crimes they could commit.
 

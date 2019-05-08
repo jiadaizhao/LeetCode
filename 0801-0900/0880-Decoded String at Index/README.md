@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/decoded-string-at-index/description/
+https://leetcode.com/problems/decoded-string-at-index/
 
 An encoded string S is given.  To find and write the decoded string to a tape, the encoded string is read one character at a time and the following steps are taken:
 

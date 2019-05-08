@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/middle-of-the-linked-list/description/
+https://leetcode.com/problems/middle-of-the-linked-list/
 
 Given a non-empty, singly linked list with head node head, return a middle node of linked list.
 

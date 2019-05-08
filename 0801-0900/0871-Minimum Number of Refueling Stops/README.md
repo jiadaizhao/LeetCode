@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/minimum-number-of-refueling-stops/description/
+https://leetcode.com/problems/minimum-number-of-refueling-stops/
 
 A car travels from a starting position to a destination which is target miles east of the starting position.
 

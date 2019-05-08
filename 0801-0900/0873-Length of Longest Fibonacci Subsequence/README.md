@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/description/
+https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/
 
 A sequence X_1, X_2, ..., X_n is fibonacci-like if:
 

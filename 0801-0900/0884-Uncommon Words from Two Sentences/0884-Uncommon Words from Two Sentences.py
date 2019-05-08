@@ -1,11 +1,5 @@
 import collections
 class Solution:
-    def uncommonFromSentences(self, A, B):
-        """
-        :type A: str
-        :type B: str
-        :rtype: List[str]
-        """
-        count = collections.Counter(A.split())
-        count += collections.Counter(B.split())
-        return [word for word in count if count[word] == 1]
+    def uncommonFromSentences(self, A: str, B: str) -> List[str]:
+        table = collections.Counter((A + ' ' + B).split())
+        return [word for word in table if table[word] == 1]

@@ -1,16 +1,11 @@
 class Solution:
-    def numRescueBoats(self, people, limit):
-        """
-        :type people: List[int]
-        :type limit: int
-        :rtype: int
-        """
+    def numRescueBoats(self, people: List[int], limit: int) -> int:
         people.sort()
-        start, end = 0, len(people) - 1
-        total = 0
-        while start <= end:
+        low = total = 0
+        high = len(people) - 1
+        while low <= high:
             total += 1
-            if people[start] + people[end] <= limit:
-                start += 1
-            end -= 1
+            if people[low] + people[high] <= limit:
+                low += 1
+            high -= 1
         return total

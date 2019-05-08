@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/description/
+https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/
 
 
 Return any binary tree that matches the given preorder and postorder traversals.

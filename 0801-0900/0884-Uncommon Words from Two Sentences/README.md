@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/uncommon-words-from-two-sentences/description/
+https://leetcode.com/problems/uncommon-words-from-two-sentences/
 
 We are given two sentences A and B.  (A sentence is a string of space separated words.  Each word consists only of lowercase letters.)
 

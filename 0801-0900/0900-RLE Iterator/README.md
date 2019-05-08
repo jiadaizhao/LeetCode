@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/rle-iterator/description/
+https://leetcode.com/problems/rle-iterator/
 
 Write an iterator that iterates through a run-length encoded sequence.
 

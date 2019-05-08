@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/groups-of-special-equivalent-strings/description/
+https://leetcode.com/problems/groups-of-special-equivalent-strings/
 
 
 You are given an array A of strings.

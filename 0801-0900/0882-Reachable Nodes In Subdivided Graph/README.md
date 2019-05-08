@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/reachable-nodes-in-subdivided-graph/description/
+https://leetcode.com/problems/reachable-nodes-in-subdivided-graph/
 
 Starting with an undirected graph (the "original graph") with nodes from 0 to N-1, subdivisions are made to some of the edges.
 

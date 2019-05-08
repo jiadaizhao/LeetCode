@@ -1,10 +1,5 @@
 class Solution:
-    def fairCandySwap(self, A, B):
-        """
-        :type A: List[int]
-        :type B: List[int]
-        :rtype: List[int]
-        """
+    def fairCandySwap(self, A: List[int], B: List[int]) -> List[int]:
         diff = (sum(B) - sum(A)) // 2
         setB = set(B)
         for a in A:

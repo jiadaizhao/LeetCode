@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/nth-magical-number/description/
+https://leetcode.com/problems/nth-magical-number/
 
 A positive integer is magical if it is divisible by either A or B.
 

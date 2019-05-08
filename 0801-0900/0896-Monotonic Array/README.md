@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/monotonic-array/description/
+https://leetcode.com/problems/monotonic-array/
 
 An array is monotonic if it is either monotone increasing or monotone decreasing.
 

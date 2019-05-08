@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/prime-palindrome/description/
+https://leetcode.com/problems/prime-palindrome/
 
 Find the smallest prime palindrome greater than or equal to N.
 
