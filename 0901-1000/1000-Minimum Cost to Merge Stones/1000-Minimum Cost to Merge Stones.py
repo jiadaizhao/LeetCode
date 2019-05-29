@@ -10,13 +10,7 @@ class Solution:
 
         @lru_cache(None)
         def dfs(start, end, p):
-            if (end - start + 1 - p) % (K - 1):
-                return math.inf
-
-            if end - start + 1 == K:
-                return presum[end + 1] - presum[start]
-
-            if start == end:
+            if end - start + 1 == p:
                 return 0
 
             if p == 1:
