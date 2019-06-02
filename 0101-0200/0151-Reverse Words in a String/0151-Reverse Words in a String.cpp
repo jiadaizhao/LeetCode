@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void reverseWords(string &s) {
+    string reverseWords(string s) {
         reverse(s.begin(), s.end());
         int index = 0;
         for (int i = 0; i < s.size(); ++i) {
@@ -18,5 +18,6 @@ public:
         }
 
         s.erase(s.begin() + index, s.end());
+        return s;
     }
 };

@@ -9,12 +9,6 @@
  */
 
  // BFS
-struct Node {
-    int index;
-    TreeNode* treeNode;
-    Node(int i, TreeNode* node) : index(i), treeNode(node) {}
-};
-
 class Solution {
 public:
     int widthOfBinaryTree(TreeNode* root) {
@@ -22,31 +16,28 @@ public:
             return 0;
         }
         int maxWidth = 0;
-        queue<Node> Q;
-
-        Q.emplace(1, root);
-        
+        queue<pair<int, TreeNode*>> Q;
+        Q.emplace(1, root);        
         while (!Q.empty()) {
             int qs = Q.size();
-            int left = -1, right = -1;
+            int index = -1;
+            int left = Q.front().first;
             for (int i = 0; i < qs; ++i) {
-                Node* node = &(Q.front());
+                index = Q.front().first;
+                TreeNode* node = Q.front().second;
                 Q.pop();
-                if (left == -1) {
-                    left = node->index;
+
+                if (node->left) {
+                    // Previously it's index * 2, which may have overflow issue, minus shift
+                    Q.emplace((index - left + 1) * 2, node->left);
                 }
 
-                right = node->index;
-                if (node->treeNode->left) {
-                    Q.emplace(node->index * 2, node->treeNode->left);
-                }
-
-                if (node->treeNode->right) {
-                    Q.emplace(node->index * 2 + 1, node->treeNode->right);
+                if (node->right) {
+                    Q.emplace((index - left + 1) * 2 + 1, node->right);
                 }
             }
 
-            maxWidth = max(maxWidth, right - left + 1);
+            maxWidth = max(maxWidth, index - left + 1);
         }
 
         return maxWidth;
@@ -71,8 +62,8 @@ private:
             lefts.push_back(index);
         }
         
-        int leftMax = dfs(root->left, level + 1, index * 2, lefts);
-        int rightMax = dfs(root->right, level + 1, index * 2 + 1, lefts);
+        int leftMax = dfs(root->left, level + 1, (index - lefts[level] + 1) * 2, lefts);
+        int rightMax = dfs(root->right, level + 1, (index - lefts[level] + 1) * 2 + 1, lefts);
         return max({index - lefts[level] + 1, leftMax, rightMax});
     }
 };
