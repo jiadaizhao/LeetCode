@@ -4,17 +4,15 @@ class Solution:
         for word in words:
             table = {}
             mapped = set()
-            match = True
-            for i in range(len(pattern)):
-                if pattern[i] not in table:
-                    if word[i] in mapped:
-                        match = False
+            for p, w in zip(pattern, word):
+                if p not in table:
+                    if w in mapped:
                         break
-                    table[pattern[i]] = word[i]
-                    mapped.add(word[i])
-                elif table[pattern[i]] != word[i]:
-                    match = False
+                    table[p] = w
+                    mapped.add(w)
+                elif table[p] != w:
                     break
-            if match:
+            else:
                 result.append(word)
+                
         return result

@@ -13,6 +13,7 @@ public:
         vector<int> dy = {-1, 0, 1, -1, 1, -1, 0, 1};
         queue<pair<int, int>> Q;
         Q.emplace(x, y);
+        board[x][y] = 'B';
         while (!Q.empty()) {
             x = Q.front().first;
             y = Q.front().second;
@@ -29,9 +30,7 @@ public:
             if (count) {
                 board[x][y] = '0' + count;
             }
-            else {
-                board[x][y] = 'B';
-                
+            else {                
                 for (int i = 0; i < dx.size(); ++i) {
                     int nx = x + dx[i];
                     int ny = y + dy[i];

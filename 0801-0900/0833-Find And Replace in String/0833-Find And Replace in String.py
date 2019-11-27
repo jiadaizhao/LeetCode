@@ -3,5 +3,5 @@ class Solution:
         sl = list(S)
         for i, source, target in sorted(zip(indexes, sources, targets), reverse=True):
             if S[i: i + len(source)] == source:
-                sl[i: i + len(source)] = list(target)
+                sl[i: i + len(source)] = target
         return ''.join(sl)

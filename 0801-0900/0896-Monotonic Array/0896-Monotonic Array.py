@@ -1,6 +1,6 @@
 class Solution:
     def isMonotonic(self, A: List[int]) -> bool:
-        inc, dec = False, False
+        inc = dec = False
         for i in range(len(A) - 1):
             if A[i] > A[i + 1]:
                 if inc:

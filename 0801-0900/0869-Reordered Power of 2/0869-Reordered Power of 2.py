@@ -8,3 +8,10 @@ class Solution:
             return result
         result = countDigits(N)
         return any(result == countDigits(1 << i) for i in range(31))
+
+
+import collections
+class Solution2:
+    def reorderedPowerOf2(self, N: int) -> bool:
+        curr = collections.Counter(str(N))
+        return any(curr == collections.Counter(str(1 << i)) for i in range(31))

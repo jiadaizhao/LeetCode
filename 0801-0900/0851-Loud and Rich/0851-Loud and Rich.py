@@ -1,6 +1,7 @@
+import collections
 class Solution:
     def loudAndRich(self, richer: List[List[int]], quiet: List[int]) -> List[int]:
-        graph = [[] for _ in range(len(quiet))]
+        graph = collections.defaultdict(list)
         for u, v in richer:
             graph[v].append(u)
             

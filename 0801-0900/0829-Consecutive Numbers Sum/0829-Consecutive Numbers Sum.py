@@ -1,10 +1,12 @@
 class Solution:
     def consecutiveNumbersSum(self, N: int) -> int:
-        N *= 2;
         count = 1
         i = 2
-        while i * i <= N:
-            if N % i == 0 and ((i & 1) ^ (N // i & 1)):
+        left =  N - i * (i - 1) // 2
+        while left > 0:
+            if left % i == 0:
                 count += 1
             i += 1
+            left = N - i * (i - 1) // 2
+
         return count

@@ -36,7 +36,7 @@ public:
                 return false;
             }
             
-            if ((i >= 0 && j < 0) || (i < 0 && j >= 0)) {
+            if ((i < 0) ^ (j < 0)) {
                 return false;
             }
             --i;

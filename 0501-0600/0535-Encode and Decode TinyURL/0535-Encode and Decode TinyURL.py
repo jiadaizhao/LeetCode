@@ -6,7 +6,7 @@ class Codec:
 
         
     def getKey(self):
-        return ''.join(c for c in random.choice(self.seed))
+        return ''.join(random.choice(self.seed) for _ in range(6))
 
 
     def encode(self, longUrl):

@@ -35,3 +35,28 @@ private:
         dfs(root->right, sum, count);
     }
 };
+
+class Solution2 {
+public:
+    int pathSum(TreeNode* root, int sum) {
+        table[0] = 1;
+        int count = 0;
+        dfs(root, 0, sum, count);
+        return count;
+    }
+    
+private:
+    unordered_map<int, int> table;
+    void dfs(TreeNode* root, int curr, int sum, int& count) {
+        if (root == nullptr) {
+            return;
+        }
+        
+        curr += root->val;
+        count += table[curr - sum];
+        ++table[curr];
+        dfs(root->left, curr, sum, count);
+        dfs(root->right, curr, sum, count);
+        --table[curr];
+    }
+};

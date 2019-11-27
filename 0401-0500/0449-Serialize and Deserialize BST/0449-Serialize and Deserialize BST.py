@@ -40,7 +40,7 @@ class Codec:
             return None
         
         strs = data[1:-1].split(',')
-        root = TreeNode(strs[0])
+        root = TreeNode(int(strs[0]))
         Q = collections.deque([root])
         leftChild = True
         for s in strs[1:]:
