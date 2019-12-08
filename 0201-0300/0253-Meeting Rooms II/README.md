@@ -6,12 +6,16 @@ https://leetcode.com/problems/meeting-rooms-ii/description/
 
 Given an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...] (si < ei), find the minimum number of conference rooms required.
 
-For example,  
-Given [[0, 30],[5, 10],[15, 20]],  
-return 2.
+**Example 1:**
+```
+Input: [[0, 30],[5, 10],[15, 20]]
+Output: 2
+```
 
-Companies: Google, Snapchat, Facebook
+**Example 2:**
+```
+Input: [[7,10],[2,4]]
+Output: 1
+```
 
-Related Topics: Heap, Greedy, Sort
-
-Similar Questions: Merge Intervals, Meeting Rooms, Minimum Number of Arrows to Burst Ballons
+NOTE: input types have been changed on April 15, 2019. Please reset to default code definition to get new method signature.
