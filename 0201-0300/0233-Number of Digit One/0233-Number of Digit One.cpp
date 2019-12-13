@@ -1,9 +1,8 @@
 class Solution {
 public:
     int countDigitOne(int n) {
-        long long base = 1;
         int count = 0;
-        while (n / base) {
+        for (long base = 1; base <= n; base *= 10) {
             int curr = n / base % 10;
             int low = n % base;
             int high = n / (base * 10);
@@ -16,7 +15,6 @@ public:
             else {
                 count += (high + 1) * base;
             }
-            base *= 10;
         }
         
         return count;

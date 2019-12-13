@@ -1,10 +1,8 @@
 class Solution:
     def countDigitOne(self, n: int) -> int:
-        if n < 0:
-            return 0
         base = 1
         count = 0
-        while n // base != 0:
+        while base <= n:
             curr = n // base % 10
             low = n % base
             high = n // (base * 10)

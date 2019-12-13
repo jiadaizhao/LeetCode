@@ -14,7 +14,7 @@ class Solution:
         def fac(num):
             result = 1
             for i in range(2, num + 1):
-                result = result * i % MOD;
+                result = result * i % MOD
             return result
         
         return fac(count) * fac(n - count) % MOD
