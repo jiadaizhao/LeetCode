@@ -2,13 +2,10 @@ import collections
 class Solution:
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
         graph = collections.defaultdict(list)
+        degrees = [0] * numCourses
         for c1, c2 in prerequisites:
             graph[c2].append(c1)
-            
-        degrees = [0] * numCourses
-        for k, v in graph.items():
-            for c in v:
-                degrees[c] += 1
+            degrees[c1] += 1
                 
         Q = collections.deque([c for c in range(numCourses) if degrees[c] == 0])
         result = []

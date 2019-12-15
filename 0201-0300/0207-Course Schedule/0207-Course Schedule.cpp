@@ -1,20 +1,15 @@
 // BFS
 class Solution {
 public:
-    bool canFinish(int numCourses, vector<pair<int, int>>& prerequisites) {
-        vector<unordered_set<int>> graph(numCourses);
-        for (auto& p : prerequisites) {
-            graph[p.second].insert(p.first);
-        }
-        
+    bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
+        vector<vector<int>> graph(numCourses);
         vector<int> degrees(numCourses);
-        for (auto g : graph) {
-            for (int node : g) {
-                ++degrees[node];
-            }
+        for (auto& p : prerequisites) {
+            graph[p[1]].push_back(p[0]);
+            ++degrees[p[0]];
         }
-        
-        queue<int> Q;
+
+        queue<int> Q;        
         for (int i = 0; i < numCourses; ++i) {
             if (degrees[i] == 0) {
                 Q.push(i);
@@ -23,12 +18,12 @@ public:
         
         int count = 0;
         while (!Q.empty()) {
+            int i = Q.front();
             ++count;
-            int course = Q.front();
             Q.pop();
-            for (int i : graph[course]) {
-                if (--degrees[i] == 0) {
-                    Q.push(i);
+            for (int j : graph[i]) {
+                if (--degrees[j] == 0) {
+                    Q.push(j);
                 }
             }
         }
@@ -40,16 +35,15 @@ public:
 // DFS
 class Solution {
 public:
-    bool canFinish(int numCourses, vector<pair<int, int>>& prerequisites) {
-        vector<unordered_set<int>> graph(numCourses);
+    bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
+        vector<vector<int>> graph(numCourses);
         for (auto& p : prerequisites) {
-            graph[p.second].insert(p.first);
+            graph[p[1]].push_back(p[0]);
         }
-        
-        vector<bool> visiting(numCourses);
-        vector<bool> visited(numCourses);
+
+        vector<int> visited(numCourses);
         for (int i = 0; i < numCourses; ++i) {
-            if (!visited[i] && dfsCycle(graph, i, visiting, visited)) {
+            if (!dfs(graph, i, visited)) {
                 return false;
             }
         }
@@ -57,18 +51,23 @@ public:
         return true;
     }
     
-    bool dfsCycle(vector<unordered_set<int>>& graph, int course, vector<bool>& visiting, vector<bool>& visited) {
-        if (visited[course]) {
+private:
+    bool dfs(vector<vector<int>>& graph, int course, vector<int>& visited) {
+        if (visited[course] == 1) {
+            return true;
+        }
+        else if (visited[course] == 2) {
             return false;
         }
         
-        visited[course] = visiting[course] = true;
+        visited[course] = 2;
         for (int i : graph[course]) {
-            if (visiting[i] || dfsCycle(graph, i, visiting, visited)) {
-                return true;
+            if (!dfs(graph, i, visited)) {
+                return false;
             }
         }
         
-        return visiting[course] = false;
+        visited[course] = 1;
+        return true;
     }
 };
