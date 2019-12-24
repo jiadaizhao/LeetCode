@@ -8,30 +8,28 @@ public:
         
         int k = costs[0].size();
         int min1 = -1, min2 = -1;
-        int premin1 = -1, premin2 = -1;
         for (int i = 0; i < n; ++i) {
-            min1 = -1;
-            min2 = -1;
+            int currMin1 = -1, currMin2 = -1;
             for (int j = 0; j < k; ++j) {
-                if (premin1 != j) {
+                if (min1 != j) {
                     if (i > 0) {
-                        costs[i][j] += costs[i - 1][premin1];
+                        costs[i][j] += costs[i - 1][min1];
                     }
                 }
                 else {
-                    costs[i][j] += costs[i - 1][premin2];
+                    costs[i][j] += costs[i - 1][min2];
                 }
                 
-                if (min1 == -1 || costs[i][j] < costs[i][min1]) {
-                    min2 = min1;
-                    min1 = j;
+                if (currMin1 == -1 || costs[i][j] < costs[i][currMin1]) {
+                    currMin2 = currMin1;
+                    currMin1 = j;
                 }
-                else if (min2 == -1 || costs[i][j] < costs[i][min2]) {
-                    min2 = j;
+                else if (currMin2 == -1 || costs[i][j] < costs[i][currMin2]) {
+                    currMin2 = j;
                 }
             }
-            premin1 = min1;
-            premin2 = min2;
+            min1 = currMin1;
+            min2 = currMin2;
         }
         
         return costs[n - 1][min1];

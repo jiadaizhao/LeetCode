@@ -7,7 +7,7 @@ class Solution:
                 result.append(path[:])
                 return
 
-            for i in range(start, n + 1):
+            for i in range(start, n + len(path) - k + 2):
                 path.append(i)
                 dfs(i + 1, n, k)
                 path.pop()

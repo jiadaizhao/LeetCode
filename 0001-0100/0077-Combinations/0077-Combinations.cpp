@@ -18,7 +18,8 @@ private:
             return;
         }
         
-        for (int i = start; i <= n; ++i) {
+        int curr = path.size();
+        for (int i = start; i <= n + curr + 1 - k; ++i) {
             path.push_back(i);
             dfs(i + 1, n, k, path, result);
             path.pop_back();
