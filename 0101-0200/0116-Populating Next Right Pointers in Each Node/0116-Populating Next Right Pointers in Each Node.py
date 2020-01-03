@@ -8,14 +8,14 @@ class Node:
 
 class Solution:
     def connect(self, root: 'Node') -> 'Node':
-        node = root
-        while node:
-            p = node
+        curr = root
+        while curr:
+            p = curr
             while p:
                 if p.left:
                     p.left.next = p.right
-                if p.right and p.next:
-                    p.right.next = p.next.left
+                    if p.next:
+                        p.right.next = p.next.left
                 p = p.next
-            node = node.left
+            curr = curr.left
         return root

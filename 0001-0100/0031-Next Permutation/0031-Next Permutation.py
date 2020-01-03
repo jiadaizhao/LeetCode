@@ -3,8 +3,6 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        if len(nums) <= 1:
-            return
         i = len(nums) - 2
         while i >= 0 and nums[i] >= nums[i + 1]:
             i -= 1

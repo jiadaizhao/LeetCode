@@ -1,8 +1,7 @@
 class Solution:
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
         maxArea = 0
-        m = len(grid)
-        n = len(grid[0])
+        m, n = len(grid), len(grid[0])
         def dfs(r, c):
             if grid[r][c] == 0:
                 return 0

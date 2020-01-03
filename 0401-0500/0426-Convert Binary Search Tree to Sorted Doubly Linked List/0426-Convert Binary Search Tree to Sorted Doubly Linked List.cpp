@@ -2,11 +2,17 @@
 // Definition for a Node.
 class Node {
 public:
-    int val = NULL;
-    Node* left = NULL;
-    Node* right = NULL;
+    int val;
+    Node* left;
+    Node* right;
 
     Node() {}
+
+    Node(int _val) {
+        val = _val;
+        left = NULL;
+        right = NULL;
+    }
 
     Node(int _val, Node* _left, Node* _right) {
         val = _val;
@@ -22,25 +28,25 @@ public:
             return root;
         }
         stack<Node*> St;
-        Node *node = root, *prev = nullptr, *head = nullptr, *tail = nullptr;
-        while (!St.empty() || node) {
-            if (node) {
-                St.push(node);
-                node = node->left;
+        Node *curr = root, *prev = nullptr, *head = nullptr, *tail = nullptr;
+        while (!St.empty() || curr) {
+            if (curr) {
+                St.push(curr);
+                curr = curr->left;
             }
             else {
-                node = St.top();
-                if (head == nullptr) {
-                    head = node;
-                }
-                tail = node;
+                curr = St.top();
                 St.pop();
-                if (prev) {
-                    prev->right = node;
+                if (prev == nullptr) {
+                    head = curr;
                 }
-                node->left = prev;
-                prev = node;
-                node = node->right;
+                else {
+                    curr->left = prev;
+                    prev->right = curr;
+                }
+                tail = curr;
+                prev = curr;
+                curr = curr->right;
             }
         }
         

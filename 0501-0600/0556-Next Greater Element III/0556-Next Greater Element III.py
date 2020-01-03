@@ -1,9 +1,5 @@
 class Solution:
-    def nextGreaterElement(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
+    def nextGreaterElement(self, n: int) -> int:
         num = list(str(n))
         i = len(num) - 2
         while i >= 0:

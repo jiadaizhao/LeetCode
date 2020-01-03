@@ -1,32 +1,21 @@
 class Solution:
     def spellchecker(self, wordlist: List[str], queries: List[str]) -> List[str]:
-        table1 = set(wordlist)
-        table2 = {word.lower() : word for word in wordlist[::-1]}
-        table3 = {}
+        raw = set(wordlist)
+        cap = {word.lower() : word for word in wordlist[::-1]}
+        vowel = {}
         for word in wordlist[::-1]:
-            temp = []
-            for c in word.lower():
-                if c in 'aeiou':
-                    temp.append('#')
-                else:
-                    temp.append(c)
-            table3[''.join(temp)] = word
+            vowel[''.join(['#' if c in 'aeiou' else c for c in word.lower()])] = word
 
         result = [''] * len(queries)
 
-        for i in range(len(queries)):
-            query = queries[i]
-            if query in table1:
+        for i, query in enumerate(queries):
+            if query in raw:
                 result[i] = query
-            elif query.lower() in table2:
-                result[i] = table2[query.lower()]
+            elif query.lower() in cap:
+                result[i] = cap[query.lower()]
             else:
-                temp = list(query.lower())
-                for j in range(len(temp)):
-                    if temp[j] in 'aeiou':
-                        temp[j] = '#'
-                key = ''.join(temp)
-                if key in table3:
-                    result[i] = table3[key]
+                key = ''.join(['#' if c in 'aeiou' else c for c in query.lower()])
+                if key in vowel:
+                    result[i] = vowel[key]
         
         return result

@@ -1,17 +1,14 @@
 class Solution {
 public:
-    int countComponents(int n, vector<pair<int, int>>& edges) {
-        if (n <= 0) {
-            return 0;
-        }
+    int countComponents(int n, vector<vector<int>>& edges) {
         vector<int> parent(n);
         for (int i = 0; i < n; ++i) {
             parent[i] = i;
         }
         
         for (auto p : edges) {
-            int i = p.first;
-            int j = p.second;
+            int i = p[0];
+            int j = p[1];
             int iparent = findParent(parent, i);
             int jparent = findParent(parent, j);
             if (iparent != jparent) {

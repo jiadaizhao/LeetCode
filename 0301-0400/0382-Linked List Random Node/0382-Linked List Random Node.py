@@ -17,15 +17,15 @@ class Solution:
         """
         Returns a random node's value.
         """
-        node = self.head
-        result = node.val
-        node = node.next
-        i = 2
-        while node:
-            if random.randrange(i) == 0:
-                result = node.val
-            node = node.next
-            i += 1
+        currLen = 1
+        result = self.head.val
+        curr = self.head.next
+        while curr:
+            currLen += 1
+            if random.randrange(currLen) == 0:
+                result = curr.val
+            curr = curr.next
+            
         return result
 
 # Your Solution object will be instantiated and called as such:

@@ -7,13 +7,13 @@ class Solution:
             dist, wi, mask = heapq.heappop(pq)
             if wi == len(workers):
                 return dist
-            if (wi, mask) in visited:
+            if mask in visited:
                 continue
-            visited.add((wi, mask))
+            visited.add(mask)
             for j in range(len(bikes)):
                 if (1 << j) & mask == 0:
                     nmask = (1 << j) | mask
-                    if (wi + 1, nmask) in visited:
+                    if nmask in visited:
                         continue
                     d = abs(workers[wi][0] - bikes[j][0]) + abs(workers[wi][1] - bikes[j][1])
                     heapq.heappush(pq, (dist + d, wi + 1, nmask))

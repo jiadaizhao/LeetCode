@@ -1,11 +1,7 @@
 class Solution {
 public:
     void nextPermutation(vector<int>& nums) {
-        int n = nums.size();
-        if (n <= 1) {
-            return;
-        }
-        
+        int n = nums.size();       
         int i = n - 2;
         while (i >= 0 && nums[i] >= nums[i + 1]) {
             --i;

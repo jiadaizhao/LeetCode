@@ -26,10 +26,9 @@ public:
             while (p) {
                 if (p->left) {
                     p->left->next = p->right;
-                }
-                
-                if (p->right && p->next) {
-                    p->right->next = p->next->left;
+                    if (p->next) {
+                        p->right->next = p->next->left;
+                    }
                 }
                 
                 p = p->next;

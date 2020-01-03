@@ -8,8 +8,7 @@ class Solution:
         count = 0
         while Q:
             count += 1
-            qs = len(Q)
-            for _ in range(qs):
+            for _ in range(len(Q)):
                 s = Q.popleft()
                 i = 0
                 while s[i] == B[i]:

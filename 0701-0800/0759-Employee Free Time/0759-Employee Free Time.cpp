@@ -1,18 +1,24 @@
-/**
- * Definition for an interval.
- * struct Interval {
- *     int start;
- *     int end;
- *     Interval() : start(0), end(0) {}
- *     Interval(int s, int e) : start(s), end(e) {}
- * };
- */
+/*
+// Definition for an Interval.
+class Interval {
+public:
+    int start;
+    int end;
+
+    Interval() {}
+
+    Interval(int _start, int _end) {
+        start = _start;
+        end = _end;
+    }
+};
+*/
 class Solution {
 public:
-    vector<Interval> employeeFreeTime(vector<vector<Interval>>& avails) {
+    vector<Interval> employeeFreeTime(vector<vector<Interval>> schedule) {
         vector<Interval> intervals;
-        for (auto a : avails) {
-            for (Interval i : a) {
+        for (auto s : schedule) {
+            for (Interval i : s) {
                 intervals.push_back(i);
             }
         }
@@ -38,54 +44,5 @@ private:
         bool operator() (Interval& i1, Interval& i2) {
             return i1.start < i2.start;
         }    
-    };
-};
-
-
-class Solution {
-public:
-    vector<Interval> employeeFreeTime(vector<vector<Interval>>& avails) {
-        priority_queue<Node> pq;
-        int prevStart = avails[0][0].start, prevEnd = avails[0][0].end;
-        for (int i = 0; i < avails.size(); ++i) {
-            if (avails[i][0].start < prevStart) {
-                prevStart = avails[i][0].start;
-                prevEnd = avails[i][0].end;
-            }
-            pq.emplace(i, 0, avails[i][0].start, avails[i][0].end);
-        }
-        
-        vector<Interval> result;
-        while (!pq.empty()) {
-            Node node = pq.top();
-            pq.pop();
-            if (node.start > prevEnd) {
-                result.push_back({prevEnd, node.start});
-            }
-            
-            if (node.end > prevEnd) {
-                prevEnd = node.end;    
-            }
-            
-            int col = node.col;
-            if (col < avails[node.row].size() - 1) {
-                ++col;
-                pq.emplace(node.row, col, avails[node.row][col].start, avails[node.row][col].end);
-            }
-        }
-        
-        return result;
-    }
-    
-private:
-    struct Node {
-        int row;
-        int col;
-        int start;
-        int end;
-        Node(int r, int c, int s, int e): row(r), col(c), start(s), end(e) {}
-        bool operator < (const Node& node) const {
-            return start > node.start;
-        }
     };
 };

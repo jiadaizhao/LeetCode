@@ -28,14 +28,14 @@ public:
             if (wi == workers.size()) {
                 return dist;
             }
-            if (visited.count(wi * 1024 + mask)) {
+            if (visited.count(mask)) {
                 continue;
             }
-            visited.insert(wi * 1024 + mask);
+            visited.insert(mask);
             for (int j = 0; j < bikes.size(); ++j) {
                 if (((1 << j) & mask) == 0) {
                     int nmask = (1 << j) | mask;
-                    if (!visited.count((wi + 1) * 1024 + nmask)) {
+                    if (!visited.count(nmask)) {
                         int d = abs(workers[wi][0] - bikes[j][0]) + abs(workers[wi][1] - bikes[j][1]);
                         pq.emplace(dist + d, wi + 1, nmask);
                     }

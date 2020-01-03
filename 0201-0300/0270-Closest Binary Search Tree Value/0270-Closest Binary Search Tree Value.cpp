@@ -12,21 +12,14 @@ public:
     int closestValue(TreeNode* root, double target) {
         int result = root->val;
         while (root) {
-            if (root->val == target) {
-                return target;
-            }
-            else if (root->val < target) {
-                if (target - root->val < abs(result - target)) {
-                    result = root->val;
+            if (abs(root->val - target) < abs(result - target)) {
+                result = root->val;
+                if (abs(result - target) <= 0.5) {
+                    break;
                 }
-                root = root->right;
             }
-            else {
-                if (root->val - target < abs(result - target)) {
-                    result = root->val;
-                }
-                root = root->left;
-            }
+            
+            root = (root->val < target)? root->right : root->left;
         }
         
         return result;

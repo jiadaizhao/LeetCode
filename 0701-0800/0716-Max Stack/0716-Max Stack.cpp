@@ -69,13 +69,13 @@ public:
     }
     
     void push(int x) {
-        St.push_front(x);
-        table[x].push_back(St.begin());
+        dll.push_front(x);
+        table[x].push_back(dll.begin());
     }
     
     int pop() {
-        int val = top();
-        St.pop_front();
+        int val = dll.front();
+        dll.pop_front();
         table[val].pop_back();
         if (table[val].size() == 0) {
             table.erase(val);
@@ -84,7 +84,7 @@ public:
     }
     
     int top() {
-        return *(St.begin());
+        return dll.front();
     }
     
     int peekMax() {
@@ -92,16 +92,26 @@ public:
     }
     
     int popMax() {
-        int val = peekMax();
-        St.erase(table.rbegin()->second.back());
+        int val = table.rbegin()->first;
+        dll.erase(table.rbegin()->second.back());
         table.rbegin()->second.pop_back();
-        if (table.rbegin()->second.size() == 0) {
+        if (table[val].size() == 0) {
             table.erase(val);
         }
         return val;
     }
     
 private:
+    list<int> dll;
     map<int, vector<list<int>::iterator>> table;
-    list<int> St;
 };
+
+/**
+ * Your MaxStack object will be instantiated and called as such:
+ * MaxStack* obj = new MaxStack();
+ * obj->push(x);
+ * int param_2 = obj->pop();
+ * int param_3 = obj->top();
+ * int param_4 = obj->peekMax();
+ * int param_5 = obj->popMax();
+ */

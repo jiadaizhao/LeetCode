@@ -14,8 +14,7 @@ class Solution:
         step = 0
         while Q:
             step += 1
-            qs = len(Q)
-            for _ in range(qs):
+            for _ in range(len(Q)):
                 s = Q.popleft()
                 for nb in stationToBus[s]:
                     if nb not in visitedBus:

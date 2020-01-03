@@ -1,12 +1,9 @@
 class Solution:
     def maximalSquare(self, matrix: List[List[str]]) -> int:
-        m = len(matrix)
-        if m == 0:
+        if not matrix:
             return 0
-        n = len(matrix[0])
-        if n == 0:
-            return 0
-        dp = [[0]*(1 + n) for _ in range(2 + m)]
+        m, n = len(matrix), len(matrix[0])
+        dp = [[0] * (1 + n) for _ in range(1 + m)]
         maxArea = 0
         for i in range(1, 1 + m):
             for j in range(1, 1 + n):
@@ -18,13 +15,10 @@ class Solution:
 
 class Solution2:
     def maximalSquare(self, matrix: List[List[str]]) -> int:
-        m = len(matrix)
-        if m == 0:
+        if not matrix:
             return 0
-        n = len(matrix[0])
-        if n == 0:
-            return 0
-        dp = [0]*(1 + n)
+        m, n = len(matrix), len(matrix[0])
+        dp = [0] * (1 + n)
         maxArea = 0
         for i in range(1, 1 + m):
             temp = [0] * (1 + n)
@@ -39,13 +33,10 @@ class Solution2:
 
 class Solution3:
     def maximalSquare(self, matrix: List[List[str]]) -> int:
-        m = len(matrix)
-        if m == 0:
+        if not matrix:
             return 0
-        n = len(matrix[0])
-        if n == 0:
-            return 0
-        dp = [0]*(1 + n)
+        m, n = len(matrix), len(matrix[0])
+        dp = [0] * (1 + n)
         maxArea = 0
         for i in range(1, 1 + m):
             temp1 = dp[0]

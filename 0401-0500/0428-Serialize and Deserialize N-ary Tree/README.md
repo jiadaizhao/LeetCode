@@ -14,9 +14,16 @@ For example, you may serialize the following 3-ary tree
 
 as [1 [3[5 6] 2 4]]. You do not necessarily need to follow this format, so please be creative and come up with different approaches yourself.
 
-**Note:**
+Or you can follow LeetCode's level order traversal serialization format, where each group of children is separated by the null value.
 
-1. N is in the range of [1, 1000]
-2. Do not use class member/global/static variables to store states. Your serialize and deserialize algorithms should be stateless.
+![ex](ex.png)
 
-Similar Questions: Encode N-ary Tree to Binary Tree
+For example, the above tree may be serialized as [1,null,2,3,4,5,null,null,6,7,null,8,null,9,10,null,null,11,null,12,null,13,null,null,14].
+
+You do not necessarily need to follow the above suggested formats, there are many more different formats that work so please be creative and come up with different approaches yourself.
+
+**Constraints:**
+
+* The height of the n-ary tree is less than or equal to 1000
+* The total number of nodes is between [0, 10^4]
+* Do not use class member/global/static variables to store states. Your encode and decode algorithms should be stateless.
