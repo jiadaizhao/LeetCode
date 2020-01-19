@@ -4,39 +4,30 @@ public:
         if (nums.size() == 0) {
             return -1;
         }
-        
-        int start = 0, end = nums.size() - 1;
-        while (start + 1 < end) {
-            int mid = start + (end - start) / 2;
+        int low = 0, high = nums.size() - 1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
             if (nums[mid] == target) {
                 return mid;
             }
-            if (nums[mid] <= nums[end]) {
-                if (nums[mid] < target && nums[end] >= target) {
-                    start = mid + 1;
+            else if (nums[low] <= nums[mid]) {
+                if (target >= nums[low] && target < nums[mid]) {
+                    high = mid - 1;
                 }
                 else {
-                    end = mid - 1;
+                    low = mid + 1;
                 }
             }
             else {
-                if (nums[start] <= target && nums[mid] > target) {
-                    end = mid - 1;
+                if (target > nums[mid] && target <= nums[high]) {
+                    low = mid + 1;
                 }
                 else {
-                    start = mid + 1;
+                    high = mid - 1;
                 }
             }
         }
         
-        if (nums[start] == target) {
-            return start;
-        }
-        else if (nums[end] == target) {
-            return end;
-        }
-        else {
-            return -1;
-        }
+        return -1;
     }
 };

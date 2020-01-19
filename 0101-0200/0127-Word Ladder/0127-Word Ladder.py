@@ -73,7 +73,7 @@ class Solution3:
         step = 1
         visitedBegin = set([beginWord])
         visitedEnd = set([endWord])
-        visited = set([beginWord])
+        visited = set([beginWord, endWord])
         while visitedBegin and visitedEnd:
             if len(visitedBegin) > len(visitedEnd):
                 visitedBegin, visitedEnd = visitedEnd, visitedBegin
