@@ -1,26 +1,19 @@
+from functools import lru_cache
 class Solution:
-    def removeBoxes(self, boxes):
-        """
-        :type boxes: List[int]
-        :rtype: int
-        """
-        N = len(boxes)
-        dp = {}
+    def removeBoxes(self, boxes: List[int]) -> int:
+        @lru_cache(None)
         def dfs(i, j, k):
             if i > j:
                 return 0
-            index = i * N * N + j * N + k
-            if index not in dp:
-                l = i
-                n = k
-                while l < j and boxes[l] == boxes[l + 1]:
-                    l += 1
-                    n += 1
-                maxVal = dfs(l + 1, j, 0) + (n + 1) * (n + 1)
-                for r in range(l + 2, j + 1):
-                    if boxes[l] == boxes[r]:
-                        maxVal = max(maxVal, dfs(l + 1, r - 1, 0) + dfs(r, j, n + 1))
-                dp[index] = maxVal
-            return dp[index]
+
+            while i < j and boxes[i] == boxes[i + 1]:
+                i += 1
+                k += 1
+            maxVal = dfs(i + 1, j, 0) + (k + 1) * (k + 1)
+            for r in range(i + 2, j + 1):
+                if boxes[i] == boxes[r]:
+                    maxVal = max(maxVal, dfs(i + 1, r - 1, 0) + dfs(r, j, k + 1))
+
+            return maxVal
             
         return dfs(0, len(boxes) - 1, 0)

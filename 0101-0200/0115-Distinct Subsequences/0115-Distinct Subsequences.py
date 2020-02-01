@@ -1,10 +1,5 @@
 class Solution:
-    def numDistinct(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: int
-        """
+    def numDistinct(self, s: str, t: str) -> int:
         dp = [0] * (1 + len(t))
         dp[0] = 1
         for i in range(1, len(s) + 1):

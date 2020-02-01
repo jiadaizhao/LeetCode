@@ -6,27 +6,18 @@ public:
             return 0;
         }
         int left = 0, right = n - 1;
-        int leftHeight = height[left];
-        int rightHeight = height[right];
+        int maxLeft = 0, maxRight = 0;
         int sum = 0;
         while (left < right) {
-            if (leftHeight <= rightHeight) {
+            if (height[left] <= height[right]) {
+                sum += max(0, maxLeft - height[left]);
+                maxLeft = max(maxLeft, height[left]);
                 ++left;
-                if (leftHeight > height[left]) {
-                    sum += leftHeight - height[left];
-                }
-                else {
-                    leftHeight = height[left];
-                }
             }
             else {
+                sum += max(0, maxRight - height[right]);
+                maxRight = max(maxRight, height[right]);
                 --right;
-                if (rightHeight > height[right]) {
-                    sum += rightHeight - height[right];
-                }
-                else {
-                    rightHeight = height[right];
-                }
             }
         }
         

@@ -27,3 +27,17 @@ class Solution2:
             prev = k
         
         return max(skip, take)
+
+
+class Solution3:
+    def deleteAndEarn(self, nums: List[int]) -> int:
+        table = collections.Counter(nums)
+        take = skip = 0
+        prev = None
+        for k in sorted(table):
+            if k - 1 == prev:
+                take, skip = skip + k * table[k], max(skip, take)
+            else:
+                take, skip = max(take, skip) + k * table[k], max(skip, take)
+            prev = k
+        return max(skip, take)

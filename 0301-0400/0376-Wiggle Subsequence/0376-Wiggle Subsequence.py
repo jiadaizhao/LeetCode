@@ -1,9 +1,5 @@
 class Solution:
-    def wiggleMaxLength(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+    def wiggleMaxLength(self, nums: List[int]) -> int:
         if len(nums) < 2:
             return len(nums)
         up = down = 1

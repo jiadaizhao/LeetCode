@@ -6,7 +6,7 @@ class Solution:
         for i in range(1, 1 + L):
             for j in range(1, 1 + N):
                 # new song
-                dp[i][j] = (dp[i][j] + dp[i - 1][j - 1] * (N - j + 1)) % MOD
+                dp[i][j] = dp[i - 1][j - 1] * (N - j + 1) % MOD
                 if j > K:
                     # old song
                     dp[i][j] = (dp[i][j] + dp[i - 1][j] * (j - K)) % MOD

@@ -3,18 +3,18 @@ import math
 class Solution:
     def shortestPathLength(self, graph: List[List[int]]) -> int:
         n = len(graph)
-        dp = [[math.inf] * (1 << n) for _ in range(n)]
+        dp = [[math.inf] * n for _ in range(1 << n)]
         Q = collections.deque()
         for i in range(n):
-            dp[i][1 << i] = 0
-            Q.append((i, 1 << i))
+            dp[1 << i][i] = 0
+            Q.append((1 << i, i))
             
         while Q:
-            curr, mask = Q.popleft()
+            mask, curr = Q.popleft()
             for next in graph[curr]:
                 nextMask = mask | (1 << next)
-                if dp[next][nextMask] > dp[curr][mask] + 1:
-                    dp[next][nextMask] = dp[curr][mask] + 1
-                    Q.append((next, nextMask))
+                if dp[nextMask][next] > dp[mask][curr] + 1:
+                    dp[nextMask][next] = dp[mask][curr] + 1
+                    Q.append((nextMask, next))
         
-        return min(list(zip(*dp))[-1])
+        return min(dp[-1])

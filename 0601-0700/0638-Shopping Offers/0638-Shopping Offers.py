@@ -1,12 +1,10 @@
-from functools import reduce
+from functools import reduce, lru_cache
 class Solution:
     def shoppingOffers(self, price: List[int], special: List[List[int]], needs: List[int]) -> int:
         key = reduce(lambda x, y : 10 * x + y, needs)
-        table = {}
         base = [10 ** (len(price) - 1 - i) for i in range(len(price))]
+        @lru_cache(None)
         def dfs(key):
-            if key in table:
-                return table[key]
             total = 0
             curr = [key // base[i] % 10 for i in range(len(price))]
             for i in range(len(price)):
@@ -14,15 +12,12 @@ class Solution:
                 
             for s in special:
                 nextKey = 0
-                avail = True
                 for i in range(len(price)):
                     if curr[i] >= s[i]:
                         nextKey = nextKey * 10 + curr[i] - s[i]
                     else:
-                        avail = False
                         break
-                if avail:
+                else:
                     total = min(total, s[-1] + dfs(nextKey))
-            table[key] = total
             return total
         return dfs(key)

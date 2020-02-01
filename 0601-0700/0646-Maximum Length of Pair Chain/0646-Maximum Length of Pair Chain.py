@@ -7,4 +7,5 @@ class Solution:
             if s > prev:
                 maxLen += 1
                 prev = e
+        
         return maxLen

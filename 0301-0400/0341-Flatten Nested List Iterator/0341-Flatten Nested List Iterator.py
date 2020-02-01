@@ -31,32 +31,37 @@ class NestedIterator(object):
         :type nestedList: List[NestedInteger]
         """
         self.St = [[nestedList, 0]]
+        
 
     def next(self):
         """
         :rtype: int
         """
-        ni, index = self.St[-1]
+        nl, index = self.St[-1]
         self.St[-1][1] += 1
-        return ni[index].getInteger()
+        return nl[index].getInteger()
+        
 
     def hasNext(self):
         """
         :rtype: bool
         """
         while self.St:
-            ni, index = self.St[-1]
-            if index == len(ni):
+            nl, index = self.St[-1]
+            if index == len(nl):
                 self.St.pop()
             else:
-                x = ni[index]
-                if x.isInteger():
+                ni = nl[index]
+                if ni.isInteger():
                     return True
-                
                 self.St[-1][1] += 1
-                self.St.append([x.getList(), 0])
-
+                self.St.append([ni.getList(), 0])
         return False
+        
+
+# Your NestedIterator object will be instantiated and called as such:
+# i, v = NestedIterator(nestedList), []
+# while i.hasNext(): v.append(i.next())
 
 # Your NestedIterator object will be instantiated and called as such:
 # i, v = NestedIterator(nestedList), []
