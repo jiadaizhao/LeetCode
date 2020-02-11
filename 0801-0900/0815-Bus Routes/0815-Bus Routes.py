@@ -4,8 +4,8 @@ class Solution:
         if S == T:
             return 0
         stationToBus = collections.defaultdict(list)
-        for i in range(len(routes)):
-            for station in routes[i]:
+        for i, route in enumerate(routes):
+            for station in route:
                 stationToBus[station].append(i)
                 
         Q = collections.deque([S])
@@ -25,4 +25,5 @@ class Solution:
                             if ns not in visitedStation:
                                 Q.append(ns)
                                 visitedStation.add(ns)
+        
         return -1

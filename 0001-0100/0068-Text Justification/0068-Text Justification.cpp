@@ -42,3 +42,40 @@ public:
         return result;
     }
 };
+
+class Solution2 {
+public:
+    vector<string> fullJustify(vector<string>& words, int maxWidth) {
+        vector<string> result, curr;
+        int num = 0;
+        for (string word : words) {
+            if (word.size() + curr.size() + num > maxWidth) {
+                for (int i = 0; i < maxWidth - num; ++i) {
+                    if (curr.size() > 1) {
+                        curr[i % (curr.size() - 1)] += ' ';
+                    }
+                    else {
+                        curr[0] += ' ';
+                    }
+                }
+                string temp;
+                for (string s : curr) {
+                    temp += s;
+                }
+                result.push_back(temp);
+                curr.clear();
+                num = 0;
+            }
+            curr.push_back(word);
+            num += word.size();
+        }
+        
+        string temp = curr[0];
+        for (int i = 1; i < curr.size(); ++i) {
+            temp += ' ' + curr[i];
+        }
+        temp += string(maxWidth - temp.size(), ' ');
+        result.push_back(temp);
+        return result;
+    }
+};

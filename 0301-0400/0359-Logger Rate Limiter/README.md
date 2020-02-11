@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/logger-rate-limiter/description/
+https://leetcode.com/problems/logger-rate-limiter/
 
 Design a logger system that receive stream of messages along with its timestamps, each message should be printed if and only if it is not printed in the last 10 seconds.
 
@@ -32,12 +32,3 @@ logger.shouldPrintMessage(10,"foo"); returns false;
 // logging string "foo" at timestamp 11
 logger.shouldPrintMessage(11,"foo"); returns true;
 ```
-
-Credits:
-Special thanks to @memoryless for adding this problem and creating all test cases.
-
-Companies: Google
-
-Related Topics: Hash Table, Design
-
-Similar Questions: Design Hit Counter

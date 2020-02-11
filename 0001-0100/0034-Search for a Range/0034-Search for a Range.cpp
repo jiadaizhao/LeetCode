@@ -6,52 +6,34 @@ public:
         if (n == 0) {
             return result;
         }
-        
-        int start = 0, end = n - 1;
-        while (start + 1 < end) {
-            int mid = start + (end - start) / 2;
+        int low = 0, high = n - 1;
+        while (low < high) {
+            int mid = low + (high - low) / 2;
             if (nums[mid] < target) {
-                start = mid + 1;
-            }
-            else if (nums[mid] == target) {
-                end = mid; 
+                low = mid + 1;
             }
             else {
-                end = mid - 1;
+                high = mid;
             }
         }
-        
-        if (nums[start] == target) {
-            result[0] = start;
-        }
-        else if (nums[end] == target) {
-            result[0] = end;
-        }
-        else {
+        if (nums[low] != target) {
             return result;
         }
+        else {
+            result[0] = low;
+        }
         
-        start = 0, end = n - 1;
-        while (start + 1 < end) {
-            int mid = start + (end - start) / 2;
-            if (nums[mid] < target) {
-                start = mid + 1;
-            }
-            else if (nums[mid] == target) {
-                start = mid;
+        high = n - 1;
+        while (low < high) {
+            int mid = low + (high - low + 1) / 2;
+            if (nums[mid] > target) {
+                high = mid - 1;
             }
             else {
-                end = mid - 1;
+                low = mid;
             }
         }
-        
-        if (nums[end] == target) {
-            result[1] = end;
-        }
-        else {
-            result[1] = start;
-        }
-        
+        result[1] = low;
         return result;
     }
 };

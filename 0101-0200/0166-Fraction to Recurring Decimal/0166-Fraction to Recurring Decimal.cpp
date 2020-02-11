@@ -1,11 +1,8 @@
 class Solution {
 public:
     string fractionToDecimal(int numerator, int denominator) {
-        if (numerator == 0) {
-            return "0";
-        }
         string result = "";
-        if ((numerator > 0) ^ (denominator > 0)) {
+        if ((float)numerator / denominator < 0) {
             result += '-';
         }
         
@@ -19,20 +16,16 @@ public:
         }
         
         result += '.';
-        unordered_map<long, int> table;
-        table[rem] = result.length();
+        unordered_map<long, int> table;        
         while(rem) {
+            table[rem] = result.length();
             rem *= 10;
             result += to_string(rem / den);
             rem %= den;
             if (table.find(rem) != table.end()) {
-                int i = table[rem];
-                result.insert(i, "(");
+                result.insert(table[rem], "(");
                 result += ')';
                 break;
-            }
-            else {
-                table[rem] = result.length();
             }
         }
         

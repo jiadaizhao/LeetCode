@@ -11,11 +11,9 @@ class Solution:
         if rem == 0:
             return ''.join(result)
         result.append('.')
-        l = len(result)
         table = {}
         while rem:
-            table[rem] = l
-            l += 1
+            table[rem] = len(result)
             rem *= 10
             result.append(str(rem // den))
             rem %= den

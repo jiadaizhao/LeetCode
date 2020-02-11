@@ -1,24 +1,23 @@
 class Solution {
 public:
-    vector<string> findItinerary(vector<pair<string, string>> tickets) {
+    vector<string> findItinerary(vector<vector<string>>& tickets) {
         vector<string> result;
-        unordered_map<string, multiset<string>> graph;
+        sort(tickets.begin(), tickets.end(), greater<vector<string>>());
+        unordered_map<string, vector<string>> graph;
         for (auto& t : tickets) {
-            graph[t.first].insert(t.second);
+            graph[t[0]].push_back(t[1]);
         }
         
         stack<string> St;
         St.push("JFK");
         while (!St.empty()) {
-            string loc = St.top();
-            
-            if (graph[loc].size()) {
-                auto it = graph[loc].begin();
-                St.push(*it);
-                graph[loc].erase(it);
+            string curr = St.top();            
+            if (graph[curr].size()) {
+                St.push(graph[curr].back());
+                graph[curr].pop_back();
             }
             else {
-                result.push_back(loc);
+                result.push_back(curr);
                 St.pop();
             }
         }

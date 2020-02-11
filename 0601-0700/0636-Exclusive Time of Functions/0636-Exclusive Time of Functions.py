@@ -13,7 +13,6 @@ class Solution:
                 St.append(fid)
                 prev = timestamp
             else:
-                time[St[-1]] += timestamp - prev + 1
-                St.pop()
+                time[St.pop()] += timestamp - prev + 1
                 prev = timestamp + 1
         return time

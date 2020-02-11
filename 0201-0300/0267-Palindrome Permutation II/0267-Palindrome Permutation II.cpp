@@ -8,8 +8,7 @@ public:
 
         vector<string> result;
         int odd = 0;
-        string mid;
-        string seed;
+        string mid, seed;
         for (int i = 0; i < table.size(); ++i) {
             if (table[i] % 2) {
                 ++odd;
@@ -18,8 +17,7 @@ public:
                     return result;
                 }
             }
-            table[i] >>= 1;
-            seed += string(table[i], i);
+            seed += string(table[i] >> 1, i);
         }
         
         string path;

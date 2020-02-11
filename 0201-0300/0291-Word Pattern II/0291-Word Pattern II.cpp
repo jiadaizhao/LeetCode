@@ -9,12 +9,7 @@ private:
     unordered_set<char> chars;
     bool dfs(string& pattern, int pstart, string& str, int sstart) {
         if (pstart == pattern.size()) {
-            if (sstart == str.size()) {
-                return true;
-            }
-            else {
-                return false;
-            }
+            return sstart == str.size();
         }
         
         for (int i = sstart; i < str.size() && str.size() - i >= pattern.size() - pstart; ++i) {
@@ -27,10 +22,7 @@ private:
                     return true;
                 }
             }
-            else if (table.find(temp) == table.end() && chars.find(pattern[pstart]) != chars.end()) {
-                continue;
-            }
-            else {
+            else if (chars.find(pattern[pstart]) == chars.end()) {
                 table[temp] = pattern[pstart];
                 chars.insert(pattern[pstart]);
                 if (dfs(pattern, pstart + 1, str, i + 1)) {
