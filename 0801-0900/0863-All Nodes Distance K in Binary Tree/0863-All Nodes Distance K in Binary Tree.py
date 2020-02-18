@@ -1,9 +1,9 @@
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
 
 import collections
 class Solution:
@@ -21,10 +21,9 @@ class Solution:
         dist = 0
         visited = set([target])
         while Q:
-            qs = len(Q)
             if dist == K:
                 return [node.val for node in Q]
-            for _ in range(qs):
+            for _ in range(len(Q)):
                 node = Q.popleft()
                 if node.left and node.left not in visited:
                     Q.append(node.left)

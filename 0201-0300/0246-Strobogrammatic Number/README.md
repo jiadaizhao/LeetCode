@@ -2,16 +2,26 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/strobogrammatic-number/description/
+https://leetcode.com/problems/strobogrammatic-number/
 
 A strobogrammatic number is a number that looks the same when rotated 180 degrees (looked at upside down).
 
 Write a function to determine if a number is strobogrammatic. The number is represented as a string.
 
-For example, the numbers "69", "88", and "818" are all strobogrammatic.
+**Example 1:**
+```
+Input:  "69"
+Output: true
+```
 
-Companies: Google
+**Example 2:**
+```
+Input:  "88"
+Output: true
+```
 
-Related Topics: Hash Table, Math
-
-Similar Questions: Strobogrammatic Number II, Strobogrammatic Number III
+**Example 3:**
+```
+Input:  "962"
+Output: false
+```

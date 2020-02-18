@@ -7,12 +7,12 @@ public:
     }
     
     int shortest(string word1, string word2) {
-        int result = INT_MAX;
-        vector<int> index1 = table[word1];
-        vector<int> index2 = table[word2];
+        int minDist = INT_MAX;
+        vector<int>& index1 = table[word1];
+        vector<int>& index2 = table[word2];
         int p1 = 0, p2 = 0;
         while (p1 < index1.size() && p2 < index2.size()) {
-            result = min(result, abs(index1[p1] - index2[p2]));
+            minDist = min(minDist, abs(index1[p1] - index2[p2]));
             if (index1[p1] < index2[p2]) {
                 ++p1;
             }
@@ -21,7 +21,7 @@ public:
             }
         }
         
-        return result;
+        return minDist;
     }
 private:
     unordered_map<string, vector<int>> table;
@@ -32,4 +32,3 @@ private:
  * WordDistance obj = new WordDistance(words);
  * int param_1 = obj.shortest(word1,word2);
  */
- 

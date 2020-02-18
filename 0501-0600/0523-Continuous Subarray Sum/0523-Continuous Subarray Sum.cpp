@@ -6,14 +6,16 @@ public:
         table[0] = -1;
         for (int i = 0; i < nums.size(); ++i) {
             presum += nums[i];
-            int target = (k == 0) ? presum : presum % k;
-            if (table.find(target) != table.end()) {
-                if (i - table[target] > 1) {
+            if (k != 0) {
+                presum %= k;
+            }
+            if (table.find(presum) != table.end()) {
+                if (i - table[presum] > 1) {
                     return true;
                 }
             }
             else {
-                table[target] = i;
+                table[presum] = i;
             }
         }
         

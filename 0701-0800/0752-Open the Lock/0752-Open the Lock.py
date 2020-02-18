@@ -8,8 +8,7 @@ class Solution:
         Q = collections.deque(['0000'])
         visited = set(['0000'])
         while Q:
-            qs = len(Q)
-            for i in range(qs):
+            for i in range(len(Q)):
                 s = Q.popleft()
                 if s == target:
                     return turn

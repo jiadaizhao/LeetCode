@@ -5,8 +5,7 @@ public:
         vector<int> visited(n);
         for (int i = 0; i < n; ++i) {
             if (visited[i] == 0) {
-                visited[i] = 1;
-                if (dfs(graph, i, -1, visited) == false) {
+                if (!dfs(graph, i, -1, visited)) {
                     return false;
                 }
             }
@@ -15,11 +14,12 @@ public:
     }
     
 private:
-    bool dfs(vector<vector<int>>& graph, int curr, int parent, vector<int>& visited) {
+    bool dfs(vector<vector<int>>& graph, int curr, int prev, vector<int>& visited) {
+        visited[curr] = (prev == -1) ? 1 : 3 - visited[prev];
         for (int next : graph[curr]) {
             if (visited[next] == 0) {
                 visited[next] = 3 - visited[curr];
-                if (dfs(graph, next, curr, visited) == false) {
+                if (!dfs(graph, next, curr, visited)) {
                     return false;
                 }
             }

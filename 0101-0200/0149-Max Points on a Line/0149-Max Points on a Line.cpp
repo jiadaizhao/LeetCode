@@ -1,12 +1,3 @@
-/**
- * Definition for a point.
- * struct Point {
- *     int x;
- *     int y;
- *     Point() : x(0), y(0) {}
- *     Point(int a, int b) : x(a), y(b) {}
- * };
- */
 struct pairhash {
     template<typename T, typename U>
     size_t operator()(const pair<T, U> &p) const {
@@ -16,27 +7,18 @@ struct pairhash {
 
 class Solution {
 public:
-    int maxPoints(vector<Point>& points) {
-        int n = points.size();
-        if (n <= 2) {
-            return n;
-        }
-        
+    int maxPoints(vector<vector<int>>& points) {     
         int maxNum = 0;
-        for (int i = 0; i < n; ++i) {
-            int same = 0, vertical = 0;
+        for (int i = 0; i < points.size(); ++i) {
+            int same = 0, localMax = 0;
             unordered_map<pair<int, int>, int, pairhash> table;
-            int localMax = 0;
-            for (int j = i + 1; j < n; ++j) {
-                if (points[j].x == points[i].x && points[j].y == points[i].y) {
+            for (int j = 0; j < i; ++j) {
+                if (points[i][0] == points[j][0] && points[i][1] == points[j][1]) {
                     ++same;
                 }
-                else if (points[j].x == points[i].x) {
-                    ++vertical;
-                }
                 else {
-                    int a = points[j].x - points[i].x;
-                    int b = points[j].y - points[i].y;
+                    int a = points[i][0] - points[j][0];
+                    int b = points[i][1] - points[j][1];
                     int c = gcd(a, b);
                     a /= c;
                     b /= c;
@@ -45,7 +27,7 @@ public:
                 }
             }
             
-            maxNum = max(maxNum, max(localMax, vertical) + same + 1);
+            maxNum = max(maxNum, localMax + same + 1);
         }
         
         return maxNum;

@@ -12,7 +12,7 @@ The state of the board is solved if and only if the board is [[1,2,3],[4,5,0]].
 
 Given a puzzle board, return the least number of moves required so that the state of the board is solved. If it is impossible for the state of the board to be solved, return -1.
 
-Examples:
+**Examples:**
 ```
 Input: board = [[1,2,3],[4,0,5]]
 Output: 1
@@ -43,7 +43,3 @@ Output: 14
 
 * board will be a 2 x 3 array as described above.
 * board[i][j] will be a permutation of [0, 1, 2, 3, 4, 5].
-
-Companies: Airbnb
-
-Related Topics: Breadth-first Search

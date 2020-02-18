@@ -9,7 +9,7 @@ class NumMatrix:
                 self.presum[i + 1][j + 1] = self.presum[i][j + 1] + self.presum[i + 1][j] - self.presum[i][j] + matrix[i][j]
 
     def sumRegion(self, row1: int, col1: int, row2: int, col2: int) -> int:
-        return self.presum[1 + row2][1 + col2] - self.presum[row1][1 + col2] - self.presum[1 + row2][col1] + self.presum[row1][col1]
+        return self.presum[row2 + 1][col2 + 1] - self.presum[row1][col2 + 1] - self.presum[row2 + 1][col1] + self.presum[row1][col1]
 
 
 # Your NumMatrix object will be instantiated and called as such:

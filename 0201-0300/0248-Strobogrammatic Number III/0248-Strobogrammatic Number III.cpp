@@ -74,27 +74,9 @@ private:
         }
         
         for (string s : result) {
-            if (cmp(low, s) && cmp(s, high)) {
+            if (!((s.size() == low.size() && s < low) || (s.size() == high.size() && s > high))) {
                 ++count;
             }
-        }
-    }
-    
-    bool cmp(string& s1, string& s2) {
-        if (s1.size() == s2.size()) {
-            for (int i = 0; i < s1.size(); ++i) {
-                if (s1[i] < s2[i]) {
-                    return true;
-                }
-                else if (s1[i] > s2[i]) {
-                    return false;
-                }
-            }
-            
-            return true;
-        }
-        else {
-            return s1.size() < s2.size();
         }
     }
 };

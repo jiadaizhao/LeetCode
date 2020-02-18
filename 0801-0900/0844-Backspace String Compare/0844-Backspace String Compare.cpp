@@ -3,7 +3,7 @@ public:
     bool backspaceCompare(string S, string T) {
         int i = S.size() - 1, j = T.size() - 1;
         int bs = 0, bt = 0;
-        while (i >= 0 || j >= 0) {
+        while (true) {
             while (i >= 0) {
                 if (S[i] == '#') {
                     ++bs;
@@ -32,16 +32,13 @@ public:
                 }
             }
             
-            if (i >= 0 && j >= 0 && S[i] != T[j]) {
-                return false;
+            if (i >= 0 && j >= 0 && S[i] == T[j]) {
+                --i;
+                --j; 
             }
-            
-            if ((i < 0) ^ (j < 0)) {
-                return false;
-            }
-            --i;
-            --j; 
+            else {
+                return i == -1 && j == -1;
+            }            
         }
-        return true;
     }
 };

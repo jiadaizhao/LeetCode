@@ -1,7 +1,7 @@
 class Solution:
     def validPalindrome(self, s: str) -> bool:
         def isPalindrome(i, j):
-            return all(s[k] == s[j - k + i] for k in range(i, j + 1))
+            return all(s[k] == s[j - k + i] for k in range(i, (i + j) // 2 + 1))
         
         for i in range(len(s) // 2):
             if s[i] != s[~i]:

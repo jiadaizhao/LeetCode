@@ -19,12 +19,13 @@ public:
                 
                 if (b == target) return step;
                 int x, y;
-                for (int i = 0; i < 2; ++i)
-                    for (int j = 0; j < 3; ++j)
+                bool found = false;
+                for (int i = 0; i < 2 && !found; ++i)
+                    for (int j = 0; j < 3 && !found; ++j)
                         if (b[i][j] == 0) {
                             x = i;
                             y = j;
-                            break;
+                            found = true;
                         }
                 for (int k = 0; k < 4; ++k) {
                     int nx = x + dx[k];

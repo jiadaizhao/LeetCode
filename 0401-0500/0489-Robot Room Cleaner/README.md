@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/robot-room-cleaner/description/
+https://leetcode.com/problems/robot-room-cleaner/
 
 Given a robot cleaner in a room modeled as a grid.
 

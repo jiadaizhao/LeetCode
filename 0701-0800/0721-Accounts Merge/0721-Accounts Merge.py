@@ -4,7 +4,7 @@ class Solution:
         parent = [i for i in range(len(accounts))]
         table = {}
         def findParent(index):
-            while (parent[index] != index):
+            while parent[index] != index:
                 parent[index] = parent[parent[index]]
                 index = parent[index]
             return index
@@ -18,7 +18,7 @@ class Solution:
                     p1 = findParent(table[email])
                     p2 = findParent(i)
                     if p1 != p2:
-                        parent[p1] = p2
+                        parent[p2] = p1
         
         result = collections.defaultdict(list)
         for email, i in table.items():

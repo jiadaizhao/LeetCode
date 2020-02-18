@@ -1,5 +1,7 @@
 class Solution:
     def addOperators(self, num: str, target: int) -> List[str]:
+        if not num:
+            return []
         result = []
         def dfs(start, path, curr, prev):
             if start == len(num):
@@ -20,6 +22,5 @@ class Solution:
                     dfs(i + 1, path + '-' + s, curr - n, -n)
                     dfs(i + 1, path + '*' + s, curr - prev + prev*n, prev*n)
         
-        if num:
-            dfs(0, '', 0, 0)
+        dfs(0, '', 0, 0)
         return result
