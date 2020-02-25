@@ -5,12 +5,12 @@ class Solution:
         def dfs(pstart, sstart):
             if pstart == len(pattern):
                 return sstart == len(str)
-            i = sstart
-            while i < len(str) and len(str) - i >= len(pattern) - pstart:
+            for i in range(sstart, len(str)):
+                if len(str) - i < len(pattern) - pstart:
+                    break
                 temp = str[sstart : i + 1]
                 if temp in table:
                     if table[temp] != pattern[pstart]:
-                        i += 1
                         continue
                     elif dfs(pstart + 1, i + 1):
                         return True
@@ -21,7 +21,6 @@ class Solution:
                         return True
                     del table[temp]
                     mapped.remove(pattern[pstart])
-                i += 1
             
             return False
         return dfs(0, 0)

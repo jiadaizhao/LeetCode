@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/sentence-screen-fitting/description/
+https://leetcode.com/problems/sentence-screen-fitting/
 
 Given a rows x cols screen and a sentence represented by a list of non-empty words, find how many times the given sentence can be fitted on the screen.
 
@@ -29,6 +29,7 @@ world---
 
 The character '-' signifies an empty space on the screen.
 ```
+
 **Example 2:**
 ```
 Input:
@@ -44,6 +45,7 @@ bcd-e-
 
 The character '-' signifies an empty space on the screen.
 ```
+
 **Example 3:**
 ```
 Input:
@@ -60,7 +62,3 @@ had--
 
 The character '-' signifies an empty space on the screen.
 ```
-
-Companies: Google
-
-Related Topics: Dynamic Programming

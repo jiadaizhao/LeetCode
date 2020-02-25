@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree/description/
+https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree/
 
 Given an array of numbers, verify whether it is the correct preorder traversal sequence of a binary search tree.
 

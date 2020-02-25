@@ -31,7 +31,3 @@ Input: nums =
 Output: 4 
 Explanation: The longest increasing path is [3, 4, 5, 6]. Moving diagonally is not allowed.
 ```
-
-Companies: Google
-
-Related Topic: Depth-first Search, Topological Sort, Memoization

@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/factor-combinations/description/
+https://leetcode.com/problems/factor-combinations/
 
 Numbers can be regarded as product of its factors. For example,
 ```
@@ -15,29 +15,33 @@ Write a function that takes an integer n and return all possible combinations of
 1. You may assume that n is always positive.
 2. Factors should be greater than 1 and less than n.
 
-**Examples:**  
-input: 1  
-output:  
+**Example 1:**
 ```
-[]
+Input: 1
+Output: []
 ```
-input: 37  
-output: 
-``` 
-[]
+
+**Example 2:**
 ```
-input: 12  
-output:  
+Input: 37
+Output:[]
 ```
+
+**Example 3:**
+```
+Input: 12
+Output:
 [
   [2, 6],
   [2, 2, 3],
   [3, 4]
 ]
 ```
-input: 32  
-output:  
+
+**Example 4:**
 ```
+Input: 32
+Output:
 [
   [2, 16],
   [2, 2, 8],
@@ -47,9 +51,3 @@ output:
   [4, 8]
 ]
 ```
-
-Companies: LinkedIn, Uber
-
-Related Topics: Backtracking
-
-Similar Questions: Combination Sum

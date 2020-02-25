@@ -30,18 +30,18 @@ public:
             }
         }
         
-        vector<int> dx = {-1, 1, 0, 0};
-        vector<int> dy = {0, 0, -1, 1};
+        vector<int> dr = {-1, 1, 0, 0};
+        vector<int> dc = {0, 0, -1, 1};
         while (!Q.empty()) {
-            int x = Q.front().first;
-            int y = Q.front().second;
+            int r = Q.front().first;
+            int c = Q.front().second;
             Q.pop();
-            for (int k = 0; k < dx.size(); ++k) {
-                int nx = x + dx[k];
-                int ny = y + dy[k];
-                if (nx >= 0 && nx < m && ny >= 0 && ny < n && board[nx][ny] == 'O') {
-                    board[nx][ny] = '#';
-                    Q.push({nx, ny});
+            for (int k = 0; k < dr.size(); ++k) {
+                int nr = r + dr[k];
+                int nc = c + dc[k];
+                if (nr >= 0 && nr < m && nc >= 0 && nc < n && board[nr][nc] == 'O') {
+                    board[nr][nc] = '#';
+                    Q.push({nr, nc});
                 }
             }
         }
