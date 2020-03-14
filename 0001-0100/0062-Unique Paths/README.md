@@ -10,13 +10,11 @@ The robot can only move either down or right at any point in time. The robot is 
 
 How many possible unique paths are there?
 
-![alt text](robot_maze.png)
+![robot_maze](robot_maze.png)
 
 Above is a 3 x 7 grid. How many possible unique paths are there?
 
-Note: m and n will be at most 100.
-
-Example 1:
+**Example 1:**
 ```
 Input: m = 3, n = 2
 Output: 3
@@ -27,14 +25,13 @@ From the top-left corner, there are a total of 3 ways to reach the bottom-right 
 3. Down -> Right -> Right
 ```
 
-Example 2:
+**Example 2:**
 ```
 Input: m = 7, n = 3
 Output: 28
 ```
 
-Companies: Bloomberg
+**Constraints:**
 
-Related Topics: Array, Dynamic Programming
-
-Similar Questions: Unique Paths II, Minimum Path Sum, Dungeon Game
+* 1 <= m, n <= 100
+* It's guaranteed that the answer will be less than or equal to 2 * 10 ^ 9.

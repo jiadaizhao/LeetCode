@@ -5,17 +5,16 @@ public:
         visited.insert(n);
         while (n != 1) {
             int temp = n;
-            int curr = 0;
+            n = 0;
             while (temp) {
                 int i = temp % 10;
-                curr += i * i;
+                n += i * i;
                 temp /= 10;
             }
-            if (visited.find(curr) != visited.end()) {
+            if (visited.count(n)) {
                 return false;
             }
-            visited.insert(curr);
-            n = curr;
+            visited.insert(n);
         }
         
         return true;

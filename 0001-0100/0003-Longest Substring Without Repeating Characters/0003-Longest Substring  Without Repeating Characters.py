@@ -1,8 +1,7 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         table = {}
-        maxLen = 0
-        start = 0
+        start = maxLen = 0
         for i, c in enumerate(s):
             if c in table and start <= table[c]:
                 start = table[c] + 1

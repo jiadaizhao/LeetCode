@@ -52,3 +52,19 @@ public:
         return maxProduct;
     }
 };
+
+class Solution {
+public:
+    int maxProduct(vector<int>& nums) {
+        int dpMin = nums[0], dpMax = nums[0], maxP = nums[0];
+        for (int i = 1; i < nums.size(); ++i) {
+            if (nums[i] < 0) {
+                swap(dpMin, dpMax);
+            }
+            dpMax = max(nums[i], dpMax * nums[i]);
+            dpMin = min(nums[i], dpMin * nums[i]);
+            maxP = max(maxP, dpMax);
+        }
+        return maxP;
+    }
+};

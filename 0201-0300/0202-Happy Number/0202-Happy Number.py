@@ -3,12 +3,12 @@ class Solution:
         visited = {n}
         while n != 1:
             curr = n
-            next = 0
+            n = 0
             while curr:
-                next += (curr % 10) ** 2
+                n += (curr % 10) ** 2
                 curr //= 10
-            if next in visited:
+            if n in visited:
                 return False
-            visited.add(next)
-            n = next
+            visited.add(n)
+
         return True

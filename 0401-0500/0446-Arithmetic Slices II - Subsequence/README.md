@@ -24,8 +24,7 @@ The function should return the number of arithmetic subsequence slices in the ar
 
 The input contains N integers. Every integer is in the range of -2<sup>31</sup> and 2<sup>31</sup>-1 and 0 ≤ N ≤ 1000. The output is guaranteed to be less than 2<sup>31</sup>-1.
 
-
-Example:
+**Example:**
 ```
 Input: [2, 4, 6, 8, 10]
 
@@ -41,9 +40,3 @@ All arithmetic subsequence slices are:
 [2,4,6,8,10]
 [2,6,10]
 ```
-
-Companies: Baidu
-
-Related Topics: Dynamic Programming
-
-Similar Questions: Arithmetic Slices

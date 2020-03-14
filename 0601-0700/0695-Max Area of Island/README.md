@@ -28,9 +28,3 @@ Given the above grid, return 6. Note the answer is not 11, because the island mu
 Given the above grid, return 0.
 
 **Note:** The length of each dimension in the given grid does not exceed 50.
-
-Companies: Intuit
-
-Related Topics: Array, Depth-first Search
-
-Similar Questions: Number of Islands, Island Perimeter

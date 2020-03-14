@@ -6,8 +6,8 @@ public:
             return 0;
         }
         int n = grid[0].size();
-        vector<int> dx = {-1, 1, 0, 0};
-        vector<int> dy = {0, 0, -1, 1};
+        int dr[4] = {-1, 1, 0, 0};
+        int dc[4] = {0, 0, -1, 1};
         int maxCount = 0;
         for (int i = 0; i < m; ++i) {
             for (int j = 0; j < n; ++j) {
@@ -21,9 +21,9 @@ public:
                         int c = Q.front().second;
                         ++count;
                         Q.pop();
-                        for (int k = 0; k < dx.size(); ++k) {
-                            int nr = r + dx[k];
-                            int nc = c + dy[k];
+                        for (int k = 0; k < 4; ++k) {
+                            int nr = r + dr[k];
+                            int nc = c + dc[k];
                             if (nr >= 0 && nr < m && nc >= 0 && nc < n && grid[nr][nc] == 1) {
                                 Q.emplace(nr, nc);
                                 grid[nr][nc] = 0;

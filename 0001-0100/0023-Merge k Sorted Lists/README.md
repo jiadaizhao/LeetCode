@@ -6,7 +6,7 @@ https://leetcode.com/problems/merge-k-sorted-lists/
 
 Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
 
-Example:
+**Example:**
 ```
 Input:
 [
@@ -16,9 +16,3 @@ Input:
 ]
 Output: 1->1->2->3->4->4->5->6
 ```
-
-Companies: LinkedIn, Google, Uber, Airbnb, Facebook, Twitter, Amazon, Microsoft
-
-Related Topics: Divide and Conquer, Linked List, Heap
-
-Similar Questions: Merge Two Sorted List, Ugly Number II

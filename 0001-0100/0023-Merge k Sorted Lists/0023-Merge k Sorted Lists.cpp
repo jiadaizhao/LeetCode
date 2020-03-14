@@ -9,6 +9,38 @@
 class Solution {
 public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
+        struct compare {
+            bool operator()(ListNode* l1, ListNode* l2) {
+                return l1->val > l2->val;
+            }
+        };
+        priority_queue<ListNode*, vector<ListNode*>, compare> pq;
+        for (ListNode* l : lists) {
+            if (l) {
+                pq.push(l);
+            }
+        }
+        if (pq.empty()) {
+            return nullptr;
+        }
+        ListNode dummy = ListNode(-1);
+        ListNode* curr = &dummy;
+        while (!pq.empty()) {
+            curr->next = pq.top();
+            pq.pop();
+            curr = curr->next;
+            if (curr->next) {
+                pq.push(curr->next);
+            }
+        }
+        
+        return dummy.next;
+    }
+};
+
+class Solution {
+public:
+    ListNode* mergeKLists(vector<ListNode*>& lists) {
         if (lists.size() == 0) {
             return nullptr;
         }

@@ -10,7 +10,7 @@ The robot can only move either down or right at any point in time. The robot is 
 
 Now consider if some obstacles are added to the grids. How many unique paths would there be?
 
-![alt text](robot_maze.png)
+![robot_maze](robot_maze.png)
 
 An obstacle and empty space is marked as 1 and 0 respectively in the grid.
 
@@ -31,9 +31,3 @@ There are two ways to reach the bottom-right corner:
 1. Right -> Right -> Down -> Down
 2. Down -> Down -> Right -> Right
 ```
-
-Companies: Bloomberg
-
-Related Topics: Array, Dynamic Programming
-
-Similar Questions: Unique Paths

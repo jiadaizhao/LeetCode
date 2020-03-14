@@ -17,9 +17,3 @@ For example, given n = 3, a solution set is:
   "()()()"
 ]
 ```
-
-Companies: Google, Uber, Zenefits
-
-Related Topics: Backtracking, String
-
-Similar Questions: Letter Combinations of a Phone Number, Valid Parentheses

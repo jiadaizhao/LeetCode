@@ -9,17 +9,14 @@ Given an array of integers, every element appears three times except for one, wh
 **Note:**  
 Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
 
-Example 1:
+**Example 1:**
 ```
 Input: [2,2,3,2]
 Output: 3
 ```
-Example 2:
+
+**Example 2:**
 ```
 Input: [0,1,0,1,0,1,99]
 Output: 99
 ```
-
-Related Topics: Bit Manipulation
-
-Similar Questions: Single Number, Single Number III

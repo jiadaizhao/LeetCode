@@ -22,9 +22,3 @@ Output: 0
 
 In this case, no transaction is done, i.e. max profit = 0.
 ```
-
-Companies: Amazon, Microsoft, Bloomberg, Uber, Facebook
-
-Related Topics: Array, Dynamic Programming
-
-Similar Questions: Maximum Subarray, Best Time to Buy and Sell Stock II, Best Time to Buy and Sell Stock III, Best Time to Buy and Sell Stock IV, Best Time to Buy and Sell Stock with Cooldown
