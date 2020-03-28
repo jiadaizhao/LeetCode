@@ -6,9 +6,10 @@ https://leetcode.com/problems/permutations/
 
 Given a collection of distinct numbers, return all possible permutations.
 
-For example,
-[1,2,3] have the following permutations:
+**Example:**
 ```
+Input: [1,2,3]
+Output:
 [
   [1,2,3],
   [1,3,2],
@@ -18,9 +19,3 @@ For example,
   [3,2,1]
 ]
 ```
-
-Companies: LinkedIn, Microsoft
-
-Related Topics: Backtracking
-
-Similar Questions: Next Permutation, Permutation II, Permutation Sequence, Combination

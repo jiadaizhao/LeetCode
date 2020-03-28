@@ -1,3 +1,4 @@
+import math
 class Solution:
     def getPermutation(self, n: int, k: int) -> str:
         fac = math.factorial(n - 1)

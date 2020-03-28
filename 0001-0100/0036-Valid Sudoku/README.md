@@ -16,7 +16,7 @@ A partially filled sudoku which is valid.
 
 The Sudoku board could be partially filled, where empty cells are filled with the character '.'.
 
-Example 1:
+**Example 1:**
 ```
 Input:
 [
@@ -32,7 +32,8 @@ Input:
 ]
 Output: true
 ```
-Example 2:
+
+**Example 2:**
 ```
 Input:
 [
@@ -57,9 +58,3 @@ Explanation: Same as Example 1, except with the 5 in the top left corner being
 * Only the filled cells need to be validated according to the mentioned rules.
 * The given board contain only digits 1-9 and the character '.'.
 * The given board size is always 9x9.
-
-Companies: Snapchat, Uber, Apple
-
-Related Topics: Hash Table
-
-Similar Questions: Sudoku Solver

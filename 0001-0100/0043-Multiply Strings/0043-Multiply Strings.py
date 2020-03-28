@@ -8,7 +8,5 @@ class Solution:
                 sum = int(num1[i]) * int(num2[j]) + product[p2]
                 product[p1] += sum // 10
                 product[p2] = sum % 10
-        start = 0
-        while start < len(product) and product[start] == 0:
-            start += 1
-        return ''.join(map(str, product[start:])) or '0'
+                
+        return ''.join(map(str, product)).lstrip('0') or '0'

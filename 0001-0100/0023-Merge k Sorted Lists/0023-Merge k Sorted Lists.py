@@ -29,12 +29,12 @@ class Solution:
 import heapq
 class Solution2:
     def mergeKLists(self, lists: List[ListNode]) -> ListNode:
-        pq = [(head.val, i, head) for i, head in enumerate(lists)]
+        pq = [(head.val, i, head) for i, head in enumerate(lists) if head]
         heapq.heapify(pq)
         dummy = curr = ListNode(-1)
         while pq:
             i, curr.next = heapq.heappop(pq)[1:3]
             curr = curr.next
             if curr.next:
-                heapq.heappush((curr.next.val, i, curr.next))
+                heapq.heappush(pq, (curr.next.val, i, curr.next))
         return dummy.next

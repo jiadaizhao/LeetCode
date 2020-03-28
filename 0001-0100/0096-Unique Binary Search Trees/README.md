@@ -6,7 +6,7 @@ https://leetcode.com/problems/unique-binary-search-trees/
 
 Given n, how many structurally unique BST's (binary search trees) that store values 1 ... n?
 
-Example:
+**Example:**
 ```
 Input: 3
 Output: 5
@@ -19,9 +19,3 @@ Given n = 3, there are a total of 5 unique BST's:
     /     /       \                 \
    2     1         2                 3
 ```
-
-Companies: Snapchat
-
-Related Topics: Tree, Dynamic Programming
-
-Similar Questions: Unique Binary Search Trees II

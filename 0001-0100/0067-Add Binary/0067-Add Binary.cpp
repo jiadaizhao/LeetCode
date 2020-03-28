@@ -1,30 +1,21 @@
 class Solution {
 public:
-    string addBinary(string a, string b) {     
+    string addBinary(string a, string b) {
         string result;
-        int carry = 0;
-        while (a.size() || b.size()) {
-            int val1 = 0, val2 = 0;
-            if (a.size()) {
-                val1 = a.back() - '0';
-                a.pop_back();
+        int i = a.size() - 1, j = b.size() - 1, carry = 0;
+        while (i >= 0 || j >= 0 || carry) {
+            int sum = carry;
+            if (i >= 0) {
+                sum += a[i--] - '0';
             }
-            if (b.size()) {
-                val2 = b.back() - '0';
-                b.pop_back();
+            if (j >= 0) {
+                sum += b[j--] - '0';
             }
-            int sum = val1 + val2 + carry;
+            result += '0' + (sum & 1);
             carry = sum / 2;
-            sum %= 2;
-            result += '0' + sum;
         }
         
-        if (carry) {
-            result += '1';
-        }
-        
-        reverse(result.begin(), result.end());
-        
+        reverse(result.begin(), result.end());        
         return result;
     }
 };

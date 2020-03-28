@@ -17,7 +17,7 @@ public:
             }
 
             temp += to_string(count);
-            temp += result[result.size() - 1];
+            temp += result.back();
 
             result = temp;
         }

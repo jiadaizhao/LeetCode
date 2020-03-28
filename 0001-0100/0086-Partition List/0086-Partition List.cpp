@@ -6,13 +6,11 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
- class Solution {
+class Solution {
 public:
     ListNode* partition(ListNode* head, int x) {
-        ListNode dummy1 = ListNode(-1);
-        ListNode *p1 = &dummy1;
-        ListNode dummy2 = ListNode(-1);
-        ListNode *p2 = &dummy2;
+        ListNode dummy1 = ListNode(-1), dummy2 = ListNode(-1);
+        ListNode *p1 = &dummy1, *p2 = &dummy2;
         while (head) {
             if (head->val < x) {
                 p1->next = head;

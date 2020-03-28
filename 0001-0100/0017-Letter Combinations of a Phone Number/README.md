@@ -10,7 +10,7 @@ A mapping of digit to letters (just like on the telephone buttons) is given belo
 
 ![alt text](Telephone-keypad2.png)
 
-Example:
+**Example:**
 ```
 Input:Digit string "23"
 Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
@@ -19,9 +19,3 @@ Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
 **Note:**
 
 Although the above answer is in lexicographical order, your answer could be in any order you want.
-
-Companies: Amazon, Dropbox, Google, Uber, Facebook
-
-Related Topics: Backtracking, String
-
-Similar Questions: Generate Parentheses, Combination, Binary Watch

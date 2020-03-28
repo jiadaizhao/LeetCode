@@ -1,10 +1,6 @@
 class Solution {
 public:
-    double myPow(double x, int n) {
-        if (n == 0) {
-            return 1;
-        }
-        
+    double myPow(double x, int n) {        
         long long nc = n;
         if (nc < 0) {
             nc = -nc;
@@ -15,8 +11,7 @@ public:
         while (nc) {
             if (nc & 1) {
                 result *= x;
-            }
-            
+            }            
             x *= x;
             nc >>= 1;
         }

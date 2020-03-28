@@ -6,7 +6,7 @@ https://leetcode.com/problems/unique-binary-search-trees-ii/
 
 Given an integer n, generate all structurally unique BST's (binary search trees) that store values 1 ... n.
 
-Example:
+**Example:**
 ```
 Input: 3
 Output:
@@ -26,7 +26,3 @@ The above output corresponds to the 5 unique BST's shown below:
     /     /       \                 \
    2     1         2                 3
 ```
-
-Related Topics: Tree, Dynamic Programming
-
-Similar Questions: Unique Binary Search Trees, Different Ways to Add Parentheses

@@ -17,24 +17,19 @@ By listing and labeling all of the permutations in order, we get the following s
 
 Given n and k, return the kth permutation sequence.
 
-Note:
+**Note:**
 
 * Given n will be between 1 and 9 inclusive.
 * Given k will be between 1 and n! inclusive.
 
-Example 1:
+**Example 1:**
 ```
 Input: n = 3, k = 3
 Output: "213"
 ```
-Example 2:
+
+**Example 2:**
 ```
 Input: n = 4, k = 9
 Output: "2314"
 ```
-
-Companies: Twitter
-
-Related Topics: Backtracking, Math
-
-Similar Questions: Next permuration, Permutations

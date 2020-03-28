@@ -22,14 +22,8 @@ A sudoku puzzle...
 
 ...and its solution numbers marked in red.
 
-Note:
+**Note:**
 
 * The given board contain only digits 1-9 and the character '.'.
 * You may assume that the given Sudoku puzzle will have a single unique solution.
 * The given board size is always 9x9.
-
-Companies: Snapchat, Uber
-
-Related Topics: Backtracking, Hash Table
-
-Similar Questions: Valid Sudoku

@@ -6,7 +6,7 @@ https://leetcode.com/problems/set-matrix-zeroes/
 
 Given a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in-place.
 
-Example 1:
+**Example 1:**
 ```
 Input: 
 [
@@ -21,7 +21,8 @@ Output:
   [1,0,1]
 ]
 ```
-Example 2:
+
+**Example 2:**
 ```
 Input: 
 [
@@ -36,14 +37,9 @@ Output:
   [0,3,1,0]
 ]
 ```
-Follow up:
+
+**Follow up:**
 
 * A straight forward solution using O(mn) space is probably a bad idea.
 * A simple improvement uses O(m + n) space, but still not the best solution.
 * Could you devise a constant space solution?
-
-Companies: Microsoft, Amazon
-
-Related Topics: Array
-
-Similar Questions: Game of Life

@@ -24,7 +24,7 @@ Some examples:
 "95a54e53" => false
 ```
 
-Note: It is intended for the problem statement to be ambiguous. You should gather all requirements up front before implementing one. However, here is a list of characters that can be in a valid decimal number:
+**Note:** It is intended for the problem statement to be ambiguous. You should gather all requirements up front before implementing one. However, here is a list of characters that can be in a valid decimal number:
 
 * Numbers 0-9
 * Exponent - "e"
@@ -33,11 +33,5 @@ Note: It is intended for the problem statement to be ambiguous. You should gathe
 
 Of course, the context of these characters also matters in the input.
 
-Update (2015-02-10):
+**Update (2015-02-10):**
 The signature of the C++ function had been updated. If you still see your function signature accepts a const char * argument, please click the reload button to reset your code definition.
-
-Companies: LinkedIn
-
-Related Topics: Math, String
-
-Similar Questions: String to Integer(atoi)

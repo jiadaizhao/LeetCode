@@ -8,38 +8,37 @@ Given a string containing just the characters '(', ')', '{', '}', '[' and ']', d
 
 An input string is valid if:
 
-Open brackets must be closed by the same type of brackets.
-Open brackets must be closed in the correct order.
+1. Open brackets must be closed by the same type of brackets.
+2. Open brackets must be closed in the correct order.
+
 Note that an empty string is also considered valid.
 
-Example 1:
+**Example 1:**
 ```
 Input: "()"
 Output: true
 ```
-Example 2:
+
+**Example 2:**
 ```
 Input: "()[]{}"
 Output: true
 ```
-Example 3:
+
+**Example 3:**
 ```
 Input: "(]"
 Output: false
 ```
-Example 4:
+
+**Example 4:**
 ```
 Input: "([)]"
 Output: false
 ```
-Example 5:
+
+**Example 5:**
 ```
 Input: "{[]}"
 Output: true
 ```
-
-Companies: Google, Airbnb, Facebook, Twitter, Zenefits, Amazon, Microsoft, Bloomberg
-
-Related Topics: Stack, String
-
-Similar Questions: Generate Parentheses, Longest Valid Parentheses, Remove Invalid Parentheses

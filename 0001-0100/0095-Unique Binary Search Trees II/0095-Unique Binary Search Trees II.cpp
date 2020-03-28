@@ -17,14 +17,14 @@ class Solution {
 public:
     vector<TreeNode*> generateTrees(int n) {
         if (n <= 0) {
-            return vector<TreeNode*>();
+            return {};
         }
-        return helper(1, n);
+        return dfs(1, n);
     }
     
 private:
     unordered_map<pair<int, int>, vector<TreeNode*>, pairhash> table;
-    vector<TreeNode*> helper(int start, int end) {
+    vector<TreeNode*> dfs(int start, int end) {
         if (end < start) {
             return {nullptr};
         }
@@ -36,8 +36,8 @@ private:
         vector<TreeNode*> result;
         
         for (int i = start; i <= end; ++i) {
-            vector<TreeNode*> lefts = helper(start, i - 1);
-            vector<TreeNode*> rights = helper(i + 1, end);
+            vector<TreeNode*> lefts = dfs(start, i - 1);
+            vector<TreeNode*> rights = dfs(i + 1, end);
             for (TreeNode* left : lefts) {
                 for (TreeNode* right : rights) {
                     TreeNode* root = new TreeNode(i);

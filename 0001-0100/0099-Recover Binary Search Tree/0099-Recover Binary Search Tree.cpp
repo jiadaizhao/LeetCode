@@ -14,10 +14,8 @@ public:
             return;
         }
         
-        TreeNode* first = nullptr;
-        TreeNode* second = nullptr;
-        TreeNode* curr = root;
-        TreeNode* prev = nullptr;
+        TreeNode *first = nullptr, *second = nullptr;
+        TreeNode *curr = root, *prev = nullptr;
         stack<TreeNode*> St;
         while (!St.empty() || curr) {
             if (curr) {

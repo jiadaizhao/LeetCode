@@ -1,8 +1,7 @@
 class Solution {
 public:
     bool isMatch(string s, string p) {
-        int m = s.size();
-        int n = p.size();
+        int m = s.size(), n = p.size();
         vector<vector<bool>> dp(1 + m, vector<bool>(1 + n));
         dp[0][0] = true;
 

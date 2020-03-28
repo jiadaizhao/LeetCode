@@ -8,12 +8,10 @@ Given a string s consists of upper/lower-case alphabets and empty space characte
 
 If the last word does not exist, return 0.
 
-Note: A word is defined as a character sequence consists of non-space characters only.
+**Note:** A word is defined as a character sequence consists of non-space characters only.
 
-Example:
+**Example:**
 ```
 Input: "Hello World"
 Output: 5
 ```
-
-Related Topics: String

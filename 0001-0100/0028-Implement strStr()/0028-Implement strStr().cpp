@@ -1,8 +1,7 @@
 class Solution {
 public:
     int strStr(string haystack, string needle) {
-        int n = haystack.size();
-        int m = needle.size();
+        int n = haystack.size(), m = needle.size();
         if (m == 0) {
             return 0;
         }
@@ -34,16 +33,16 @@ private:
     vector<int> preprocess(string target) {
         int m = target.size();
         vector<int> lps(m);
-        int i = 1, len = 0;
+        int i = 1, l = 0;
         while (i < m) {
-            if (target[i] == target[len]) {
-                lps[i++] = ++len;
+            if (target[i] == target[l]) {
+                lps[i++] = ++l;
             }
-            else if (len != 0) {
-                len = lps[len - 1]; 
+            else if (l != 0) {
+                l = lps[l - 1]; 
             }
             else {
-                lps[i++] = 0;
+                ++i;
             }
         }
         

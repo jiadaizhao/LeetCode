@@ -2,10 +2,6 @@ class Solution {
 public:
     vector<vector<int>> combine(int n, int k) {
         vector<vector<int>> result;
-        if (n <= 0) {
-            return result;
-        }
-        
         vector<int> path;
         dfs(1, n, k, path, result);
         return result;

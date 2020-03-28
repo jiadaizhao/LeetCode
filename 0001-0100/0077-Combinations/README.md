@@ -6,7 +6,7 @@ https://leetcode.com/problems/combinations/
 
 Given two integers n and k, return all possible combinations of k numbers out of 1 ... n.
 
-Example:
+**Example:**
 ```
 Input: n = 4, k = 2
 Output:
@@ -19,7 +19,3 @@ Output:
   [1,4],
 ]
 ```
-
-Related Topics: Backtracking
-
-Similar Questions: Combination Sum, Permutations

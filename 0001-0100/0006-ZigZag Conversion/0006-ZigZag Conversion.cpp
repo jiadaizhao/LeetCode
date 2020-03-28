@@ -24,3 +24,31 @@ public:
         return result;
     }
 };
+
+
+class Solution {
+public:
+    string convert(string s, int numRows) {
+        if (numRows == 1) {
+            return s;
+        }
+        int step = 1, index = 0;
+        vector<string> str(numRows);
+        for (char c : s) {
+            str[index].push_back(c);
+            if (index == 0) {
+                step = 1;
+            }
+            else if (index == numRows - 1) {
+                step = -1;
+            }            
+            index += step;
+        }
+        
+        string result;
+        for (string st : str) {
+            result += st;
+        }
+        return result;
+    }
+};
