@@ -10,10 +10,12 @@ get(key) - Get the value (will always be positive) of the key if the key exists 
 
 put(key, value) - Set or insert the value if the key is not already present. When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.
 
+The cache is initialized with a positive capacity.
+
 **Follow up:**  
 Could you do both operations in O(1) time complexity?
 
-Example:
+**Example:**
 ```
 LRUCache cache = new LRUCache( 2 /* capacity */ );
 
@@ -27,9 +29,3 @@ cache.get(1);       // returns -1 (not found)
 cache.get(3);       // returns 3
 cache.get(4);       // returns 4
 ```
-
-Companies: Google, Uber, Facebook, Twitter, Zenefits, Amazon, Microsoft, Snapchat, Yahoo, Bloomberg, Palantir
-
-Related Topics: Design
-
-Similar Questions: LFU Cache, Design In-Memory File System, Design Compressed String Iterator

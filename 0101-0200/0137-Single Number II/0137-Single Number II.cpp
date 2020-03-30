@@ -1,12 +1,11 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        int sum = 0;
         int result = 0;
         for (int i = 0; i < 32; ++i) {
-            sum = 0;
+            int sum = 0;
             for (int num : nums) {
-                sum += num >> i & 1;
+                sum += (num >> i) & 1;
             }
             result += (sum % 3) << i;
         }

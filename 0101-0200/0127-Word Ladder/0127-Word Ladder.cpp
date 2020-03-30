@@ -1,48 +1,84 @@
 class Solution {
 public:
     int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
-        unordered_set<string> wordSet;
-        for (string s : wordList) {
-            wordSet.insert(s);
+        unordered_map<string, vector<string>> table;
+        int L = beginWord.size();
+        for (string word : wordList) {
+            for (int i = 0; i < L; ++i) {
+                table[word.substr(0, i) + '*' + word.substr(i + 1)].push_back(word);
+            }
         }
         
-        if (wordSet.find(endWord) == wordSet.end()) {
-            return 0;
-        }
-        
-        unordered_set<string> visited;
+        int step = 1;
         queue<string> Q;
         Q.push(beginWord);
-        visited.insert(beginWord);
-        int len = 0;
+        unordered_set<string> visited{beginWord};
         while (!Q.empty()) {
-            ++len;
             int qs = Q.size();
-            for (int i = 0; i < qs; ++i) {
-                string word = Q.front();
-                if (word == endWord) {
-                    return len;
-                }
+            ++step;
+            for (int k = 0; k < qs; ++k) {
+                string s = Q.front();
                 Q.pop();
-                for (int j = 0; j < word.size(); ++j) {
-                    string newWord(word);
-                    for (char c = 'a'; c <= 'z'; ++c) {
-                        if (word[j] == c) {
-                            continue;
+                
+                for (int i = 0; i < L; ++i) {
+                    string nextWord = s.substr(0, i) + '*' + s.substr(i + 1);
+                    for (string word : table[nextWord]) {
+                        if (word == endWord) {
+                            return step;
                         }
-                        
-                        newWord[j] = c;
-                        if (wordSet.find(newWord) == wordSet.end()) {
-                            continue;
-                        }
-                        
-                        if (visited.find(newWord) == visited.end()) {
-                            Q.push(newWord);
-                            visited.insert(newWord);
+                        if (!visited.count(word)) {
+                            Q.push(word);
+                            visited.insert(word);
                         }
                     }
                 }
             }
+        }
+        
+        return 0;
+    }
+};
+
+
+class Solution {
+public:
+    int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
+        if (find(wordList.begin(), wordList.end(), endWord) == wordList.end()) {
+            return 0;
+        }
+        unordered_map<string, vector<string>> table;
+        int L = beginWord.size();
+        for (string word : wordList) {
+            for (int i = 0; i < L; ++i) {
+                table[word.substr(0, i) + '*' + word.substr(i + 1)].push_back(word);
+            }
+        }
+        
+        int step = 1;
+        unordered_set<string> visitedBegin{beginWord}, visitedEnd{endWord};
+        unordered_set<string> visited{beginWord, endWord};
+        while (!visitedBegin.empty() && !visitedEnd.empty()) {
+            if (visitedBegin.size() > visitedEnd.size()) {
+                swap(visitedBegin, visitedEnd);
+            }
+            
+            ++step;
+            unordered_set<string> temp;
+            for (string w : visitedBegin) {
+                for (int i = 0; i < L; ++i) {
+                    string nw = w.substr(0, i) + '*' + w.substr(i + 1);
+                    for (string word : table[nw]) {
+                        if (visitedEnd.count(word)) {
+                            return step;
+                        }
+                        if (!visited.count(word)) {
+                            temp.insert(word);
+                            visited.insert(word);
+                        }
+                    }
+                }
+            }
+            visitedBegin = std::move(temp);
         }
         
         return 0;

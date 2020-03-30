@@ -8,7 +8,7 @@ Given a non-empty binary tree, find the maximum path sum.
 
 For this problem, a path is defined as any sequence of nodes from some starting node to any node in the tree along the parent-child connections. The path must contain at least one node and does not need to go through the root.
 
-Example 1:
+**Example 1:**
 ```
 Input: [1,2,3]
 
@@ -18,7 +18,8 @@ Input: [1,2,3]
 
 Output: 6
 ```
-Example 2:
+
+**Example 2:**
 ```
 Input: [-10,9,20,null,null,15,7]
 
@@ -30,9 +31,3 @@ Input: [-10,9,20,null,null,15,7]
 
 Output: 42
 ```
-
-Companies: Microsoft, Baidu
-
-Related Topics: Tree, Depth-first Search
-
-Similar Questions: Path Sum, Sum Root to Leaf Numbers

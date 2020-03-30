@@ -17,24 +17,21 @@ For example:
     AB -> 28 
     ...
 ```
-Example 1:
+
+**Example 1:**
 ```
 Input: "A"
 Output: 1
 ```
-Example 2:
+
+**Example 2:**
 ```
 Input: "AB"
 Output: 28
 ```
-Example 3:
+
+**Example 3:**
 ```
 Input: "ZY"
 Output: 701
 ```
-
-Companies: Microsoft, Uber
-
-Related Topics: Math
-
-Similar Questions: Excel Sheet Column Title

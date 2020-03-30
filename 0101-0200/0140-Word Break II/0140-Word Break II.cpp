@@ -1,40 +1,39 @@
 class Solution {
 public:
     vector<string> wordBreak(string s, vector<string>& wordDict) {
-        unordered_set<string> wordSet;
+        unordered_set<string> dict;
         int maxLen = 0;
-        for (string w : wordDict) {
-            maxLen = max(maxLen, (int)(w.size()));
-            wordSet.insert(w);
+        for (string& word : wordDict) {
+            maxLen = max(maxLen, (int)(word.size()));
+            dict.insert(word);
         }
         
-        return dfs(s, wordSet, maxLen);
+        return dfs(s, dict, maxLen);        
     }
     
 private:
     unordered_map<string, vector<string>> table;
-    vector<string> dfs(string s, unordered_set<string>& wordSet, int maxLen) {
-        if (table.find(s) != table.end()) {
+    vector<string> dfs(string s, unordered_set<string>& dict, int& maxLen) {
+        if (table.count(s)) {
             return table[s];
         }
         
-        vector<string> result;        
-        if (wordSet.find(s) != wordSet.end()) {
+        vector<string> result;
+        if (dict.count(s)) {
             result.push_back(s);
         }
-        
+
         for (int i = 1; i <= maxLen && i < s.size(); ++i) {
             string prefix = s.substr(0, i);
-            if (wordSet.find(prefix) != wordSet.end()) {
+            if (dict.count(prefix)) {
                 string suffix = s.substr(i);
-                vector<string> temp = dfs(suffix, wordSet, maxLen);
-                for (string t : temp) {
-                    result.push_back(prefix + " " + t);
+                vector<string> temp = dfs(suffix, dict, maxLen);
+                for (string s : temp) {
+                    result.push_back(prefix + " " + s);
                 }
-            }
+            }                        
         }
         
-        table[s] = result;
-        return result;
-    }
+        return table[s] = result;
+    }    
 };

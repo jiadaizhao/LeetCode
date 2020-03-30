@@ -19,8 +19,6 @@ public:
             return true;
         }
         
-        bool left = hasPathSum(root->left, sum);
-        bool right = hasPathSum(root->right, sum);
-        return left || right;
+        return hasPathSum(root->left, sum) || hasPathSum(root->right, sum);
     }
 };

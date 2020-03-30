@@ -7,7 +7,7 @@ public:
         }
         
         vector<int> dp(n);
-        vector<vector<bool>> palindrome(n, vector<bool>(n, false));
+        vector<vector<bool>> palindrome(n, vector<bool>(n));
         for (int j = 0; j < n; ++j) {
             dp[j] = j;
             for (int i = j; i >= 0; --i) {
@@ -18,7 +18,7 @@ public:
                     }
                     else {
                         dp[j] = min(dp[j], 1 + dp[i - 1]);
-                    }
+                    }                    
                 }
             }
         }

@@ -50,9 +50,6 @@ class LRUCache:
         prev = node.prev
         prev.next = node.next
         node.next.prev = prev
-        
-        
-
 
 # Your LRUCache object will be instantiated and called as such:
 # obj = LRUCache(capacity)

@@ -1,64 +1,52 @@
 class Solution {
 public:
     vector<vector<string>> findLadders(string beginWord, string endWord, vector<string>& wordList) {
+        int L = beginWord.size();
+        for (string word : wordList) {
+            for (int i = 0; i < L; ++i) {
+                table[word.substr(0, i) + '*' + word.substr(i + 1)].push_back(word);
+            }
+        }
         vector<vector<string>> result;
-        unordered_set<string> wordSet;
-        for (string s : wordList) {
-            wordSet.insert(s);
-        }
         
-        if (wordSet.find(endWord) == wordSet.end()) {
+        if (!bfs(beginWord, endWord)) {
             return result;
         }
         
-        if (!bfs(beginWord, endWord, wordSet)) {
-            return result;
-        }
-        
-        vector<string> path;
-        path.push_back(beginWord);
+        vector<string> path = {beginWord};
         dfs(beginWord, endWord, path, result);
         return result;
     }
-
+    
 private:
+    unordered_map<string, vector<string>> table;
     unordered_map<string, vector<string>> nextWord;
     unordered_map<string, int> distance;
-    bool bfs(string beginWord, string endWord, unordered_set<string>& wordSet) {
+    bool bfs(string beginWord, string endWord) {
+        int step = 0, L = beginWord.size();
         queue<string> Q;
         Q.push(beginWord);
         distance[beginWord] = 0;
-        int len = 0;
         while (!Q.empty()) {
-            ++len;
+            ++step;
             int qs = Q.size();
             for (int i = 0; i < qs; ++i) {
-                string word = Q.front();
-                Q.pop();
-                if (word == endWord) {
+                string s = Q.front();
+                if (s == endWord) {
                     return true;
                 }
-                for (int j = 0; j < word.size(); ++j) {
-                    string newWord(word);
-                    for (char c = 'a'; c <= 'z'; ++c) {
-                        if (word[j] == c) {
-                            continue;
+                Q.pop();
+                for (int i = 0; i < L; ++i) {
+                    string nw = s.substr(0, i) + '*' + s.substr(i + 1);
+                    for (string word : table[nw]) {
+                        if (!distance.count(word)) {
+                            Q.push(word);
+                            distance[word] = step;
                         }
-                        
-                        newWord[j] = c;
-                        if (wordSet.find(newWord) == wordSet.end()) {
-                            continue;
-                        }
-                        
-                        if (distance.find(newWord) == distance.end()) {
-                            Q.push(newWord);
-                            distance[newWord] = len;
-                        }
-                        
-                        nextWord[word].push_back(newWord);
+                        nextWord[s].push_back(word);
                     }
                 }
-            }
+            }            
         }
         
         return false;
@@ -70,11 +58,10 @@ private:
             return;
         }
         
-        auto nw = nextWord[beginWord];
-        for (string s : nw) {
-            if (distance[s] == distance[beginWord] + 1) {
-                path.push_back(s);
-                dfs(s, endWord, path, result);
+        for (string word : nextWord[beginWord]) {
+            if (distance[word] == distance[beginWord] + 1) {
+                path.push_back(word);
+                dfs(word, endWord, path, result);
                 path.pop_back();
             }
         }

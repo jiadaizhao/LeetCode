@@ -27,8 +27,10 @@ private:
         if (sum == 0 && root->left == nullptr && root->right == nullptr) {
             result.push_back(path);
         }
-        dfs(root->left, sum, path, result);
-        dfs(root->right, sum, path, result);
+        else {
+            dfs(root->left, sum, path, result);
+            dfs(root->right, sum, path, result);
+        }        
         path.pop_back();
     }
 };

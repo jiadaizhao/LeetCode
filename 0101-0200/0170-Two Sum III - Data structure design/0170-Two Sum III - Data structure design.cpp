@@ -12,10 +12,10 @@ public:
     
     /** Find if there exists any pair of numbers which sum is equal to the value. */
     bool find(int value) {
-        for (auto it = table.begin(); it != table.end(); ++it) {
-            int val1 = it->first;
+        for (auto p : table) {
+            int val1 = p.first;
             int val2 = value - val1;
-            if ((val1 == val2 && table[val1] > 1) || (val1 != val2 && table.find(val2) != table.end())) {
+            if ((val1 == val2 && table[val1] > 1) || (val1 != val2 && table.count(val2))) {
                 return true;
             }
         }
@@ -33,4 +33,3 @@ private:
  * obj.add(number);
  * bool param_2 = obj.find(value);
  */
- 

@@ -10,7 +10,7 @@ For this problem, a height-balanced binary tree is defined as:
 
 a binary tree in which the depth of the two subtrees of every node never differ by more than 1.
 
-Example 1:
+**Example 1:**
 ```
 Given the following tree [3,9,20,null,null,15,7]:
 
@@ -21,7 +21,8 @@ Given the following tree [3,9,20,null,null,15,7]:
    15   7
 Return true.
 ```
-Example 2:
+
+**Example 2:**
 ```
 Given the following tree [1,2,2,3,3,null,null,4,4]:
 
@@ -33,9 +34,3 @@ Given the following tree [1,2,2,3,3,null,null,4,4]:
   / \
  4   4
 ```
-
-Companies: Bloomberg
-
-Related Topics: Tree, Depth-first Search
-
-Similar Questions: Maximum Depth of Binary Tree

@@ -16,7 +16,7 @@ Given two words (beginWord and endWord), and a dictionary's word list, find the 
 * You may assume no duplicates in the word list.
 * You may assume beginWord and endWord are non-empty and are not the same.
 
-Example 1:
+**Example 1:**
 ```
 Input:
 beginWord = "hit",
@@ -28,7 +28,8 @@ Output: 5
 Explanation: As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog",
 return its length 5.
 ```
-Example 2:
+
+**Example 2:**
 ```
 Input:
 beginWord = "hit"
@@ -39,7 +40,3 @@ Output: 0
 
 Explanation: The endWord "cog" is not in wordList, therefore no possible transformation.
 ```
-
-Companies: Amazon, LinkedIn, Snapchat, Facebook, Yelp
-
-Related Topics: Breadth-first Search

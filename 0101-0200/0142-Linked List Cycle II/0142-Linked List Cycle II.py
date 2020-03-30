@@ -4,12 +4,8 @@ class ListNode(object):
         self.val = x
         self.next = None
 
-class Solution(object):
-    def detectCycle(self, head):
-        """
-        :type head: ListNode
-        :rtype: ListNode
-        """
+class Solution:
+    def detectCycle(self, head: ListNode) -> ListNode:
         slow = fast = head
         while fast and fast.next:
             slow = slow.next

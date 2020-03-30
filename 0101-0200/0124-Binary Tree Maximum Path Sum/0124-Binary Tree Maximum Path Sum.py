@@ -5,6 +5,7 @@ class TreeNode:
         self.left = None
         self.right = None
 
+import math
 class Solution:
     def maxPathSum(self, root: TreeNode) -> int:
         maxSum = -math.inf

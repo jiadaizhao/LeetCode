@@ -22,9 +22,3 @@ minStack.pop();
 minStack.top();      --> Returns 0.
 minStack.getMin();   --> Returns -2.
 ```
-
-Companies: Google, Uber, Zenefits, Amazon, Snapchat, Bloomberg
-
-Related Topics: Stack, Design
-
-Similar Questions: Sliding Window Maximum

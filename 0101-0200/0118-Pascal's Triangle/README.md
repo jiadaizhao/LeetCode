@@ -6,7 +6,11 @@ https://leetcode.com/problems/pascals-triangle/
 
 Given a non-negative integer numRows, generate the first numRows of Pascal's triangle.
 
-Example:
+![triangle](PascalTriangle.gif)
+
+In Pascal's triangle, each number is the sum of the two numbers directly above it.
+
+**Example:**
 ```
 Input: 5
 Output:
@@ -18,9 +22,3 @@ Output:
  [1,4,6,4,1]
 ]
 ```
-
-Companies: Apple, Twitter
-
-Related Topics: Array
-
-Similar Questions: Pascal's Triangle II

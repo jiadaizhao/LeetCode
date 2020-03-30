@@ -10,19 +10,19 @@
 class Solution {
 public:
     TreeNode* sortedArrayToBST(vector<int>& nums) {
-        return helper(nums, 0, nums.size() - 1);
+        return dfs(nums, 0, nums.size() - 1);
     }
     
 private:
-    TreeNode* helper(vector<int>& nums, int start, int end) {
+    TreeNode* dfs(vector<int>& nums, int start, int end) {
         if (start > end) {
             return nullptr;
         }
         
         int mid = start + (end - start) / 2;
         TreeNode* root = new TreeNode(nums[mid]);
-        root->left = helper(nums, start, mid - 1);
-        root->right = helper(nums, mid + 1, end);
+        root->left = dfs(nums, start, mid - 1);
+        root->right = dfs(nums, mid + 1, end);
         return root;
     }
 };

@@ -8,13 +8,9 @@ All DNA is composed of a series of nucleotides abbreviated as A, C, G, and T, fo
 
 Write a function to find all the 10-letter-long sequences (substrings) that occur more than once in a DNA molecule.
 
-Example:
+**Example:**
 ```
 Input: s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"
 
 Output: ["AAAAACCCCC", "CCCCCAAAAA"]
 ```
-
-Companies: LinkedIn
-
-Related Topics: Hash Table, Bit Manipulation

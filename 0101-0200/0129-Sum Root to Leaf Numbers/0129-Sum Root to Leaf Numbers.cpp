@@ -10,28 +10,24 @@
 class Solution {
 public:
     int sumNumbers(TreeNode* root) {
-        if (root == nullptr) {
-            return 0;
-        }
         int sum = 0;
-        helper(root, 0, sum);
+        dfs(root, 0, sum);
         return sum;
     }
     
 private:
-    void helper(TreeNode* root, int prev, int& sum) {
-        prev = prev * 10 + root->val;
-        if (root->left == nullptr && root->right == nullptr) {
-            sum += prev;
+    void dfs(TreeNode* root, int curr, int& sum) {
+        if (root == nullptr) {
             return;
         }
         
-        if (root->left) {
-            helper(root->left, prev, sum);
+        curr = curr * 10 + root->val;
+        if (root->left == nullptr && root->right == nullptr) {
+            sum += curr;
         }
-        
-        if (root->right) {
-            helper(root->right, prev, sum);
+        else {
+            dfs(root->left, curr, sum);
+            dfs(root->right, curr, sum);
         }
     }
 };

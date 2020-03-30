@@ -23,7 +23,3 @@ return its bottom-up level order traversal as:
   [3]
 ]
 ```
-
-Related Topics: Tree, Breadth-first Search
-
-Similar Questions: Binary Tree Level Order Traversal, Average of Levels in Binary Tree

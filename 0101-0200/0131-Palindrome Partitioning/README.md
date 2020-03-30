@@ -8,7 +8,7 @@ Given a string s, partition s such that every substring of the partition is a pa
 
 Return all possible palindrome partitioning of s.
 
-Example:
+**Example:**
 ```
 Input: "aab"
 Output:
@@ -17,7 +17,3 @@ Output:
   ["a","a","b"]
 ]
 ```
-
-Related Topics: Backtracking
-
-Similar Questions: Palindrome Partitioning II

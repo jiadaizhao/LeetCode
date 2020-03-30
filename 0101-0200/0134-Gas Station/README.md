@@ -10,13 +10,13 @@ You have a car with an unlimited gas tank and it costs cost[i] of gas to travel 
 
 Return the starting gas station's index if you can travel around the circuit once in the clockwise direction, otherwise return -1.
 
-Note:
+**Note:**
 
 * If there exists a solution, it is guaranteed to be unique.
 * Both input arrays are non-empty and have the same length.
 * Each element in the input arrays is a non-negative integer.
 
-Example 1:
+**Example 1:**
 ```
 Input: 
 gas  = [1,2,3,4,5]
@@ -33,7 +33,8 @@ Travel to station 2. Your tank = 6 - 4 + 3 = 5
 Travel to station 3. The cost is 5. Your gas is just enough to travel back to station 3.
 Therefore, return 3 as the starting index.
 ```
-Example 2:
+
+**Example 2:**
 ```
 Input: 
 gas  = [2,3,4]
@@ -49,5 +50,3 @@ Travel to station 1. Your tank = 3 - 3 + 3 = 3
 You cannot travel back to station 2, as it requires 4 unit of gas but you only have 3.
 Therefore, you can't travel around the circuit once no matter where you start.
 ```
-
-Related Topics: Greedy

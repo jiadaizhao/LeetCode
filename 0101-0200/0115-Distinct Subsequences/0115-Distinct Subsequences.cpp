@@ -1,9 +1,8 @@
 class Solution {
 public:
     int numDistinct(string s, string t) {
-        int m = s.size();
-        int n = t.size();
-        vector<vector<int>> dp(1 + m, vector<int>(1 + n));
+        int m = s.size(), n = t.size();
+        vector<vector<long>> dp(1 + m, vector<long>(1 + n));
         dp[0][0] = 1;
         for (int i = 1; i <= m; ++i) {
             dp[i][0] = 1;
@@ -25,9 +24,8 @@ public:
 class Solution {
 public:
     int numDistinct(string s, string t) {
-        int m = s.size();
-        int n = t.size();
-        vector<int> dp(1 + n);
+        int m = s.size(), n = t.size();
+        vector<long> dp(1 + n);
         dp[0] = 1;
         for (int i = 1; i <= m; ++i) {
             for (int j = n; j >= 1; --j) {

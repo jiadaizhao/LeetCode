@@ -12,7 +12,7 @@ public:
                 board[i][0] = '#';
                 Q.push({i, 0});
             }
-            if (n > 1 && board[i][n - 1] == 'O') {
+            if (board[i][n - 1] == 'O') {
                 board[i][n - 1] = '#';
                 Q.push({i, n - 1});
             }
@@ -24,7 +24,7 @@ public:
                 Q.push({0, j});
             }
             
-            if (m > 1 && board[m - 1][j] == 'O') {
+            if (board[m - 1][j] == 'O') {
                 board[m - 1][j] = '#';
                 Q.push({m - 1, j});
             }

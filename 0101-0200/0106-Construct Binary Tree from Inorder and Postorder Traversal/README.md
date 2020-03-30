@@ -6,7 +6,7 @@ https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-t
 
 Given inorder and postorder traversal of a tree, construct the binary tree.
 
-Note:
+**Note:**
 You may assume that duplicates do not exist in the tree.
 
 For example, given
@@ -22,9 +22,3 @@ Return the following binary tree:
     /  \
    15   7
 ```
-
-Companies: Microsoft
-
-Related Topics: Tree, Array, Depth-first Search
-
-Similar Questions: Construct Binary Tree from Preorder and Inorder Traversal

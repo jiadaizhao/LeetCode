@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/read-n-characters-given-read4/description/
+https://leetcode.com/problems/read-n-characters-given-read4/
 
 Given a file and assume that you can only read the file using a given method read4, implement a method read to read n characters. Your method read may be called multiple times.
 

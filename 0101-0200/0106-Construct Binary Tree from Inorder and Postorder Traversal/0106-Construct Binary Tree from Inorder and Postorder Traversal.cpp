@@ -13,27 +13,25 @@ public:
         if (postorder.size() == 0) {
             return nullptr;
         }
+        for (int i = 0; i < inorder.size(); ++i) {
+            table[inorder[i]] = i;
+        }
         int postIndex = postorder.size() - 1;
-        return buildTree(inorder, 0, inorder.size() - 1, postorder, postIndex);
+        return dfs(inorder, 0, inorder.size() - 1, postorder, postIndex);
     }
     
 private:
-    TreeNode* buildTree(vector<int>& inorder, int inStart, int inEnd, vector<int>& postorder, int& postIndex) {
+    unordered_map<int, int> table;
+    TreeNode* dfs(vector<int>& inorder, int inStart, int inEnd, vector<int>& postorder, int& postIndex) {
         if (inStart > inEnd) {
             return nullptr;
         }
         
         TreeNode* root = new TreeNode(postorder[postIndex--]);
-        int index = inStart;
-        for (int i = inStart; i <= inEnd; ++i) {
-            if (root->val == inorder[i]) {
-                index = i;
-                break;
-            }
-        }
+        int index = table[root->val];
         
-        root->right = buildTree(inorder, index + 1, inEnd, postorder, postIndex);
-        root->left = buildTree(inorder, inStart, index - 1, postorder, postIndex);
+        root->right = dfs(inorder, index + 1, inEnd, postorder, postIndex);
+        root->left = dfs(inorder, inStart, index - 1, postorder, postIndex);
         return root;
     }
 };

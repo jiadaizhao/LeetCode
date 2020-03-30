@@ -13,12 +13,14 @@ class Solution:
         if root is None:
             return
         St = [root]
+        prev = None
         while St:
             node = St.pop()
+            if prev:
+                prev.right = node
             if node.right:
                 St.append(node.right)
             if node.left:
                 St.append(node.left)
             node.left = None
-            if St:
-                node.right = St[-1]
+            prev = node

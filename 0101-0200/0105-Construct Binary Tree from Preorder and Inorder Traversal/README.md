@@ -2,11 +2,11 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/
+https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
 
 Given preorder and inorder traversal of a tree, construct the binary tree.
 
-Note:
+**Note:**
 You may assume that duplicates do not exist in the tree.
 
 For example, given
@@ -22,9 +22,3 @@ Return the following binary tree:
     /  \
    15   7
 ```
-
-Companies: Bloomberg
-
-Related Topics: Tree, Array, Depth-first Search
-
-Similar Questions: Construct Binary Tree from Inorder and Postorder Traversal
