@@ -23,7 +23,3 @@ For instance, the skyline in Figure B should be represented as:[ [2 10], [3 15],
 * The input list is already sorted in ascending order by the left x position Li.
 * The output list must be sorted by the x position.
 * There must be no consecutive horizontal lines of equal height in the output skyline. For instance, [...[2 3], [4 5], [7 5], [11 5], [12 7]...] is not acceptable; the three lines of height 5 should be merged into one in the final output as such: [...[2 3], [4 5], [12 7], ...]
-
-Companies: Microsoft, Google, Facebook, Twitter, Yelp
-
-Related Topics: Binary Indexed Tree, Segment Tree, Heap, Divide and Conquer

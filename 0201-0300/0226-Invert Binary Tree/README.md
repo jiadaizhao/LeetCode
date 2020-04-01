@@ -2,11 +2,11 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/invert-binary-tree/description/
+https://leetcode.com/problems/invert-binary-tree/
 
 Invert a binary tree.
 
-Example:
+**Example:**
 ```
 Input:
 
@@ -24,8 +24,7 @@ Output:
 9   6 3   1
 ```
 
-**Trivia:**  
+**Trivia:**
+
 This problem was inspired by this original tweet by Max Howell:
 > Google: 90% of our engineers use the software you wrote (Homebrew), but you can’t invert a binary tree on a whiteboard so fuck off.
-
-Related Topics: Tree

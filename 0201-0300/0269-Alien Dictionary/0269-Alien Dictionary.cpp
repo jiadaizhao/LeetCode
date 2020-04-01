@@ -40,27 +40,18 @@ public:
                 result += 'a' + i;
             }
         }
-        
-        int count = 0;
-        for (int i = 0; i < letters.size(); ++i) {
-            count += letters[i] ? 1 : 0;
-        }
+                
         while (!Q.empty()) {
-            int top = Q.front();
+            int curr = Q.front();
             Q.pop();
-            for (int node : graph[top]) {
+            for (int node : graph[curr]) {
                 if (--degrees[node] == 0) {
                     Q.push(node);
                     result += 'a' + node;
                 }
             }
         }
-        
-        if (result.size() == count) {
-            return result;
-        }
-        else {
-            return "";
-        }
+        int count = accumulate(letters.begin(), letters.end(), 0);
+        return result.size() == count ? result : "";
     }
 };

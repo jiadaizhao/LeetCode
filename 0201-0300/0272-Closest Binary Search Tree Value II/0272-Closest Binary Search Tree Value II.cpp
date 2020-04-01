@@ -32,7 +32,7 @@ public:
                 result.push_back(getNextPredecessor(pre));
             }
             else {
-                if (abs(pre.top()->val - target) < abs(suc.top()->val - target)) {
+                if (target - pre.top()->val < suc.top()->val - target) {
                     result.push_back(getNextPredecessor(pre));
                 }
                 else {

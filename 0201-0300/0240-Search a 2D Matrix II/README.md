@@ -24,9 +24,3 @@ Consider the following matrix:
 Given target = 5, return true.
 
 Given target = 20, return false.
-
-Companies: Amazon, Google, Apple
-
-Related Topics: Binary Search, Divide and Conquer
-
-Similar Questions: Search a 2D Matrix

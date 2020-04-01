@@ -6,7 +6,7 @@ https://leetcode.com/problems/peeking-iterator/
 
 Given an Iterator class interface with methods: next() and hasNext(), design and implement a PeekingIterator that support the peek() operation -- it essentially peek() at the element that will be returned by the next call to next().
 
-Example:
+**Example:**
 ```
 Assume that the iterator is initialized to the beginning of the list: [1,2,3].
 
@@ -16,10 +16,4 @@ You call next() the final time and it returns 3, the last element.
 Calling hasNext() after that should return false.
 ```
 
-Follow up: How would you extend your design to be generic and work with all types, not just integer?
-
-Companies: Google, Apple, Yahoo
-
-Related Topics: Design
-
-Similar Questions: Binary Search Tree Iterator, Flatten 2D Vector, Zigzag Iterator
+**Follow up:** How would you extend your design to be generic and work with all types, not just integer?

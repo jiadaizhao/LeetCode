@@ -14,4 +14,3 @@ class Solution:
                     cow += 1
                 table[g] -= 1
         return str(bull) + 'A' + str(cow) + 'B'
-

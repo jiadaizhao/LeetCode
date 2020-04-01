@@ -15,7 +15,7 @@ Given a board with m by n cells, each cell has an initial state live (1) or dead
 
 Write a function to compute the next state (after one update) of the board given its current state. The next state is created by applying the above rules simultaneously to every cell in the current state, where births and deaths occur simultaneously.
 
-Example:
+**Example:**
 ```
 Input: 
 [
@@ -36,9 +36,3 @@ Output:
 **Follow up:**
 1. Could you solve it in-place? Remember that the board needs to be updated at the same time: You cannot update some cells first and then use their updated values to update other cells.
 2. In this question, we represent the board using a 2D array. In principle, the board is infinite, which would cause problems when the active area encroaches the border of the array. How would you address these problems?
-
-Companies: Dropbox, Google, Two Sigma, Snapchat
-
-Related Topics: Array
-
-Similar Questions: Set Matrix Zeros

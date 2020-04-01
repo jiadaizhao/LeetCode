@@ -6,7 +6,7 @@ https://leetcode.com/problems/add-digits/
 
 Given a non-negative integer num, repeatedly add all its digits until the result has only one digit.
 
-Example:
+**Example:**
 ```
 Input: 38
 Output: 2 
@@ -16,9 +16,3 @@ Explanation: The process is like: 3 + 8 = 11, 1 + 1 = 2.
 
 **Follow up:**  
 Could you do it without any loop/recursion in O(1) runtime?
-
-Companies: Adobe, Microsoft
-
-Related Topics: Math
-
-Similar Questions: Happy Number

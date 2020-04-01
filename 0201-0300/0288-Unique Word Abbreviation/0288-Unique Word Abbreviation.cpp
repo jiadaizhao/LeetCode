@@ -3,7 +3,7 @@ public:
     ValidWordAbbr(vector<string> dictionary) {
         for (string s : dictionary) {
             string key = getKey(s);
-            if (table.find(key) != table.end()) {
+            if (table.count(key)) {
                 if (table[key] != s) {
                     table[key] = "";
                 }                
@@ -16,7 +16,7 @@ public:
     
     bool isUnique(string word) {
         string key = getKey(word);
-        return table.find(key) == table.end() || table[key] == word;
+        return !table.count(key) || table[key] == word;
     }
     
 private:
@@ -26,7 +26,7 @@ private:
             return s;
         }
         
-        return s[0] + to_string(s.size() - 2) + s[s.size() - 1];
+        return s[0] + to_string(s.size() - 2) + s.back();
     }
 };
 

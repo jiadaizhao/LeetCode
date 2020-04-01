@@ -2,8 +2,7 @@ class Solution {
 public:
     int nthUglyNumber(int n) {
         int p2 = 0, p3 = 0, p5 = 0;
-        vector<int> ugly(n);
-        ugly[0] = 1;
+        vector<int> ugly(n, 1);
         for (int i = 1; i < n; ++i) {
             ugly[i] = min({ugly[p2] * 2, ugly[p3] * 3, ugly[p5] * 5});
             if (ugly[p2] * 2 == ugly[i]) {

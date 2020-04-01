@@ -8,7 +8,7 @@ Given an array of citations (each citation is a non-negative integer) of a resea
 
 According to the definition of h-index on Wikipedia: "A scientist has index h if h of his/her N papers have at least h citations each, and the other N − h papers have no more than h citations each."
 
-Example:
+**Example:**
 ```
 Input: citations = [3,0,6,1,5]
 Output: 3 
@@ -19,9 +19,3 @@ Explanation: [3,0,6,1,5] means the researcher has 5 papers in total and each of 
 ```
 
 **Note:** If there are several possible values for h, the maximum one is taken as the h-index.
-
-Companies: Bloomberg, Google, Facebook
-
-Related Topics: Hash Table, Sort
-
-Similar Questions: H-Index II

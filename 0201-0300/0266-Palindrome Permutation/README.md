@@ -2,15 +2,24 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/palindrome-permutation/description/
+https://leetcode.com/problems/palindrome-permutation/
 
 Given a string, determine if a permutation of the string could form a palindrome.
 
-For example,  
-"code" -> False, "aab" -> True, "carerac" -> True.
+**Example 1:**
+```
+Input: "code"
+Output: false
+```
 
-Companies: Google, Uber, Bloomberg
+**Example 2:**
+```
+Input: "aab"
+Output: true
+```
 
-Related Topics: Hash Table
-
-Similar Questions: Longest Palindromic Substring, Valid Anagram, Palindrome Permutation II, Longest Palindrome
+**Example 3:**
+```
+Input: "carerac"
+Output: true
+```

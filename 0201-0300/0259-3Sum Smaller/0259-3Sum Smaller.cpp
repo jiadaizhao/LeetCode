@@ -11,8 +11,7 @@ public:
             int start = i + 1, end = nums.size() - 1;
             int t = target - nums[i];
             while (start < end) {
-                int sum = nums[start] + nums[end];
-                if (sum < t) {
+                if (nums[start] + nums[end] < t) {
                     count += end - start;
                     ++start;
                 }

@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/zigzag-iterator/description/
+https://leetcode.com/problems/zigzag-iterator/
 
 Given two 1d vectors, implement an iterator to return their elements alternately.
 

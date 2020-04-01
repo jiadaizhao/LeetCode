@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/unique-word-abbreviation/description/
+https://leetcode.com/problems/unique-word-abbreviation/d
 
 An abbreviation of a word follows the form <first letter><number><last letter>. Below are some examples of word abbreviations:
 ```
@@ -21,7 +21,7 @@ d) l|ocalizatio|n          --> l10n
 ```
 Assume you have a dictionary and given a word, find whether its abbreviation is unique in the dictionary. A word's abbreviation is unique if no other word from the dictionary has the same abbreviation.
 
-Example: 
+**Example:**
 ```
 Given dictionary = [ "deer", "door", "cake", "card" ]
 
@@ -37,9 +37,3 @@ false
 isUnique("make") -> 
 true
 ```
-
-Companies: Google
-
-Related Topics: Hash Table, Design
-
-Similar Questions: Two Sum III - Data structure design, Generalized Abbreviation

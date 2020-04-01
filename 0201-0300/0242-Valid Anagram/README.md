@@ -6,25 +6,22 @@ https://leetcode.com/problems/valid-anagram/
 
 Given two strings s and t, write a function to determine if t is an anagram of s.
 
-Example 1:
+**Example 1:**
 ```
 Input: s = "anagram", t = "nagaram"
 Output: true
 ```
-Example 2:
+
+**Example 2:**
 ```
 Input: s = "rat", t = "car"
 Output: false
 ```
 
-**Note:**  
+**Note:**
+
 You may assume the string contains only lowercase alphabets.
 
-**Follow up:**  
+**Follow up:**
+
 What if the inputs contain unicode characters? How would you adapt your solution to such case?
-
-Companies: Amazon, Uber, Yelp
-
-Related Topics: Hash Table, Sort
-
-Similar Questions: Group Anagrams, Palindrome Permutation, Find All Anagrams in a String

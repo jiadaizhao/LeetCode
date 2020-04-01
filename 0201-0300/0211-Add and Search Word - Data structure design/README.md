@@ -11,7 +11,7 @@ bool search(word)
 ```
 search(word) can search a literal word or a regular expression string containing only letters a-z or .. A . means it can represent any one letter.
 
-Example:
+**Example:**
 ```
 addWord("bad")
 addWord("dad")
@@ -22,15 +22,7 @@ search(".ad") -> true
 search("b..") -> true
 ```
 
-**Note:**  
+**Note:**
+
 You may assume that all words are consist of lowercase letters a-z.
 
-click to show hint.
-
-You should be familiar with how a Trie works. If not, please work on this problem: Implement Trie (Prefix Tree) first.
-
-Companies: Facebook
-
-Related Topics: Backtracking, Trie, Design
-
-Similar Questions: Implement Trie(Prefix Tree)

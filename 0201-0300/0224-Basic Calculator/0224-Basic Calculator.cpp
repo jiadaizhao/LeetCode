@@ -1,130 +1,40 @@
 class Solution {
 public:
     int calculate(string s) {
-        stack<int> vals;
-        stack<int> ops;
-        int num = 0;
+        stack<int> St;
+        int result = 0, num = 0, i = 0;
         int sign = 1;
-        int res = 0;
-        for (char c : s) {
-            if (isdigit(c)) {
-                num = num * 10 + (c - '0');
+        while (i < s.size()) {
+            if (isdigit(s[i])) {
+                while (i < s.size() && isdigit(s[i])) {
+                    num = num * 10 + (s[i++] - '0');
+                }
+                result += sign * num;
+                num = 0;
             }
             else {
-                res += sign * num;
-                num = 0;
-                if (c == '+') {
+                if (s[i] == '+') {
                     sign = 1;
                 }
-                else if (c == '-') {
+                else if (s[i] == '-') {
                     sign = -1;
                 }
-                else if (c == '(') {
-                    vals.push(res);
-                    ops.push(sign);
-                    res = 0;
+                else if (s[i] == '(') {
+                    St.push(sign);
+                    St.push(result);
                     sign = 1;
+                    result = 0;
                 }
-                else if (c == ')') {
-                    res = vals.top() + ops.top() * res;
-                    vals.pop();
-                    ops.pop();
-                }
-            }                
-        }
-        
-        res += sign * num;        
-        return res;
-    }
-};
-
-// Convert to reversed polish notation
-class Solution {
-public:
-    int calculate(string s) {
-        vector<string> postexp = infixToPostfix(s);
-        stack<int> St;
-        for (string& exp : postexp) {
-            if (isOperand(exp)) {
-                St.push(stoi(exp));
-            }
-            else {
-                int data2 = St.top();
-                St.pop();
-                int data1 = St.top();
-                St.pop();
-                int result = 0;
-                if (exp == "+") {
-                    result = data1 + data2;
-                }
-                else {
-                    result = data1 - data2;
-                }
-
-                St.push(result);
-            }
-        }
-        
-        return !St.empty() ? St.top() : 0;
-    }
-    
-private:
-    bool isOperand(string s) {
-        return s.size() && s[0] >= '0' && s[1] <= '9';
-    }
-
-    vector<string> infixToPostfix(string& s) {
-        stack<string> St;
-        vector<string> result;
-        int num = 0;
-        bool hasNumber = false;
-        for (char c : s) {
-            if (isdigit(c)) {
-                hasNumber = true;
-                num = num * 10 + (c - '0');
-            }
-            else {
-                if (hasNumber) {
-                    result.push_back(to_string(num));
-                    hasNumber = false;
-                    num = 0;
-                }
-                
-                if (c == ' ') {
-                    continue;
-                }
-                
-                if (c == '(') {
-                    St.push(string(1, c));
-                }
-                else if (c == ')') {
-                    while (!St.empty() && St.top() != "(") {
-                        result.push_back(St.top());
-                        St.pop();
-                    }
+                else if (s[i] == ')') {
+                    int prev = St.top();
                     St.pop();
+                    sign = St.top();
+                    St.pop();
+                    result = prev + sign * result;
                 }
-                else {
-                    while (!St.empty() && St.top() != "(") {
-                        result.push_back(St.top());
-                        St.pop();
-                    }
-                    St.push(string(1, c));
-                }
+                ++i;
             }
         }
-        
-        if (hasNumber) {
-            result.push_back(to_string(num));
-            hasNumber = false;
-            num = 0;
-        }
-        
-        while (!St.empty()) {
-            result.push_back(St.top());
-            St.pop();
-        }
-        
         return result;
     }
 };

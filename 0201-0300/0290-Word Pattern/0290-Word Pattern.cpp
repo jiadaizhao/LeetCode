@@ -11,13 +11,13 @@ public:
                 return false;
             }
             
-            if (table.find(s) != table.end()) {
+            if (table.count(s)) {
                 if (table[s] != pattern[i]) {
                     return false;
                 }
             }
             else {
-                if (chars.find(pattern[i]) != chars.end()) {
+                if (chars.count(pattern[i])) {
                     return false;
                 }
                 table[s] = pattern[i];

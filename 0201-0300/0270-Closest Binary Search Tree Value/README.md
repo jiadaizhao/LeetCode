@@ -2,16 +2,24 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/closest-binary-search-tree-value/description/
+https://leetcode.com/problems/closest-binary-search-tree-value/
 
 Given a non-empty binary search tree and a target value, find the value in the BST that is closest to the target.
 
-**Note:**  
+**Note:**
+
 * Given target value is a floating point.
 * You are guaranteed to have only one unique value in the BST that is closest to the target.
 
-Companies: Microsoft, Google, Snapchat
+**Example:**
+```
+Input: root = [4,2,5,1,3], target = 3.714286
 
-Related Topics: Tree, Binary Search
+    4
+   / \
+  2   5
+ / \
+1   3
 
-Similar Questions: Count Complete Tree Nodes, Closest Binary Search Tree Value II
+Output: 4
+```

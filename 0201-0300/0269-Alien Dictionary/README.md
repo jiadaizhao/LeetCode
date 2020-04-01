@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/alien-dictionary/description/
+https://leetcode.com/problems/alien-dictionary/
 
 There is a new alien language which uses the latin alphabet. However, the order among letters are unknown to you. You receive a list of non-empty words from the dictionary, where words are sorted lexicographically by the rules of this new language. Derive the order of letters in this language.
 
@@ -45,9 +45,3 @@ The order is invalid, so return "".
 2. You may assume that if a is a prefix of b, then a must appear before b in the given dictionary.
 3. If the order is invalid, return an empty string.
 4. There may be multiple valid order of letters, return any one of them is fine.
-
-Companies: Google, Airbnb, Facebook, Twitter, Snapchat, Pocket Gems
-
-Related Topics: Graph,  Topological Sort
-
-Similar Questions: Course Schedule II

@@ -3,7 +3,6 @@ class Solution:
         if not costs:
             return 0
         
-        k = len(costs[0])
         min1 = min2 = -1
         for i in range(len(costs)):
             currMin1 = currMin2 = -1

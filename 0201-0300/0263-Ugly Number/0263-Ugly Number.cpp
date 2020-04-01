@@ -5,16 +5,10 @@ public:
             return false;
         }
         
-        while (num % 2 == 0) {
-            num /= 2;
-        }
-        
-        while (num % 3 == 0) {
-            num /= 3;
-        }
-        
-        while (num % 5 == 0) {
-            num /= 5;
+        for (int p : vector<int>{2, 3, 5}) {
+            while (num % p == 0) {
+                num /= p;
+            } 
         }
         
         return num == 1;

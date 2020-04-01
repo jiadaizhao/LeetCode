@@ -1,8 +1,7 @@
 class Solution {
 public:
     bool isHappy(int n) {
-        unordered_set<int> visited;
-        visited.insert(n);
+        unordered_set<int> visited{n};
         while (n != 1) {
             int temp = n;
             n = 0;
