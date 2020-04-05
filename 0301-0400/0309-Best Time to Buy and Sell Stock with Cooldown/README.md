@@ -11,15 +11,9 @@ Design an algorithm to find the maximum profit. You may complete as many transac
 * You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
 * After you sell your stock, you cannot buy stock on next day. (ie, cooldown 1 day)
 
-Example:
+**Example:**
 ```
 Input: [1,2,3,0,2]
 Output: 3 
 Explanation: transactions = [buy, sell, cooldown, buy, sell]
 ```
-
-Companies: Google
-
-Related Topic: Dynamic Programming
-
-Similar Questions: Best Time to Buy and Sell Stock, Best Time to Buy and Sell Stock II

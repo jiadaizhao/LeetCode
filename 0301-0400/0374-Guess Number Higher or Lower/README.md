@@ -17,14 +17,8 @@ You call a pre-defined API guess(int num) which returns 3 possible results (-1, 
  0 : Congrats! You got it!
  ```
 
-Example:
+**Example:**
 ```
 Input: n = 10, pick = 6
 Output: 6
 ```
-
-Companies: Google
-
-Related Topics: Binary Search
-
-Similar Questions: First Bad Version, Guess Number Higher or Lower II, Find K Closest Elements

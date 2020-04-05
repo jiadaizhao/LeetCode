@@ -26,14 +26,15 @@ Given an array of integers representing the data, return whether it is a valid u
 **Note:**  
 The input is an array of integers. Only the least significant 8 bits of each integer is used to store the data. This means each integer represents only 1 byte of data.
 
-Example 1:
+**Example 1:**
 ```
 data = [197, 130, 1], which represents the octet sequence: 11000101 10000010 00000001.
 
 Return true.
 It is a valid utf-8 encoding for a 2-bytes character followed by a 1-byte character.
 ```
-Example 2:
+
+**Example 2:**
 ```
 data = [235, 140, 4], which represented the octet sequence: 11101011 10001100 00000100.
 
@@ -42,7 +43,3 @@ The first 3 bits are all one's and the 4th bit is 0 means it is a 3-bytes charac
 The next byte is a continuation byte which starts with 10 and that's correct.
 But the second continuation byte does not start with 10, so it is invalid.
 ```
-
-Companies: Google
-
-Related Topics: Bit Manipulation

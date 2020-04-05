@@ -38,7 +38,3 @@ twitter.unfollow(1, 2);
 // since user 1 is no longer following user 2.
 twitter.getNewsFeed(1);
 ```
-
-Companies: Amazon, Twitter
-
-Related Topic: Hash Table, Heap, Design

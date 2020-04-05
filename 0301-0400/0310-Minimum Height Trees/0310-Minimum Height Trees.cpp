@@ -1,16 +1,16 @@
 class Solution {
 public:
-    vector<int> findMinHeightTrees(int n, vector<pair<int, int>>& edges) {
+    vector<int> findMinHeightTrees(int n, vector<vector<int>>& edges) {
         if (n == 2) {
             return {0, 1};
         }
         vector<int> degrees(n);
-        unordered_map<int, unordered_set<int>> graph;
+        unordered_map<int, vector<int>> graph;
         for (auto edge : edges) {
-            graph[edge.first].insert(edge.second);
-            graph[edge.second].insert(edge.first);
-            ++degrees[edge.first];
-            ++degrees[edge.second];
+            graph[edge[0]].push_back(edge[1]);
+            graph[edge[1]].push_back(edge[0]);
+            ++degrees[edge[0]];
+            ++degrees[edge[1]];
         }
         
         queue<int> Q;
@@ -42,7 +42,6 @@ public:
             }
         }
         
-        vector<int> result(nodes.begin(), nodes.end());
-        return result;
+        return vector<int>{nodes.begin(), nodes.end()};
     }
 };

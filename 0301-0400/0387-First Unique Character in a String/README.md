@@ -14,6 +14,5 @@ return 0.
 s = "loveleetcode",
 return 2.
 ```
-**Note:** You may assume the string contain only lowercase letters.
 
-Companies: Amazon, Bloomberg, Microsoft
+**Note:** You may assume the string contain only lowercase letters.

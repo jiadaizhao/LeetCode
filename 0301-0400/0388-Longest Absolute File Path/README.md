@@ -38,5 +38,3 @@ Given a string representing the file system in the above format, return the leng
 Time complexity required: O(n) where n is the size of the input string.
 
 Notice that a/aa/aaa/file1.txt is not the longest file path, if there is another path aaaaaaaaaaaaaaaaaaaaa/sth.png.
-
-Companies: Google

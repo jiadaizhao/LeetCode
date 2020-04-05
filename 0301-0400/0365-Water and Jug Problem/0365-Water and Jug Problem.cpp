@@ -9,23 +9,6 @@ public:
             return z == 0;
         }
         
-        int gcd = GCD(x, y);
-        if (z % gcd == 0) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-    
-private:
-    int GCD(int x, int y) {
-        while (y) {
-            int temp = x;
-            x = y;
-            y = temp % y;
-        }
-        
-        return x;
+        return z % __gcd(x, y) == 0;
     }
 };

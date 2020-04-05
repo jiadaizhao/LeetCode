@@ -26,7 +26,3 @@ F(3) = (0 * 3) + (1 * 2) + (2 * 6) + (3 * 4) = 0 + 2 + 12 + 12 = 26
 
 So the maximum value of F(0), F(1), F(2), F(3) is F(3) = 26.
 ```
-
-Companies: Amazon
-
-Related Topics: Math

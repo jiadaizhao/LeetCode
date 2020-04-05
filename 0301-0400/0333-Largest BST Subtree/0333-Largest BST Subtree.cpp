@@ -9,12 +9,8 @@
  */
  class Solution {
 public:
-    int largestBSTSubtree(TreeNode* root) {
-        if (root == nullptr) {
-            return 0;
-        }
-        
-        int maxCount = 1;
+    int largestBSTSubtree(TreeNode* root) {        
+        int maxCount = 0;
         isBST(root, maxCount);
         return maxCount;
     }

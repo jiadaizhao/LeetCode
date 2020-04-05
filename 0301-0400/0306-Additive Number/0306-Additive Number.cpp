@@ -48,7 +48,7 @@ private:
         int carry = 0;
         int i = s1.size() - 1;
         int j = s2.size() - 1;
-        while (i >= 0 || j >= 0) {
+        while (i >= 0 || j >= 0 || carry) {
             int sum = carry;
             sum += (i >= 0) ? s1[i--] - '0' : 0;
             sum += (j >= 0) ? s2[j--] - '0' : 0;
@@ -57,9 +57,6 @@ private:
             result += '0' + sum;
         }
         
-        if (carry) {
-            result += '1';
-        }
         reverse(result.begin(), result.end());
         return result;
     }

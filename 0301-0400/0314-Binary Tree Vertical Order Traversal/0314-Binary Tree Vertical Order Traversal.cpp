@@ -14,41 +14,28 @@ public:
         if (root == nullptr) {
             return result;
         }
-        
-        queue<Cell> Q;
-        unordered_map<int, vector<int>> table;
         int minCol = 0, maxCol = 0;
-        Q.emplace(0, root);
-        table[0].push_back(root->val);
-        
+        unordered_map<int, vector<int>> table;
+        queue<pair<TreeNode*, int>> Q;
+        Q.emplace(root, 0);
         while (!Q.empty()) {
-            int col = Q.front().col;
-            TreeNode* node = Q.front().node;
+            TreeNode* node = Q.front().first;
+            int col = Q.front().second;
             Q.pop();
+            minCol = min(minCol, col);
+            maxCol = max(maxCol, col);
+            table[col].push_back(node->val);
             if (node->left) {
-                minCol = min(minCol, col - 1);
-                Q.emplace(col - 1, node->left);
-                table[col - 1].push_back(node->left->val);
+                Q.emplace(node->left, col - 1);
             }
-            
             if (node->right) {
-                maxCol = max(maxCol, col + 1);
-                Q.emplace(col + 1, node->right);
-                table[col + 1].push_back(node->right->val);
+                Q.emplace(node->right, col + 1);
             }
         }
         
         for (int i = minCol; i <= maxCol; ++i) {
             result.push_back(table[i]);
         }
-        
         return result;
     }
-    
-private:
-    struct Cell {
-        int col;
-        TreeNode* node;
-        Cell(int c, TreeNode* p): col(c), node(p) {};
-    };
 };

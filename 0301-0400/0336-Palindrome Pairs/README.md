@@ -19,9 +19,3 @@ Input: ["bat","tab","cat"]
 Output: [[0,1],[1,0]] 
 Explanation: The palindromes are ["battab","tabbat"]
 ```
-
-Companies: Google, Airbnb
-
-Related Topic: Hash Table, String, Trie
-
-Similar Questions: Longest Palindrome Substring, Shortest Palindrome

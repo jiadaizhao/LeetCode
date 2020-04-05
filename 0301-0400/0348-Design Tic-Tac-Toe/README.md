@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/design-tic-tac-toe/description/
+https://leetcode.com/problems/design-tic-tac-toe/
 
 Design a Tic-tac-toe game that is played between two players on a n x n grid.
 
@@ -54,9 +54,6 @@ toe.move(2, 1, 1); -> Returns 1 (player 1 wins)
 |X|X|X|
 ```
 
-Follow up:
+**Follow up:**
+
 Could you do better than O(n<sup>2</sup>) per move() operation?
-
-Companies: Microsoft, Google
-
-Related Topic: Design

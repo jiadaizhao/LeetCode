@@ -20,6 +20,7 @@ Given s = "324",
 
 You should return a NestedInteger object which contains a single integer 324.
 ```
+
 **Example 2:**
 ```
 Given s = "[123,[456,[789]]]",
@@ -32,9 +33,3 @@ Return a NestedInteger object containing a nested list with 2 elements:
     ii. A nested list with one element:
          a. An integer containing value 789.
 ```
-
-Companies: Airbnb
-
-Related Topics: Stack, String
-
-Similar Questions: Flatten Nested List Iterator, Ternary Expression Parser

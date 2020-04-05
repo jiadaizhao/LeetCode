@@ -36,9 +36,3 @@ randomSet.insert(2);
 // Since 2 is the only number in the set, getRandom always return 2.
 randomSet.getRandom();
 ```
-
-Companies: Google, Uber, Twitter, Amazon, Yelp, Pocket Gems, Facebook
-
-Related Topics: Array, Hash Table, Design 
-
-Similar Questions: Insert Delete GetRandom O(1)

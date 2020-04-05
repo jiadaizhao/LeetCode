@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/design-phone-directory/description/
+https://leetcode.com/problems/design-phone-directory/
 
 Design a Phone Directory which supports the following operations:
 
@@ -36,7 +36,3 @@ directory.release(2);
 // Number 2 is available again, return true.
 directory.check(2);
 ```
-
-Companies: Google
-
-Related Topics: Linked List, Design 

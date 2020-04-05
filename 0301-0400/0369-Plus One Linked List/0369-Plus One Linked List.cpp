@@ -9,9 +9,6 @@
  class Solution {
 public:
     ListNode* plusOne(ListNode* head) {
-        if (head == nullptr) {
-            return nullptr;
-        }
         ListNode* lastNodeNot9 = nullptr;
         ListNode* node = head;
         while (node) {
@@ -21,12 +18,12 @@ public:
             node = node->next;
         }
         
-        if (!lastNodeNot9) {
-            node = head;
-        }
-        else {
+        if (lastNodeNot9) {
             node = lastNodeNot9->next;
             ++lastNodeNot9->val;
+        }
+        else {            
+            node = head;
         }
         
         while (node) {
@@ -34,13 +31,13 @@ public:
             node = node->next;
         }
         
-        if (!lastNodeNot9) {
-            ListNode* res = new ListNode(1);
-            res->next = head;
-            return res;
+        if (lastNodeNot9) {
+            return head;            
         }
         else {
-            return head;
+            ListNode* result = new ListNode(1);
+            result->next = head;
+            return result;
         }
     }
 };

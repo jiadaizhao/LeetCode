@@ -20,9 +20,3 @@ Solution solution = new Solution(head);
 // getRandom() should return either 1, 2, or 3 randomly. Each element should have equal probability of returning.
 solution.getRandom();
 ```
-
-Companies: Google
-
-Related Topics: Reservoir Sampling
-
-Similar Questions: Random Pick Index

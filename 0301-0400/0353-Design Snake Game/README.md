@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/design-snake-game/description/
+https://leetcode.com/problems/design-snake-game/
 
 Design a Snake game that is played on a device with screen size = width x height. Play the game online if you are not familiar with the game.
 
@@ -14,7 +14,7 @@ Each food appears one by one on the screen. For example, the second food will no
 
 When a food does appear on the screen, it is guaranteed that it will not appear on a block occupied by the snake.
 
-Example:
+**Example:**
 ```
 Given width = 3, height = 2, and food = [[1,2],[0,1]].
 
@@ -52,10 +52,3 @@ snake.move("L"); -> Returns 2 (Snake eats the second food)
 
 snake.move("U"); -> Returns -1 (Game over because snake collides with border)
 ```
-
-**Credits:**  
-Special thanks to @elmirap for adding this problem and creating all test cases.
-
-Companies: Google
-
-Related Topic: Design, Queue

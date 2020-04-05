@@ -23,9 +23,3 @@ Output: [1,4,6]
 Explanation: By calling next repeatedly until hasNext returns false, 
              the order of elements returned by next should be: [1,4,6].
 ```
-
-Companies: Google, Facebook, Twitter
-
-Related Topic: Stack, Design
-
-Similar Questions: Flatten 2D Vector, Zigzag Iterator, Mini Parser, Array Nesting

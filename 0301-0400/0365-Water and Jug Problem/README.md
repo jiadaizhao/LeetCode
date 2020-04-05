@@ -19,12 +19,9 @@ Operations allowed:
 Input: x = 3, y = 5, z = 4
 Output: True
 ```
+
 **Example 2:**
 ```
 Input: x = 2, y = 6, z = 5
 Output: False
 ```
-
-Companies: Microsoft
-
-Related Topics: Math

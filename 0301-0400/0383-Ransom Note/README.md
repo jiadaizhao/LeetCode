@@ -15,7 +15,3 @@ canConstruct("a", "b") -> false
 canConstruct("aa", "ab") -> false
 canConstruct("aa", "aab") -> true
 ```
-
-Companies: Apple
-
-Related Topics: String

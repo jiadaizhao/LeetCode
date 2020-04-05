@@ -29,7 +29,3 @@ Explanation: The two patches can be [2, 4].
 Input: nums = [1,2,2], n = 5
 Output: 0
 ```
-
-Companies: Google
-
-Related Topic: Greedy

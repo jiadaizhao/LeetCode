@@ -29,9 +29,3 @@ Therefore the output is 7.
 What if negative numbers are allowed in the given array?  
 How does it change the problem?  
 What limitation we need to add to the question to allow negative numbers?
-
-Companies: Google, Snapchat, Facebook
-
-Related Topics: Dynamic Programming
-
-Similar Questions: Combination Sum

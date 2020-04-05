@@ -8,7 +8,7 @@ You are given an array x of n positive numbers. You start at point (0,0) and mov
 
 Write a one-pass algorithm with O(1) extra space to determine, if your path crosses itself, or not.
 
-Example 1:
+**Example 1:**
 ```
 ┌───┐
 │   │
@@ -19,7 +19,7 @@ Input: [2,1,1,2]
 Output: true
 ```
 
-Example 2:
+**Example 2:**
 ```
 ┌──────┐
 │      │
@@ -31,7 +31,7 @@ Input: [1,2,3,4]
 Output: false 
 ```
 
-Example 3:
+**Example 3:**
 ```
 ┌───┐
 │   │
@@ -40,5 +40,3 @@ Example 3:
 Input: [1,1,1,1]
 Output: true 
 ```
-
-Related Topic: Math

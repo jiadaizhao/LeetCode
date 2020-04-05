@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/design-hit-counter/description/
+https://leetcode.com/problems/design-hit-counter/
 
 Design a hit counter which counts the number of hits received in the past 5 minutes.
 
@@ -10,7 +10,7 @@ Each function accepts a timestamp parameter (in seconds granularity) and you may
 
 It is possible that several hits arrive roughly at the same time.
 
-Example:
+**Example:**
 ```
 HitCounter counter = new HitCounter();
 
@@ -38,12 +38,3 @@ counter.getHits(301);
 
 **Follow up:**  
 What if the number of hits per second could be very large? Does your design scale?
-
-**Credits:**  
-Special thanks to @elmirap for adding this problem and creating all test cases.
-
-Companies: Dropbox, Google
-
-Related Topics: Design
-
-Similar Questions: Logger Rate Limiter

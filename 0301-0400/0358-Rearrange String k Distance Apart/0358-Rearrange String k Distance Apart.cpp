@@ -19,9 +19,8 @@ public:
         string result;
         int m = s.size();
         while (!pq.empty()) {
-            int pqs = pq.size();
             int count = min(m, k);
-            if (pqs < count) {
+            if (pq.size() < count) {
                 return "";
             }
             

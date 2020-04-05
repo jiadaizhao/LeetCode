@@ -39,7 +39,3 @@ Output: false
 Input: "9,#,#,1"
 Output: false
 ```
-
-Companies: Google
-
-Related Topic: Stack

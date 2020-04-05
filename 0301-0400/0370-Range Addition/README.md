@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/range-addition/description/
+https://leetcode.com/problems/range-addition/
 
 Assume you have an array of length n initialized with all 0's and are given k update operations.
 
@@ -10,22 +10,13 @@ Each operation is represented as a triplet: [startIndex, endIndex, inc] which in
 
 Return the modified array after all k operations were executed.
 
-Example:
+**Example:**
 ```
-Given:
-
-    length = 5,
-    updates = [
-        [1,  3,  2],
-        [2,  4,  3],
-        [0,  2, -2]
-    ]
-
-Output:
-
-    [-2, 0, 3, 5, 3]
+Input: length = 5, updates = [[1,3,2],[2,4,3],[0,2,-2]]
+Output: [-2,0,3,5,3]
 ```
-Explanation:
+
+**Explanation:**
 ```
 Initial state:
 [ 0, 0, 0, 0, 0 ]
@@ -39,12 +30,3 @@ After applying operation [2, 4, 3]:
 After applying operation [0, 2, -2]:
 [-2, 0, 3, 5, 3 ]
 ```
-
-Credits:
-Special thanks to @vinod23 for adding this problem and creating all test cases.
-
-Companies: Google
-
-Related Topics: Array
-
-Similar Questions: Range Addition II

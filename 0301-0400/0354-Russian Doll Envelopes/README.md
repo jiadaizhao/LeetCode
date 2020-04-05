@@ -8,16 +8,12 @@ You have a number of envelopes with widths and heights given as a pair of intege
 
 What is the maximum number of envelopes can you Russian doll? (put one inside other)
 
-Note:  
+**Note:**  
 Rotation is not allowed.
 
-Example:
+**Example:**
 ```
 Input: [[5,4],[6,4],[6,7],[2,3]]
 Output: 3 
 Explanation: The maximum number of envelopes you can Russian doll is 3 ([2,3] => [5,4] => [6,7]).
 ```
-
-Companies: Google
-
-Related Topic: Binary Search, Dynamic Programming

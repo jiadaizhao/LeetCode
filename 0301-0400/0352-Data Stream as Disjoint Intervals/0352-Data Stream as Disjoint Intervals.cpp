@@ -1,12 +1,3 @@
-/**
- * Definition for an interval.
- * struct Interval {
- *     int start;
- *     int end;
- *     Interval() : start(0), end(0) {}
- *     Interval(int s, int e) : start(s), end(e) {}
- * };
- */
 class SummaryRanges {
 public:
     /** Initialize your data structure here. */
@@ -15,45 +6,39 @@ public:
     }
     
     void addNum(int val) {
-        auto it = table.lower_bound(Interval(val, val));
+        auto it = table.lower_bound(val);
         if (it != table.begin()) {
-            auto prev = it;
-            --prev;
-            if (prev->end >= val - 1) {
-                it = prev;
+            --it;
+            if (it->second < val - 1) {
+                ++it;
             }
         }
         int start = val, end = val;
-        while (it != table.end() && it->start <= val + 1 && it->end >= val - 1) {
-            start = min(start, it->start);
-            end = max(end, it->end);
+        while (it != table.end() && it->first <= val + 1 && it->second >= val - 1) {
+            start = min(start, it->first);
+            end = max(end, it->second);
             it = table.erase(it);
         }
-        table.insert(it, Interval(start, end));
+        table[start] = end;
     }
     
-    vector<Interval> getIntervals() {
-        vector<Interval> result;
-        for (auto val : table) {
-            result.push_back(val);
+    vector<vector<int>> getIntervals() {
+        vector<vector<int>> result;
+        for (auto p : table) {
+            result.push_back({p.first, p.second});
         }
         return result;
     }
     
 private:
-    struct cmp {
-        bool operator()(Interval i1, Interval i2) {
-            return i1.start < i2.start;
-        }
-    };
-    set<Interval, cmp> table;
+    map<int, int> table;
 };
 
 /**
  * Your SummaryRanges object will be instantiated and called as such:
- * SummaryRanges obj = new SummaryRanges();
- * obj.addNum(val);
- * vector<Interval> param_2 = obj.getIntervals();
+ * SummaryRanges* obj = new SummaryRanges();
+ * obj->addNum(val);
+ * vector<vector<int>> param_2 = obj->getIntervals();
  */
 
 class SummaryRanges {
@@ -71,7 +56,6 @@ public:
                 ++l;
             }
         }
-        
         auto r = table.upper_bound(val + 1);
         int left = val, right = val;
         if (l != r) {
@@ -79,14 +63,13 @@ public:
             right = max(right, (--r)->second);
             table.erase(l, ++r);
         }
-        
         table[left] = right;
     }
     
-    vector<Interval> getIntervals() {
-        vector<Interval> result;
-        for (auto t : table) {
-            result.emplace_back(t.first, t.second);
+    vector<vector<int>> getIntervals() {
+        vector<vector<int>> result;
+        for (auto p : table) {
+            result.push_back({p.first, p.second});
         }
         return result;
     }
@@ -95,4 +78,9 @@ private:
     map<int, int> table;
 };
 
-
+/**
+ * Your SummaryRanges object will be instantiated and called as such:
+ * SummaryRanges* obj = new SummaryRanges();
+ * obj->addNum(val);
+ * vector<vector<int>> param_2 = obj->getIntervals();
+ */

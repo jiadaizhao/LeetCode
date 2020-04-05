@@ -22,7 +22,8 @@ Output:
 Explanation:
 8 -> 4 -> 2 -> 1
 ```
-Example 2:
+
+**Example 2:**
 ```
 Input:
 7
@@ -35,7 +36,3 @@ Explanation:
 or
 7 -> 6 -> 3 -> 2 -> 1
 ```
-
-Companies: Google, Baidu
-
-Related Topics: Math, Bit Manipulation

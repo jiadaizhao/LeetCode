@@ -18,11 +18,6 @@ Input: "leetcode"
 Output: "leotcede"
 ```
 
-**Note:**  
+**Note:**
+
 The vowels does not include the letter "y".
-
-Companies: Google
-
-Related Topic: Two Pointers, String
-
-Similar String: Reverse String
