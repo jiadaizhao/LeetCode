@@ -4,16 +4,16 @@ public:
         string result;
         int currA = 0, currB = 0;
         while (A || B) {
-            if ((A > B && currA < 2) || B == 0 || currB == 2) {
+            if ((A > B && currA < 2) || currB == 2) {
                 result += 'a';
-                ++currA;
                 --A;
+                ++currA;               
                 currB = 0;
             }
             else {
                 result += 'b';
-                ++currB;
                 --B;
+                ++currB;               
                 currA = 0;
             }
         }

@@ -3,7 +3,7 @@ class Solution:
         result = []
         currA = currB = 0
         while A or B:
-            if (A > B and currA < 2) or B == 0 or currB == 2:
+            if (A > B and currA < 2) or currB == 2:
                 result.append('a')
                 A -= 1
                 currA += 1
