@@ -10,22 +10,12 @@
 class Solution {
 public:
     int sumOfLeftLeaves(TreeNode* root) {
-        int sum = 0;
-        helper(root, nullptr, sum);
-        return sum;
-    }
-    
-private:
-    void helper(TreeNode* root, TreeNode* parent, int& sum) {
         if (root == nullptr) {
-            return;
+            return 0;
         }
-        
-        if (root->left == nullptr && root->right == nullptr && parent && parent->left == root) {
-            sum += root->val;
+        if (root->left && root->left->left == nullptr && root->left->right == nullptr) {
+            return root->left->val + sumOfLeftLeaves(root->right);
         }
-        
-        helper(root->left, root, sum);
-        helper(root->right, root, sum);
+        return sumOfLeftLeaves(root->left) + sumOfLeftLeaves(root->right);
     }
 };

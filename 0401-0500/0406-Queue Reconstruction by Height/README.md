@@ -17,9 +17,3 @@ Input:
 Output:
 [[5,0], [7,0], [5,2], [6,1], [4,4], [7,1]]
 ```
-
-Companies: Google
-
-Related Topics: Greedy
-
-Similar Questions: Count of Smaller Numbers After Self

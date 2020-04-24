@@ -17,11 +17,10 @@ Input: "owoztneoer"
 
 Output: "012"
 ```
+
 **Example 2:**
 ```
 Input: "fviefuro"
 
 Output: "45"
 ```
-
-Related Topics: Math

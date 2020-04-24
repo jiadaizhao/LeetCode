@@ -12,7 +12,3 @@ Implement a data structure supporting the following operations:
 4. GetMinKey() - Returns one of the keys with minimal value. If no element exists, return an empty string "".
 
 Challenge: Perform all these in O(1) time complexity.
-
-Companies: Uber
-
-Related Topics: Design

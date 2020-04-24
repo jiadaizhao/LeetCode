@@ -1,4 +1,5 @@
 from functools import reduce
+import collections
 class Solution:
     def findMaximumXOR(self, nums: 'List[int]') -> 'int':
         Trie = lambda: collections.defaultdict(Trie)

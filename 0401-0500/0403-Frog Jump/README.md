@@ -10,7 +10,7 @@ Given a list of stones' positions (in units) in sorted ascending order, determin
 
 If the frog's last jump was k units, then its next jump must be either k - 1, k, or k + 1 units. Note that the frog can only jump in the forward direction.
 
-Note:
+**Note:**
 
 * The number of stones is ≥ 2 and is < 1,100.
 * Each stone's position will be a non-negative integer < 2<sup>31</sup>.
@@ -30,6 +30,7 @@ Return true. The frog can jump to the last stone by jumping
 2 units to the 4th stone, then 3 units to the 6th stone, 
 4 units to the 7th stone, and 5 units to the 8th stone.
 ```
+
 **Example 2:**
 ```
 [0,1,2,3,4,8,9,11]
@@ -37,7 +38,3 @@ Return true. The frog can jump to the last stone by jumping
 Return false. There is no way to jump to the last stone as 
 the gap between the 5th and 6th stone is too large.
 ```
-
-Companies: Snapchat
-
-Related Topics: Dynamic Programming

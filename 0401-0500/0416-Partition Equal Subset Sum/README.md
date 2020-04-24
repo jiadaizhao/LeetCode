@@ -18,6 +18,7 @@ Output: true
 
 Explanation: The array can be partitioned as [1, 5, 5] and [11].
 ```
+
 **Example 2:**
 ```
 Input: [1, 2, 3, 5]
@@ -26,7 +27,3 @@ Output: false
 
 Explanation: The array cannot be partitioned into equal sum subsets.
 ```
-
-Companies: eBay
-
-Related Topics: Dynamic Programming

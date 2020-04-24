@@ -18,7 +18,3 @@ Output: 28
 
 Explanation: The maximum result is 5 ^ 25 = 28.
 ```
-
-Companies: Google
-
-Related Topics: Bit Manipulation, Trie

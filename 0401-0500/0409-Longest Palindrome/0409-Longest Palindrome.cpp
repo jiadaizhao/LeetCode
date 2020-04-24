@@ -6,10 +6,9 @@ public:
             ++table[c];
         }
         
-        int sum = 0;
-        int odd = 0;
+        int sum = 0, odd = 0;
         for (int i : table) {
-            if (i % 2) {
+            if (i & 1) {
                 odd = 1;
                 sum += i - 1;
             }

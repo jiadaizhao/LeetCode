@@ -1,21 +1,19 @@
 class Solution {
 public:
     string frequencySort(string s) {
-        vector<int> table(256);
+        unordered_map<char, int> table;
         for (char c : s) {
             ++table[c];
         }
         
-        priority_queue<pair<int, int>> pq;
-        for (int i = 0; i < table.size(); ++i) {
-            if (table[i]) {
-                pq.push({table[i], i});
-            }
+        priority_queue<pair<int, char>> pq;
+        for (auto& p : table) {
+            pq.push({p.second, p.first});
         }
         
         string result;
         while (!pq.empty()) {
-            pair<int, int> p = pq.top();
+            auto p = pq.top();
             pq.pop();
             result += string(p.first, p.second);
         }

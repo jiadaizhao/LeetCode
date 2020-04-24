@@ -1,19 +1,13 @@
-# Definition for an interval.
-class Interval:
-   def __init__(self, s=0, e=0):
-        self.start = s
-        self.end = e
-
 import math
 class Solution:
-    def eraseOverlapIntervals(self, intervals: 'List[Interval]') -> 'int':
-        intervals.sort(key=lambda x: x.start)
+    def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
+        intervals.sort()
         count = 0
         prev = -math.inf
         for interval in intervals:
-            if interval.start < prev:
+            if interval[0] < prev:
                 count += 1
-                prev = min(prev, interval.end)
+                prev = min(prev, interval[1])
             else:
-                prev = interval.end
+                prev = interval[1]
         return count

@@ -2,7 +2,7 @@
 
 Difficulty: Easy
 
-https://leetcode.com/problems/valid-word-abbreviation/description/
+https://leetcode.com/problems/valid-word-abbreviation/
 
 Given a non-empty string s and an abbreviation abbr, return whether the string matches with the given abbreviation.
 
@@ -21,15 +21,10 @@ Given s = "internationalization", abbr = "i12iz4n":
 
 Return true.
 ```
+
 **Example 2:**
 ```
 Given s = "apple", abbr = "a2e":
 
 Return false.
 ```
-
-Companies: Google
-
-Related Topics: String
-
-Similar Questions: Minimum Unique Word Abbreviation, Word Abbreviation

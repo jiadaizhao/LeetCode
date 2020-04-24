@@ -2,10 +2,14 @@
 // Definition for a Node.
 class Node {
 public:
-    int val = NULL;
+    int val;
     vector<Node*> children;
 
     Node() {}
+
+    Node(int _val) {
+        val = _val;
+    }
 
     Node(int _val, vector<Node*> _children) {
         val = _val;
@@ -13,6 +17,7 @@ public:
     }
 };
 */
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -22,9 +27,9 @@ public:
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
 class Codec {
 public:
-
     // Encodes an n-ary tree to a binary tree.
     TreeNode* encode(Node* root) {
         if (root == nullptr) {
@@ -60,7 +65,7 @@ public:
         
         return result;
     }
-
+	
     // Decodes your binary tree to an n-ary tree.
     Node* decode(TreeNode* root) {
         if (root == nullptr) {

@@ -20,6 +20,7 @@ Output: [-1]
 
 Explanation: There is only one interval in the collection, so it outputs -1.
 ```
+
 **Example 2:**
 ```
 Input: [ [3,4], [2,3], [1,2] ]
@@ -30,6 +31,7 @@ Explanation: There is no satisfied "right" interval for [3,4].
 For [2,3], the interval [3,4] has minimum-"right" start point;
 For [1,2], the interval [2,3] has minimum-"right" start point.
 ```
+
 **Example 3:**
 
 Input: [ [1,4], [2,3], [3,4] ]
@@ -39,7 +41,3 @@ Output: [-1, 2, -1]
 Explanation: There is no satisfied "right" interval for [1,4] and [3,4].
 For [2,3], the interval [3,4] has minimum-"right" start point.
 ```
-
-Related Topics: Binary Search
-
-Similar Questions: Data Stream as Disjoint Intervals

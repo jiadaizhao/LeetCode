@@ -1,23 +1,23 @@
 class Solution {
 public:
-    vector<pair<int, int>> reconstructQueue(vector<pair<int, int>>& people) {
+    vector<vector<int>> reconstructQueue(vector<vector<int>>& people) {
         sort(people.begin(), people.end(), cmp());
-        vector<pair<int, int>> result;
+        vector<vector<int>> result;
         for (auto& p : people) {
-            result.insert(result.begin() + p.second, p);
+            result.insert(result.begin() + p[1], p);
         }
         
         return result;
     }
-    
-private:
+
+    private:
     struct cmp {
-        bool operator() (pair<int, int>& p1, pair<int, int>& p2) {
-            if (p1.first == p2.first) {
-                return p1.second < p2.second;
+        bool operator() (vector<int>& p1, vector<int>& p2) {
+            if (p1[0] == p2[0]) {
+                return p1[1] < p2[1];
             }
             else {
-                return p1.first > p2.first;
+                return p1[0] > p2[0];
             }
         }
     };

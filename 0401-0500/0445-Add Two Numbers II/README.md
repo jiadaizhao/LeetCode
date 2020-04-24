@@ -8,17 +8,11 @@ You are given two non-empty linked lists representing two non-negative integers.
 
 You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
-Follow up:
+**Follow up:**  
 What if you cannot modify the input lists? In other words, reversing the lists is not allowed.
 
-Example:
+**Example:**
 ```
 Input: (7 -> 2 -> 4 -> 3) + (5 -> 6 -> 4)
 Output: 7 -> 8 -> 0 -> 7
 ```
-
-Companies: Microsoft, Bloomberg
-
-Related Topics: Linked List
-
-Similar Questions: Add Two Numbers

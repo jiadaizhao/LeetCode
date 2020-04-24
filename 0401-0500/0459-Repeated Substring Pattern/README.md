@@ -14,12 +14,14 @@ Output: True
 
 Explanation: It's the substring "ab" twice.
 ```
+
 **Example 2:**
 ```
 Input: "aba"
 
 Output: False
 ```
+
 **Example 3:**
 ```
 Input: "abcabcabcabc"
@@ -28,9 +30,3 @@ Output: True
 
 Explanation: It's the substring "abc" four times. (And the substring "abcabc" twice.)
 ```
-
-Companies: Google, Amazon
-
-Related Topics: String
-
-Similar Questions: Implement strStr()

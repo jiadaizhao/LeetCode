@@ -21,6 +21,7 @@ The coins can form the following rows:
 
 Because the 3rd row is incomplete, we return 2.
 ```
+
 **Example 2:**
 ```
 n = 8
@@ -33,7 +34,3 @@ The coins can form the following rows:
 
 Because the 4th row is incomplete, we return 3.
 ```
-
-Companies: GoDaddy
-
-Related Topics: Math, Binary Search

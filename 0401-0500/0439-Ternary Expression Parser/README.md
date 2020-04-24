@@ -2,7 +2,7 @@
 
 Difficulty: Medium
 
-https://leetcode.com/problems/ternary-expression-parser/description/
+https://leetcode.com/problems/ternary-expression-parser/
 
 Given a string representing arbitrarily nested ternary expressions, calculate the result of the expression. You can always assume that the given expression is valid and only consists of digits 0-9, ?, :, T and F (T and F represent True and False respectively).
 
@@ -22,6 +22,7 @@ Output: "2"
 
 Explanation: If true, then result is 2; otherwise result is 3.
 ```
+
 **Example 2:**
 ```
 Input: "F?1:T?4:5"
@@ -34,6 +35,7 @@ Explanation: The conditional expressions group right-to-left. Using parenthesis,
           -> "(F ? 1 : 4)"                 or       -> "(T ? 4 : 5)"
           -> "4"                                    -> "4"
 ```
+
 **Example 3:**
 ```
 Input: "T?T?F:5:3"
@@ -46,9 +48,3 @@ Explanation: The conditional expressions group right-to-left. Using parenthesis,
           -> "(T ? F : 3)"                 or       -> "(T ? F : 5)"
           -> "F"                                    -> "F"
 ```
-
-Companies: Snapchat
-
-Related Topics: Stack, Depth-first Search
-
-Similar Questions: Mini Parser

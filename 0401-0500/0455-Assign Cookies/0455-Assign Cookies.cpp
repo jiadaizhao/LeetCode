@@ -4,14 +4,9 @@ public:
         sort(g.begin(), g.end());
         sort(s.begin(), s.end());
         int count = 0;
-        int j = 0;
-        for (int i = 0; i < g.size(); ++i) {
-            while (j < s.size() && s[j] < g[i]) {
-                ++j;
-            }
-            if (j < s.size() && s[j] >= g[i]) {
+        for (int i = 0; i < s.size() && count < g.size(); ++i) {
+            if (s[i] >= g[count]) {
                 ++count;
-                ++j;
             }
         }
         

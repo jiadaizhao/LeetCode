@@ -8,11 +8,11 @@ There are 1000 buckets, one and only one of them is poisonous, while the rest ar
 
 Answer this question, and write an algorithm for the general case.
 
-General case:
+**General case:**
 
 If there are n buckets and a pig drinking poison will die within m minutes, how many pigs (x) you need to figure out the poisonous bucket within p minutes? There is exactly one bucket with poison.
 
-Note:
+**Note:**
 
 1. A pig can be allowed to drink simultaneously on as many buckets as one would like, and the feeding takes no time.
 2. After a pig has instantly finished drinking buckets, there has to be a cool down time of m minutes. During this time, only observation is allowed and no feedings at all.

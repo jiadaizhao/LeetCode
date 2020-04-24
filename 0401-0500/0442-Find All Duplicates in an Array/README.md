@@ -18,9 +18,3 @@ Input:
 Output:
 [2,3]
 ```
-
-Companies: Pocket Gems
-
-Related Topics: Array
-
-Similar Questions: Find All Numbers Disappeared in an Array

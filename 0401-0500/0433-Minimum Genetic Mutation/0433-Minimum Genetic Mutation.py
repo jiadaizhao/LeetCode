@@ -1,25 +1,33 @@
 import collections
 class Solution:
-    def minMutation(self, start: 'str', end: 'str', bank: 'List[str]') -> 'int':
-        bankSet = set(bank)
-        Q = collections.deque()
-        visited = set()
-        Q.append(start)
-        visited.add(start)
+    def minMutation(self, start: str, end: str, bank: List[str]) -> int:
+        if end not in bank:
+            return -1
+        table = collections.defaultdict(list)
+        L = len(start)
+        for gene in bank:
+            for i in range(L):
+                table[gene[:i] + '*' + gene[i+1:]].append(gene)
+        
         step = 0
-        while Q:
+        visitedBegin = set([start])
+        visitedEnd = set([end])
+        visited = set([start, end])
+        while visitedBegin and visitedEnd:
+            if len(visitedBegin) > len(visitedEnd):
+                visitedBegin, visitedEnd = visitedEnd, visitedBegin
+            
             step += 1
-            qs = len(Q)
-            for i in range(qs):
-                s = Q.popleft()
-                for j in range(len(s)):
-                    for c in 'ACGT':
-                        nextS = s[:j] + c + s[j+1:]
-                        if nextS not in bankSet:
-                            continue
-                        if nextS == end:
+            temp = set()
+            for g in visitedBegin:
+                for i in range(L):
+                    ng = g[:i] + '*' + g[i+1:]
+                    for gene in table[ng]:
+                        if gene in visitedEnd:
                             return step
-                        if nextS not in visited:
-                            Q.append(nextS)
-                            visited.add(nextS)
+                        if gene not in visited:
+                            temp.add(gene)
+                            visited.add(gene)
+            visitedBegin = temp
+        
         return -1

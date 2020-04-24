@@ -14,6 +14,7 @@ Output: 1
 
 Explanation: The third maximum is 1.
 ```
+
 **Example 2:**
 ```
 Input: [1, 2]
@@ -22,6 +23,7 @@ Output: 2
 
 Explanation: The third maximum does not exist, so the maximum (2) is returned instead.
 ```
+
 **Example 3:**
 ```
 Input: [2, 2, 3, 1]
@@ -31,9 +33,3 @@ Output: 1
 Explanation: Note that the third maximum here means the third maximum distinct number.
 Both numbers with value 2 are both considered as second maximum.
 ```
-
-Companies: Amazon
-
-Related Topics: Array
-
-Similar Questions: Kth Largest Element in an Array

@@ -28,6 +28,7 @@ Return 6, and the first 6 characters of the input array should be: ["a","2","b",
 Explanation:
 "aa" is replaced by "a2". "bb" is replaced by "b2". "ccc" is replaced by "c3".
 ```
+
 **Example 2:**
 ```
 Input:
@@ -39,6 +40,7 @@ Return 1, and the first 1 characters of the input array should be: ["a"]
 Explanation:
 Nothing is replaced.
 ```
+
 **Example 3:**
 ```
 Input:
@@ -55,9 +57,3 @@ Notice each digit has it's own entry in the array.
 **Note:**  
 1. All characters have an ASCII value in [35, 126].
 2. 1 <= len(chars) <= 1000.
-
-Companies: Microsoft, Bloomberg, Snapchat, Yelp, Expedia, GoDaddy, Lyft
-
-Related Topics: String
-
-Similar Questions: Count and Say, Encode and Decode Strings, Design Compressed String Iterator 

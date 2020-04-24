@@ -2,7 +2,7 @@
 
 Difficulty: Hard
 
-https://leetcode.com/problems/word-squares/description/
+https://leetcode.com/problems/word-squares/
 
 Given a set of words (without duplicates), find all word squares you can build from them.
 
@@ -43,6 +43,7 @@ Output:
 Explanation:
 The output consists of two word squares. The order of output does not matter (just the order of words in each word square matters).
 ```
+
 **Example 2:**
 ```
 Input:
@@ -65,9 +66,3 @@ Output:
 Explanation:
 The output consists of two word squares. The order of output does not matter (just the order of words in each word square matters).
 ```
-
-Companies: Google
-
-Related Topics: Backtracking, Trie
-
-Similar Questions: Valid Word Square

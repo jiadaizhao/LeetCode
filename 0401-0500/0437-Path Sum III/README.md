@@ -30,7 +30,3 @@ Return 3. The paths that sum to 8 are:
 2.  5 -> 2 -> 1
 3. -3 -> 11
 ```
-
-Related Topics: Tree
-
-Similar Questions: Path Sum, Path Sum II, Path Sum IV

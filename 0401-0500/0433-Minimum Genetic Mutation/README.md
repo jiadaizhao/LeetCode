@@ -47,7 +47,3 @@ bank: ["AAAACCCC", "AAACCCCC", "AACCCCCC"]
 
 return: 3
 ```
-
-Companies: Twiter
-
-Similar Questions: Word Ladder
