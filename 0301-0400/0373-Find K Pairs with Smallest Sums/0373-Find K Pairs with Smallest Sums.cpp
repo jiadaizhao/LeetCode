@@ -1,17 +1,14 @@
 class Solution {
 public:
-    vector<pair<int, int>> kSmallestPairs(vector<int>& nums1, vector<int>& nums2, int k) {
-        vector<pair<int, int>> result;
-        if (nums1.size() == 0 || nums2.size() == 0 || k <= 0) {
-            return result;
-        }
+    vector<vector<int>> kSmallestPairs(vector<int>& nums1, vector<int>& nums2, int k) {
+        vector<vector<int>> result;
         
         priority_queue<Cell, vector<Cell>, cmp> pq;
         pq.emplace(0, 0, nums1[0] + nums2[0]);
         while (!pq.empty() && k--) {
             Cell cell = pq.top();
             pq.pop();
-            result.emplace_back(nums1[cell.col1], nums2[cell.col2]);
+            result.push_back({nums1[cell.col1], nums2[cell.col2]});
             if (cell.col1 + 1 < nums1.size()) {
                 pq.emplace(cell.col1 + 1, cell.col2, nums1[cell.col1 + 1] + nums2[cell.col2]);
             }

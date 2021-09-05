@@ -1,9 +1,6 @@
 import heapq
 class Solution:
     def kSmallestPairs(self, nums1: List[int], nums2: List[int], k: int) -> List[List[int]]:
-        if not nums1 or not nums2 or k <= 0:
-            return []
-
         pq = [(nums1[0] + nums2[0], 0, 0)]
         result = []
         while pq and k:
