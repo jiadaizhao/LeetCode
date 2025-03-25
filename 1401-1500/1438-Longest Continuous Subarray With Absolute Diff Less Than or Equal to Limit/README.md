@@ -40,5 +40,5 @@ Output: 3
 **Constraints:**
 
 * 1 <= nums.length <= 105
-* 1 <= nums[i] <= 109
-* 0 <= limit <= 109
+* 1 <= nums[i] <= 10<sup>9</sup>
+* 0 <= limit <= 10<sup>9</sup>

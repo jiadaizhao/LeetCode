@@ -42,7 +42,7 @@ Output: ["clare","leslie"]
 
 **Constraints:**
 
-* 1 <= keyName.length, keyTime.length <= 105
+* 1 <= keyName.length, keyTime.length <= 10<sup>5</sup>
 * keyName.length == keyTime.length
 * keyTime[i] is in the format "HH:MM".
 * [keyName[i], keyTime[i]] is unique.

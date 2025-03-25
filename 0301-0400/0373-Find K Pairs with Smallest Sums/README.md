@@ -34,7 +34,7 @@ Explanation: All possible pairs are returned from the sequence: [1,3],[2,3]
 ```
 
 **Constraints:**
-* 1 <= nums1.length, nums2.length <= 105
-* -109 <= nums1[i], nums2[i] <= 109
+* 1 <= nums1.length, nums2.length <= 10<sup>5</sup>
+* -10<sup>9</sup> <= nums1[i], nums2[i] <= 10<sup>9</sup>
 * nums1 and nums2 both are sorted in ascending order.
 * 1 <= k <= 1000

@@ -29,7 +29,7 @@ Explanation: The 3 ways are {(0,1)}, {(0,2)}, {(1,2)}.
 ```
 Input: n = 30, k = 7
 Output: 796297179
-Explanation: The total number of possible ways to draw 7 line segments is 3796297200. Taking this number modulo 109 + 7 gives us 796297179.
+Explanation: The total number of possible ways to draw 7 line segments is 3796297200. Taking this number modulo 10<sup>9</sup> + 7 gives us 796297179.
 ```
 
 **Example 4:**

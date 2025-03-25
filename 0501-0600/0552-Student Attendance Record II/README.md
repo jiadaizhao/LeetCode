@@ -4,7 +4,7 @@ Difficulty: Hard
 
 https://leetcode.com/problems/student-attendance-record-ii/
 
-Given a positive integer n, return the number of all possible attendance records with length n, which will be regarded as rewardable. The answer may be very large, return it after mod 109 + 7.
+Given a positive integer n, return the number of all possible attendance records with length n, which will be regarded as rewardable. The answer may be very large, return it after mod 10<sup>9</sup> + 7.
 
 A student attendance record is a string that only contains the following three characters:
 
